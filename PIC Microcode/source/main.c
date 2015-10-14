@@ -6,7 +6,6 @@ Created on October 12, 2015, 11:56 AM
 ====================================================================================*/
 
 #include "main_header.h"
-#include "pic16F1788.h"
 
 void main_loop_individual();
 void main_loop_omega();
@@ -14,10 +13,11 @@ void main_loop_omega();
 int main()
 {
     // Initialize team members' blocks
-    void init_ir();
-    void init_accel();
-    void init_leds();
-    void init_isr();
+    init_pic();
+    init_ir();
+    init_accel();
+    init_leds();
+    init_isr();
 
     // main loop
     while(1)
@@ -67,3 +67,13 @@ void main_loop_omega()
     return;
 #endif
 }
+
+#ifndef _BUILD_STUBS
+
+// Initialize TRISX registers and set oscillator frequency
+void init_pic()
+{
+    
+}
+
+#endif

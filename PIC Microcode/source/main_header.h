@@ -5,6 +5,8 @@ Author: bjesper
 Created on October 12, 2015, 11:56 AM
 ====================================================================================*/
 
+#include "pic16F1788.h"
+
 /* Blade selection */
 
 #define F_OSC = 32000000;
@@ -15,11 +17,24 @@ Created on October 12, 2015, 11:56 AM
 //#define _DELTA_BLADE
 //#define _GAMMA_BLADE
 
+// Uncomment this line to build with functions stubbed
+#define _BUILD_STUBS
+
+/*------------------------------------------------------------------------------------
+Name: init_pic
+Inputs: void
+Return: void
+Purpose: Initialize TRISX registers to set up basic I/O directions and set up
+         oscillator frequency.
+Developer: Ben Jespersen
+------------------------------------------------------------------------------------*/
+void init_pic();
+
 /*------------------------------------------------------------------------------------
 Name: init_ir
 Inputs: void
 Return: void
-Purpose: Initialize andy registers, peripherals, etc. needed by the IR communication
+Purpose: Initialize any registers, peripherals, etc. needed by the IR communication
          functions.
 Developer: Brandon Hogue
 ------------------------------------------------------------------------------------*/
