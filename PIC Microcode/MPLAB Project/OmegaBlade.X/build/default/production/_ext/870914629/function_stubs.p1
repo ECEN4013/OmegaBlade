@@ -6683,9 +6683,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
 [; ;uart_header.h: 8: void init_uart();
-[; ;uart_header.h: 9: void putch(unsigned char byte);
+[; ;uart_header.h: 9: void putch(unsigned char);
 [; ;uart_header.h: 10: unsigned char getch();
-[; ;uart_header.h: 11: unsigned char getche(void);
+[; ;uart_header.h: 11: unsigned char getche();
 [; ;main_header.h: 49: void init_pic();
 [; ;main_header.h: 59: void init_ir();
 [; ;main_header.h: 81: void output_ir(char pkt_type, char amount);

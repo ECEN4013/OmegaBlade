@@ -13,13 +13,15 @@
 [v _init_isr init_isr `(v  1 e 0 0 ]
 "13 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
-"41
+"42
 [v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
-"75
+"89
 [v _init_pic init_pic `(v  1 e 0 0 ]
-"29 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+"11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+[v _init_uart init_uart `(v  1 e 0 0 ]
+"41
 [v _putch putch `(v  1 e 0 0 ]
-"37
+"51
 [v _getch getch `(uc  1 e 1 0 ]
 "464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -43,36 +45,73 @@
 [v _TXREG TXREG `VEuc  1 e 1 @410 ]
 "4117
 [v _SPBRG SPBRG `VEuc  1 e 1 @411 ]
-"4243
-[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
-"4422
-[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
 "16067
 [v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
 "16069
 [v _BRGH BRGH `VEb  1 e 0 @3314 ]
+"16331
+[v _CREN CREN `VEb  1 e 0 @3308 ]
+"16473
+[v _GIE GIE `VEb  1 e 0 @95 ]
 "18449
 [v _RB3 RB3 `VEb  1 e 0 @107 ]
+"18479
+[v _RCIE RCIE `VEb  1 e 0 @1165 ]
 "18481
 [v _RCIF RCIF `VEb  1 e 0 @141 ]
+"18571
+[v _SPEN SPEN `VEb  1 e 0 @3311 ]
 "18647
 [v _SYNC SYNC `VEb  1 e 0 @3316 ]
-"18805
-[v _TXIF TXIF `VEb  1 e 0 @140 ]
+"18779
+[v _TRMT TRMT `VEb  1 e 0 @3313 ]
+"18801
+[v _TXEN TXEN `VEb  1 e 0 @3317 ]
 "13 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"38
+"39
 } 0
-"41
+"42
 [v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
 {
-"57
+"44
+[v main_loop_individual@userInput userInput `uc  1 a 1 11 ]
+"71
 } 0
-"75
+"464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"499
+[v printf@c c `c  1 a 1 7 ]
+"466
+[v printf@ap ap `[1]*.1v  1 a 1 6 ]
+"464
+[v printf@f f `*.25DCCuc  1 p 2 1 ]
+"1541
+} 0
+"41 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+[v _putch putch `(v  1 e 0 0 ]
+{
+[v putch@input input `uc  1 a 1 wreg ]
+[v putch@input input `uc  1 a 1 wreg ]
+[v putch@input input `uc  1 a 1 0 ]
+"48
+} 0
+"51
+[v _getch getch `(uc  1 e 1 0 ]
+{
+"58
+} 0
+"11
+[v _init_uart init_uart `(v  1 e 0 0 ]
+{
+"32
+} 0
+"89 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _init_pic init_pic `(v  1 e 0 0 ]
 {
-"82
+"99
 } 0
 "24 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _init_leds init_leds `(v  1 e 0 0 ]

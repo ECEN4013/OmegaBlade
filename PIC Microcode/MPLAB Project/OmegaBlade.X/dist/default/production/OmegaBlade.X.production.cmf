@@ -11,21 +11,25 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Ben\AppData\Local\Temp\s7e0.obj
+$C:\Users\Ben\AppData\Local\Temp\sb08.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 2 2
 $dist/default/production\OmegaBlade.X.production.obj
 cinit CODE 0 7FD 7FD 3 2
-text1 CODE 0 7DE 7DE 1F 2
-text2 CODE 0 7C1 7C1 A 2
-text3 CODE 0 7C0 7C0 1 2
-text4 CODE 0 7BF 7BF 1 2
-text5 CODE 0 7BE 7BE 1 2
-text6 CODE 0 7BD 7BD 1 2
-maintext CODE 0 7CB 7CB 13 2
-cstackCOMMON COMMON 1 70 70 3 1
-stringtext STRCODE 0 800 800 14 2
+text1 CODE 0 7BA 7BA 43 2
+text2 CODE 0 79F 79F 1B 2
+text3 CODE 0 765 765 7 2
+text4 CODE 0 75F 75F 6 2
+text5 CODE 0 777 777 12 2
+text6 CODE 0 76C 76C B 2
+text7 CODE 0 75E 75E 1 2
+text8 CODE 0 75D 75D 1 2
+text9 CODE 0 75C 75C 1 2
+text10 CODE 0 75B 75B 1 2
+maintext CODE 0 789 789 16 2
+cstackCOMMON COMMON 1 70 70 C 1
+stringtext STRCODE 0 800 800 97 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -68,10 +72,10 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-7BC 2
-CONST 814-3FFF 2
-ENTRY 4-7BC 2
-ENTRY 814-3FFF 2
+CONST 4-75A 2
+CONST 897-3FFF 2
+ENTRY 4-75A 2
+ENTRY 897-3FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -96,8 +100,8 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2000-27EF 1
-CODE 4-7BC 2
-CODE 814-3FFF 2
+CODE 4-75A 2
+CODE 897-3FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -125,12 +129,12 @@ BANK23 BA0-BEF 1
 BANK24 C20-C6F 1
 BANK25 CA0-CBF 1
 BIGRAM 2000-27EF 1
-COMMON 73-7D 1
+COMMON 7C-7D 1
 EEDATA F000-F0FF 2
-STRCODE 4-7BC 2
-STRCODE 814-3FFF 2
-STRING 4-7BC 2
-STRING 814-3FFF 2
+STRCODE 4-75A 2
+STRCODE 897-3FFF 2
+STRING 4-75A 2
+STRING 897-3FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -145,33 +149,67 @@ STRING 814-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\OmegaBlade.X.production.obj
-7FD cinit CODE >2098:C:\Users\Ben\AppData\Local\Temp\s7e0.
-7FD cinit CODE >2101:C:\Users\Ben\AppData\Local\Temp\s7e0.
-7FD cinit CODE >2107:C:\Users\Ben\AppData\Local\Temp\s7e0.
-7FD cinit CODE >2109:C:\Users\Ben\AppData\Local\Temp\s7e0.
-7FE cinit CODE >2110:C:\Users\Ben\AppData\Local\Temp\s7e0.
-7BD text6 CODE >13:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-7BE text5 CODE >10:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-7BF text4 CODE >26:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-7C0 text3 CODE >24:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-7C1 text2 CODE >75:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7C1 text2 CODE >78:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7C6 text2 CODE >81:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7CA text2 CODE >82:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7DE text1 CODE >41:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7DE text1 CODE >44:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7E0 text1 CODE >45:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7ED text1 CODE >46:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7EF text1 CODE >47:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7CB maintext CODE >13:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7CB maintext CODE >16:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7CE maintext CODE >17:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7D1 maintext CODE >18:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7D4 maintext CODE >19:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7D7 maintext CODE >20:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7DA maintext CODE >23:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7DA maintext CODE >25:C:\git\OmegaBlade\PIC Microcode/source/main.c
-7DD maintext CODE >23:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7FD cinit CODE >2251:C:\Users\Ben\AppData\Local\Temp\sb08.
+7FD cinit CODE >2254:C:\Users\Ben\AppData\Local\Temp\sb08.
+7FD cinit CODE >2260:C:\Users\Ben\AppData\Local\Temp\sb08.
+7FD cinit CODE >2262:C:\Users\Ben\AppData\Local\Temp\sb08.
+7FE cinit CODE >2263:C:\Users\Ben\AppData\Local\Temp\sb08.
+75B text10 CODE >13:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+75C text9 CODE >10:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+75D text8 CODE >26:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+75E text7 CODE >24:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+76C text6 CODE >89:C:\git\OmegaBlade\PIC Microcode/source/main.c
+76C text6 CODE >92:C:\git\OmegaBlade\PIC Microcode/source/main.c
+771 text6 CODE >95:C:\git\OmegaBlade\PIC Microcode/source/main.c
+775 text6 CODE >98:C:\git\OmegaBlade\PIC Microcode/source/main.c
+776 text6 CODE >99:C:\git\OmegaBlade\PIC Microcode/source/main.c
+777 text5 CODE >11:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+777 text5 CODE >14:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+77C text5 CODE >17:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+77D text5 CODE >20:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+780 text5 CODE >21:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+781 text5 CODE >22:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+782 text5 CODE >27:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+783 text5 CODE >28:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+784 text5 CODE >29:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+785 text5 CODE >30:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+786 text5 CODE >31:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+788 text5 CODE >32:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+75F text4 CODE >51:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+75F text4 CODE >53:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+75F text4 CODE >56:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+762 text4 CODE >57:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+765 text3 CODE >41:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+766 text3 CODE >43:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+766 text3 CODE >46:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+769 text3 CODE >47:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+76B text3 CODE >48:C:\git\OmegaBlade\PIC Microcode/source/uart.c
+79F text2 CODE >464:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+79F text2 CODE >533:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+7A3 text2 CODE >536:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+7B5 text2 CODE >541:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+7B9 text2 CODE >536:C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+7BA text1 CODE >42:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7BA text1 CODE >44:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7BB text1 CODE >46:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7C2 text1 CODE >47:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7C9 text1 CODE >49:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7CF text1 CODE >50:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7D3 text1 CODE >52:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7D7 text1 CODE >56:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7DE text1 CODE >58:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7E0 text1 CODE >59:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7ED text1 CODE >60:C:\git\OmegaBlade\PIC Microcode/source/main.c
+7EF text1 CODE >61:C:\git\OmegaBlade\PIC Microcode/source/main.c
+789 maintext CODE >13:C:\git\OmegaBlade\PIC Microcode/source/main.c
+789 maintext CODE >16:C:\git\OmegaBlade\PIC Microcode/source/main.c
+78C maintext CODE >17:C:\git\OmegaBlade\PIC Microcode/source/main.c
+78F maintext CODE >18:C:\git\OmegaBlade\PIC Microcode/source/main.c
+792 maintext CODE >19:C:\git\OmegaBlade\PIC Microcode/source/main.c
+795 maintext CODE >20:C:\git\OmegaBlade\PIC Microcode/source/main.c
+798 maintext CODE >21:C:\git\OmegaBlade\PIC Microcode/source/main.c
+79B maintext CODE >26:C:\git\OmegaBlade\PIC Microcode/source/main.c
+79E maintext CODE >24:C:\git\OmegaBlade\PIC Microcode/source/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -186,7 +224,7 @@ $dist/default/production\OmegaBlade.X.production.obj
 %SYMTAB
 ___latbits 3 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Hspace_0 8009 0 ABS 0 - -
-__Hspace_1 73 0 ABS 0 - -
+__Hspace_1 7C 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __size_of_init_isr 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
@@ -200,32 +238,40 @@ ltemp3 80 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Lstringtext 0 0 ABS 0 stringtext -
 __Hstrings 0 0 ABS 0 strings -
 _BRGH CF2 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+_CREN CEC 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+_RCIE 48D 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 _RCIF 8D 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+_SPEN CEF 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 _SYNC CF4 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-_TXIF 8C 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-_main F96 0 CODE 0 maintext dist/default/production\OmegaBlade.X.production.obj
+_TRMT CF1 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+_TXEN CF5 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\sb08.obj
+_main F12 0 CODE 0 maintext dist/default/production\OmegaBlade.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-start 4 0 CODE 0 init C:\Users\Ben\AppData\Local\Temp\s7e0.obj
+start 4 0 CODE 0 init C:\Users\Ben\AppData\Local\Temp\sb08.obj
 ttemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+main_loop_individual@userInput 7B 0 COMMON 1 cstackCOMMON dist/default/production\OmegaBlade.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
+printf@c 77 0 COMMON 1 cstackCOMMON dist/default/production\OmegaBlade.X.production.obj
+printf@f 71 0 COMMON 1 cstackCOMMON dist/default/production\OmegaBlade.X.production.obj
 ttemp0 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ttemp1 81 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ttemp2 84 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-intlevel1 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-intlevel2 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-intlevel3 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-intlevel4 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-intlevel5 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-_init_isr F7E 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
-_init_pic F82 0 CODE 0 text2 dist/default/production\OmegaBlade.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\sb08.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\sb08.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\sb08.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\sb08.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\sb08.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\sb08.obj
+_init_isr EBA 0 CODE 0 text8 dist/default/production\OmegaBlade.X.production.obj
+_init_pic ED8 0 CODE 0 text6 dist/default/production\OmegaBlade.X.production.obj
+putch@input 70 0 COMMON 1 cstackCOMMON dist/default/production\OmegaBlade.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 wtemp1 80 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 wtemp2 82 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
@@ -235,16 +281,20 @@ wtemp5 88 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 wtemp6 7F 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_init_isr F80 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
-__end_of_init_pic F96 0 CODE 0 text2 dist/default/production\OmegaBlade.X.production.obj
+__end_of_init_isr EBC 0 CODE 0 text8 dist/default/production\OmegaBlade.X.production.obj
+__end_of_init_pic EEE 0 CODE 0 text6 dist/default/production\OmegaBlade.X.production.obj
 __size_of_init_ir 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-_main_loop_individual FBC 0 CODE 0 text1 dist/default/production\OmegaBlade.X.production.obj
+_main_loop_individual F74 0 CODE 0 text1 dist/default/production\OmegaBlade.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_init_accel 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+?_printf 71 0 COMMON 1 cstackCOMMON dist/default/production\OmegaBlade.X.production.obj
+__size_of_getch 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+__size_of_putch 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 start_initialization FFA 0 CODE 0 cinit dist/default/production\OmegaBlade.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-__end_of_init_ir F7E 0 CODE 0 text5 dist/default/production\OmegaBlade.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\s7e0.obj
+__end_of_printf F74 0 CODE 0 text2 dist/default/production\OmegaBlade.X.production.obj
+__end_of_init_ir EBA 0 CODE 0 text9 dist/default/production\OmegaBlade.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\sb08.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -371,16 +421,20 @@ __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_GIE 5F 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 _RB3 6B 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __S0 8009 0 ABS 0 - -
-__S1 73 0 ABS 0 - -
+__S1 7C 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Ben\AppData\Local\Temp\s7e0.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ben\AppData\Local\Temp\sb08.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-__end_of_init_leds F82 0 CODE 0 text3 dist/default/production\OmegaBlade.X.production.obj
+__end_of_init_leds EBE 0 CODE 0 text7 dist/default/production\OmegaBlade.X.production.obj
+__end_of_init_uart F12 0 CODE 0 text5 dist/default/production\OmegaBlade.X.production.obj
+__ptext10 EB6 0 CODE 0 text10 dist/default/production\OmegaBlade.X.production.obj
 __size_of_init_leds 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+__size_of_init_uart 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -403,18 +457,20 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext F96 0 CODE 0 maintext dist/default/production\OmegaBlade.X.production.obj
+__pmaintext F12 0 CODE 0 maintext dist/default/production\OmegaBlade.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
+_printf F3E 0 CODE 0 text2 dist/default/production\OmegaBlade.X.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-_init_leds F80 0 CODE 0 text3 dist/default/production\OmegaBlade.X.production.obj
+_init_leds EBC 0 CODE 0 text7 dist/default/production\OmegaBlade.X.production.obj
+_init_uart EEE 0 CODE 0 text5 dist/default/production\OmegaBlade.X.production.obj
 __CFG_VCAPEN$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-stackhi 27EF 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\s7e0.obj
-stacklo 2000 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\s7e0.obj
+stackhi 27EF 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\sb08.obj
+stacklo 2000 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\sb08.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -422,20 +478,25 @@ __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lend_init 4 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+printf@ap 76 0 COMMON 1 cstackCOMMON dist/default/production\OmegaBlade.X.production.obj
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production\OmegaBlade.X.production.obj
 __Hintentry 4 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+__size_of_printf 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
-_init_ir F7C 0 CODE 0 text5 dist/default/production\OmegaBlade.X.production.obj
+_init_ir EB8 0 CODE 0 text9 dist/default/production\OmegaBlade.X.production.obj
 __size_of_main_loop_individual 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-__ptext1 FBC 0 CODE 0 text1 dist/default/production\OmegaBlade.X.production.obj
-__ptext2 F82 0 CODE 0 text2 dist/default/production\OmegaBlade.X.production.obj
-__ptext3 F80 0 CODE 0 text3 dist/default/production\OmegaBlade.X.production.obj
-__ptext4 F7E 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
-__ptext5 F7C 0 CODE 0 text5 dist/default/production\OmegaBlade.X.production.obj
-__ptext6 F7A 0 CODE 0 text6 dist/default/production\OmegaBlade.X.production.obj
-_init_accel F7A 0 CODE 0 text6 dist/default/production\OmegaBlade.X.production.obj
+__ptext1 F74 0 CODE 0 text1 dist/default/production\OmegaBlade.X.production.obj
+__ptext2 F3E 0 CODE 0 text2 dist/default/production\OmegaBlade.X.production.obj
+__ptext3 ECA 0 CODE 0 text3 dist/default/production\OmegaBlade.X.production.obj
+__ptext4 EBE 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
+__ptext5 EEE 0 CODE 0 text5 dist/default/production\OmegaBlade.X.production.obj
+__ptext6 ED8 0 CODE 0 text6 dist/default/production\OmegaBlade.X.production.obj
+__ptext7 EBC 0 CODE 0 text7 dist/default/production\OmegaBlade.X.production.obj
+__ptext8 EBA 0 CODE 0 text8 dist/default/production\OmegaBlade.X.production.obj
+__ptext9 EB8 0 CODE 0 text9 dist/default/production\OmegaBlade.X.production.obj
+_init_accel EB6 0 CODE 0 text10 dist/default/production\OmegaBlade.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __pstringtext 1000 0 STRCODE 0 stringtext dist/default/production\OmegaBlade.X.production.obj
@@ -449,19 +510,21 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __CFG_PLLEN$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\OmegaBlade.X.production.obj
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_main FBC 0 CODE 0 maintext dist/default/production\OmegaBlade.X.production.obj
+__end_of_main F3E 0 CODE 0 maintext dist/default/production\OmegaBlade.X.production.obj
 _BRG16 CFB 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+__end_of_getch ECA 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
 _RCREG 199 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-_RCSTA 19D 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 _SPBRG 19B 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 _TRISB 8D 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 _TRISC 8E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 _TXREG 19A 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-_TXSTA 19E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
+__end_of_putch ED8 0 CODE 0 text3 dist/default/production\OmegaBlade.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
+_getch EBE 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
+_putch ECA 0 CODE 0 text3 dist/default/production\OmegaBlade.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-__end_of_init_accel F7C 0 CODE 0 text6 dist/default/production\OmegaBlade.X.production.obj
+__end_of_init_accel EB8 0 CODE 0 text10 dist/default/production\OmegaBlade.X.production.obj
 __initialization FFA 0 CODE 0 cinit dist/default/production\OmegaBlade.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Hstringtext 0 0 ABS 0 stringtext -
@@ -492,14 +555,18 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FD FFA 3 2
-text1 0 7DE FBC 1F 2
-text2 0 7C1 F82 A 2
-text3 0 7C0 F80 1 2
-text4 0 7BF F7E 1 2
-text5 0 7BE F7C 1 2
-text6 0 7BD F7A 1 2
-maintext 0 7CB F96 13 2
-cstackCOMMON 1 70 70 3 1
+text1 0 7BA F74 43 2
+text2 0 79F F3E 1B 2
+text3 0 765 ECA 7 2
+text4 0 75F EBE 6 2
+text5 0 777 EEE 12 2
+text6 0 76C ED8 B 2
+text7 0 75E EBC 1 2
+text8 0 75D EBA 1 2
+text9 0 75C EB8 1 2
+text10 0 75B EB6 1 2
+maintext 0 789 F12 16 2
+cstackCOMMON 1 70 70 C 1
 reset_vec 0 0 0 4 2
-stringtext 0 800 1000 14 2
+stringtext 0 800 1000 97 2
 config 0 8007 1000E 2 2

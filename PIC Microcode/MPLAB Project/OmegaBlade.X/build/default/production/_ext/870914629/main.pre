@@ -9143,9 +9143,9 @@ extern __bit __timeout;
 
 # 8 "../../source/uart_header.h"
 void init_uart();
-void putch(unsigned char byte);
+void putch(unsigned char);
 unsigned char getch();
-unsigned char getche(void);
+unsigned char getche();
 
 # 49 "../../source/main_header.h"
 void init_pic();
@@ -9194,6 +9194,7 @@ int main()
 {
 
 init_pic();
+init_uart();
 init_ir();
 init_accel();
 init_leds();
@@ -9204,22 +9205,35 @@ while(1)
 {
 main_loop_individual();
 
-# 37
+# 38
 }
 }
 
 
 void main_loop_individual()
 {
+char userInput = 0;
 
+printf("\n\rMain Loop Individual\n\r");
+printf("Please enter the character A: ");
+
+userInput = getch();
+if(userInput == 'A')
+{
+printf("\n\rGood job. You know how to read instructions.\n\n");
+}
+else
+{
+printf("\n\rWrong key. Try again.\n\r");
+}
 RB3 = 1;
-_delay((unsigned long)((500)*(16000000/4000.0)));
+_delay((unsigned long)((500)*(32000000/4000.0)));
 RB3 = 0;
-_delay((unsigned long)((500)*(16000000/4000.0)));
+_delay((unsigned long)((500)*(32000000/4000.0)));
 
 return;
 
-# 57
+# 71
 }
 
 
@@ -9229,15 +9243,18 @@ printf("Main Loop Omega    ");
 
 return;
 
-# 72
+# 86
 }
 
 
 void init_pic()
 {
 
-OSCCON |= 0b01111010;
+OSCCON |= 0b11111000;
 
 
 TRISB &= 0b11110111;
+
+
+GIE = 1;
 }

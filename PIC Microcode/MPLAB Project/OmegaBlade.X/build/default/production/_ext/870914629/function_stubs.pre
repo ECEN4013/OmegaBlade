@@ -9143,9 +9143,9 @@ extern __bit __timeout;
 
 # 8 "../../source/uart_header.h"
 void init_uart();
-void putch(unsigned char byte);
+void putch(unsigned char);
 unsigned char getch();
-unsigned char getche(void);
+unsigned char getche();
 
 # 49 "../../source/main_header.h"
 void init_pic();

@@ -2,7 +2,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "49 ../../source/main_header.h
 [v _init_pic `(v ~T0 @X0 0 ef ]
-"59
+"12 C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h
+[v _init_uart `(v ~T0 @X0 0 ef ]
+"59 ../../source/main_header.h
 [v _init_ir `(v ~T0 @X0 0 ef ]
 "100
 [v _init_accel `(v ~T0 @X0 0 ef ]
@@ -12,18 +14,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _init_isr `(v ~T0 @X0 0 ef ]
 "10 ../../source/main.c
 [v _main_loop_individual `(v ~T0 @X0 0 ef ]
+"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"14 C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h
+[v _getch `(uc ~T0 @X0 0 ef ]
 "18449 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
 [v _RB3 `Vb ~T0 @X0 0 e@107 ]
 [v F7196 `(v ~T0 @X0 1 tf1`ul ]
 "150 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic.h
 [v __delay `JF7196 ~T0 @X0 0 e ]
 [p i __delay ]
-"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "1863 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
 "1232
 [v _TRISB `Vuc ~T0 @X0 0 e@141 ]
+"16473
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
 "8 ../../source/main_header.h
 [p x FOSC=INTOSC ]
 "9
@@ -6706,9 +6712,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 185: extern __bit __powerdown;
 [; ;pic.h: 186: extern __bit __timeout;
 [; ;uart_header.h: 8: void init_uart();
-[; ;uart_header.h: 9: void putch(unsigned char byte);
+[; ;uart_header.h: 9: void putch(unsigned char);
 [; ;uart_header.h: 10: unsigned char getch();
-[; ;uart_header.h: 11: unsigned char getche(void);
+[; ;uart_header.h: 11: unsigned char getche();
 [; ;main_header.h: 49: void init_pic();
 [; ;main_header.h: 59: void init_ir();
 [; ;main_header.h: 81: void output_ir(char pkt_type, char amount);
@@ -6735,101 +6741,149 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 16: init_pic();
 "16
 [e ( _init_pic ..  ]
-[; ;main.c: 17: init_ir();
+[; ;main.c: 17: init_uart();
 "17
-[e ( _init_ir ..  ]
-[; ;main.c: 18: init_accel();
+[e ( _init_uart ..  ]
+[; ;main.c: 18: init_ir();
 "18
-[e ( _init_accel ..  ]
-[; ;main.c: 19: init_leds();
+[e ( _init_ir ..  ]
+[; ;main.c: 19: init_accel();
 "19
-[e ( _init_leds ..  ]
-[; ;main.c: 20: init_isr();
+[e ( _init_accel ..  ]
+[; ;main.c: 20: init_leds();
 "20
+[e ( _init_leds ..  ]
+[; ;main.c: 21: init_isr();
+"21
 [e ( _init_isr ..  ]
-[; ;main.c: 23: while(1)
-"23
-[e :U 742 ]
-[; ;main.c: 24: {
+[; ;main.c: 24: while(1)
 "24
-{
-[; ;main.c: 25: main_loop_individual();
+[e :U 742 ]
+[; ;main.c: 25: {
 "25
+{
+[; ;main.c: 26: main_loop_individual();
+"26
 [e ( _main_loop_individual ..  ]
-"37
+"38
 }
 [e :U 741 ]
-"23
+"24
 [e $U 742  ]
 [e :U 743 ]
-[; ;main.c: 37: }
 [; ;main.c: 38: }
-"38
+[; ;main.c: 39: }
+"39
 [e :UE 740 ]
 }
-"41
-[v _main_loop_individual `(v ~T0 @X0 1 ef ]
 "42
+[v _main_loop_individual `(v ~T0 @X0 1 ef ]
+"43
 {
-[; ;main.c: 41: void main_loop_individual()
-[; ;main.c: 42: {
+[; ;main.c: 42: void main_loop_individual()
+[; ;main.c: 43: {
 [e :U _main_loop_individual ]
 [f ]
-[; ;main.c: 44: RB3 = 1;
 "44
-[e = _RB3 -> -> 1 `i `b ]
-[; ;main.c: 45: _delay((unsigned long)((500)*(16000000/4000.0)));
-"45
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 46: RB3 = 0;
+[v _userInput `uc ~T0 @X0 1 a ]
+[; ;main.c: 44: char userInput = 0;
+[e = _userInput -> -> 0 `i `uc ]
+[; ;main.c: 46: printf("\n\rMain Loop Individual\n\r");
 "46
-[e = _RB3 -> -> 0 `i `b ]
-[; ;main.c: 47: _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( _printf :s 1C ]
+[; ;main.c: 47: printf("Please enter the character A: ");
 "47
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 49: return;
+[e ( _printf :s 2C ]
+[; ;main.c: 49: userInput = getch();
 "49
-[e $UE 744  ]
-[; ;main.c: 57: }
+[e = _userInput ( _getch ..  ]
+[; ;main.c: 50: if(userInput == 'A')
+"50
+[e $ ! == -> _userInput `ui -> 65 `ui 745  ]
+[; ;main.c: 51: {
+"51
+{
+[; ;main.c: 52: printf("\n\rGood job. You know how to read instructions.\n\n");
+"52
+[e ( _printf :s 3C ]
+"53
+}
+[; ;main.c: 53: }
+[e $U 746  ]
+"54
+[e :U 745 ]
+[; ;main.c: 54: else
+[; ;main.c: 55: {
+"55
+{
+[; ;main.c: 56: printf("\n\rWrong key. Try again.\n\r");
+"56
+[e ( _printf :s 4C ]
 "57
+}
+[e :U 746 ]
+[; ;main.c: 57: }
+[; ;main.c: 58: RB3 = 1;
+"58
+[e = _RB3 -> -> 1 `i `b ]
+[; ;main.c: 59: _delay((unsigned long)((500)*(32000000/4000.0)));
+"59
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 60: RB3 = 0;
+"60
+[e = _RB3 -> -> 0 `i `b ]
+[; ;main.c: 61: _delay((unsigned long)((500)*(32000000/4000.0)));
+"61
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 63: return;
+"63
+[e $UE 744  ]
+[; ;main.c: 71: }
+"71
 [e :UE 744 ]
 }
-"60
+"74
 [v _main_loop_omega `(v ~T0 @X0 1 ef ]
-"61
+"75
 {
-[; ;main.c: 60: void main_loop_omega()
-[; ;main.c: 61: {
+[; ;main.c: 74: void main_loop_omega()
+[; ;main.c: 75: {
 [e :U _main_loop_omega ]
 [f ]
-[; ;main.c: 62: printf("Main Loop Omega    ");
-"62
-[e ( _printf :s 1C ]
-[; ;main.c: 64: return;
-"64
-[e $UE 745  ]
-[; ;main.c: 72: }
-"72
-[e :UE 745 ]
-}
-"75
-[v _init_pic `(v ~T0 @X0 1 ef ]
+[; ;main.c: 76: printf("Main Loop Omega    ");
 "76
+[e ( _printf :s 5C ]
+[; ;main.c: 78: return;
+"78
+[e $UE 747  ]
+[; ;main.c: 86: }
+"86
+[e :UE 747 ]
+}
+"89
+[v _init_pic `(v ~T0 @X0 1 ef ]
+"90
 {
-[; ;main.c: 75: void init_pic()
-[; ;main.c: 76: {
+[; ;main.c: 89: void init_pic()
+[; ;main.c: 90: {
 [e :U _init_pic ]
 [f ]
-[; ;main.c: 78: OSCCON |= 0b01111010;
-"78
-[e =| _OSCCON -> -> 122 `i `uc ]
-[; ;main.c: 81: TRISB &= 0b11110111;
-"81
+[; ;main.c: 92: OSCCON |= 0b11111000;
+"92
+[e =| _OSCCON -> -> 248 `i `uc ]
+[; ;main.c: 95: TRISB &= 0b11110111;
+"95
 [e =& _TRISB -> -> 247 `i `uc ]
-[; ;main.c: 82: }
-"82
-[e :UE 746 ]
+[; ;main.c: 98: GIE = 1;
+"98
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 99: }
+"99
+[e :UE 748 ]
 }
 [p f _printf 8388608 ]
-[a 1C 77 97 105 110 32 76 111 111 112 32 79 109 101 103 97 32 32 32 32 0 ]
-
+[a 2C 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 99 104 97 114 97 99 116 101 114 32 65 58 32 0 ]
+[a 5C 77 97 105 110 32 76 111 111 112 32 79 109 101 103 97 32 32 32 32 0 ]
+[a 1C 10 13 77 97 105 110 32 76 111 111 112 32 73 110 100 105 118 105 100 117 97 108 10 13 0 ]
+[a 4C 10 13 87 114 111 110 103 32 107 101 121 46 32 84 114 121 32 97 103 97 105 110 46 10 13 0 ]
+[a 3C 10 13 71 111 111 100 32 106 111 98 46 32 89 111 117 32 107 110 111 119 32 104 111 119 32 116 111 32 114 101 97 100 32 105 110 115 116 114 117 99 116 105 111 110 115 46 10 10 0 ]

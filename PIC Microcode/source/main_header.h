@@ -29,8 +29,8 @@ Created on October 12, 2015
 #include "xc.h"
 #include "uart_header.h"
 
-#define F_OSC 16000000
-#define _XTAL_FREQ 16000000
+#define F_OSC 32000000
+#define _XTAL_FREQ 32000000
 
 // Uncomment the appropriate line for the blade you wish to compile the program for
 #define _ALPHA_BLADE 1

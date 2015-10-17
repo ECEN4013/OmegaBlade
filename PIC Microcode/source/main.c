@@ -14,6 +14,7 @@ int main()
 {
     // Initialize team members' blocks
     init_pic();
+    init_uart();
     init_ir();
     init_accel();
     init_leds();
@@ -40,7 +41,20 @@ int main()
 // Single iteration of main loop for an individual blade
 void main_loop_individual()
 {
-    //printf("Main Loop Individual    ");
+    char userInput = 0;
+    
+    printf("\n\rMain Loop Individual\n\r");
+    printf("Please enter the character A: ");
+    
+    userInput = getch();
+    if(userInput == 'A')
+    {
+        printf("\n\rGood job. You know how to read instructions.\n\n");
+    }
+    else
+    {
+        printf("\n\rWrong key. Try again.\n\r");
+    }
     RB3 = 1;
     __delay_ms(500);
     RB3 = 0;
@@ -74,9 +88,12 @@ void main_loop_omega()
 // Initialize TRISX registers and set oscillator frequency
 void init_pic()
 {
-    // Configure for 16MHz operation with internal oscillator
-    OSCCON |= 0b01111010;
+    // Configure for 32MHz operation with internal oscillator
+    OSCCON |= 0b11111000;
     
     // Set pin RB3 to output
     TRISB &= 0b11110111;
+    
+    // Enable interrupts
+    GIE = 1;
 }
