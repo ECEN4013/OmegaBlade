@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\OmegaBlade.X.production.sym \
   --cmf=dist/default/production\OmegaBlade.X.production.cmf -z -Q16F1788 \
-  -oC:\Users\Ben\AppData\Local\Temp\s5t8.2 \
+  -oC:\Users\Ben\AppData\Local\Temp\s81k.2 \
   -Mdist/default/production/OmegaBlade.X.production.map -E1 -ver=XC8 \
   -ASTACK=02000h-027efh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
@@ -36,7 +36,7 @@ Linker command line:
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Ben\AppData\Local\Temp\s5t8.obj \
+  C:\Users\Ben\AppData\Local\Temp\s81k.obj \
   dist/default/production\OmegaBlade.X.production.obj 
 
 Object code version is 3.11
@@ -46,7 +46,7 @@ Machine type is 16F1788
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Ben\AppData\Local\Temp\s5t8.obj
+C:\Users\Ben\AppData\Local\Temp\s81k.obj
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
 dist/default/production\OmegaBlade.X.production.obj

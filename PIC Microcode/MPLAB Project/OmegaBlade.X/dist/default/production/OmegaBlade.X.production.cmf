@@ -11,9 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Ben\AppData\Local\Temp\s5t8.obj
-reset_vec CODE 0 0 0 2 2
-end_init CODE 0 2 2 2 2
 $dist/default/production\OmegaBlade.X.production.obj
 cinit CODE 0 7FD 7FD 3 2
 text1 CODE 0 7D1 7D1 1 2
@@ -26,6 +23,9 @@ text7 CODE 0 7CC 7CC 1 2
 text8 CODE 0 7D2 7D2 4 2
 maintext CODE 0 7E0 7E0 1D 2
 cstackCOMMON COMMON 1 70 70 1 1
+$C:\Users\Ben\AppData\Local\Temp\s81k.obj
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 2 2 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -146,11 +146,11 @@ STRING 800-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\OmegaBlade.X.production.obj
-7FD cinit CODE >1370:C:\Users\Ben\AppData\Local\Temp\s5t8.
-7FD cinit CODE >1373:C:\Users\Ben\AppData\Local\Temp\s5t8.
-7FD cinit CODE >1379:C:\Users\Ben\AppData\Local\Temp\s5t8.
-7FD cinit CODE >1381:C:\Users\Ben\AppData\Local\Temp\s5t8.
-7FE cinit CODE >1382:C:\Users\Ben\AppData\Local\Temp\s5t8.
+7FD cinit CODE >1370:C:\Users\Ben\AppData\Local\Temp\s81k.
+7FD cinit CODE >1373:C:\Users\Ben\AppData\Local\Temp\s81k.
+7FD cinit CODE >1379:C:\Users\Ben\AppData\Local\Temp\s81k.
+7FD cinit CODE >1381:C:\Users\Ben\AppData\Local\Temp\s81k.
+7FE cinit CODE >1382:C:\Users\Ben\AppData\Local\Temp\s81k.
 7D2 text8 CODE >25:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
 7D2 text8 CODE >27:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
 7D4 text8 CODE >28:C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
@@ -202,11 +202,11 @@ ltemp1 82 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ltemp2 86 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ltemp3 80 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\s5t8.obj
+___sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\s81k.obj
 _main FC0 0 CODE 0 maintext dist/default/production\OmegaBlade.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-start 4 0 CODE 0 init C:\Users\Ben\AppData\Local\Temp\s5t8.obj
+start 4 0 CODE 0 init C:\Users\Ben\AppData\Local\Temp\s81k.obj
 ttemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
@@ -216,12 +216,12 @@ ttemp1 81 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ttemp2 84 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s5t8.obj
-intlevel1 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s5t8.obj
-intlevel2 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s5t8.obj
-intlevel3 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s5t8.obj
-intlevel4 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s5t8.obj
-intlevel5 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s5t8.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s81k.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s81k.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s81k.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s81k.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s81k.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Ben\AppData\Local\Temp\s81k.obj
 _init_isr F9C 0 CODE 0 text5 dist/default/production\OmegaBlade.X.production.obj
 _init_pic FAC 0 CODE 0 text3 dist/default/production\OmegaBlade.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
@@ -242,7 +242,7 @@ __size_of_init_accel 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production
 start_initialization FFA 0 CODE 0 cinit dist/default/production\OmegaBlade.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __end_of_init_ir F9C 0 CODE 0 text6 dist/default/production\OmegaBlade.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\s5t8.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Ben\AppData\Local\Temp\s81k.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -378,7 +378,7 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _main_loop_omega FA2 0 CODE 0 text1 dist/default/production\OmegaBlade.X.production.obj
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Ben\AppData\Local\Temp\s5t8.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ben\AppData\Local\Temp\s81k.obj
 __end_of_init_leds FA0 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
 __size_of_init_leds 0 0 ABS 0 - dist/default/production\OmegaBlade.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 -
@@ -408,8 +408,8 @@ __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 0 config -
 _init_leds F9E 0 CODE 0 text4 dist/default/production\OmegaBlade.X.production.obj
-stackhi 27EF 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\s5t8.obj
-stacklo 2000 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\s5t8.obj
+stackhi 27EF 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\s81k.obj
+stacklo 2000 0 ABS 0 - C:\Users\Ben\AppData\Local\Temp\s81k.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
