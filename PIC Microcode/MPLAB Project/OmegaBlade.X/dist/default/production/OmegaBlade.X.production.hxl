@@ -1,11 +1,11 @@
 ### HEXMate logfile and output summary ###
 ### Memory Usage ###
  Unused memory ranges:
-  8h - F97h
+  8h - FF5h
   
  dist/default/production\OmegaBlade.X.production.hex ranges:
   0h - 7h
-  F98h - FFFh
+  FF6h - FFFh
   
 ### Hex Memory Map ###
  Legend:
@@ -20,5 +20,4 @@
   X = Find & delete opcode
   1 = dist/default/production\OmegaBlade.X.production.hex
 00000000: 11111111--------------------------------------------------------
-00000F80: ------------------------1111111111111111111111111111111111111111
-00000FC0: 1111111111111111111111111111111111111111111111111111111111111111
+00000FC0: ------------------------------------------------------1111111111

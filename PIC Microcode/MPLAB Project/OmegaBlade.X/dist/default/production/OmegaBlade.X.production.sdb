@@ -3,24 +3,8 @@
 [d edition pro ]
 [d chip 16F1788 ]
 [d frameptr 6 ]
-"12 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-[v _init_pic init_pic `(v  1 e 0 0 ]
-"20
-[v _init_ir init_ir `(v  1 e 0 0 ]
-"23
-[v _init_accel init_accel `(v  1 e 0 0 ]
-"25
-[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
-"32
-[v _init_leds init_leds `(v  1 e 0 0 ]
-"34
-[v _init_isr init_isr `(v  1 e 0 0 ]
 "13 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
-"38
-[v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
-"55
-[v _main_loop_omega main_loop_omega `(v  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
@@ -29,50 +13,8 @@
 [v _eecpymem eecpymem `(v  1 e 0 0 ]
 "24
 [v _memcpyee memcpyee `(v  1 e 0 0 ]
-"1232 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16F1788.h
-[v _TRISB TRISB `VEuc  1 e 1 @141 ]
-"1863
-[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
-"18449
-[v _RB3 RB3 `VEb  1 e 0 @107 ]
 "13 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"35
-} 0
-"55
-[v _main_loop_omega main_loop_omega `(v  1 e 0 0 ]
-{
-"69
-} 0
-"38
-[v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
-{
-"52
-} 0
-"12 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-[v _init_pic init_pic `(v  1 e 0 0 ]
-{
-"19
-} 0
-"32
-[v _init_leds init_leds `(v  1 e 0 0 ]
-{
-} 0
-"34
-[v _init_isr init_isr `(v  1 e 0 0 ]
-{
-} 0
-"20
-[v _init_ir init_ir `(v  1 e 0 0 ]
-{
-} 0
-"23
-[v _init_accel init_accel `(v  1 e 0 0 ]
-{
-} 0
-"25
-[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
-{
-"29
+"16
 } 0

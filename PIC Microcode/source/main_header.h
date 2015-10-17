@@ -6,9 +6,6 @@ Created on October 12, 2015, 11:56 AM
 ====================================================================================*/
 
 #include "pic16F1788.h"
-
-/* Blade selection */
-
 #define F_OSC = 32000000;
 
 // Uncomment the appropriate line for the blade you wish to compile the program for
@@ -16,9 +13,6 @@ Created on October 12, 2015, 11:56 AM
 //#define _BETA_BLADE
 //#define _DELTA_BLADE
 //#define _GAMMA_BLADE
-
-// Uncomment this line to build with functions stubbed
-#define _BUILD_STUBS
 
 /*------------------------------------------------------------------------------------
 Name: init_pic

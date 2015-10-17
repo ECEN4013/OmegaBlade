@@ -9022,43 +9022,43 @@ extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 
 extern volatile __bit nWPUEN @ (((unsigned) &OPTION_REG)*8) + 7;
 
-# 31 "../../source/main_header.h"
+# 25 "../../source/main_header.h"
 void init_pic();
 
-# 41
+# 35
 void init_ir();
 
-# 63
+# 57
 void output_ir(char pkt_type, char amount);
 
-# 72
+# 66
 void play_sound(char sound_selection);
 
-# 82
+# 76
 void init_accel();
 
-# 96
+# 90
 char determine_sword_was_swung(char* buffer);
 
-# 109
+# 103
 char determine_omega_mode_active();
 
-# 123
+# 117
 void determine_packets_to_send(char* packets);
 
-# 134
+# 128
 void display_health(char health);
 
-# 144
+# 138
 void init_leds();
 
-# 155
+# 149
 void display_blade_lights(char mode);
 
-# 164
+# 158
 void init_isr();
 
-# 177
+# 171
 void isr();
 
 # 10 "../../source/main.c"
@@ -9067,26 +9067,7 @@ void main_loop_omega();
 
 int main()
 {
-
-init_pic();
-init_ir();
-init_accel();
-init_leds();
-init_isr();
-
-
-while(1)
-{
-
-if(determine_omega_mode_active() <= 0)
-{
-main_loop_individual();
-}
-else
-{
-main_loop_omega();
-}
-}
+return;
 }
 
 
@@ -9095,7 +9076,7 @@ void main_loop_individual()
 
 return;
 
-# 52
+# 33
 }
 
 
@@ -9104,6 +9085,5 @@ void main_loop_omega()
 
 return;
 
-# 69
+# 50
 }
-

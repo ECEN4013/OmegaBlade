@@ -1,21 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"31 ../../source/main_header.h
-[v _init_pic `(v ~T0 @X0 0 ef ]
-"41
-[v _init_ir `(v ~T0 @X0 0 ef ]
-"82
-[v _init_accel `(v ~T0 @X0 0 ef ]
-"144
-[v _init_leds `(v ~T0 @X0 0 ef ]
-"164
-[v _init_isr `(v ~T0 @X0 0 ef ]
-"109
-[v _determine_omega_mode_active `(uc ~T0 @X0 0 ef ]
-"10 ../../source/main.c
-[v _main_loop_individual `(v ~T0 @X0 0 ef ]
-"11
-[v _main_loop_omega `(v ~T0 @X0 0 ef ]
 [; ;pic16F1788.h: 49: extern volatile unsigned char INDF0 @ 0x000;
 "51 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16F1788.h
 [; ;pic16F1788.h: 51: asm("INDF0 equ 00h");
@@ -6620,19 +6604,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16F1788.h: 18899: extern volatile __bit nT1SYNC @ (((unsigned) &T1CON)*8) + 2;
 [; ;pic16F1788.h: 18901: extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 [; ;pic16F1788.h: 18903: extern volatile __bit nWPUEN @ (((unsigned) &OPTION_REG)*8) + 7;
-[; ;main_header.h: 31: void init_pic();
-[; ;main_header.h: 41: void init_ir();
-[; ;main_header.h: 63: void output_ir(char pkt_type, char amount);
-[; ;main_header.h: 72: void play_sound(char sound_selection);
-[; ;main_header.h: 82: void init_accel();
-[; ;main_header.h: 96: char determine_sword_was_swung(char* buffer);
-[; ;main_header.h: 109: char determine_omega_mode_active();
-[; ;main_header.h: 123: void determine_packets_to_send(char* packets);
-[; ;main_header.h: 134: void display_health(char health);
-[; ;main_header.h: 144: void init_leds();
-[; ;main_header.h: 155: void display_blade_lights(char mode);
-[; ;main_header.h: 164: void init_isr();
-[; ;main_header.h: 177: void isr();
+[; ;main_header.h: 25: void init_pic();
+[; ;main_header.h: 35: void init_ir();
+[; ;main_header.h: 57: void output_ir(char pkt_type, char amount);
+[; ;main_header.h: 66: void play_sound(char sound_selection);
+[; ;main_header.h: 76: void init_accel();
+[; ;main_header.h: 90: char determine_sword_was_swung(char* buffer);
+[; ;main_header.h: 103: char determine_omega_mode_active();
+[; ;main_header.h: 117: void determine_packets_to_send(char* packets);
+[; ;main_header.h: 128: void display_health(char health);
+[; ;main_header.h: 138: void init_leds();
+[; ;main_header.h: 149: void display_blade_lights(char mode);
+[; ;main_header.h: 158: void init_isr();
+[; ;main_header.h: 171: void isr();
 [; ;main.c: 10: void main_loop_individual();
 [; ;main.c: 11: void main_loop_omega();
 "13 ../../source/main.c
@@ -6643,91 +6627,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 14: {
 [e :U _main ]
 [f ]
-[; ;main.c: 16: init_pic();
+[; ;main.c: 15: return;
+"15
+[e $UE 739  ]
+[; ;main.c: 16: }
 "16
-[e ( _init_pic ..  ]
-[; ;main.c: 17: init_ir();
-"17
-[e ( _init_ir ..  ]
-[; ;main.c: 18: init_accel();
-"18
-[e ( _init_accel ..  ]
-[; ;main.c: 19: init_leds();
-"19
-[e ( _init_leds ..  ]
-[; ;main.c: 20: init_isr();
-"20
-[e ( _init_isr ..  ]
-[; ;main.c: 23: while(1)
-"23
-[e :U 741 ]
-[; ;main.c: 24: {
-"24
-{
-[; ;main.c: 26: if(determine_omega_mode_active() <= 0)
-"26
-[e $ ! <= -> ( _determine_omega_mode_active ..  `i -> 0 `i 743  ]
-[; ;main.c: 27: {
-"27
-{
-[; ;main.c: 28: main_loop_individual();
-"28
-[e ( _main_loop_individual ..  ]
-"29
-}
-[; ;main.c: 29: }
-[e $U 744  ]
-"30
-[e :U 743 ]
-[; ;main.c: 30: else
-[; ;main.c: 31: {
-"31
-{
-[; ;main.c: 32: main_loop_omega();
-"32
-[e ( _main_loop_omega ..  ]
-"33
-}
-[e :U 744 ]
-"34
-}
-[e :U 740 ]
-"23
-[e $U 741  ]
-[e :U 742 ]
-[; ;main.c: 33: }
-[; ;main.c: 34: }
-[; ;main.c: 35: }
-"35
 [e :UE 739 ]
 }
-"38
+"19
 [v _main_loop_individual `(v ~T0 @X0 1 ef ]
-"39
+"20
 {
-[; ;main.c: 38: void main_loop_individual()
-[; ;main.c: 39: {
+[; ;main.c: 19: void main_loop_individual()
+[; ;main.c: 20: {
 [e :U _main_loop_individual ]
 [f ]
-[; ;main.c: 41: return;
-"41
-[e $UE 745  ]
-[; ;main.c: 52: }
-"52
-[e :UE 745 ]
+[; ;main.c: 22: return;
+"22
+[e $UE 740  ]
+[; ;main.c: 33: }
+"33
+[e :UE 740 ]
 }
-"55
+"36
 [v _main_loop_omega `(v ~T0 @X0 1 ef ]
-"56
+"37
 {
-[; ;main.c: 55: void main_loop_omega()
-[; ;main.c: 56: {
+[; ;main.c: 36: void main_loop_omega()
+[; ;main.c: 37: {
 [e :U _main_loop_omega ]
 [f ]
-[; ;main.c: 58: return;
-"58
-[e $UE 746  ]
-[; ;main.c: 69: }
-"69
-[e :UE 746 ]
+[; ;main.c: 39: return;
+"39
+[e $UE 741  ]
+[; ;main.c: 50: }
+"50
+[e :UE 741 ]
 }
