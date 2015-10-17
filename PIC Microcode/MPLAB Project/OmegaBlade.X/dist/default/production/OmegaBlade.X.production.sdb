@@ -3,24 +3,26 @@
 [d edition pro ]
 [d chip 16F1788 ]
 [d frameptr 6 ]
-"12 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-[v _init_pic init_pic `(v  1 e 0 0 ]
-"20
+"10 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _init_ir init_ir `(v  1 e 0 0 ]
-"23
+"13
 [v _init_accel init_accel `(v  1 e 0 0 ]
-"25
-[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
-"32
+"24
 [v _init_leds init_leds `(v  1 e 0 0 ]
-"34
+"26
 [v _init_isr init_isr `(v  1 e 0 0 ]
 "13 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
-"38
+"41
 [v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
-"55
-[v _main_loop_omega main_loop_omega `(v  1 e 0 0 ]
+"75
+[v _init_pic init_pic `(v  1 e 0 0 ]
+"29 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+[v _putch putch `(v  1 e 0 0 ]
+"37
+[v _getch getch `(uc  1 e 1 0 ]
+"464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
@@ -29,50 +31,62 @@
 [v _eecpymem eecpymem `(v  1 e 0 0 ]
 "24
 [v _memcpyee memcpyee `(v  1 e 0 0 ]
-"1232 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16F1788.h
+"1232 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1301
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
 "1863
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"4005
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"4062
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"4117
+[v _SPBRG SPBRG `VEuc  1 e 1 @411 ]
+"4243
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+"4422
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+"16067
+[v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
+"16069
+[v _BRGH BRGH `VEb  1 e 0 @3314 ]
 "18449
 [v _RB3 RB3 `VEb  1 e 0 @107 ]
+"18481
+[v _RCIF RCIF `VEb  1 e 0 @141 ]
+"18647
+[v _SYNC SYNC `VEb  1 e 0 @3316 ]
+"18805
+[v _TXIF TXIF `VEb  1 e 0 @140 ]
 "13 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"35
-} 0
-"55
-[v _main_loop_omega main_loop_omega `(v  1 e 0 0 ]
-{
-"69
-} 0
 "38
+} 0
+"41
 [v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
 {
-"52
+"57
 } 0
-"12 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+"75
 [v _init_pic init_pic `(v  1 e 0 0 ]
 {
-"19
+"82
 } 0
-"32
+"24 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _init_leds init_leds `(v  1 e 0 0 ]
 {
 } 0
-"34
+"26
 [v _init_isr init_isr `(v  1 e 0 0 ]
 {
 } 0
-"20
+"10
 [v _init_ir init_ir `(v  1 e 0 0 ]
 {
 } 0
-"23
+"13
 [v _init_accel init_accel `(v  1 e 0 0 ]
 {
-} 0
-"25
-[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
-{
-"29
 } 0

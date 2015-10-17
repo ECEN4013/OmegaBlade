@@ -2,7 +2,7 @@
 File:   main_header.h
 Author: bjesper
 
-Created on October 12, 2015, 11:56 AM
+Created on October 12, 2015
 ====================================================================================*/
 
 #include "main_header.h"
@@ -22,6 +22,8 @@ int main()
     // main loop
     while(1)
     {
+        main_loop_individual();
+        /*
         // select omega mode loop or individual blade loop
         if(determine_omega_mode_active() <= 0)
         {
@@ -31,22 +33,25 @@ int main()
         {
             main_loop_omega();
         }
+        */ 
     }
 }
 
 // Single iteration of main loop for an individual blade
 void main_loop_individual()
 {
-#ifdef _ALPHA_BLADE
+    //printf("Main Loop Individual    ");
+    RB3 = 1;
+    __delay_ms(500);
+    RB3 = 0;
+    __delay_ms(500);
+#if _ALPHA_BLADE
     return;
-#endif
-#ifdef _BETA_BLADE
+#elif _BETA_BLADE
     return;
-#endif
-#ifdef _DELTA_BLADE
+#elif _DELTA_BLADE
     return;
-#endif
-#ifdef _GAMMA_BLADE
+#elif _GAMMA_BLADE
     return;
 #endif
 }
@@ -54,26 +59,24 @@ void main_loop_individual()
 // Single iteration of main loop for the omega blade
 void main_loop_omega()
 {
-#ifdef _ALPHA_BLADE
+    printf("Main Loop Omega    ");
+#if _ALPHA_BLADE
     return;
-#endif
-#ifdef _BETA_BLADE
+#elif _BETA_BLADE
     return;
-#endif
-#ifdef _DELTA_BLADE
+#elif _DELTA_BLADE
     return;
-#endif
-#ifdef _GAMMA_BLADE
+#elif _GAMMA_BLADE
     return;
 #endif
 }
-
-#ifndef _BUILD_STUBS
 
 // Initialize TRISX registers and set oscillator frequency
 void init_pic()
 {
+    // Configure for 16MHz operation with internal oscillator
+    OSCCON |= 0b01111010;
     
+    // Set pin RB3 to output
+    TRISB &= 0b11110111;
 }
-
-#endif
