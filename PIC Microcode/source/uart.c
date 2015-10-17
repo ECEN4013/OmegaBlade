@@ -64,3 +64,29 @@ unsigned char getche()
    putch(c = getch());
    return c;
 }
+
+// Run a simple routine to test UART communication
+void uart_test()
+{
+    char userInput = 0;
+    
+    while(1)
+    {
+        printf("\n\rMain Loop Individual\n\r");
+        printf("Please enter the character A: ");
+
+        userInput = getch();
+        if(userInput == 'A')
+        {
+            printf("\n\rGood job. You know how to read instructions.\n\n");
+        }
+        else
+        {
+            printf("\n\rWrong key. Try again.\n\r");
+        }
+        RB3 = 1;
+        __delay_ms(500);
+        RB3 = 0;
+        __delay_ms(500);
+    }
+}

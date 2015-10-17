@@ -38,6 +38,19 @@ Created on October 12, 2015
 #define _DELTA_BLADE 0
 #define _GAMMA_BLADE 0
 
+// Define values of IR packet types
+#define _PKT_TYPE_DAMAGE 0
+#define _PKT_TYPE_HEALTH 1
+#define _PKT_TYPE_STUN   2
+
+// Define values of blade lighting modes
+#define _LIGHT_MODE_INDIVIDUAL_SWING 0
+#define _LIGHT_MODE_OMEGA_SWING      1
+#define _LIGHT_MODE_CONNECT          2
+
+// Global variables
+extern int stun_counter;
+
 /*------------------------------------------------------------------------------------
 Name: init_pic
 Inputs: void

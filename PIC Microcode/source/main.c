@@ -10,6 +10,8 @@ Created on October 12, 2015
 void main_loop_individual();
 void main_loop_omega();
 
+int stun_counter = 0;
+
 int main()
 {
     // Initialize team members' blocks
@@ -41,31 +43,42 @@ int main()
 // Single iteration of main loop for an individual blade
 void main_loop_individual()
 {
-    char userInput = 0;
+    char pkt_arr = {0, 0, 0};
+    int i = 0;
     
-    printf("\n\rMain Loop Individual\n\r");
-    printf("Please enter the character A: ");
+#if _ALPHA_BLADE || _GAMMA_BLADE
     
-    userInput = getch();
-    if(userInput == 'A')
+    while(!determine_sword_was_swung()) {}
+    
+    if(!determine_omega_mode_active())
     {
-        printf("\n\rGood job. You know how to read instructions.\n\n");
+        determine_packets_to_send(&pkt_arr);
+        
+        for(i = 0; i < 3; ++i)
+        {
+            if(pkt_arr[i] > 0)
+            {
+                output_ir(pkt_arr[i], i);
+            }
+        }
     }
-    else
+    
+    display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
+    
+    GIE = 0;
+    if(stun_counter > 0)
     {
-        printf("\n\rWrong key. Try again.\n\r");
+        GIE = 1;
+        __delay_ms(100);
+        GIE = 0;
+        --stun_counter;
     }
-    RB3 = 1;
-    __delay_ms(500);
-    RB3 = 0;
-    __delay_ms(500);
-#if _ALPHA_BLADE
+    GIE = 1;
+    
     return;
 #elif _BETA_BLADE
     return;
 #elif _DELTA_BLADE
-    return;
-#elif _GAMMA_BLADE
     return;
 #endif
 }
@@ -73,7 +86,6 @@ void main_loop_individual()
 // Single iteration of main loop for the omega blade
 void main_loop_omega()
 {
-    printf("Main Loop Omega    ");
 #if _ALPHA_BLADE
     return;
 #elif _BETA_BLADE

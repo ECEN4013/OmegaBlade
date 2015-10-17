@@ -9,3 +9,4 @@ void init_uart();
 void putch(unsigned char);
 unsigned char getch();
 unsigned char getche();
+void uart_test();
