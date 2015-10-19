@@ -102,7 +102,7 @@ int main()
             while( 1 )
             {
                 userInput = determine_sword_was_swung();
-                if(userInput == 1)
+                if( ( userInput == 1 ) && ( health > 0) ) 
                 {
                     printf("Sword was swung\n\r");
 
@@ -189,7 +189,7 @@ int main()
             while( 1 )
             {
                 userInput = determine_sword_was_swung();
-                if(userInput == 1)
+                if( ( userInput == 1 ) && ( health > 0) )
                 {
                     printf("Sword was swung\n\r");
 
@@ -235,7 +235,7 @@ int main()
             }
         }
         // -----Delta blade--------------------
-        if( blade == 3 )
+        if( ( userInput == 1 ) && ( health > 0) )
         {
             while( 1 )
             {
@@ -323,7 +323,7 @@ int main()
             GIE = 1;
         }
         // -----Gamma blade--------------------
-        if( blade == 4 )
+        if( ( userInput == 1 ) && ( health > 0) )
         {
             while( 1 )
             {
