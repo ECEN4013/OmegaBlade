@@ -1,6 +1,10 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"18449 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
-[v _RB3 `Vb ~T0 @X0 0 e@107 ]
+"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"14 C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h
+[v _getch `(uc ~T0 @X0 0 ef ]
+"54 ../../source/main_header.h
+[v _omega_mode `uc ~T0 @X0 0 e ]
 "8 ../../source/main_header.h
 [p x FOSC=INTOSC ]
 "9
@@ -6686,142 +6690,344 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart_header.h: 9: void putch(unsigned char);
 [; ;uart_header.h: 10: unsigned char getch();
 [; ;uart_header.h: 11: unsigned char getche();
-[; ;main_header.h: 49: void init_pic();
-[; ;main_header.h: 59: void init_ir();
-[; ;main_header.h: 81: void output_ir(char pkt_type, char amount);
-[; ;main_header.h: 90: void play_sound(char sound_selection);
-[; ;main_header.h: 100: void init_accel();
-[; ;main_header.h: 114: char determine_sword_was_swung(char* buffer);
-[; ;main_header.h: 127: char determine_omega_mode_active();
-[; ;main_header.h: 141: void determine_packets_to_send(char* packets);
-[; ;main_header.h: 152: void display_health(char health);
-[; ;main_header.h: 162: void init_leds();
-[; ;main_header.h: 173: void display_blade_lights(char mode);
-[; ;main_header.h: 182: void init_isr();
-[; ;main_header.h: 195: void isr();
+[; ;uart_header.h: 12: unsigned char waitch();
+[; ;uart_header.h: 13: void uart_test();
+[; ;main_header.h: 52: extern char stun_counter;
+[; ;main_header.h: 53: extern char health;
+[; ;main_header.h: 54: extern char omega_mode;
+[; ;main_header.h: 55: extern char blade;
+[; ;main_header.h: 65: void init_pic();
+[; ;main_header.h: 75: void init_ir();
+[; ;main_header.h: 97: void output_ir(char pkt_type, char amount);
+[; ;main_header.h: 106: void play_sound(char sound_selection);
+[; ;main_header.h: 116: void init_accel();
+[; ;main_header.h: 130: char determine_sword_was_swung();
+[; ;main_header.h: 143: char determine_omega_mode_active();
+[; ;main_header.h: 157: void determine_packets_to_send(char* packets);
+[; ;main_header.h: 168: void display_health(char health);
+[; ;main_header.h: 178: void init_leds();
+[; ;main_header.h: 189: void display_blade_lights(char mode);
+[; ;main_header.h: 198: void init_isr();
+[; ;main_header.h: 211: void isr();
 "10 ../../source/function_stubs.c
 [v _init_ir `(v ~T0 @X0 1 ef ]
+"11
 {
-[; ;function_stubs.c: 10: void init_ir() { return; }
+[; ;function_stubs.c: 10: void init_ir()
+[; ;function_stubs.c: 11: {
 [e :U _init_ir ]
 [f ]
-[e $UE 740  ]
+[; ;function_stubs.c: 12: printf("Initialized IR send/receive code.\n\r");
+"12
+[e ( _printf :s 1C ]
+[; ;function_stubs.c: 13: }
+"13
 [e :UE 740 ]
 }
-"11
+"15
 [v _output_ir `(v ~T0 @X0 1 ef2`uc`uc ]
+"16
 {
-[; ;function_stubs.c: 11: void output_ir(char pkt_type, char amount) { return; }
+[; ;function_stubs.c: 15: void output_ir(char pkt_type, char amount)
+[; ;function_stubs.c: 16: {
 [e :U _output_ir ]
+"15
 [v _pkt_type `uc ~T0 @X0 1 r1 ]
 [v _amount `uc ~T0 @X0 1 r2 ]
+"16
 [f ]
-[e $UE 741  ]
+[; ;function_stubs.c: 17: printf("Sent %d ", amount);
+"17
+[e ( _printf , (. :s 2C -> _amount `i ]
+[; ;function_stubs.c: 18: if(pkt_type == 0)
+"18
+[e $ ! == -> _pkt_type `i -> 0 `i 742  ]
+[; ;function_stubs.c: 19: {
+"19
+{
+[; ;function_stubs.c: 20: printf("damage.\n\r");
+"20
+[e ( _printf :s 3C ]
+"21
+}
+[; ;function_stubs.c: 21: }
+[e $U 743  ]
+"22
+[e :U 742 ]
+[; ;function_stubs.c: 22: else if(pkt_type == 1)
+[e $ ! == -> _pkt_type `i -> 1 `i 744  ]
+[; ;function_stubs.c: 23: {
+"23
+{
+[; ;function_stubs.c: 24: printf("health.\n\r");
+"24
+[e ( _printf :s 4C ]
+"25
+}
+[; ;function_stubs.c: 25: }
+[e $U 745  ]
+"26
+[e :U 744 ]
+[; ;function_stubs.c: 26: else
+[; ;function_stubs.c: 27: {
+"27
+{
+[; ;function_stubs.c: 28: printf("stun.\n\r");
+"28
+[e ( _printf :s 5C ]
+"29
+}
+[e :U 745 ]
+[e :U 743 ]
+[; ;function_stubs.c: 29: }
+[; ;function_stubs.c: 30: }
+"30
 [e :UE 741 ]
 }
-"12
+"32
 [v _play_sound `(v ~T0 @X0 1 ef1`uc ]
+"33
 {
-[; ;function_stubs.c: 12: void play_sound(char sound_selection) { return; }
+[; ;function_stubs.c: 32: void play_sound(char sound_selection)
+[; ;function_stubs.c: 33: {
 [e :U _play_sound ]
+"32
 [v _sound_selection `uc ~T0 @X0 1 r1 ]
+"33
 [f ]
-[e $UE 742  ]
-[e :UE 742 ]
-}
-"13
-[v _init_accel `(v ~T0 @X0 1 ef ]
+[; ;function_stubs.c: 34: if(sound_selection == 0)
+"34
+[e $ ! == -> _sound_selection `i -> 0 `i 747  ]
+[; ;function_stubs.c: 35: {
+"35
 {
-[; ;function_stubs.c: 13: void init_accel() { return; }
-[e :U _init_accel ]
-[f ]
-[e $UE 743  ]
-[e :UE 743 ]
+[; ;function_stubs.c: 36: printf("Played Beta blade swing sound.\n\r");
+"36
+[e ( _printf :s 6C ]
+"37
 }
-"14
-[v _determine_sword_was_swung `(uc ~T0 @X0 1 ef1`*uc ]
+[; ;function_stubs.c: 37: }
+[e $U 748  ]
+"38
+[e :U 747 ]
+[; ;function_stubs.c: 38: else if(sound_selection == 1)
+[e $ ! == -> _sound_selection `i -> 1 `i 749  ]
+[; ;function_stubs.c: 39: {
+"39
 {
-[; ;function_stubs.c: 14: char determine_sword_was_swung(char* buffer) { return 0; }
-[e :U _determine_sword_was_swung ]
-[v _buffer `*uc ~T0 @X0 1 r1 ]
-[f ]
-[e ) -> -> 0 `i `uc ]
-[e $UE 744  ]
-[e :UE 744 ]
+[; ;function_stubs.c: 40: printf("Played Omega blade swing sound.\n\r");
+"40
+[e ( _printf :s 7C ]
+"41
 }
-"16
-[v _determine_omega_mode_active `(uc ~T0 @X0 1 ef ]
-"17
-{
-[; ;function_stubs.c: 16: char determine_omega_mode_active()
-[; ;function_stubs.c: 17: {
-[e :U _determine_omega_mode_active ]
-[f ]
-[; ;function_stubs.c: 18: RB3 = 1;
-"18
-[e = _RB3 -> -> 1 `i `b ]
-[; ;function_stubs.c: 19: return 0;
-"19
-[e ) -> -> 0 `i `uc ]
-[e $UE 745  ]
-[; ;function_stubs.c: 20: }
-"20
-[e :UE 745 ]
-}
-"22
-[v _determine_packets_to_send `(v ~T0 @X0 1 ef1`*uc ]
-{
-[; ;function_stubs.c: 22: void determine_packets_to_send(char* packets) { return; }
-[e :U _determine_packets_to_send ]
-[v _packets `*uc ~T0 @X0 1 r1 ]
-[f ]
-[e $UE 746  ]
+[e :U 749 ]
+"42
+[e :U 748 ]
+[; ;function_stubs.c: 41: }
+[; ;function_stubs.c: 42: }
 [e :UE 746 ]
 }
-"23
+"44
+[v _init_accel `(v ~T0 @X0 1 ef ]
+"45
+{
+[; ;function_stubs.c: 44: void init_accel()
+[; ;function_stubs.c: 45: {
+[e :U _init_accel ]
+[f ]
+[; ;function_stubs.c: 46: printf("Initialized accelerometer.\n\r");
+"46
+[e ( _printf :s 8C ]
+[; ;function_stubs.c: 47: }
+"47
+[e :UE 750 ]
+}
+"49
+[v _determine_sword_was_swung `(uc ~T0 @X0 1 ef ]
+"50
+{
+[; ;function_stubs.c: 49: char determine_sword_was_swung()
+[; ;function_stubs.c: 50: {
+[e :U _determine_sword_was_swung ]
+[f ]
+"51
+[v _input `uc ~T0 @X0 1 a ]
+[; ;function_stubs.c: 51: char input = getch();
+[e = _input ( _getch ..  ]
+[; ;function_stubs.c: 52: if( input == 's' )
+"52
+[e $ ! == -> _input `ui -> 115 `ui 752  ]
+[; ;function_stubs.c: 53: {
+"53
+{
+[; ;function_stubs.c: 54: return 1;
+"54
+[e ) -> -> 1 `i `uc ]
+[e $UE 751  ]
+"55
+}
+[; ;function_stubs.c: 55: }
+[e $U 753  ]
+"56
+[e :U 752 ]
+[; ;function_stubs.c: 56: else
+[; ;function_stubs.c: 57: {
+"57
+{
+[; ;function_stubs.c: 58: return input;
+"58
+[e ) _input ]
+[e $UE 751  ]
+"59
+}
+[e :U 753 ]
+[; ;function_stubs.c: 59: }
+[; ;function_stubs.c: 60: }
+"60
+[e :UE 751 ]
+}
+"62
+[v _determine_omega_mode_active `(uc ~T0 @X0 1 ef ]
+"63
+{
+[; ;function_stubs.c: 62: char determine_omega_mode_active()
+[; ;function_stubs.c: 63: {
+[e :U _determine_omega_mode_active ]
+[f ]
+[; ;function_stubs.c: 64: return omega_mode;
+"64
+[e ) _omega_mode ]
+[e $UE 754  ]
+[; ;function_stubs.c: 65: }
+"65
+[e :UE 754 ]
+}
+"67
+[v _determine_packets_to_send `(v ~T0 @X0 1 ef1`*uc ]
+"68
+{
+[; ;function_stubs.c: 67: void determine_packets_to_send(char* packets)
+[; ;function_stubs.c: 68: {
+[e :U _determine_packets_to_send ]
+"67
+[v _packets `*uc ~T0 @X0 1 r1 ]
+"68
+[f ]
+[; ;function_stubs.c: 69: packets[0] = 5;
+"69
+[e = *U + _packets * -> -> 0 `i `x -> -> # *U _packets `i `x -> -> 5 `i `uc ]
+[; ;function_stubs.c: 70: packets[1] = 10;
+"70
+[e = *U + _packets * -> -> 1 `i `x -> -> # *U _packets `i `x -> -> 10 `i `uc ]
+[; ;function_stubs.c: 71: packets[2] = 15;
+"71
+[e = *U + _packets * -> -> 2 `i `x -> -> # *U _packets `i `x -> -> 15 `i `uc ]
+[; ;function_stubs.c: 72: }
+"72
+[e :UE 755 ]
+}
+"74
 [v _display_health `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;function_stubs.c: 23: void display_health(char health) { return; }
+[; ;function_stubs.c: 74: void display_health(char health) { return; }
 [e :U _display_health ]
 [v _health `uc ~T0 @X0 1 r1 ]
 [f ]
-[e $UE 747  ]
-[e :UE 747 ]
+[e $UE 756  ]
+[e :UE 756 ]
 }
-"24
+"76
 [v _init_leds `(v ~T0 @X0 1 ef ]
+"77
 {
-[; ;function_stubs.c: 24: void init_leds() { return; }
+[; ;function_stubs.c: 76: void init_leds()
+[; ;function_stubs.c: 77: {
 [e :U _init_leds ]
 [f ]
-[e $UE 748  ]
-[e :UE 748 ]
+[; ;function_stubs.c: 78: printf("Initialized LEDs.\n\r");
+"78
+[e ( _printf :s 9C ]
+[; ;function_stubs.c: 79: }
+"79
+[e :UE 757 ]
 }
-"25
+"81
 [v _display_blade_lights `(v ~T0 @X0 1 ef1`uc ]
+"82
 {
-[; ;function_stubs.c: 25: void display_blade_lights(char mode) { return; }
+[; ;function_stubs.c: 81: void display_blade_lights(char mode)
+[; ;function_stubs.c: 82: {
 [e :U _display_blade_lights ]
+"81
 [v _mode `uc ~T0 @X0 1 r1 ]
+"82
 [f ]
-[e $UE 749  ]
-[e :UE 749 ]
-}
-"26
-[v _init_isr `(v ~T0 @X0 1 ef ]
+[; ;function_stubs.c: 83: if(mode == 0)
+"83
+[e $ ! == -> _mode `i -> 0 `i 759  ]
+[; ;function_stubs.c: 84: {
+"84
 {
-[; ;function_stubs.c: 26: void init_isr() { return; }
+[; ;function_stubs.c: 85: printf("Displayed individual sword swing light show.\n\r");
+"85
+[e ( _printf :s 10C ]
+"86
+}
+[; ;function_stubs.c: 86: }
+[e $U 760  ]
+"87
+[e :U 759 ]
+[; ;function_stubs.c: 87: else if(mode == 1)
+[e $ ! == -> _mode `i -> 1 `i 761  ]
+[; ;function_stubs.c: 88: {
+"88
+{
+[; ;function_stubs.c: 89: printf("Displayed Omega blade swing light show.\n\r");
+"89
+[e ( _printf :s 11C ]
+"90
+}
+[e :U 761 ]
+"91
+[e :U 760 ]
+[; ;function_stubs.c: 90: }
+[; ;function_stubs.c: 91: }
+[e :UE 758 ]
+}
+"93
+[v _init_isr `(v ~T0 @X0 1 ef ]
+"94
+{
+[; ;function_stubs.c: 93: void init_isr()
+[; ;function_stubs.c: 94: {
 [e :U _init_isr ]
 [f ]
-[e $UE 750  ]
-[e :UE 750 ]
+[; ;function_stubs.c: 95: printf("Initialized ISR.\n\r");
+"95
+[e ( _printf :s 12C ]
+[; ;function_stubs.c: 96: }
+"96
+[e :UE 762 ]
 }
-"27
+"97
 [v _isr `(v ~T0 @X0 1 ef ]
 {
-[; ;function_stubs.c: 27: void isr() { return; }
+[; ;function_stubs.c: 97: void isr() { return; }
 [e :U _isr ]
 [f ]
-[e $UE 751  ]
-[e :UE 751 ]
+[e $UE 763  ]
+[e :UE 763 ]
 }
+[p f _printf 8388736 ]
+[a 2C 83 101 110 116 32 37 100 32 0 ]
+[a 11C 68 105 115 112 108 97 121 101 100 32 79 109 101 103 97 32 98 108 97 100 101 32 115 119 105 110 103 32 108 105 103 104 116 32 115 104 111 119 46 10 13 0 ]
+[a 10C 68 105 115 112 108 97 121 101 100 32 105 110 100 105 118 105 100 117 97 108 32 115 119 111 114 100 32 115 119 105 110 103 32 108 105 103 104 116 32 115 104 111 119 46 10 13 0 ]
+[a 9C 73 110 105 116 105 97 108 105 122 101 100 32 76 69 68 115 46 10 13 0 ]
+[a 8C 73 110 105 116 105 97 108 105 122 101 100 32 97 99 99 101 108 101 114 111 109 101 116 101 114 46 10 13 0 ]
+[a 5C 115 116 117 110 46 10 13 0 ]
+[a 4C 104 101 97 108 116 104 46 10 13 0 ]
+[a 3C 100 97 109 97 103 101 46 10 13 0 ]
+[a 1C 73 110 105 116 105 97 108 105 122 101 100 32 73 82 32 115 101 110 100 47 114 101 99 101 105 118 101 32 99 111 100 101 46 10 13 0 ]
+[a 6C 80 108 97 121 101 100 32 66 101 116 97 32 98 108 97 100 101 32 115 119 105 110 103 32 115 111 117 110 100 46 10 13 0 ]
+[a 7C 80 108 97 121 101 100 32 79 109 101 103 97 32 98 108 97 100 101 32 115 119 105 110 103 32 115 111 117 110 100 46 10 13 0 ]
+[a 12C 73 110 105 116 105 97 108 105 122 101 100 32 73 83 82 46 10 13 0 ]

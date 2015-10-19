@@ -1,35 +1,45 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"49 ../../source/main_header.h
+"65 ../../source/main_header.h
 [v _init_pic `(v ~T0 @X0 0 ef ]
 "12 C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h
 [v _init_uart `(v ~T0 @X0 0 ef ]
-"59 ../../source/main_header.h
-[v _init_ir `(v ~T0 @X0 0 ef ]
-"100
-[v _init_accel `(v ~T0 @X0 0 ef ]
-"162
-[v _init_leds `(v ~T0 @X0 0 ef ]
-"182
-[v _init_isr `(v ~T0 @X0 0 ef ]
-"10 ../../source/main.c
-[v _main_loop_individual `(v ~T0 @X0 0 ef ]
-"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"14 C:\Program Files (x86)\Microchip\xc8\v1.35\include\conio.h
-[v _getch `(uc ~T0 @X0 0 ef ]
-"18449 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
-[v _RB3 `Vb ~T0 @X0 0 e@107 ]
 [v F7196 `(v ~T0 @X0 1 tf1`ul ]
 "150 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic.h
 [v __delay `JF7196 ~T0 @X0 0 e ]
 [p i __delay ]
+"18449 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
+[v _RB3 `Vb ~T0 @X0 0 e@107 ]
+"195 C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"75 ../../source/main_header.h
+[v _init_ir `(v ~T0 @X0 0 ef ]
+"116
+[v _init_accel `(v ~T0 @X0 0 ef ]
+"178
+[v _init_leds `(v ~T0 @X0 0 ef ]
+"198
+[v _init_isr `(v ~T0 @X0 0 ef ]
+"12 ../../source/uart_header.h
+[v _waitch `(uc ~T0 @X0 0 ef ]
+"130 ../../source/main_header.h
+[v _determine_sword_was_swung `(uc ~T0 @X0 0 ef ]
+"143
+[v _determine_omega_mode_active `(uc ~T0 @X0 0 ef ]
+"157
+[v _determine_packets_to_send `(v ~T0 @X0 0 ef1`*uc ]
+"97
+[v _output_ir `(v ~T0 @X0 0 ef2`uc`uc ]
+"189
+[v _display_blade_lights `(v ~T0 @X0 0 ef1`uc ]
+"16473 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"106 ../../source/main_header.h
+[v _play_sound `(v ~T0 @X0 0 ef1`uc ]
 "1863 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
 "1232
 [v _TRISB `Vuc ~T0 @X0 0 e@141 ]
-"16473
-[v _GIE `Vb ~T0 @X0 0 e@95 ]
 "8 ../../source/main_header.h
 [p x FOSC=INTOSC ]
 "9
@@ -6715,175 +6725,1353 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;uart_header.h: 9: void putch(unsigned char);
 [; ;uart_header.h: 10: unsigned char getch();
 [; ;uart_header.h: 11: unsigned char getche();
-[; ;main_header.h: 49: void init_pic();
-[; ;main_header.h: 59: void init_ir();
-[; ;main_header.h: 81: void output_ir(char pkt_type, char amount);
-[; ;main_header.h: 90: void play_sound(char sound_selection);
-[; ;main_header.h: 100: void init_accel();
-[; ;main_header.h: 114: char determine_sword_was_swung(char* buffer);
-[; ;main_header.h: 127: char determine_omega_mode_active();
-[; ;main_header.h: 141: void determine_packets_to_send(char* packets);
-[; ;main_header.h: 152: void display_health(char health);
-[; ;main_header.h: 162: void init_leds();
-[; ;main_header.h: 173: void display_blade_lights(char mode);
-[; ;main_header.h: 182: void init_isr();
-[; ;main_header.h: 195: void isr();
+[; ;uart_header.h: 12: unsigned char waitch();
+[; ;uart_header.h: 13: void uart_test();
+[; ;main_header.h: 52: extern char stun_counter;
+[; ;main_header.h: 53: extern char health;
+[; ;main_header.h: 54: extern char omega_mode;
+[; ;main_header.h: 55: extern char blade;
+[; ;main_header.h: 65: void init_pic();
+[; ;main_header.h: 75: void init_ir();
+[; ;main_header.h: 97: void output_ir(char pkt_type, char amount);
+[; ;main_header.h: 106: void play_sound(char sound_selection);
+[; ;main_header.h: 116: void init_accel();
+[; ;main_header.h: 130: char determine_sword_was_swung();
+[; ;main_header.h: 143: char determine_omega_mode_active();
+[; ;main_header.h: 157: void determine_packets_to_send(char* packets);
+[; ;main_header.h: 168: void display_health(char health);
+[; ;main_header.h: 178: void init_leds();
+[; ;main_header.h: 189: void display_blade_lights(char mode);
+[; ;main_header.h: 198: void init_isr();
+[; ;main_header.h: 211: void isr();
 [; ;main.c: 10: void main_loop_individual();
 [; ;main.c: 11: void main_loop_omega();
 "13 ../../source/main.c
-[v _main `(i ~T0 @X0 1 ef ]
+[v _stun_counter `uc ~T0 @X0 1 e ]
+[i _stun_counter
+-> -> 0 `i `uc
+]
+[; ;main.c: 13: char stun_counter = 0;
 "14
+[v _health `uc ~T0 @X0 1 e ]
+[i _health
+-> -> 50 `i `uc
+]
+[; ;main.c: 14: char health = 50;
+"15
+[v _omega_mode `uc ~T0 @X0 1 e ]
+[i _omega_mode
+-> -> 0 `i `uc
+]
+[; ;main.c: 15: char omega_mode = 0;
+"16
+[v _blade `uc ~T0 @X0 1 e ]
+[i _blade
+-> -> 0 `i `uc
+]
+[; ;main.c: 16: char blade = 0;
+"18
+[v _main `(i ~T0 @X0 1 ef ]
+"19
 {
-[; ;main.c: 13: int main()
-[; ;main.c: 14: {
+[; ;main.c: 18: int main()
+[; ;main.c: 19: {
 [e :U _main ]
 [f ]
-[; ;main.c: 16: init_pic();
-"16
-[e ( _init_pic ..  ]
-[; ;main.c: 17: init_uart();
-"17
-[e ( _init_uart ..  ]
-[; ;main.c: 18: init_ir();
-"18
-[e ( _init_ir ..  ]
-[; ;main.c: 19: init_accel();
-"19
-[e ( _init_accel ..  ]
-[; ;main.c: 20: init_leds();
+[v F7230 `uc ~T0 @X0 -> 0 `x s ]
+[i F7230
+:U ..
 "20
-[e ( _init_leds ..  ]
-[; ;main.c: 21: init_isr();
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _pkt_arr `uc ~T0 @X0 3  a ]
+[; ;main.c: 20: char pkt_arr[] = {0, 0, 0};
+[e = _pkt_arr F7230 ]
 "21
-[e ( _init_isr ..  ]
-[; ;main.c: 24: while(1)
-"24
-[e :U 742 ]
-[; ;main.c: 25: {
-"25
-{
-[; ;main.c: 26: main_loop_individual();
-"26
-[e ( _main_loop_individual ..  ]
-"38
-}
-[e :U 741 ]
-"24
-[e $U 742  ]
-[e :U 743 ]
-[; ;main.c: 38: }
-[; ;main.c: 39: }
-"39
-[e :UE 740 ]
-}
-"42
-[v _main_loop_individual `(v ~T0 @X0 1 ef ]
-"43
-{
-[; ;main.c: 42: void main_loop_individual()
-[; ;main.c: 43: {
-[e :U _main_loop_individual ]
-[f ]
-"44
 [v _userInput `uc ~T0 @X0 1 a ]
-[; ;main.c: 44: char userInput = 0;
-[e = _userInput -> -> 0 `i `uc ]
-[; ;main.c: 46: printf("\n\rMain Loop Individual\n\r");
-"46
+[; ;main.c: 21: char userInput = ' ';
+[e = _userInput -> -> 32 `ui `uc ]
+"22
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 22: char i = 0;
+[e = _i -> -> 0 `i `uc ]
+[; ;main.c: 25: init_pic();
+"25
+[e ( _init_pic ..  ]
+[; ;main.c: 26: init_uart();
+"26
+[e ( _init_uart ..  ]
+[; ;main.c: 29: _delay((unsigned long)((100)*(32000000/4000.0)));
+"29
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 30: RB3 = 1;
+"30
+[e = _RB3 -> -> 1 `i `b ]
+[; ;main.c: 32: printf("\n\r=========================================================\n\r");
+"32
 [e ( _printf :s 1C ]
-[; ;main.c: 47: printf("Please enter the character A: ");
-"47
+[; ;main.c: 35: init_ir();
+"35
+[e ( _init_ir ..  ]
+[; ;main.c: 36: init_accel();
+"36
+[e ( _init_accel ..  ]
+[; ;main.c: 37: init_leds();
+"37
+[e ( _init_leds ..  ]
+[; ;main.c: 38: init_isr();
+"38
+[e ( _init_isr ..  ]
+[; ;main.c: 41: printf("\n\rWhich blade would you like to test? Enter a for Alpha, b for\n\r");
+"41
 [e ( _printf :s 2C ]
-[; ;main.c: 49: userInput = getch();
-"49
-[e = _userInput ( _getch ..  ]
-[; ;main.c: 50: if(userInput == 'A')
-"50
-[e $ ! == -> _userInput `ui -> 65 `ui 745  ]
-[; ;main.c: 51: {
-"51
-{
-[; ;main.c: 52: printf("\n\rGood job. You know how to read instructions.\n\n");
-"52
+[; ;main.c: 42: printf("Beta, d for Delta, or g for Gamma.\n\r");
+"42
 [e ( _printf :s 3C ]
-"53
-}
-[; ;main.c: 53: }
-[e $U 746  ]
-"54
-[e :U 745 ]
-[; ;main.c: 54: else
-[; ;main.c: 55: {
-"55
+[; ;main.c: 43: while(1)
+"43
+[e :U 742 ]
+[; ;main.c: 44: {
+"44
 {
-[; ;main.c: 56: printf("\n\rWrong key. Try again.\n\r");
-"56
+[; ;main.c: 45: userInput = waitch();
+"45
+[e = _userInput ( _waitch ..  ]
+[; ;main.c: 46: if(userInput == 'a')
+"46
+[e $ ! == -> _userInput `ui -> 97 `ui 744  ]
+[; ;main.c: 47: {
+"47
+{
+[; ;main.c: 48: printf("1\n\r");
+"48
 [e ( _printf :s 4C ]
+[; ;main.c: 49: blade = 1;
+"49
+[e = _blade -> -> 1 `i `uc ]
+[; ;main.c: 50: break;
+"50
+[e $U 743  ]
+"51
+}
+[; ;main.c: 51: }
+[e $U 745  ]
+"52
+[e :U 744 ]
+[; ;main.c: 52: else if( userInput == 'b' )
+[e $ ! == -> _userInput `ui -> 98 `ui 746  ]
+[; ;main.c: 53: {
+"53
+{
+[; ;main.c: 54: printf("2\n\r");
+"54
+[e ( _printf :s 5C ]
+[; ;main.c: 55: blade = 2;
+"55
+[e = _blade -> -> 2 `i `uc ]
+[; ;main.c: 56: break;
+"56
+[e $U 743  ]
 "57
 }
-[e :U 746 ]
 [; ;main.c: 57: }
-[; ;main.c: 58: RB3 = 1;
+[e $U 747  ]
 "58
-[e = _RB3 -> -> 1 `i `b ]
-[; ;main.c: 59: _delay((unsigned long)((500)*(32000000/4000.0)));
+[e :U 746 ]
+[; ;main.c: 58: else if( userInput == 'd' )
+[e $ ! == -> _userInput `ui -> 100 `ui 748  ]
+[; ;main.c: 59: {
 "59
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 60: RB3 = 0;
+{
+[; ;main.c: 60: printf("3\n\r");
 "60
-[e = _RB3 -> -> 0 `i `b ]
-[; ;main.c: 61: _delay((unsigned long)((500)*(32000000/4000.0)));
+[e ( _printf :s 6C ]
+[; ;main.c: 61: blade = 3;
 "61
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 63: return;
+[e = _blade -> -> 3 `i `uc ]
+[; ;main.c: 62: break;
+"62
+[e $U 743  ]
 "63
-[e $UE 744  ]
-[; ;main.c: 71: }
-"71
-[e :UE 744 ]
 }
+[; ;main.c: 63: }
+[e $U 749  ]
+"64
+[e :U 748 ]
+[; ;main.c: 64: else if( userInput == 'g' )
+[e $ ! == -> _userInput `ui -> 103 `ui 750  ]
+[; ;main.c: 65: {
+"65
+{
+[; ;main.c: 66: printf("4\n\r");
+"66
+[e ( _printf :s 7C ]
+[; ;main.c: 67: blade = 4;
+"67
+[e = _blade -> -> 4 `i `uc ]
+[; ;main.c: 68: break;
+"68
+[e $U 743  ]
+"69
+}
+[e :U 750 ]
+"70
+[e :U 749 ]
+[e :U 747 ]
+[e :U 745 ]
+[; ;main.c: 69: }
+[; ;main.c: 70: printf("Invalid input. Try again.\n\r");
+[e ( _printf :s 8C ]
+"71
+}
+[e :U 741 ]
+"43
+[e $U 742  ]
+[e :U 743 ]
+[; ;main.c: 71: }
+[; ;main.c: 73: printf("Are the blades in omega mode? (y/n)\n\r");
+"73
+[e ( _printf :s 9C ]
+[; ;main.c: 74: while(1)
 "74
-[v _main_loop_omega `(v ~T0 @X0 1 ef ]
+[e :U 752 ]
+[; ;main.c: 75: {
 "75
 {
-[; ;main.c: 74: void main_loop_omega()
-[; ;main.c: 75: {
+[; ;main.c: 76: userInput = waitch();
+"76
+[e = _userInput ( _waitch ..  ]
+[; ;main.c: 77: if(userInput == 'y')
+"77
+[e $ ! == -> _userInput `ui -> 121 `ui 754  ]
+[; ;main.c: 78: {
+"78
+{
+[; ;main.c: 79: printf("y\n\r");
+"79
+[e ( _printf :s 10C ]
+[; ;main.c: 80: omega_mode = 1;
+"80
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 81: break;
+"81
+[e $U 753  ]
+"82
+}
+[; ;main.c: 82: }
+[e $U 755  ]
+"83
+[e :U 754 ]
+[; ;main.c: 83: else if( userInput == 'n' )
+[e $ ! == -> _userInput `ui -> 110 `ui 756  ]
+[; ;main.c: 84: {
+"84
+{
+[; ;main.c: 85: printf("n\n\r");
+"85
+[e ( _printf :s 11C ]
+[; ;main.c: 86: omega_mode = 0;
+"86
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 87: break;
+"87
+[e $U 753  ]
+"88
+}
+[e :U 756 ]
+"89
+[e :U 755 ]
+[; ;main.c: 88: }
+[; ;main.c: 89: printf("Invalid input. Try again.\n\r");
+[e ( _printf :s 12C ]
+"90
+}
+[e :U 751 ]
+"74
+[e $U 752  ]
+[e :U 753 ]
+[; ;main.c: 90: }
+[; ;main.c: 92: printf("Press \'s\' to swing the sword and see what happens!\n\r");
+"92
+[e ( _printf :s 13C ]
+[; ;main.c: 93: printf("Press 'd', 'h', or 't' to send damage, health, or stun packets.\n\r");
+"93
+[e ( _printf :s 14C ]
+[; ;main.c: 94: printf("Press 'o' to toggle Omega mode.\n\r\n\r");
+"94
+[e ( _printf :s 15C ]
+[; ;main.c: 97: while(1)
+"97
+[e :U 758 ]
+[; ;main.c: 98: {
+"98
+{
+[; ;main.c: 100: if( blade == 1 )
+"100
+[e $ ! == -> _blade `i -> 1 `i 760  ]
+[; ;main.c: 101: {
+"101
+{
+[; ;main.c: 102: while( 1 )
+"102
+[e :U 762 ]
+[; ;main.c: 103: {
+"103
+{
+[; ;main.c: 104: userInput = determine_sword_was_swung();
+"104
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 105: if(userInput == 1)
+"105
+[e $ ! == -> _userInput `i -> 1 `i 764  ]
+[; ;main.c: 106: {
+"106
+{
+[; ;main.c: 107: printf("Sword was swung\n\r");
+"107
+[e ( _printf :s 16C ]
+[; ;main.c: 109: if(!determine_omega_mode_active())
+"109
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 765  ]
+[; ;main.c: 110: {
+"110
+{
+[; ;main.c: 111: determine_packets_to_send(&pkt_arr);
+"111
+[e ( _determine_packets_to_send (1 &U _pkt_arr ]
+[; ;main.c: 113: for(i = 0; i < 3; ++i)
+"113
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 3 `i 766  ]
+[e $U 767  ]
+"114
+[e :U 766 ]
+[; ;main.c: 114: {
+{
+[; ;main.c: 115: if(pkt_arr[i] > 0)
+"115
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 769  ]
+[; ;main.c: 116: {
+"116
+{
+[; ;main.c: 117: output_ir(i, pkt_arr[i]);
+"117
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+"118
+}
+[e :U 769 ]
+"119
+}
+"113
+[e =+ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 3 `i 766  ]
+[e :U 767 ]
+"119
+}
+[; ;main.c: 118: }
+[; ;main.c: 119: }
+[; ;main.c: 120: display_blade_lights(0);
+"120
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
+"121
+}
+[; ;main.c: 121: }
+[e $U 770  ]
+"122
+[e :U 765 ]
+[; ;main.c: 122: else
+[; ;main.c: 123: {
+"123
+{
+[; ;main.c: 124: display_blade_lights(1);
+"124
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+"125
+}
+[e :U 770 ]
+[; ;main.c: 125: }
+[; ;main.c: 127: break;
+"127
+[e $U 763  ]
+"128
+}
+[e :U 764 ]
+[; ;main.c: 128: }
+[; ;main.c: 129: if(userInput == 'd' && !determine_omega_mode_active())
+"129
+[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 771  ]
+[; ;main.c: 130: {
+"130
+{
+[; ;main.c: 131: if(health > 0)
+"131
+[e $ ! > -> _health `i -> 0 `i 772  ]
+[; ;main.c: 132: {
+"132
+{
+[; ;main.c: 133: health -= 10;
+"133
+[e =- _health -> -> 10 `i `uc ]
+"134
+}
+[e :U 772 ]
+[; ;main.c: 134: }
+[; ;main.c: 135: printf("The blade has been damaged. Health = %d.\n\r",
+[; ;main.c: 136: health);
+"136
+[e ( _printf , (. :s 17C -> _health `i ]
+[; ;main.c: 138: break;
+"138
+[e $U 763  ]
+"139
+}
+[; ;main.c: 139: }
+[e $U 773  ]
+"140
+[e :U 771 ]
+[; ;main.c: 140: else if(userInput == 'h' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 774  ]
+[; ;main.c: 141: {
+"141
+{
+[; ;main.c: 142: if(health < 50)
+"142
+[e $ ! < -> _health `i -> 50 `i 775  ]
+[; ;main.c: 143: {
+"143
+{
+[; ;main.c: 144: health += 10;
+"144
+[e =+ _health -> -> 10 `i `uc ]
+"145
+}
+[e :U 775 ]
+[; ;main.c: 145: }
+[; ;main.c: 146: printf("The blade has been healed. Health = %d.\n\r",
+[; ;main.c: 147: health);
+"147
+[e ( _printf , (. :s 18C -> _health `i ]
+[; ;main.c: 149: break;
+"149
+[e $U 763  ]
+"150
+}
+[; ;main.c: 150: }
+[e $U 776  ]
+"151
+[e :U 774 ]
+[; ;main.c: 151: else if(userInput == 't' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 777  ]
+[; ;main.c: 152: {
+"152
+{
+[; ;main.c: 153: stun_counter += 10;
+"153
+[e =+ _stun_counter -> -> 10 `i `uc ]
+[; ;main.c: 154: printf("The blade has been stunned.\n\r");
+"154
+[e ( _printf :s 19C ]
+[; ;main.c: 156: break;
+"156
+[e $U 763  ]
+"157
+}
+[; ;main.c: 157: }
+[e $U 778  ]
+"158
+[e :U 777 ]
+[; ;main.c: 158: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 779  ]
+[; ;main.c: 159: {
+"159
+{
+[; ;main.c: 160: if(!determine_omega_mode_active())
+"160
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 780  ]
+[; ;main.c: 161: {
+"161
+{
+[; ;main.c: 162: omega_mode = 1;
+"162
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 163: printf("Omega mode enabled.\n\r");
+"163
+[e ( _printf :s 20C ]
+"164
+}
+[; ;main.c: 164: }
+[e $U 781  ]
+"165
+[e :U 780 ]
+[; ;main.c: 165: else
+[; ;main.c: 166: {
+"166
+{
+[; ;main.c: 167: omega_mode = 0;
+"167
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 168: printf("Omega mode disabled.\n\r");
+"168
+[e ( _printf :s 21C ]
+"169
+}
+[e :U 781 ]
+[; ;main.c: 169: }
+[; ;main.c: 170: break;
+"170
+[e $U 763  ]
+"171
+}
+[e :U 779 ]
+"173
+[e :U 778 ]
+[e :U 776 ]
+[e :U 773 ]
+[; ;main.c: 171: }
+[; ;main.c: 173: userInput = ' ';
+[e = _userInput -> -> 32 `ui `uc ]
+"174
+}
+[e :U 761 ]
+"102
+[e $U 762  ]
+[e :U 763 ]
+[; ;main.c: 174: }
+[; ;main.c: 176: GIE = 0;
+"176
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 177: while(stun_counter > 0)
+"177
+[e $U 782  ]
+[e :U 783 ]
+[; ;main.c: 178: {
+"178
+{
+[; ;main.c: 179: GIE = 1;
+"179
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 180: _delay((unsigned long)((100)*(32000000/4000.0)));
+"180
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 181: GIE = 0;
+"181
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 182: --stun_counter;
+"182
+[e =- _stun_counter -> -> 1 `i `uc ]
+"183
+}
+[e :U 782 ]
+"177
+[e $ > -> _stun_counter `i -> 0 `i 783  ]
+[e :U 784 ]
+[; ;main.c: 183: }
+[; ;main.c: 184: GIE = 1;
+"184
+[e = _GIE -> -> 1 `i `b ]
+"185
+}
+[e :U 760 ]
+[; ;main.c: 185: }
+[; ;main.c: 187: if( blade == 2 )
+"187
+[e $ ! == -> _blade `i -> 2 `i 785  ]
+[; ;main.c: 188: {
+"188
+{
+[; ;main.c: 189: while( 1 )
+"189
+[e :U 787 ]
+[; ;main.c: 190: {
+"190
+{
+[; ;main.c: 191: userInput = determine_sword_was_swung();
+"191
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 192: if(userInput == 1)
+"192
+[e $ ! == -> _userInput `i -> 1 `i 789  ]
+[; ;main.c: 193: {
+"193
+{
+[; ;main.c: 194: printf("Sword was swung\n\r");
+"194
+[e ( _printf :s 22C ]
+[; ;main.c: 196: if(!determine_omega_mode_active())
+"196
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 790  ]
+[; ;main.c: 197: {
+"197
+{
+[; ;main.c: 198: determine_packets_to_send(&pkt_arr);
+"198
+[e ( _determine_packets_to_send (1 &U _pkt_arr ]
+[; ;main.c: 200: for(i = 0; i < 3; ++i)
+"200
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 3 `i 791  ]
+[e $U 792  ]
+"201
+[e :U 791 ]
+[; ;main.c: 201: {
+{
+[; ;main.c: 202: if(pkt_arr[i] > 0)
+"202
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 794  ]
+[; ;main.c: 203: {
+"203
+{
+[; ;main.c: 204: output_ir(i, pkt_arr[i]);
+"204
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+"205
+}
+[e :U 794 ]
+"206
+}
+"200
+[e =+ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 3 `i 791  ]
+[e :U 792 ]
+"206
+}
+[; ;main.c: 205: }
+[; ;main.c: 206: }
+[; ;main.c: 208: play_sound(0);
+"208
+[e ( _play_sound (1 -> -> 0 `i `uc ]
+[; ;main.c: 209: display_blade_lights(0);
+"209
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
+"210
+}
+[; ;main.c: 210: }
+[e $U 795  ]
+"211
+[e :U 790 ]
+[; ;main.c: 211: else
+[; ;main.c: 212: {
+"212
+{
+[; ;main.c: 213: play_sound(1);
+"213
+[e ( _play_sound (1 -> -> 1 `i `uc ]
+[; ;main.c: 214: display_blade_lights(1);
+"214
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+"215
+}
+[e :U 795 ]
+[; ;main.c: 215: }
+[; ;main.c: 217: break;
+"217
+[e $U 788  ]
+"218
+}
+[; ;main.c: 218: }
+[e $U 796  ]
+"219
+[e :U 789 ]
+[; ;main.c: 219: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 797  ]
+[; ;main.c: 220: {
+"220
+{
+[; ;main.c: 221: if(!determine_omega_mode_active())
+"221
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 798  ]
+[; ;main.c: 222: {
+"222
+{
+[; ;main.c: 223: omega_mode = 1;
+"223
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 224: printf("Omega mode enabled.\n\r");
+"224
+[e ( _printf :s 23C ]
+"225
+}
+[; ;main.c: 225: }
+[e $U 799  ]
+"226
+[e :U 798 ]
+[; ;main.c: 226: else
+[; ;main.c: 227: {
+"227
+{
+[; ;main.c: 228: omega_mode = 0;
+"228
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 229: printf("Omega mode disabled.\n\r");
+"229
+[e ( _printf :s 24C ]
+"230
+}
+[e :U 799 ]
+[; ;main.c: 230: }
+[; ;main.c: 231: break;
+"231
+[e $U 788  ]
+"232
+}
+[e :U 797 ]
+"234
+[e :U 796 ]
+[; ;main.c: 232: }
+[; ;main.c: 234: userInput = ' ';
+[e = _userInput -> -> 32 `ui `uc ]
+"235
+}
+[e :U 786 ]
+"189
+[e $U 787  ]
+[e :U 788 ]
+"236
+}
+[e :U 785 ]
+[; ;main.c: 235: }
+[; ;main.c: 236: }
+[; ;main.c: 238: if( blade == 3 )
+"238
+[e $ ! == -> _blade `i -> 3 `i 800  ]
+[; ;main.c: 239: {
+"239
+{
+[; ;main.c: 240: while( 1 )
+"240
+[e :U 802 ]
+[; ;main.c: 241: {
+"241
+{
+[; ;main.c: 242: userInput = determine_sword_was_swung();
+"242
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 243: if(userInput == 1)
+"243
+[e $ ! == -> _userInput `i -> 1 `i 804  ]
+[; ;main.c: 244: {
+"244
+{
+[; ;main.c: 245: printf("Sword was swung\n\r");
+"245
+[e ( _printf :s 25C ]
+[; ;main.c: 247: determine_packets_to_send(&pkt_arr);
+"247
+[e ( _determine_packets_to_send (1 &U _pkt_arr ]
+[; ;main.c: 249: for(i = 0; i < 3; ++i)
+"249
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 3 `i 805  ]
+[e $U 806  ]
+"250
+[e :U 805 ]
+[; ;main.c: 250: {
+{
+[; ;main.c: 251: if(pkt_arr[i] > 0)
+"251
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 808  ]
+[; ;main.c: 252: {
+"252
+{
+[; ;main.c: 253: output_ir(i, pkt_arr[i]);
+"253
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+"254
+}
+[e :U 808 ]
+"255
+}
+"249
+[e =+ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 3 `i 805  ]
+[e :U 806 ]
+"255
+}
+[; ;main.c: 254: }
+[; ;main.c: 255: }
+[; ;main.c: 257: if(!determine_omega_mode_active())
+"257
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 809  ]
+[; ;main.c: 258: {
+"258
+{
+[; ;main.c: 259: display_blade_lights(0);
+"259
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
+"260
+}
+[; ;main.c: 260: }
+[e $U 810  ]
+"261
+[e :U 809 ]
+[; ;main.c: 261: else
+[; ;main.c: 262: {
+"262
+{
+[; ;main.c: 263: display_blade_lights(1);
+"263
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+"264
+}
+[e :U 810 ]
+[; ;main.c: 264: }
+[; ;main.c: 266: break;
+"266
+[e $U 803  ]
+"267
+}
+[e :U 804 ]
+[; ;main.c: 267: }
+[; ;main.c: 268: if(userInput == 'd' && !determine_omega_mode_active())
+"268
+[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 811  ]
+[; ;main.c: 269: {
+"269
+{
+[; ;main.c: 270: if(health > 0)
+"270
+[e $ ! > -> _health `i -> 0 `i 812  ]
+[; ;main.c: 271: {
+"271
+{
+[; ;main.c: 272: health -= 10;
+"272
+[e =- _health -> -> 10 `i `uc ]
+"273
+}
+[e :U 812 ]
+[; ;main.c: 273: }
+[; ;main.c: 274: printf("The blade has been damaged. Health = %d.\n\r",
+[; ;main.c: 275: health);
+"275
+[e ( _printf , (. :s 26C -> _health `i ]
+[; ;main.c: 277: break;
+"277
+[e $U 803  ]
+"278
+}
+[; ;main.c: 278: }
+[e $U 813  ]
+"279
+[e :U 811 ]
+[; ;main.c: 279: else if(userInput == 'h' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 814  ]
+[; ;main.c: 280: {
+"280
+{
+[; ;main.c: 281: if(health < 50)
+"281
+[e $ ! < -> _health `i -> 50 `i 815  ]
+[; ;main.c: 282: {
+"282
+{
+[; ;main.c: 283: health += 10;
+"283
+[e =+ _health -> -> 10 `i `uc ]
+"284
+}
+[e :U 815 ]
+[; ;main.c: 284: }
+[; ;main.c: 285: printf("The blade has been healed. Health = %d.\n\r",
+[; ;main.c: 286: health);
+"286
+[e ( _printf , (. :s 27C -> _health `i ]
+[; ;main.c: 288: break;
+"288
+[e $U 803  ]
+"289
+}
+[; ;main.c: 289: }
+[e $U 816  ]
+"290
+[e :U 814 ]
+[; ;main.c: 290: else if(userInput == 't' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 817  ]
+[; ;main.c: 291: {
+"291
+{
+[; ;main.c: 292: stun_counter += 10;
+"292
+[e =+ _stun_counter -> -> 10 `i `uc ]
+[; ;main.c: 293: printf("The blade has been stunned.\n\r");
+"293
+[e ( _printf :s 28C ]
+[; ;main.c: 295: break;
+"295
+[e $U 803  ]
+"296
+}
+[; ;main.c: 296: }
+[e $U 818  ]
+"297
+[e :U 817 ]
+[; ;main.c: 297: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 819  ]
+[; ;main.c: 298: {
+"298
+{
+[; ;main.c: 299: if(!determine_omega_mode_active())
+"299
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 820  ]
+[; ;main.c: 300: {
+"300
+{
+[; ;main.c: 301: omega_mode = 1;
+"301
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 302: printf("Omega mode enabled.\n\r");
+"302
+[e ( _printf :s 29C ]
+"303
+}
+[; ;main.c: 303: }
+[e $U 821  ]
+"304
+[e :U 820 ]
+[; ;main.c: 304: else
+[; ;main.c: 305: {
+"305
+{
+[; ;main.c: 306: omega_mode = 0;
+"306
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 307: printf("Omega mode disabled.\n\r");
+"307
+[e ( _printf :s 30C ]
+"308
+}
+[e :U 821 ]
+[; ;main.c: 308: }
+[; ;main.c: 309: break;
+"309
+[e $U 803  ]
+"310
+}
+[e :U 819 ]
+"312
+[e :U 818 ]
+[e :U 816 ]
+[e :U 813 ]
+[; ;main.c: 310: }
+[; ;main.c: 312: userInput = ' ';
+[e = _userInput -> -> 32 `ui `uc ]
+"313
+}
+[e :U 801 ]
+"240
+[e $U 802  ]
+[e :U 803 ]
+[; ;main.c: 313: }
+[; ;main.c: 315: GIE = 0;
+"315
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 316: while(stun_counter > 0)
+"316
+[e $U 822  ]
+[e :U 823 ]
+[; ;main.c: 317: {
+"317
+{
+[; ;main.c: 318: GIE = 1;
+"318
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 319: _delay((unsigned long)((100)*(32000000/4000.0)));
+"319
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 320: GIE = 0;
+"320
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 321: --stun_counter;
+"321
+[e =- _stun_counter -> -> 1 `i `uc ]
+"322
+}
+[e :U 822 ]
+"316
+[e $ > -> _stun_counter `i -> 0 `i 823  ]
+[e :U 824 ]
+[; ;main.c: 322: }
+[; ;main.c: 323: GIE = 1;
+"323
+[e = _GIE -> -> 1 `i `b ]
+"324
+}
+[e :U 800 ]
+[; ;main.c: 324: }
+[; ;main.c: 326: if( blade == 4 )
+"326
+[e $ ! == -> _blade `i -> 4 `i 825  ]
+[; ;main.c: 327: {
+"327
+{
+[; ;main.c: 328: while( 1 )
+"328
+[e :U 827 ]
+[; ;main.c: 329: {
+"329
+{
+[; ;main.c: 330: userInput = determine_sword_was_swung();
+"330
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 331: if(userInput == 1)
+"331
+[e $ ! == -> _userInput `i -> 1 `i 829  ]
+[; ;main.c: 332: {
+"332
+{
+[; ;main.c: 333: printf("Sword was swung\n\r");
+"333
+[e ( _printf :s 31C ]
+[; ;main.c: 335: if(!determine_omega_mode_active())
+"335
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 830  ]
+[; ;main.c: 336: {
+"336
+{
+[; ;main.c: 337: determine_packets_to_send(&pkt_arr);
+"337
+[e ( _determine_packets_to_send (1 &U _pkt_arr ]
+[; ;main.c: 339: for(i = 0; i < 3; ++i)
+"339
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 3 `i 831  ]
+[e $U 832  ]
+"340
+[e :U 831 ]
+[; ;main.c: 340: {
+{
+[; ;main.c: 341: if(pkt_arr[i] > 0)
+"341
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 834  ]
+[; ;main.c: 342: {
+"342
+{
+[; ;main.c: 343: output_ir(i, pkt_arr[i]);
+"343
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+"344
+}
+[e :U 834 ]
+"345
+}
+"339
+[e =+ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 3 `i 831  ]
+[e :U 832 ]
+"345
+}
+[; ;main.c: 344: }
+[; ;main.c: 345: }
+[; ;main.c: 346: display_blade_lights(0);
+"346
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
+"347
+}
+[; ;main.c: 347: }
+[e $U 835  ]
+"348
+[e :U 830 ]
+[; ;main.c: 348: else
+[; ;main.c: 349: {
+"349
+{
+[; ;main.c: 350: display_blade_lights(1);
+"350
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+"351
+}
+[e :U 835 ]
+[; ;main.c: 351: }
+[; ;main.c: 353: break;
+"353
+[e $U 828  ]
+"354
+}
+[e :U 829 ]
+[; ;main.c: 354: }
+[; ;main.c: 355: if(userInput == 'd' && !determine_omega_mode_active())
+"355
+[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 836  ]
+[; ;main.c: 356: {
+"356
+{
+[; ;main.c: 357: if(health > 0)
+"357
+[e $ ! > -> _health `i -> 0 `i 837  ]
+[; ;main.c: 358: {
+"358
+{
+[; ;main.c: 359: health -= 10;
+"359
+[e =- _health -> -> 10 `i `uc ]
+"360
+}
+[e :U 837 ]
+[; ;main.c: 360: }
+[; ;main.c: 361: printf("The blade has been damaged. Health = %d.\n\r",
+[; ;main.c: 362: health);
+"362
+[e ( _printf , (. :s 32C -> _health `i ]
+[; ;main.c: 364: break;
+"364
+[e $U 828  ]
+"365
+}
+[; ;main.c: 365: }
+[e $U 838  ]
+"366
+[e :U 836 ]
+[; ;main.c: 366: else if(userInput == 'h' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 839  ]
+[; ;main.c: 367: {
+"367
+{
+[; ;main.c: 368: if(health < 50)
+"368
+[e $ ! < -> _health `i -> 50 `i 840  ]
+[; ;main.c: 369: {
+"369
+{
+[; ;main.c: 370: health += 10;
+"370
+[e =+ _health -> -> 10 `i `uc ]
+"371
+}
+[e :U 840 ]
+[; ;main.c: 371: }
+[; ;main.c: 372: printf("The blade has been healed. Health = %d.\n\r",
+[; ;main.c: 373: health);
+"373
+[e ( _printf , (. :s 33C -> _health `i ]
+[; ;main.c: 375: break;
+"375
+[e $U 828  ]
+"376
+}
+[; ;main.c: 376: }
+[e $U 841  ]
+"377
+[e :U 839 ]
+[; ;main.c: 377: else if(userInput == 't' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 842  ]
+[; ;main.c: 378: {
+"378
+{
+[; ;main.c: 379: stun_counter += 10;
+"379
+[e =+ _stun_counter -> -> 10 `i `uc ]
+[; ;main.c: 380: printf("The blade has been stunned.\n\r");
+"380
+[e ( _printf :s 34C ]
+[; ;main.c: 382: break;
+"382
+[e $U 828  ]
+"383
+}
+[; ;main.c: 383: }
+[e $U 843  ]
+"384
+[e :U 842 ]
+[; ;main.c: 384: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 844  ]
+[; ;main.c: 385: {
+"385
+{
+[; ;main.c: 386: if(!determine_omega_mode_active())
+"386
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 845  ]
+[; ;main.c: 387: {
+"387
+{
+[; ;main.c: 388: omega_mode = 1;
+"388
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 389: printf("Omega mode enabled.\n\r");
+"389
+[e ( _printf :s 35C ]
+"390
+}
+[; ;main.c: 390: }
+[e $U 846  ]
+"391
+[e :U 845 ]
+[; ;main.c: 391: else
+[; ;main.c: 392: {
+"392
+{
+[; ;main.c: 393: omega_mode = 0;
+"393
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 394: printf("Omega mode disabled.\n\r");
+"394
+[e ( _printf :s 36C ]
+"395
+}
+[e :U 846 ]
+[; ;main.c: 395: }
+[; ;main.c: 396: break;
+"396
+[e $U 828  ]
+"397
+}
+[e :U 844 ]
+"399
+[e :U 843 ]
+[e :U 841 ]
+[e :U 838 ]
+[; ;main.c: 397: }
+[; ;main.c: 399: userInput = ' ';
+[e = _userInput -> -> 32 `ui `uc ]
+"400
+}
+[e :U 826 ]
+"328
+[e $U 827  ]
+[e :U 828 ]
+[; ;main.c: 400: }
+[; ;main.c: 402: GIE = 0;
+"402
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 403: while(stun_counter > 0)
+"403
+[e $U 847  ]
+[e :U 848 ]
+[; ;main.c: 404: {
+"404
+{
+[; ;main.c: 405: GIE = 1;
+"405
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 406: _delay((unsigned long)((100)*(32000000/4000.0)));
+"406
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 407: GIE = 0;
+"407
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 408: --stun_counter;
+"408
+[e =- _stun_counter -> -> 1 `i `uc ]
+"409
+}
+[e :U 847 ]
+"403
+[e $ > -> _stun_counter `i -> 0 `i 848  ]
+[e :U 849 ]
+[; ;main.c: 409: }
+[; ;main.c: 410: GIE = 1;
+"410
+[e = _GIE -> -> 1 `i `b ]
+"411
+}
+[e :U 825 ]
+[; ;main.c: 411: }
+[; ;main.c: 427: printf("\n\r");
+"427
+[e ( _printf :s 37C ]
+"428
+}
+[e :U 757 ]
+"97
+[e $U 758  ]
+[e :U 759 ]
+[; ;main.c: 428: }
+[; ;main.c: 429: }
+"429
+[e :UE 740 ]
+}
+"432
+[v _main_loop_individual `(v ~T0 @X0 1 ef ]
+"433
+{
+[; ;main.c: 432: void main_loop_individual()
+[; ;main.c: 433: {
+[e :U _main_loop_individual ]
+[f ]
+[; ;main.c: 435: return;
+"435
+[e $UE 850  ]
+[; ;main.c: 441: }
+"441
+[e :UE 850 ]
+}
+"444
+[v _main_loop_omega `(v ~T0 @X0 1 ef ]
+"445
+{
+[; ;main.c: 444: void main_loop_omega()
+[; ;main.c: 445: {
 [e :U _main_loop_omega ]
 [f ]
-[; ;main.c: 76: printf("Main Loop Omega    ");
-"76
-[e ( _printf :s 5C ]
-[; ;main.c: 78: return;
-"78
-[e $UE 747  ]
-[; ;main.c: 86: }
-"86
-[e :UE 747 ]
+[; ;main.c: 447: return;
+"447
+[e $UE 851  ]
+[; ;main.c: 455: }
+"455
+[e :UE 851 ]
 }
-"89
+"458
 [v _init_pic `(v ~T0 @X0 1 ef ]
-"90
+"459
 {
-[; ;main.c: 89: void init_pic()
-[; ;main.c: 90: {
+[; ;main.c: 458: void init_pic()
+[; ;main.c: 459: {
 [e :U _init_pic ]
 [f ]
-[; ;main.c: 92: OSCCON |= 0b11111000;
-"92
+[; ;main.c: 461: OSCCON |= 0b11111000;
+"461
 [e =| _OSCCON -> -> 248 `i `uc ]
-[; ;main.c: 95: TRISB &= 0b11110111;
-"95
+[; ;main.c: 464: TRISB &= 0b11110111;
+"464
 [e =& _TRISB -> -> 247 `i `uc ]
-[; ;main.c: 98: GIE = 1;
-"98
+[; ;main.c: 467: GIE = 1;
+"467
 [e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 99: }
-"99
-[e :UE 748 ]
+[; ;main.c: 468: }
+"468
+[e :UE 852 ]
 }
-[p f _printf 8388608 ]
-[a 2C 80 108 101 97 115 101 32 101 110 116 101 114 32 116 104 101 32 99 104 97 114 97 99 116 101 114 32 65 58 32 0 ]
-[a 5C 77 97 105 110 32 76 111 111 112 32 79 109 101 103 97 32 32 32 32 0 ]
-[a 1C 10 13 77 97 105 110 32 76 111 111 112 32 73 110 100 105 118 105 100 117 97 108 10 13 0 ]
-[a 4C 10 13 87 114 111 110 103 32 107 101 121 46 32 84 114 121 32 97 103 97 105 110 46 10 13 0 ]
-[a 3C 10 13 71 111 111 100 32 106 111 98 46 32 89 111 117 32 107 110 111 119 32 104 111 119 32 116 111 32 114 101 97 100 32 105 110 115 116 114 117 99 116 105 111 110 115 46 10 10 0 ]
+[p f _printf 8388736 ]
+[a 10C 121 10 13 0 ]
+[a 2C 10 13 87 104 105 99 104 32 98 108 97 100 101 32 119 111 117 108 100 32 121 111 117 32 108 105 107 101 32 116 111 32 116 101 115 116 63 32 69 110 116 101 114 32 97 32 102 111 114 32 65 108 112 104 97 44 32 98 32 102 111 114 10 13 0 ]
+[a 11C 110 10 13 0 ]
+[a 16C 83 119 111 114 100 32 119 97 115 32 115 119 117 110 103 10 13 0 ]
+[a 22C 83 119 111 114 100 32 119 97 115 32 115 119 117 110 103 10 13 0 ]
+[a 25C 83 119 111 114 100 32 119 97 115 32 115 119 117 110 103 10 13 0 ]
+[a 31C 83 119 111 114 100 32 119 97 115 32 115 119 117 110 103 10 13 0 ]
+[a 1C 10 13 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 61 10 13 0 ]
+[a 7C 52 10 13 0 ]
+[a 6C 51 10 13 0 ]
+[a 5C 50 10 13 0 ]
+[a 4C 49 10 13 0 ]
+[a 14C 80 114 101 115 115 32 39 100 39 44 32 39 104 39 44 32 111 114 32 39 116 39 32 116 111 32 115 101 110 100 32 100 97 109 97 103 101 44 32 104 101 97 108 116 104 44 32 111 114 32 115 116 117 110 32 112 97 99 107 101 116 115 46 10 13 0 ]
+[a 8C 73 110 118 97 108 105 100 32 105 110 112 117 116 46 32 84 114 121 32 97 103 97 105 110 46 10 13 0 ]
+[a 12C 73 110 118 97 108 105 100 32 105 110 112 117 116 46 32 84 114 121 32 97 103 97 105 110 46 10 13 0 ]
+[a 19C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 115 116 117 110 110 101 100 46 10 13 0 ]
+[a 28C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 115 116 117 110 110 101 100 46 10 13 0 ]
+[a 34C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 115 116 117 110 110 101 100 46 10 13 0 ]
+[a 21C 79 109 101 103 97 32 109 111 100 101 32 100 105 115 97 98 108 101 100 46 10 13 0 ]
+[a 24C 79 109 101 103 97 32 109 111 100 101 32 100 105 115 97 98 108 101 100 46 10 13 0 ]
+[a 30C 79 109 101 103 97 32 109 111 100 101 32 100 105 115 97 98 108 101 100 46 10 13 0 ]
+[a 36C 79 109 101 103 97 32 109 111 100 101 32 100 105 115 97 98 108 101 100 46 10 13 0 ]
+[a 20C 79 109 101 103 97 32 109 111 100 101 32 101 110 97 98 108 101 100 46 10 13 0 ]
+[a 23C 79 109 101 103 97 32 109 111 100 101 32 101 110 97 98 108 101 100 46 10 13 0 ]
+[a 29C 79 109 101 103 97 32 109 111 100 101 32 101 110 97 98 108 101 100 46 10 13 0 ]
+[a 35C 79 109 101 103 97 32 109 111 100 101 32 101 110 97 98 108 101 100 46 10 13 0 ]
+[a 18C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 104 101 97 108 101 100 46 32 72 101 97 108 116 104 32 61 32 37 100 46 10 13 0 ]
+[a 27C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 104 101 97 108 101 100 46 32 72 101 97 108 116 104 32 61 32 37 100 46 10 13 0 ]
+[a 33C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 104 101 97 108 101 100 46 32 72 101 97 108 116 104 32 61 32 37 100 46 10 13 0 ]
+[a 17C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 100 97 109 97 103 101 100 46 32 72 101 97 108 116 104 32 61 32 37 100 46 10 13 0 ]
+[a 26C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 100 97 109 97 103 101 100 46 32 72 101 97 108 116 104 32 61 32 37 100 46 10 13 0 ]
+[a 32C 84 104 101 32 98 108 97 100 101 32 104 97 115 32 98 101 101 110 32 100 97 109 97 103 101 100 46 32 72 101 97 108 116 104 32 61 32 37 100 46 10 13 0 ]
+[a 3C 66 101 116 97 44 32 100 32 102 111 114 32 68 101 108 116 97 44 32 111 114 32 103 32 102 111 114 32 71 97 109 109 97 46 10 13 0 ]
+[a 9C 65 114 101 32 116 104 101 32 98 108 97 100 101 115 32 105 110 32 111 109 101 103 97 32 109 111 100 101 63 32 40 121 47 110 41 10 13 0 ]
+[a 13C 80 114 101 115 115 32 39 115 39 32 116 111 32 115 119 105 110 103 32 116 104 101 32 115 119 111 114 100 32 97 110 100 32 115 101 101 32 119 104 97 116 32 104 97 112 112 101 110 115 33 10 13 0 ]
+[a 15C 80 114 101 115 115 32 39 111 39 32 116 111 32 116 111 103 103 108 101 32 79 109 101 103 97 32 109 111 100 101 46 10 13 10 13 0 ]
+[a 37C 10 13 0 ]

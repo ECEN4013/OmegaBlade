@@ -49,7 +49,10 @@ Created on October 12, 2015
 #define _LIGHT_MODE_CONNECT          2
 
 // Global variables
-extern int stun_counter;
+extern char stun_counter;
+extern char health;
+extern char omega_mode;
+extern char blade; // A=1, B=2, D=3, G=4
 
 /*------------------------------------------------------------------------------------
 Name: init_pic
@@ -124,7 +127,7 @@ Purpose: This function is responsible for reading the accelerometer once, updati
          what type of swing it was.
 Developer: Derrian Glynn
 ------------------------------------------------------------------------------------*/
-char determine_sword_was_swung(char* buffer);
+char determine_sword_was_swung();
 
 /*------------------------------------------------------------------------------------
 Name: determine_omega_mode_active

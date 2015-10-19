@@ -5,17 +5,27 @@
 [d frameptr 6 ]
 "10 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _init_ir init_ir `(v  1 e 0 0 ]
-"13
+"15
+[v _output_ir output_ir `(v  1 e 0 0 ]
+"32
+[v _play_sound play_sound `(v  1 e 0 0 ]
+"44
 [v _init_accel init_accel `(v  1 e 0 0 ]
-"24
+"49
+[v _determine_sword_was_swung determine_sword_was_swung `(uc  1 e 1 0 ]
+"62
+[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
+"67
+[v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
+"76
 [v _init_leds init_leds `(v  1 e 0 0 ]
-"26
+"81
+[v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
+"93
 [v _init_isr init_isr `(v  1 e 0 0 ]
-"13 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
-"42
-[v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
-"89
+"458
 [v _init_pic init_pic `(v  1 e 0 0 ]
 "11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
 [v _init_uart init_uart `(v  1 e 0 0 ]
@@ -23,16 +33,30 @@
 [v _putch putch `(v  1 e 0 0 ]
 "51
 [v _getch getch `(uc  1 e 1 0 ]
+"76
+[v _waitch waitch `(uc  1 e 1 0 ]
 "464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 0 0 ]
 "24
 [v _memcpyee memcpyee `(v  1 e 0 0 ]
+"13 C:\git\OmegaBlade\PIC Microcode/source/main.c
+[v _stun_counter stun_counter `uc  1 e 1 0 ]
+"14
+[v _health health `uc  1 e 1 0 ]
+"15
+[v _omega_mode omega_mode `uc  1 e 1 0 ]
+"16
+[v _blade blade `uc  1 e 1 0 ]
 "1232 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1301
@@ -67,27 +91,99 @@
 [v _TRMT TRMT `VEb  1 e 0 @3313 ]
 "18801
 [v _TXEN TXEN `VEb  1 e 0 @3317 ]
-"13 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"354 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _dpowers dpowers `DCC[5]ui  1 s 10 dpowers ]
+"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"39
+"20
+[v main@pkt_arr pkt_arr `[3]uc  1 a 3 21 ]
+"21
+[v main@userInput userInput `uc  1 a 1 25 ]
+"22
+[v main@i i `uc  1 a 1 24 ]
+"19
+[v main@F7230 F7230 `[3]uc  1 s 3 F7230 ]
+"429
 } 0
-"42
-[v _main_loop_individual main_loop_individual `(v  1 e 0 0 ]
+"76 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+[v _waitch waitch `(uc  1 e 1 0 ]
 {
+"83
+} 0
+"32 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+[v _play_sound play_sound `(v  1 e 0 0 ]
+{
+[v play_sound@sound_selection sound_selection `uc  1 a 1 wreg ]
+[v play_sound@sound_selection sound_selection `uc  1 a 1 wreg ]
+"34
+[v play_sound@sound_selection sound_selection `uc  1 a 1 14 ]
+"42
+} 0
+"15
+[v _output_ir output_ir `(v  1 e 0 0 ]
+{
+[v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
+[v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
+[v output_ir@amount amount `uc  1 p 1 14 ]
+"17
+[v output_ir@pkt_type pkt_type `uc  1 a 1 17 ]
+"30
+} 0
+"11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+[v _init_uart init_uart `(v  1 e 0 0 ]
+{
+"32
+} 0
+"458 C:\git\OmegaBlade\PIC Microcode/source/main.c
+[v _init_pic init_pic `(v  1 e 0 0 ]
+{
+"468
+} 0
+"76 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+[v _init_leds init_leds `(v  1 e 0 0 ]
+{
+"79
+} 0
+"93
+[v _init_isr init_isr `(v  1 e 0 0 ]
+{
+"96
+} 0
+"10
+[v _init_ir init_ir `(v  1 e 0 0 ]
+{
+"13
+} 0
 "44
-[v main_loop_individual@userInput userInput `uc  1 a 1 11 ]
-"71
+[v _init_accel init_accel `(v  1 e 0 0 ]
+{
+"47
+} 0
+"81
+[v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
+{
+[v display_blade_lights@mode mode `uc  1 a 1 wreg ]
+[v display_blade_lights@mode mode `uc  1 a 1 wreg ]
+"83
+[v display_blade_lights@mode mode `uc  1 a 1 14 ]
+"91
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
 {
+"528
+[v printf@val val `ui  1 a 2 11 ]
 "499
-[v printf@c c `c  1 a 1 7 ]
+[v printf@c c `c  1 a 1 13 ]
+"506
+[v printf@prec prec `c  1 a 1 10 ]
+"508
+[v printf@flag flag `uc  1 a 1 9 ]
 "466
-[v printf@ap ap `[1]*.1v  1 a 1 6 ]
+[v printf@ap ap `[1]*.4v  1 a 1 8 ]
 "464
-[v printf@f f `*.25DCCuc  1 p 2 1 ]
+[v printf@f f `*.25DCCuc  1 p 2 0 ]
 "1541
 } 0
 "41 C:\git\OmegaBlade\PIC Microcode/source/uart.c
@@ -98,34 +194,53 @@
 [v putch@input input `uc  1 a 1 0 ]
 "48
 } 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"6
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"26
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"6
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"31
+} 0
+"49 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+[v _determine_sword_was_swung determine_sword_was_swung `(uc  1 e 1 0 ]
+{
 "51
+[v determine_sword_was_swung@input input `uc  1 a 1 2 ]
+"60
+} 0
+"51 C:\git\OmegaBlade\PIC Microcode/source/uart.c
 [v _getch getch `(uc  1 e 1 0 ]
 {
-"58
+"53
+[v getch@counter counter `uc  1 a 1 0 ]
+"65
 } 0
-"11
-[v _init_uart init_uart `(v  1 e 0 0 ]
+"67 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+[v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
 {
-"32
+[v determine_packets_to_send@packets packets `*.4uc  1 a 1 wreg ]
+[v determine_packets_to_send@packets packets `*.4uc  1 a 1 wreg ]
+"69
+[v determine_packets_to_send@packets packets `*.4uc  1 a 1 1 ]
+"72
 } 0
-"89 C:\git\OmegaBlade\PIC Microcode/source/main.c
-[v _init_pic init_pic `(v  1 e 0 0 ]
+"62
+[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
 {
-"99
-} 0
-"24 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
-[v _init_leds init_leds `(v  1 e 0 0 ]
-{
-} 0
-"26
-[v _init_isr init_isr `(v  1 e 0 0 ]
-{
-} 0
-"10
-[v _init_ir init_ir `(v  1 e 0 0 ]
-{
-} 0
-"13
-[v _init_accel init_accel `(v  1 e 0 0 ]
-{
+"65
 } 0

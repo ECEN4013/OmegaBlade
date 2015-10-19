@@ -9146,104 +9146,479 @@ void init_uart();
 void putch(unsigned char);
 unsigned char getch();
 unsigned char getche();
+unsigned char waitch();
+void uart_test();
 
-# 49 "../../source/main_header.h"
+# 52 "../../source/main_header.h"
+extern char stun_counter;
+extern char health;
+extern char omega_mode;
+extern char blade;
+
+# 65
 void init_pic();
 
-# 59
+# 75
 void init_ir();
 
-# 81
+# 97
 void output_ir(char pkt_type, char amount);
 
-# 90
+# 106
 void play_sound(char sound_selection);
 
-# 100
+# 116
 void init_accel();
 
-# 114
-char determine_sword_was_swung(char* buffer);
+# 130
+char determine_sword_was_swung();
 
-# 127
+# 143
 char determine_omega_mode_active();
 
-# 141
+# 157
 void determine_packets_to_send(char* packets);
 
-# 152
+# 168
 void display_health(char health);
 
-# 162
+# 178
 void init_leds();
 
-# 173
+# 189
 void display_blade_lights(char mode);
 
-# 182
+# 198
 void init_isr();
 
-# 195
+# 211
 void isr();
 
 # 10 "../../source/main.c"
 void main_loop_individual();
 void main_loop_omega();
 
+char stun_counter = 0;
+char health = 50;
+char omega_mode = 0;
+char blade = 0;
+
 int main()
 {
+char pkt_arr[] = {0, 0, 0};
+char userInput = ' ';
+char i = 0;
+
 
 init_pic();
 init_uart();
+
+
+_delay((unsigned long)((100)*(32000000/4000.0)));
+RB3 = 1;
+
+printf("\n\r=========================================================\n\r");
+
+
 init_ir();
 init_accel();
 init_leds();
 init_isr();
 
 
+printf("\n\rWhich blade would you like to test? Enter a for Alpha, b for\n\r");
+printf("Beta, d for Delta, or g for Gamma.\n\r");
 while(1)
 {
-main_loop_individual();
+userInput = waitch();
+if(userInput == 'a')
+{
+printf("1\n\r");
+blade = 1;
+break;
+}
+else if( userInput == 'b' )
+{
+printf("2\n\r");
+blade = 2;
+break;
+}
+else if( userInput == 'd' )
+{
+printf("3\n\r");
+blade = 3;
+break;
+}
+else if( userInput == 'g' )
+{
+printf("4\n\r");
+blade = 4;
+break;
+}
+printf("Invalid input. Try again.\n\r");
+}
 
-# 38
+printf("Are the blades in omega mode? (y/n)\n\r");
+while(1)
+{
+userInput = waitch();
+if(userInput == 'y')
+{
+printf("y\n\r");
+omega_mode = 1;
+break;
+}
+else if( userInput == 'n' )
+{
+printf("n\n\r");
+omega_mode = 0;
+break;
+}
+printf("Invalid input. Try again.\n\r");
+}
+
+printf("Press \'s\' to swing the sword and see what happens!\n\r");
+printf("Press 'd', 'h', or 't' to send damage, health, or stun packets.\n\r");
+printf("Press 'o' to toggle Omega mode.\n\r\n\r");
+
+
+while(1)
+{
+
+if( blade == 1 )
+{
+while( 1 )
+{
+userInput = determine_sword_was_swung();
+if(userInput == 1)
+{
+printf("Sword was swung\n\r");
+
+if(!determine_omega_mode_active())
+{
+determine_packets_to_send(&pkt_arr);
+
+for(i = 0; i < 3; ++i)
+{
+if(pkt_arr[i] > 0)
+{
+output_ir(i, pkt_arr[i]);
+}
+}
+display_blade_lights(0);
+}
+else
+{
+display_blade_lights(1);
+}
+
+break;
+}
+if(userInput == 'd' && !determine_omega_mode_active())
+{
+if(health > 0)
+{
+health -= 10;
+}
+printf("The blade has been damaged. Health = %d.\n\r",
+health);
+
+break;
+}
+else if(userInput == 'h' && !determine_omega_mode_active())
+{
+if(health < 50)
+{
+health += 10;
+}
+printf("The blade has been healed. Health = %d.\n\r",
+health);
+
+break;
+}
+else if(userInput == 't' && !determine_omega_mode_active())
+{
+stun_counter += 10;
+printf("The blade has been stunned.\n\r");
+
+break;
+}
+else if(userInput == 'o')
+{
+if(!determine_omega_mode_active())
+{
+omega_mode = 1;
+printf("Omega mode enabled.\n\r");
+}
+else
+{
+omega_mode = 0;
+printf("Omega mode disabled.\n\r");
+}
+break;
+}
+
+userInput = ' ';
+}
+
+GIE = 0;
+while(stun_counter > 0)
+{
+GIE = 1;
+_delay((unsigned long)((100)*(32000000/4000.0)));
+GIE = 0;
+--stun_counter;
+}
+GIE = 1;
+}
+
+if( blade == 2 )
+{
+while( 1 )
+{
+userInput = determine_sword_was_swung();
+if(userInput == 1)
+{
+printf("Sword was swung\n\r");
+
+if(!determine_omega_mode_active())
+{
+determine_packets_to_send(&pkt_arr);
+
+for(i = 0; i < 3; ++i)
+{
+if(pkt_arr[i] > 0)
+{
+output_ir(i, pkt_arr[i]);
+}
+}
+
+play_sound(0);
+display_blade_lights(0);
+}
+else
+{
+play_sound(1);
+display_blade_lights(1);
+}
+
+break;
+}
+else if(userInput == 'o')
+{
+if(!determine_omega_mode_active())
+{
+omega_mode = 1;
+printf("Omega mode enabled.\n\r");
+}
+else
+{
+omega_mode = 0;
+printf("Omega mode disabled.\n\r");
+}
+break;
+}
+
+userInput = ' ';
+}
+}
+
+if( blade == 3 )
+{
+while( 1 )
+{
+userInput = determine_sword_was_swung();
+if(userInput == 1)
+{
+printf("Sword was swung\n\r");
+
+determine_packets_to_send(&pkt_arr);
+
+for(i = 0; i < 3; ++i)
+{
+if(pkt_arr[i] > 0)
+{
+output_ir(i, pkt_arr[i]);
+}
+}
+
+if(!determine_omega_mode_active())
+{
+display_blade_lights(0);
+}
+else
+{
+display_blade_lights(1);
+}
+
+break;
+}
+if(userInput == 'd' && !determine_omega_mode_active())
+{
+if(health > 0)
+{
+health -= 10;
+}
+printf("The blade has been damaged. Health = %d.\n\r",
+health);
+
+break;
+}
+else if(userInput == 'h' && !determine_omega_mode_active())
+{
+if(health < 50)
+{
+health += 10;
+}
+printf("The blade has been healed. Health = %d.\n\r",
+health);
+
+break;
+}
+else if(userInput == 't' && !determine_omega_mode_active())
+{
+stun_counter += 10;
+printf("The blade has been stunned.\n\r");
+
+break;
+}
+else if(userInput == 'o')
+{
+if(!determine_omega_mode_active())
+{
+omega_mode = 1;
+printf("Omega mode enabled.\n\r");
+}
+else
+{
+omega_mode = 0;
+printf("Omega mode disabled.\n\r");
+}
+break;
+}
+
+userInput = ' ';
+}
+
+GIE = 0;
+while(stun_counter > 0)
+{
+GIE = 1;
+_delay((unsigned long)((100)*(32000000/4000.0)));
+GIE = 0;
+--stun_counter;
+}
+GIE = 1;
+}
+
+if( blade == 4 )
+{
+while( 1 )
+{
+userInput = determine_sword_was_swung();
+if(userInput == 1)
+{
+printf("Sword was swung\n\r");
+
+if(!determine_omega_mode_active())
+{
+determine_packets_to_send(&pkt_arr);
+
+for(i = 0; i < 3; ++i)
+{
+if(pkt_arr[i] > 0)
+{
+output_ir(i, pkt_arr[i]);
+}
+}
+display_blade_lights(0);
+}
+else
+{
+display_blade_lights(1);
+}
+
+break;
+}
+if(userInput == 'd' && !determine_omega_mode_active())
+{
+if(health > 0)
+{
+health -= 10;
+}
+printf("The blade has been damaged. Health = %d.\n\r",
+health);
+
+break;
+}
+else if(userInput == 'h' && !determine_omega_mode_active())
+{
+if(health < 50)
+{
+health += 10;
+}
+printf("The blade has been healed. Health = %d.\n\r",
+health);
+
+break;
+}
+else if(userInput == 't' && !determine_omega_mode_active())
+{
+stun_counter += 10;
+printf("The blade has been stunned.\n\r");
+
+break;
+}
+else if(userInput == 'o')
+{
+if(!determine_omega_mode_active())
+{
+omega_mode = 1;
+printf("Omega mode enabled.\n\r");
+}
+else
+{
+omega_mode = 0;
+printf("Omega mode disabled.\n\r");
+}
+break;
+}
+
+userInput = ' ';
+}
+
+GIE = 0;
+while(stun_counter > 0)
+{
+GIE = 1;
+_delay((unsigned long)((100)*(32000000/4000.0)));
+GIE = 0;
+--stun_counter;
+}
+GIE = 1;
+}
+
+# 427
+printf("\n\r");
 }
 }
 
 
 void main_loop_individual()
 {
-char userInput = 0;
-
-printf("\n\rMain Loop Individual\n\r");
-printf("Please enter the character A: ");
-
-userInput = getch();
-if(userInput == 'A')
-{
-printf("\n\rGood job. You know how to read instructions.\n\n");
-}
-else
-{
-printf("\n\rWrong key. Try again.\n\r");
-}
-RB3 = 1;
-_delay((unsigned long)((500)*(32000000/4000.0)));
-RB3 = 0;
-_delay((unsigned long)((500)*(32000000/4000.0)));
 
 return;
 
-# 71
+# 441
 }
 
 
 void main_loop_omega()
 {
-printf("Main Loop Omega    ");
 
 return;
 
-# 86
+# 455
 }
 
 

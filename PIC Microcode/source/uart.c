@@ -37,7 +37,7 @@ void init_uart()
 // declare them here in order for the USART module to function.
 // ***************************************************************************
 
-// Send one byte via USART.
+// Send one byte via UART.
 void putch(unsigned char input)
 {
    while(!TRMT)
@@ -47,23 +47,41 @@ void putch(unsigned char input)
    TXREG = input;
 }
 
-// Receive one byte via USART.
+// Receive one byte via UART.
 unsigned char getch()
 {
-   while(!RCIF)
-   {
-      continue;
-   }
-   return RCREG;
+    unsigned char counter = 0;
+    
+    while( !RCIF )
+    {
+        continue;
+        //if(counter > 200)
+        //{
+        //    return ' ';
+        //}
+        //++counter;
+    }
+    return RCREG;
 }
 
-// Receive one byte via USART and immediately send it back via USART.
+// Receive one byte via UART and immediately send it back via UART.
 unsigned char getche()
 {
    unsigned char c;
    putch(c = getch());
    return c;
 }
+
+// Wait for a byte to arrive on UART, then return it
+unsigned char waitch()
+{
+    while(!RCIF)
+    {
+        continue;
+    }
+    return RCREG;
+}
+
 
 // Run a simple routine to test UART communication
 void uart_test()
