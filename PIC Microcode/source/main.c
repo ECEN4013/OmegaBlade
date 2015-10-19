@@ -101,6 +101,7 @@ int main()
         {
             while( 1 )
             {
+                display_health();
                 userInput = determine_sword_was_swung();
                 if( ( userInput == 1 ) && ( health > 0) ) 
                 {
@@ -174,7 +175,7 @@ int main()
             }
 
             GIE = 0;
-            while(stun_counter > 0)
+            while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
             {
                 GIE = 1;
                 __delay_ms(100);
@@ -188,6 +189,7 @@ int main()
         {
             while( 1 )
             {
+                display_health();
                 userInput = determine_sword_was_swung();
                 if( ( userInput == 1 ) && ( health > 0) )
                 {
@@ -239,6 +241,7 @@ int main()
         {
             while( 1 )
             {
+                display_health();
                 userInput = determine_sword_was_swung();
                 if(userInput == 1)
                 {
@@ -313,7 +316,7 @@ int main()
             }
 
             GIE = 0;
-            while(stun_counter > 0)
+            while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
             {
                 GIE = 1;
                 __delay_ms(100);
@@ -327,6 +330,7 @@ int main()
         {
             while( 1 )
             {
+                display_health();
                 userInput = determine_sword_was_swung();
                 if(userInput == 1)
                 {
@@ -400,7 +404,7 @@ int main()
             }
 
             GIE = 0;
-            while(stun_counter > 0)
+            while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
             {
                 GIE = 1;
                 __delay_ms(100);
