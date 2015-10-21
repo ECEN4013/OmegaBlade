@@ -49,7 +49,7 @@ void output_ir(char pkt_type, char amount)
 	//printf("Sent %d ", amount);
 	if(pkt_type == 0)
 	{
-		for(int i = 0;i < amount){		
+		for(int i = 0;i < amount;i++){		
 			//printf("damage.\n\r");
 			//Start Envelope
 			P1MDLBIT = 1;
@@ -76,7 +76,7 @@ void output_ir(char pkt_type, char amount)
 	}
 	else if(pkt_type == 1)
 	{
-		for(int i = 0;i < amount){	
+		for(int i = 0;i < amount;i++){		
 			//printf("health.\n\r");		
 			//Start Envelope
 			P1MDLBIT = 1;
@@ -102,7 +102,7 @@ void output_ir(char pkt_type, char amount)
 	}
 	else
 	{
-		for(int i = 0;i < amount){	
+		for(int i = 0;i < amount;i++){		
 			//printf("stun.\n\r");		
 			//Start Envelope
 			P1MDLBIT = 1;

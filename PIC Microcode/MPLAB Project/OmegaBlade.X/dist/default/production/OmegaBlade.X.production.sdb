@@ -3,31 +3,33 @@
 [d edition pro ]
 [d chip 16F1788 ]
 [d frameptr 6 ]
-"10 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+"10 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _init_ir init_ir `(v  1 e 0 0 ]
-"15
+"47
 [v _output_ir output_ir `(v  1 e 0 0 ]
-"32
+"132
 [v _play_sound play_sound `(v  1 e 0 0 ]
-"44
+"144
 [v _init_accel init_accel `(v  1 e 0 0 ]
-"49
+"149
 [v _determine_sword_was_swung determine_sword_was_swung `(uc  1 e 1 0 ]
-"62
+"162
 [v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
-"67
+"167
 [v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
-"76
+"174
+[v _display_health display_health `(v  1 e 0 0 ]
+"176
 [v _init_leds init_leds `(v  1 e 0 0 ]
-"81
+"181
 [v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
-"93
+"193
 [v _init_isr init_isr `(v  1 e 0 0 ]
-"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"18 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
-"458
+"462
 [v _init_pic init_pic `(v  1 e 0 0 ]
-"11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+"11 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/uart.c
 [v _init_uart init_uart `(v  1 e 0 0 ]
 "41
 [v _putch putch `(v  1 e 0 0 ]
@@ -49,7 +51,7 @@
 [v _eecpymem eecpymem `(v  1 e 0 0 ]
 "24
 [v _memcpyee memcpyee `(v  1 e 0 0 ]
-"13 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"13 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/main.c
 [v _stun_counter stun_counter `uc  1 e 1 0 ]
 "14
 [v _health health `uc  1 e 1 0 ]
@@ -61,6 +63,8 @@
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1301
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1540
+[v _PIE4 PIE4 `VEuc  1 e 1 @148 ]
 "1863
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
 "4005
@@ -69,6 +73,64 @@
 [v _TXREG TXREG `VEuc  1 e 1 @410 ]
 "4117
 [v _SPBRG SPBRG `VEuc  1 e 1 @411 ]
+"9209
+[v _PSMC1CON PSMC1CON `VEuc  1 e 1 @3729 ]
+"9278
+[v _PSMC1MDL PSMC1MDL `VEuc  1 e 1 @3730 ]
+"9342
+[v _PSMC1SYNC PSMC1SYNC `VEuc  1 e 1 @3731 ]
+"9392
+[v _PSMC1CLK PSMC1CLK `VEuc  1 e 1 @3732 ]
+"9445
+[v _PSMC1OEN PSMC1OEN `VEuc  1 e 1 @3733 ]
+"9494
+[v _PSMC1POL PSMC1POL `VEuc  1 e 1 @3734 ]
+"9549
+[v _PSMC1BLNK PSMC1BLNK `VEuc  1 e 1 @3735 ]
+"9602
+[v _PSMC1REBS PSMC1REBS `VEuc  1 e 1 @3736 ]
+"9647
+[v _PSMC1FEBS PSMC1FEBS `VEuc  1 e 1 @3737 ]
+"9692
+[v _PSMC1PHS PSMC1PHS `VEuc  1 e 1 @3738 ]
+"9742
+[v _PSMC1DCS PSMC1DCS `VEuc  1 e 1 @3739 ]
+"9792
+[v _PSMC1PRS PSMC1PRS `VEuc  1 e 1 @3740 ]
+"9842
+[v _PSMC1ASDC PSMC1ASDC `VEuc  1 e 1 @3741 ]
+"9880
+[v _PSMC1ASDL PSMC1ASDL `VEuc  1 e 1 @3742 ]
+"9929
+[v _PSMC1ASDS PSMC1ASDS `VEuc  1 e 1 @3743 ]
+"9974
+[v _PSMC1INT PSMC1INT `VEuc  1 e 1 @3744 ]
+"10041
+[v _PSMC1PHL PSMC1PHL `VEuc  1 e 1 @3745 ]
+"10102
+[v _PSMC1PHH PSMC1PHH `VEuc  1 e 1 @3746 ]
+"10169
+[v _PSMC1DCL PSMC1DCL `VEuc  1 e 1 @3747 ]
+"10230
+[v _PSMC1DCH PSMC1DCH `VEuc  1 e 1 @3748 ]
+"10297
+[v _PSMC1PRL PSMC1PRL `VEuc  1 e 1 @3749 ]
+"10358
+[v _PSMC1PRH PSMC1PRH `VEuc  1 e 1 @3750 ]
+"10547
+[v _PSMC1DBR PSMC1DBR `VEuc  1 e 1 @3753 ]
+"10608
+[v _PSMC1DBF PSMC1DBF `VEuc  1 e 1 @3754 ]
+"10669
+[v _PSMC1BLKR PSMC1BLKR `VEuc  1 e 1 @3755 ]
+"10730
+[v _PSMC1BLKF PSMC1BLKF `VEuc  1 e 1 @3756 ]
+"10791
+[v _PSMC1FFA PSMC1FFA `VEuc  1 e 1 @3757 ]
+"10828
+[v _PSMC1STR0 PSMC1STR0 `VEuc  1 e 1 @3758 ]
+"10877
+[v _PSMC1STR1 PSMC1STR1 `VEuc  1 e 1 @3759 ]
 "16067
 [v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
 "16069
@@ -77,6 +139,8 @@
 [v _CREN CREN `VEb  1 e 0 @3308 ]
 "16473
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"16933
+[v _P1MDLBIT P1MDLBIT `VEb  1 e 0 @29845 ]
 "18449
 [v _RB3 RB3 `VEb  1 e 0 @107 ]
 "18479
@@ -93,81 +157,92 @@
 [v _TXEN TXEN `VEb  1 e 0 @3317 ]
 "354 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _dpowers dpowers `DCC[5]ui  1 s 10 dpowers ]
-"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"18 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "20
-[v main@pkt_arr pkt_arr `[3]uc  1 a 3 21 ]
+[v main@pkt_arr pkt_arr `[3]uc  1 a 3 18 ]
 "21
-[v main@userInput userInput `uc  1 a 1 25 ]
+[v main@userInput userInput `uc  1 a 1 22 ]
 "22
-[v main@i i `uc  1 a 1 24 ]
+[v main@i i `uc  1 a 1 21 ]
 "19
 [v main@F7230 F7230 `[3]uc  1 s 3 F7230 ]
-"429
+"433
 } 0
-"76 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+"76 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/uart.c
 [v _waitch waitch `(uc  1 e 1 0 ]
 {
 "83
 } 0
-"32 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+"132 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _play_sound play_sound `(v  1 e 0 0 ]
 {
 [v play_sound@sound_selection sound_selection `uc  1 a 1 wreg ]
 [v play_sound@sound_selection sound_selection `uc  1 a 1 wreg ]
-"34
+"134
 [v play_sound@sound_selection sound_selection `uc  1 a 1 14 ]
-"42
+"142
 } 0
-"15
+"47
 [v _output_ir output_ir `(v  1 e 0 0 ]
 {
 [v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
+"105
+[v output_ir@i_73 i `i  1 a 2 7 ]
+"79
+[v output_ir@i_72 i `i  1 a 2 5 ]
+"52
+[v output_ir@i i `i  1 a 2 3 ]
+"47
 [v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
-[v output_ir@amount amount `uc  1 p 1 14 ]
-"17
-[v output_ir@pkt_type pkt_type `uc  1 a 1 17 ]
-"30
+[v output_ir@amount amount `uc  1 p 1 0 ]
+"50
+[v output_ir@pkt_type pkt_type `uc  1 a 1 9 ]
+"130
 } 0
-"11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+"11 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/uart.c
 [v _init_uart init_uart `(v  1 e 0 0 ]
 {
 "32
 } 0
-"458 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"462 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/main.c
 [v _init_pic init_pic `(v  1 e 0 0 ]
 {
-"468
+"472
 } 0
-"76 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+"176 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _init_leds init_leds `(v  1 e 0 0 ]
 {
-"79
+"179
 } 0
-"93
+"193
 [v _init_isr init_isr `(v  1 e 0 0 ]
 {
-"96
+"196
 } 0
 "10
 [v _init_ir init_ir `(v  1 e 0 0 ]
 {
-"13
+"45
 } 0
-"44
+"144
 [v _init_accel init_accel `(v  1 e 0 0 ]
 {
-"47
+"147
 } 0
-"81
+"174
+[v _display_health display_health `(v  1 e 0 0 ]
+{
+} 0
+"181
 [v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
 {
 [v display_blade_lights@mode mode `uc  1 a 1 wreg ]
 [v display_blade_lights@mode mode `uc  1 a 1 wreg ]
-"83
+"183
 [v display_blade_lights@mode mode `uc  1 a 1 14 ]
-"91
+"191
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -186,7 +261,7 @@
 [v printf@f f `*.25DCCuc  1 p 2 0 ]
 "1541
 } 0
-"41 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+"41 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/uart.c
 [v _putch putch `(v  1 e 0 0 ]
 {
 [v putch@input input `uc  1 a 1 wreg ]
@@ -216,31 +291,31 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "31
 } 0
-"49 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+"149 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _determine_sword_was_swung determine_sword_was_swung `(uc  1 e 1 0 ]
 {
-"51
+"151
 [v determine_sword_was_swung@input input `uc  1 a 1 2 ]
-"60
+"160
 } 0
-"51 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+"51 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/uart.c
 [v _getch getch `(uc  1 e 1 0 ]
 {
 "53
 [v getch@counter counter `uc  1 a 1 0 ]
 "65
 } 0
-"67 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
+"167 C:\Users\Brandon\Dropbox\School\Fall_2015\SRDesign\HOGUEPC-Git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
 {
 [v determine_packets_to_send@packets packets `*.4uc  1 a 1 wreg ]
 [v determine_packets_to_send@packets packets `*.4uc  1 a 1 wreg ]
-"69
+"169
 [v determine_packets_to_send@packets packets `*.4uc  1 a 1 1 ]
-"72
+"172
 } 0
-"62
+"162
 [v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
 {
-"65
+"165
 } 0

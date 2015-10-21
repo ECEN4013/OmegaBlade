@@ -22,7 +22,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _init_isr `(v ~T0 @X0 0 ef ]
 "12 ../../source/uart_header.h
 [v _waitch `(uc ~T0 @X0 0 ef ]
-"130 ../../source/main_header.h
+"168 ../../source/main_header.h
+[v _display_health `(v ~T0 @X0 0 ef1`uc ]
+"130
 [v _determine_sword_was_swung `(uc ~T0 @X0 0 ef ]
 "143
 [v _determine_omega_mode_active `(uc ~T0 @X0 0 ef ]
@@ -7021,1020 +7023,1032 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 103: {
 "103
 {
-[; ;main.c: 104: userInput = determine_sword_was_swung();
+[; ;main.c: 104: display_health(50);
 "104
-[e = _userInput ( _determine_sword_was_swung ..  ]
-[; ;main.c: 105: if(userInput == 1)
+[e ( _display_health (1 -> -> 50 `i `uc ]
+[; ;main.c: 105: userInput = determine_sword_was_swung();
 "105
-[e $ ! == -> _userInput `i -> 1 `i 764  ]
-[; ;main.c: 106: {
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 106: if( ( userInput == 1 ) && ( health > 0) )
 "106
-{
-[; ;main.c: 107: printf("Sword was swung\n\r");
+[e $ ! && == -> _userInput `i -> 1 `i > -> _health `i -> 0 `i 764  ]
+[; ;main.c: 107: {
 "107
-[e ( _printf :s 16C ]
-[; ;main.c: 109: if(!determine_omega_mode_active())
-"109
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 765  ]
-[; ;main.c: 110: {
-"110
 {
-[; ;main.c: 111: determine_packets_to_send(&pkt_arr);
+[; ;main.c: 108: printf("Sword was swung\n\r");
+"108
+[e ( _printf :s 16C ]
+[; ;main.c: 110: if(!determine_omega_mode_active())
+"110
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 765  ]
+[; ;main.c: 111: {
 "111
+{
+[; ;main.c: 112: determine_packets_to_send(&pkt_arr);
+"112
 [e ( _determine_packets_to_send (1 &U _pkt_arr ]
-[; ;main.c: 113: for(i = 0; i < 3; ++i)
-"113
+[; ;main.c: 114: for(i = 0; i < 3; ++i)
+"114
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 3 `i 766  ]
 [e $U 767  ]
-"114
-[e :U 766 ]
-[; ;main.c: 114: {
-{
-[; ;main.c: 115: if(pkt_arr[i] > 0)
 "115
-[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 769  ]
-[; ;main.c: 116: {
-"116
+[e :U 766 ]
+[; ;main.c: 115: {
 {
-[; ;main.c: 117: output_ir(i, pkt_arr[i]);
+[; ;main.c: 116: if(pkt_arr[i] > 0)
+"116
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 769  ]
+[; ;main.c: 117: {
 "117
-[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+{
+[; ;main.c: 118: output_ir(i, pkt_arr[i]);
 "118
-}
-[e :U 769 ]
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
 "119
 }
-"113
+[e :U 769 ]
+"120
+}
+"114
 [e =+ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 3 `i 766  ]
 [e :U 767 ]
-"119
-}
-[; ;main.c: 118: }
-[; ;main.c: 119: }
-[; ;main.c: 120: display_blade_lights(0);
 "120
-[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
-"121
 }
-[; ;main.c: 121: }
-[e $U 770  ]
+[; ;main.c: 119: }
+[; ;main.c: 120: }
+[; ;main.c: 121: display_blade_lights(0);
+"121
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
 "122
-[e :U 765 ]
-[; ;main.c: 122: else
-[; ;main.c: 123: {
+}
+[; ;main.c: 122: }
+[e $U 770  ]
 "123
-{
-[; ;main.c: 124: display_blade_lights(1);
+[e :U 765 ]
+[; ;main.c: 123: else
+[; ;main.c: 124: {
 "124
-[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+{
+[; ;main.c: 125: display_blade_lights(1);
 "125
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+"126
 }
 [e :U 770 ]
-[; ;main.c: 125: }
-[; ;main.c: 127: break;
-"127
-[e $U 763  ]
+[; ;main.c: 126: }
+[; ;main.c: 128: break;
 "128
+[e $U 763  ]
+"129
 }
 [e :U 764 ]
-[; ;main.c: 128: }
-[; ;main.c: 129: if(userInput == 'd' && !determine_omega_mode_active())
-"129
-[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 771  ]
-[; ;main.c: 130: {
+[; ;main.c: 129: }
+[; ;main.c: 130: if(userInput == 'd' && !determine_omega_mode_active())
 "130
-{
-[; ;main.c: 131: if(health > 0)
+[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 771  ]
+[; ;main.c: 131: {
 "131
-[e $ ! > -> _health `i -> 0 `i 772  ]
-[; ;main.c: 132: {
-"132
 {
-[; ;main.c: 133: health -= 10;
+[; ;main.c: 132: if(health > 0)
+"132
+[e $ ! > -> _health `i -> 0 `i 772  ]
+[; ;main.c: 133: {
 "133
-[e =- _health -> -> 10 `i `uc ]
+{
+[; ;main.c: 134: health -= 10;
 "134
+[e =- _health -> -> 10 `i `uc ]
+"135
 }
 [e :U 772 ]
-[; ;main.c: 134: }
-[; ;main.c: 135: printf("The blade has been damaged. Health = %d.\n\r",
-[; ;main.c: 136: health);
-"136
+[; ;main.c: 135: }
+[; ;main.c: 136: printf("The blade has been damaged. Health = %d.\n\r",
+[; ;main.c: 137: health);
+"137
 [e ( _printf , (. :s 17C -> _health `i ]
-[; ;main.c: 138: break;
-"138
-[e $U 763  ]
+[; ;main.c: 139: break;
 "139
-}
-[; ;main.c: 139: }
-[e $U 773  ]
+[e $U 763  ]
 "140
-[e :U 771 ]
-[; ;main.c: 140: else if(userInput == 'h' && !determine_omega_mode_active())
-[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 774  ]
-[; ;main.c: 141: {
+}
+[; ;main.c: 140: }
+[e $U 773  ]
 "141
-{
-[; ;main.c: 142: if(health < 50)
+[e :U 771 ]
+[; ;main.c: 141: else if(userInput == 'h' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 774  ]
+[; ;main.c: 142: {
 "142
-[e $ ! < -> _health `i -> 50 `i 775  ]
-[; ;main.c: 143: {
-"143
 {
-[; ;main.c: 144: health += 10;
+[; ;main.c: 143: if(health < 50)
+"143
+[e $ ! < -> _health `i -> 50 `i 775  ]
+[; ;main.c: 144: {
 "144
-[e =+ _health -> -> 10 `i `uc ]
+{
+[; ;main.c: 145: health += 10;
 "145
+[e =+ _health -> -> 10 `i `uc ]
+"146
 }
 [e :U 775 ]
-[; ;main.c: 145: }
-[; ;main.c: 146: printf("The blade has been healed. Health = %d.\n\r",
-[; ;main.c: 147: health);
-"147
+[; ;main.c: 146: }
+[; ;main.c: 147: printf("The blade has been healed. Health = %d.\n\r",
+[; ;main.c: 148: health);
+"148
 [e ( _printf , (. :s 18C -> _health `i ]
-[; ;main.c: 149: break;
-"149
-[e $U 763  ]
+[; ;main.c: 150: break;
 "150
-}
-[; ;main.c: 150: }
-[e $U 776  ]
-"151
-[e :U 774 ]
-[; ;main.c: 151: else if(userInput == 't' && !determine_omega_mode_active())
-[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 777  ]
-[; ;main.c: 152: {
-"152
-{
-[; ;main.c: 153: stun_counter += 10;
-"153
-[e =+ _stun_counter -> -> 10 `i `uc ]
-[; ;main.c: 154: printf("The blade has been stunned.\n\r");
-"154
-[e ( _printf :s 19C ]
-[; ;main.c: 156: break;
-"156
 [e $U 763  ]
+"151
+}
+[; ;main.c: 151: }
+[e $U 776  ]
+"152
+[e :U 774 ]
+[; ;main.c: 152: else if(userInput == 't' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 777  ]
+[; ;main.c: 153: {
+"153
+{
+[; ;main.c: 154: stun_counter += 10;
+"154
+[e =+ _stun_counter -> -> 10 `i `uc ]
+[; ;main.c: 155: printf("The blade has been stunned.\n\r");
+"155
+[e ( _printf :s 19C ]
+[; ;main.c: 157: break;
 "157
-}
-[; ;main.c: 157: }
-[e $U 778  ]
+[e $U 763  ]
 "158
-[e :U 777 ]
-[; ;main.c: 158: else if(userInput == 'o')
-[e $ ! == -> _userInput `ui -> 111 `ui 779  ]
-[; ;main.c: 159: {
-"159
-{
-[; ;main.c: 160: if(!determine_omega_mode_active())
-"160
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 780  ]
-[; ;main.c: 161: {
-"161
-{
-[; ;main.c: 162: omega_mode = 1;
-"162
-[e = _omega_mode -> -> 1 `i `uc ]
-[; ;main.c: 163: printf("Omega mode enabled.\n\r");
-"163
-[e ( _printf :s 20C ]
-"164
 }
-[; ;main.c: 164: }
-[e $U 781  ]
-"165
-[e :U 780 ]
-[; ;main.c: 165: else
-[; ;main.c: 166: {
-"166
+[; ;main.c: 158: }
+[e $U 778  ]
+"159
+[e :U 777 ]
+[; ;main.c: 159: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 779  ]
+[; ;main.c: 160: {
+"160
 {
-[; ;main.c: 167: omega_mode = 0;
+[; ;main.c: 161: if(!determine_omega_mode_active())
+"161
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 780  ]
+[; ;main.c: 162: {
+"162
+{
+[; ;main.c: 163: omega_mode = 1;
+"163
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 164: printf("Omega mode enabled.\n\r");
+"164
+[e ( _printf :s 20C ]
+"165
+}
+[; ;main.c: 165: }
+[e $U 781  ]
+"166
+[e :U 780 ]
+[; ;main.c: 166: else
+[; ;main.c: 167: {
 "167
-[e = _omega_mode -> -> 0 `i `uc ]
-[; ;main.c: 168: printf("Omega mode disabled.\n\r");
+{
+[; ;main.c: 168: omega_mode = 0;
 "168
-[e ( _printf :s 21C ]
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 169: printf("Omega mode disabled.\n\r");
 "169
+[e ( _printf :s 21C ]
+"170
 }
 [e :U 781 ]
-[; ;main.c: 169: }
-[; ;main.c: 170: break;
-"170
-[e $U 763  ]
+[; ;main.c: 170: }
+[; ;main.c: 171: break;
 "171
+[e $U 763  ]
+"172
 }
 [e :U 779 ]
-"173
+"174
 [e :U 778 ]
 [e :U 776 ]
 [e :U 773 ]
-[; ;main.c: 171: }
-[; ;main.c: 173: userInput = ' ';
+[; ;main.c: 172: }
+[; ;main.c: 174: userInput = ' ';
 [e = _userInput -> -> 32 `ui `uc ]
-"174
+"175
 }
 [e :U 761 ]
 "102
 [e $U 762  ]
 [e :U 763 ]
-[; ;main.c: 174: }
-[; ;main.c: 176: GIE = 0;
-"176
-[e = _GIE -> -> 0 `i `b ]
-[; ;main.c: 177: while(stun_counter > 0)
+[; ;main.c: 175: }
+[; ;main.c: 177: GIE = 0;
 "177
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 178: while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
+"178
 [e $U 782  ]
 [e :U 783 ]
-[; ;main.c: 178: {
-"178
-{
-[; ;main.c: 179: GIE = 1;
+[; ;main.c: 179: {
 "179
-[e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 180: _delay((unsigned long)((100)*(32000000/4000.0)));
+{
+[; ;main.c: 180: GIE = 1;
 "180
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 181: GIE = 0;
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 181: _delay((unsigned long)((100)*(32000000/4000.0)));
 "181
-[e = _GIE -> -> 0 `i `b ]
-[; ;main.c: 182: --stun_counter;
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 182: GIE = 0;
 "182
-[e =- _stun_counter -> -> 1 `i `uc ]
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 183: --stun_counter;
 "183
+[e =- _stun_counter -> -> 1 `i `uc ]
+"184
 }
 [e :U 782 ]
-"177
-[e $ > -> _stun_counter `i -> 0 `i 783  ]
+"178
+[e $ && > -> _stun_counter `i -> 0 `i ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 783  ]
 [e :U 784 ]
-[; ;main.c: 183: }
-[; ;main.c: 184: GIE = 1;
-"184
-[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 184: }
+[; ;main.c: 185: GIE = 1;
 "185
+[e = _GIE -> -> 1 `i `b ]
+"186
 }
 [e :U 760 ]
-[; ;main.c: 185: }
-[; ;main.c: 187: if( blade == 2 )
-"187
-[e $ ! == -> _blade `i -> 2 `i 785  ]
-[; ;main.c: 188: {
+[; ;main.c: 186: }
+[; ;main.c: 188: if( blade == 2 )
 "188
-{
-[; ;main.c: 189: while( 1 )
+[e $ ! == -> _blade `i -> 2 `i 785  ]
+[; ;main.c: 189: {
 "189
-[e :U 787 ]
-[; ;main.c: 190: {
+{
+[; ;main.c: 190: while( 1 )
 "190
-{
-[; ;main.c: 191: userInput = determine_sword_was_swung();
+[e :U 787 ]
+[; ;main.c: 191: {
 "191
-[e = _userInput ( _determine_sword_was_swung ..  ]
-[; ;main.c: 192: if(userInput == 1)
+{
+[; ;main.c: 192: display_health(50);
 "192
-[e $ ! == -> _userInput `i -> 1 `i 789  ]
-[; ;main.c: 193: {
+[e ( _display_health (1 -> -> 50 `i `uc ]
+[; ;main.c: 193: userInput = determine_sword_was_swung();
 "193
-{
-[; ;main.c: 194: printf("Sword was swung\n\r");
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 194: if( ( userInput == 1 ) && ( health > 0) )
 "194
-[e ( _printf :s 22C ]
-[; ;main.c: 196: if(!determine_omega_mode_active())
-"196
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 790  ]
-[; ;main.c: 197: {
-"197
+[e $ ! && == -> _userInput `i -> 1 `i > -> _health `i -> 0 `i 789  ]
+[; ;main.c: 195: {
+"195
 {
-[; ;main.c: 198: determine_packets_to_send(&pkt_arr);
+[; ;main.c: 196: printf("Sword was swung\n\r");
+"196
+[e ( _printf :s 22C ]
+[; ;main.c: 198: if(!determine_omega_mode_active())
 "198
-[e ( _determine_packets_to_send (1 &U _pkt_arr ]
-[; ;main.c: 200: for(i = 0; i < 3; ++i)
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 790  ]
+[; ;main.c: 199: {
+"199
+{
+[; ;main.c: 200: determine_packets_to_send(&pkt_arr);
 "200
+[e ( _determine_packets_to_send (1 &U _pkt_arr ]
+[; ;main.c: 202: for(i = 0; i < 3; ++i)
+"202
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 3 `i 791  ]
 [e $U 792  ]
-"201
-[e :U 791 ]
-[; ;main.c: 201: {
-{
-[; ;main.c: 202: if(pkt_arr[i] > 0)
-"202
-[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 794  ]
-[; ;main.c: 203: {
 "203
+[e :U 791 ]
+[; ;main.c: 203: {
 {
-[; ;main.c: 204: output_ir(i, pkt_arr[i]);
+[; ;main.c: 204: if(pkt_arr[i] > 0)
 "204
-[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 794  ]
+[; ;main.c: 205: {
 "205
+{
+[; ;main.c: 206: output_ir(i, pkt_arr[i]);
+"206
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+"207
 }
 [e :U 794 ]
-"206
+"208
 }
-"200
+"202
 [e =+ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 3 `i 791  ]
 [e :U 792 ]
-"206
-}
-[; ;main.c: 205: }
-[; ;main.c: 206: }
-[; ;main.c: 208: play_sound(0);
 "208
-[e ( _play_sound (1 -> -> 0 `i `uc ]
-[; ;main.c: 209: display_blade_lights(0);
-"209
-[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
-"210
 }
-[; ;main.c: 210: }
-[e $U 795  ]
+[; ;main.c: 207: }
+[; ;main.c: 208: }
+[; ;main.c: 210: play_sound(0);
+"210
+[e ( _play_sound (1 -> -> 0 `i `uc ]
+[; ;main.c: 211: display_blade_lights(0);
 "211
-[e :U 790 ]
-[; ;main.c: 211: else
-[; ;main.c: 212: {
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
 "212
-{
-[; ;main.c: 213: play_sound(1);
+}
+[; ;main.c: 212: }
+[e $U 795  ]
 "213
-[e ( _play_sound (1 -> -> 1 `i `uc ]
-[; ;main.c: 214: display_blade_lights(1);
+[e :U 790 ]
+[; ;main.c: 213: else
+[; ;main.c: 214: {
 "214
-[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+{
+[; ;main.c: 215: play_sound(1);
 "215
+[e ( _play_sound (1 -> -> 1 `i `uc ]
+[; ;main.c: 216: display_blade_lights(1);
+"216
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+"217
 }
 [e :U 795 ]
-[; ;main.c: 215: }
-[; ;main.c: 217: break;
-"217
-[e $U 788  ]
-"218
-}
-[; ;main.c: 218: }
-[e $U 796  ]
+[; ;main.c: 217: }
+[; ;main.c: 219: break;
 "219
-[e :U 789 ]
-[; ;main.c: 219: else if(userInput == 'o')
-[e $ ! == -> _userInput `ui -> 111 `ui 797  ]
-[; ;main.c: 220: {
+[e $U 788  ]
 "220
-{
-[; ;main.c: 221: if(!determine_omega_mode_active())
+}
+[; ;main.c: 220: }
+[e $U 796  ]
 "221
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 798  ]
+[e :U 789 ]
+[; ;main.c: 221: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 797  ]
 [; ;main.c: 222: {
 "222
 {
-[; ;main.c: 223: omega_mode = 1;
+[; ;main.c: 223: if(!determine_omega_mode_active())
 "223
-[e = _omega_mode -> -> 1 `i `uc ]
-[; ;main.c: 224: printf("Omega mode enabled.\n\r");
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 798  ]
+[; ;main.c: 224: {
 "224
-[e ( _printf :s 23C ]
-"225
-}
-[; ;main.c: 225: }
-[e $U 799  ]
-"226
-[e :U 798 ]
-[; ;main.c: 226: else
-[; ;main.c: 227: {
-"227
 {
-[; ;main.c: 228: omega_mode = 0;
-"228
-[e = _omega_mode -> -> 0 `i `uc ]
-[; ;main.c: 229: printf("Omega mode disabled.\n\r");
-"229
-[e ( _printf :s 24C ]
-"230
+[; ;main.c: 225: omega_mode = 1;
+"225
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 226: printf("Omega mode enabled.\n\r");
+"226
+[e ( _printf :s 23C ]
+"227
 }
-[e :U 799 ]
-[; ;main.c: 230: }
-[; ;main.c: 231: break;
+[; ;main.c: 227: }
+[e $U 799  ]
+"228
+[e :U 798 ]
+[; ;main.c: 228: else
+[; ;main.c: 229: {
+"229
+{
+[; ;main.c: 230: omega_mode = 0;
+"230
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 231: printf("Omega mode disabled.\n\r");
 "231
-[e $U 788  ]
+[e ( _printf :s 24C ]
 "232
 }
-[e :U 797 ]
-"234
-[e :U 796 ]
+[e :U 799 ]
 [; ;main.c: 232: }
-[; ;main.c: 234: userInput = ' ';
+[; ;main.c: 233: break;
+"233
+[e $U 788  ]
+"234
+}
+[e :U 797 ]
+"236
+[e :U 796 ]
+[; ;main.c: 234: }
+[; ;main.c: 236: userInput = ' ';
 [e = _userInput -> -> 32 `ui `uc ]
-"235
+"237
 }
 [e :U 786 ]
-"189
+"190
 [e $U 787  ]
 [e :U 788 ]
-"236
+"238
 }
 [e :U 785 ]
-[; ;main.c: 235: }
-[; ;main.c: 236: }
-[; ;main.c: 238: if( blade == 3 )
-"238
-[e $ ! == -> _blade `i -> 3 `i 800  ]
-[; ;main.c: 239: {
-"239
-{
-[; ;main.c: 240: while( 1 )
+[; ;main.c: 237: }
+[; ;main.c: 238: }
+[; ;main.c: 240: if( ( userInput == 1 ) && ( health > 0) )
 "240
-[e :U 802 ]
+[e $ ! && == -> _userInput `i -> 1 `i > -> _health `i -> 0 `i 800  ]
 [; ;main.c: 241: {
 "241
 {
-[; ;main.c: 242: userInput = determine_sword_was_swung();
+[; ;main.c: 242: while( 1 )
 "242
-[e = _userInput ( _determine_sword_was_swung ..  ]
-[; ;main.c: 243: if(userInput == 1)
+[e :U 802 ]
+[; ;main.c: 243: {
 "243
-[e $ ! == -> _userInput `i -> 1 `i 804  ]
-[; ;main.c: 244: {
-"244
 {
-[; ;main.c: 245: printf("Sword was swung\n\r");
+[; ;main.c: 244: display_health(50);
+"244
+[e ( _display_health (1 -> -> 50 `i `uc ]
+[; ;main.c: 245: userInput = determine_sword_was_swung();
 "245
-[e ( _printf :s 25C ]
-[; ;main.c: 247: determine_packets_to_send(&pkt_arr);
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 246: if(userInput == 1)
+"246
+[e $ ! == -> _userInput `i -> 1 `i 804  ]
+[; ;main.c: 247: {
 "247
+{
+[; ;main.c: 248: printf("Sword was swung\n\r");
+"248
+[e ( _printf :s 25C ]
+[; ;main.c: 250: determine_packets_to_send(&pkt_arr);
+"250
 [e ( _determine_packets_to_send (1 &U _pkt_arr ]
-[; ;main.c: 249: for(i = 0; i < 3; ++i)
-"249
+[; ;main.c: 252: for(i = 0; i < 3; ++i)
+"252
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 3 `i 805  ]
 [e $U 806  ]
-"250
-[e :U 805 ]
-[; ;main.c: 250: {
-{
-[; ;main.c: 251: if(pkt_arr[i] > 0)
-"251
-[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 808  ]
-[; ;main.c: 252: {
-"252
-{
-[; ;main.c: 253: output_ir(i, pkt_arr[i]);
 "253
-[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+[e :U 805 ]
+[; ;main.c: 253: {
+{
+[; ;main.c: 254: if(pkt_arr[i] > 0)
 "254
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 808  ]
+[; ;main.c: 255: {
+"255
+{
+[; ;main.c: 256: output_ir(i, pkt_arr[i]);
+"256
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+"257
 }
 [e :U 808 ]
-"255
+"258
 }
-"249
+"252
 [e =+ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 3 `i 805  ]
 [e :U 806 ]
-"255
-}
-[; ;main.c: 254: }
-[; ;main.c: 255: }
-[; ;main.c: 257: if(!determine_omega_mode_active())
-"257
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 809  ]
-[; ;main.c: 258: {
 "258
-{
-[; ;main.c: 259: display_blade_lights(0);
-"259
-[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
+}
+[; ;main.c: 257: }
+[; ;main.c: 258: }
+[; ;main.c: 260: if(!determine_omega_mode_active())
 "260
-}
-[; ;main.c: 260: }
-[e $U 810  ]
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 809  ]
+[; ;main.c: 261: {
 "261
-[e :U 809 ]
-[; ;main.c: 261: else
-[; ;main.c: 262: {
-"262
 {
-[; ;main.c: 263: display_blade_lights(1);
+[; ;main.c: 262: display_blade_lights(0);
+"262
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
 "263
-[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
-"264
 }
-[e :U 810 ]
-[; ;main.c: 264: }
-[; ;main.c: 266: break;
+[; ;main.c: 263: }
+[e $U 810  ]
+"264
+[e :U 809 ]
+[; ;main.c: 264: else
+[; ;main.c: 265: {
+"265
+{
+[; ;main.c: 266: display_blade_lights(1);
 "266
-[e $U 803  ]
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
 "267
 }
-[e :U 804 ]
+[e :U 810 ]
 [; ;main.c: 267: }
-[; ;main.c: 268: if(userInput == 'd' && !determine_omega_mode_active())
-"268
-[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 811  ]
-[; ;main.c: 269: {
+[; ;main.c: 269: break;
 "269
-{
-[; ;main.c: 270: if(health > 0)
+[e $U 803  ]
 "270
-[e $ ! > -> _health `i -> 0 `i 812  ]
-[; ;main.c: 271: {
+}
+[e :U 804 ]
+[; ;main.c: 270: }
+[; ;main.c: 271: if(userInput == 'd' && !determine_omega_mode_active())
 "271
-{
-[; ;main.c: 272: health -= 10;
+[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 811  ]
+[; ;main.c: 272: {
 "272
-[e =- _health -> -> 10 `i `uc ]
+{
+[; ;main.c: 273: if(health > 0)
 "273
+[e $ ! > -> _health `i -> 0 `i 812  ]
+[; ;main.c: 274: {
+"274
+{
+[; ;main.c: 275: health -= 10;
+"275
+[e =- _health -> -> 10 `i `uc ]
+"276
 }
 [e :U 812 ]
-[; ;main.c: 273: }
-[; ;main.c: 274: printf("The blade has been damaged. Health = %d.\n\r",
-[; ;main.c: 275: health);
-"275
-[e ( _printf , (. :s 26C -> _health `i ]
-[; ;main.c: 277: break;
-"277
-[e $U 803  ]
+[; ;main.c: 276: }
+[; ;main.c: 277: printf("The blade has been damaged. Health = %d.\n\r",
+[; ;main.c: 278: health);
 "278
-}
-[; ;main.c: 278: }
-[e $U 813  ]
-"279
-[e :U 811 ]
-[; ;main.c: 279: else if(userInput == 'h' && !determine_omega_mode_active())
-[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 814  ]
-[; ;main.c: 280: {
+[e ( _printf , (. :s 26C -> _health `i ]
+[; ;main.c: 280: break;
 "280
-{
-[; ;main.c: 281: if(health < 50)
+[e $U 803  ]
 "281
-[e $ ! < -> _health `i -> 50 `i 815  ]
-[; ;main.c: 282: {
+}
+[; ;main.c: 281: }
+[e $U 813  ]
 "282
-{
-[; ;main.c: 283: health += 10;
+[e :U 811 ]
+[; ;main.c: 282: else if(userInput == 'h' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 814  ]
+[; ;main.c: 283: {
 "283
-[e =+ _health -> -> 10 `i `uc ]
+{
+[; ;main.c: 284: if(health < 50)
 "284
+[e $ ! < -> _health `i -> 50 `i 815  ]
+[; ;main.c: 285: {
+"285
+{
+[; ;main.c: 286: health += 10;
+"286
+[e =+ _health -> -> 10 `i `uc ]
+"287
 }
 [e :U 815 ]
-[; ;main.c: 284: }
-[; ;main.c: 285: printf("The blade has been healed. Health = %d.\n\r",
-[; ;main.c: 286: health);
-"286
-[e ( _printf , (. :s 27C -> _health `i ]
-[; ;main.c: 288: break;
-"288
-[e $U 803  ]
+[; ;main.c: 287: }
+[; ;main.c: 288: printf("The blade has been healed. Health = %d.\n\r",
+[; ;main.c: 289: health);
 "289
-}
-[; ;main.c: 289: }
-[e $U 816  ]
-"290
-[e :U 814 ]
-[; ;main.c: 290: else if(userInput == 't' && !determine_omega_mode_active())
-[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 817  ]
-[; ;main.c: 291: {
+[e ( _printf , (. :s 27C -> _health `i ]
+[; ;main.c: 291: break;
 "291
-{
-[; ;main.c: 292: stun_counter += 10;
-"292
-[e =+ _stun_counter -> -> 10 `i `uc ]
-[; ;main.c: 293: printf("The blade has been stunned.\n\r");
-"293
-[e ( _printf :s 28C ]
-[; ;main.c: 295: break;
-"295
 [e $U 803  ]
+"292
+}
+[; ;main.c: 292: }
+[e $U 816  ]
+"293
+[e :U 814 ]
+[; ;main.c: 293: else if(userInput == 't' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 817  ]
+[; ;main.c: 294: {
+"294
+{
+[; ;main.c: 295: stun_counter += 10;
+"295
+[e =+ _stun_counter -> -> 10 `i `uc ]
+[; ;main.c: 296: printf("The blade has been stunned.\n\r");
 "296
-}
-[; ;main.c: 296: }
-[e $U 818  ]
-"297
-[e :U 817 ]
-[; ;main.c: 297: else if(userInput == 'o')
-[e $ ! == -> _userInput `ui -> 111 `ui 819  ]
-[; ;main.c: 298: {
+[e ( _printf :s 28C ]
+[; ;main.c: 298: break;
 "298
-{
-[; ;main.c: 299: if(!determine_omega_mode_active())
+[e $U 803  ]
 "299
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 820  ]
-[; ;main.c: 300: {
-"300
-{
-[; ;main.c: 301: omega_mode = 1;
-"301
-[e = _omega_mode -> -> 1 `i `uc ]
-[; ;main.c: 302: printf("Omega mode enabled.\n\r");
-"302
-[e ( _printf :s 29C ]
-"303
 }
-[; ;main.c: 303: }
-[e $U 821  ]
-"304
-[e :U 820 ]
-[; ;main.c: 304: else
-[; ;main.c: 305: {
-"305
+[; ;main.c: 299: }
+[e $U 818  ]
+"300
+[e :U 817 ]
+[; ;main.c: 300: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 819  ]
+[; ;main.c: 301: {
+"301
 {
-[; ;main.c: 306: omega_mode = 0;
+[; ;main.c: 302: if(!determine_omega_mode_active())
+"302
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 820  ]
+[; ;main.c: 303: {
+"303
+{
+[; ;main.c: 304: omega_mode = 1;
+"304
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 305: printf("Omega mode enabled.\n\r");
+"305
+[e ( _printf :s 29C ]
 "306
-[e = _omega_mode -> -> 0 `i `uc ]
-[; ;main.c: 307: printf("Omega mode disabled.\n\r");
+}
+[; ;main.c: 306: }
+[e $U 821  ]
 "307
-[e ( _printf :s 30C ]
+[e :U 820 ]
+[; ;main.c: 307: else
+[; ;main.c: 308: {
 "308
+{
+[; ;main.c: 309: omega_mode = 0;
+"309
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 310: printf("Omega mode disabled.\n\r");
+"310
+[e ( _printf :s 30C ]
+"311
 }
 [e :U 821 ]
-[; ;main.c: 308: }
-[; ;main.c: 309: break;
-"309
+[; ;main.c: 311: }
+[; ;main.c: 312: break;
+"312
 [e $U 803  ]
-"310
+"313
 }
 [e :U 819 ]
-"312
+"315
 [e :U 818 ]
 [e :U 816 ]
 [e :U 813 ]
-[; ;main.c: 310: }
-[; ;main.c: 312: userInput = ' ';
+[; ;main.c: 313: }
+[; ;main.c: 315: userInput = ' ';
 [e = _userInput -> -> 32 `ui `uc ]
-"313
+"316
 }
 [e :U 801 ]
-"240
+"242
 [e $U 802  ]
 [e :U 803 ]
-[; ;main.c: 313: }
-[; ;main.c: 315: GIE = 0;
-"315
+[; ;main.c: 316: }
+[; ;main.c: 318: GIE = 0;
+"318
 [e = _GIE -> -> 0 `i `b ]
-[; ;main.c: 316: while(stun_counter > 0)
-"316
+[; ;main.c: 319: while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
+"319
 [e $U 822  ]
 [e :U 823 ]
-[; ;main.c: 317: {
-"317
-{
-[; ;main.c: 318: GIE = 1;
-"318
-[e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 319: _delay((unsigned long)((100)*(32000000/4000.0)));
-"319
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 320: GIE = 0;
+[; ;main.c: 320: {
 "320
-[e = _GIE -> -> 0 `i `b ]
-[; ;main.c: 321: --stun_counter;
+{
+[; ;main.c: 321: GIE = 1;
 "321
-[e =- _stun_counter -> -> 1 `i `uc ]
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 322: _delay((unsigned long)((100)*(32000000/4000.0)));
 "322
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 323: GIE = 0;
+"323
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 324: --stun_counter;
+"324
+[e =- _stun_counter -> -> 1 `i `uc ]
+"325
 }
 [e :U 822 ]
-"316
-[e $ > -> _stun_counter `i -> 0 `i 823  ]
+"319
+[e $ && > -> _stun_counter `i -> 0 `i ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 823  ]
 [e :U 824 ]
-[; ;main.c: 322: }
-[; ;main.c: 323: GIE = 1;
-"323
+[; ;main.c: 325: }
+[; ;main.c: 326: GIE = 1;
+"326
 [e = _GIE -> -> 1 `i `b ]
-"324
+"327
 }
 [e :U 800 ]
-[; ;main.c: 324: }
-[; ;main.c: 326: if( blade == 4 )
-"326
-[e $ ! == -> _blade `i -> 4 `i 825  ]
-[; ;main.c: 327: {
-"327
-{
-[; ;main.c: 328: while( 1 )
-"328
-[e :U 827 ]
-[; ;main.c: 329: {
+[; ;main.c: 327: }
+[; ;main.c: 329: if( ( userInput == 1 ) && ( health > 0) )
 "329
-{
-[; ;main.c: 330: userInput = determine_sword_was_swung();
+[e $ ! && == -> _userInput `i -> 1 `i > -> _health `i -> 0 `i 825  ]
+[; ;main.c: 330: {
 "330
-[e = _userInput ( _determine_sword_was_swung ..  ]
-[; ;main.c: 331: if(userInput == 1)
+{
+[; ;main.c: 331: while( 1 )
 "331
-[e $ ! == -> _userInput `i -> 1 `i 829  ]
+[e :U 827 ]
 [; ;main.c: 332: {
 "332
 {
-[; ;main.c: 333: printf("Sword was swung\n\r");
+[; ;main.c: 333: display_health(50);
 "333
-[e ( _printf :s 31C ]
-[; ;main.c: 335: if(!determine_omega_mode_active())
+[e ( _display_health (1 -> -> 50 `i `uc ]
+[; ;main.c: 334: userInput = determine_sword_was_swung();
+"334
+[e = _userInput ( _determine_sword_was_swung ..  ]
+[; ;main.c: 335: if(userInput == 1)
 "335
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 830  ]
+[e $ ! == -> _userInput `i -> 1 `i 829  ]
 [; ;main.c: 336: {
 "336
 {
-[; ;main.c: 337: determine_packets_to_send(&pkt_arr);
+[; ;main.c: 337: printf("Sword was swung\n\r");
 "337
-[e ( _determine_packets_to_send (1 &U _pkt_arr ]
-[; ;main.c: 339: for(i = 0; i < 3; ++i)
+[e ( _printf :s 31C ]
+[; ;main.c: 339: if(!determine_omega_mode_active())
 "339
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 830  ]
+[; ;main.c: 340: {
+"340
+{
+[; ;main.c: 341: determine_packets_to_send(&pkt_arr);
+"341
+[e ( _determine_packets_to_send (1 &U _pkt_arr ]
+[; ;main.c: 343: for(i = 0; i < 3; ++i)
+"343
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 3 `i 831  ]
 [e $U 832  ]
-"340
-[e :U 831 ]
-[; ;main.c: 340: {
-{
-[; ;main.c: 341: if(pkt_arr[i] > 0)
-"341
-[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 834  ]
-[; ;main.c: 342: {
-"342
-{
-[; ;main.c: 343: output_ir(i, pkt_arr[i]);
-"343
-[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
 "344
+[e :U 831 ]
+[; ;main.c: 344: {
+{
+[; ;main.c: 345: if(pkt_arr[i] > 0)
+"345
+[e $ ! > -> *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux `i -> 0 `i 834  ]
+[; ;main.c: 346: {
+"346
+{
+[; ;main.c: 347: output_ir(i, pkt_arr[i]);
+"347
+[e ( _output_ir (2 , _i *U + &U _pkt_arr * -> _i `ux -> -> # *U &U _pkt_arr `ui `ux ]
+"348
 }
 [e :U 834 ]
-"345
+"349
 }
-"339
+"343
 [e =+ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 3 `i 831  ]
 [e :U 832 ]
-"345
-}
-[; ;main.c: 344: }
-[; ;main.c: 345: }
-[; ;main.c: 346: display_blade_lights(0);
-"346
-[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
-"347
-}
-[; ;main.c: 347: }
-[e $U 835  ]
-"348
-[e :U 830 ]
-[; ;main.c: 348: else
-[; ;main.c: 349: {
 "349
-{
-[; ;main.c: 350: display_blade_lights(1);
+}
+[; ;main.c: 348: }
+[; ;main.c: 349: }
+[; ;main.c: 350: display_blade_lights(0);
 "350
-[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+[e ( _display_blade_lights (1 -> -> 0 `i `uc ]
 "351
 }
-[e :U 835 ]
 [; ;main.c: 351: }
-[; ;main.c: 353: break;
+[e $U 835  ]
+"352
+[e :U 830 ]
+[; ;main.c: 352: else
+[; ;main.c: 353: {
 "353
-[e $U 828  ]
+{
+[; ;main.c: 354: display_blade_lights(1);
 "354
+[e ( _display_blade_lights (1 -> -> 1 `i `uc ]
+"355
+}
+[e :U 835 ]
+[; ;main.c: 355: }
+[; ;main.c: 357: break;
+"357
+[e $U 828  ]
+"358
 }
 [e :U 829 ]
-[; ;main.c: 354: }
-[; ;main.c: 355: if(userInput == 'd' && !determine_omega_mode_active())
-"355
-[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 836  ]
-[; ;main.c: 356: {
-"356
-{
-[; ;main.c: 357: if(health > 0)
-"357
-[e $ ! > -> _health `i -> 0 `i 837  ]
-[; ;main.c: 358: {
-"358
-{
-[; ;main.c: 359: health -= 10;
+[; ;main.c: 358: }
+[; ;main.c: 359: if(userInput == 'd' && !determine_omega_mode_active())
 "359
-[e =- _health -> -> 10 `i `uc ]
+[e $ ! && == -> _userInput `ui -> 100 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 836  ]
+[; ;main.c: 360: {
 "360
+{
+[; ;main.c: 361: if(health > 0)
+"361
+[e $ ! > -> _health `i -> 0 `i 837  ]
+[; ;main.c: 362: {
+"362
+{
+[; ;main.c: 363: health -= 10;
+"363
+[e =- _health -> -> 10 `i `uc ]
+"364
 }
 [e :U 837 ]
-[; ;main.c: 360: }
-[; ;main.c: 361: printf("The blade has been damaged. Health = %d.\n\r",
-[; ;main.c: 362: health);
-"362
-[e ( _printf , (. :s 32C -> _health `i ]
-[; ;main.c: 364: break;
-"364
-[e $U 828  ]
-"365
-}
-[; ;main.c: 365: }
-[e $U 838  ]
+[; ;main.c: 364: }
+[; ;main.c: 365: printf("The blade has been damaged. Health = %d.\n\r",
+[; ;main.c: 366: health);
 "366
-[e :U 836 ]
-[; ;main.c: 366: else if(userInput == 'h' && !determine_omega_mode_active())
-[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 839  ]
-[; ;main.c: 367: {
-"367
-{
-[; ;main.c: 368: if(health < 50)
+[e ( _printf , (. :s 32C -> _health `i ]
+[; ;main.c: 368: break;
 "368
-[e $ ! < -> _health `i -> 50 `i 840  ]
-[; ;main.c: 369: {
+[e $U 828  ]
 "369
-{
-[; ;main.c: 370: health += 10;
+}
+[; ;main.c: 369: }
+[e $U 838  ]
 "370
-[e =+ _health -> -> 10 `i `uc ]
+[e :U 836 ]
+[; ;main.c: 370: else if(userInput == 'h' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 104 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 839  ]
+[; ;main.c: 371: {
 "371
+{
+[; ;main.c: 372: if(health < 50)
+"372
+[e $ ! < -> _health `i -> 50 `i 840  ]
+[; ;main.c: 373: {
+"373
+{
+[; ;main.c: 374: health += 10;
+"374
+[e =+ _health -> -> 10 `i `uc ]
+"375
 }
 [e :U 840 ]
-[; ;main.c: 371: }
-[; ;main.c: 372: printf("The blade has been healed. Health = %d.\n\r",
-[; ;main.c: 373: health);
-"373
-[e ( _printf , (. :s 33C -> _health `i ]
-[; ;main.c: 375: break;
-"375
-[e $U 828  ]
-"376
-}
-[; ;main.c: 376: }
-[e $U 841  ]
+[; ;main.c: 375: }
+[; ;main.c: 376: printf("The blade has been healed. Health = %d.\n\r",
+[; ;main.c: 377: health);
 "377
-[e :U 839 ]
-[; ;main.c: 377: else if(userInput == 't' && !determine_omega_mode_active())
-[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 842  ]
-[; ;main.c: 378: {
-"378
-{
-[; ;main.c: 379: stun_counter += 10;
+[e ( _printf , (. :s 33C -> _health `i ]
+[; ;main.c: 379: break;
 "379
-[e =+ _stun_counter -> -> 10 `i `uc ]
-[; ;main.c: 380: printf("The blade has been stunned.\n\r");
-"380
-[e ( _printf :s 34C ]
-[; ;main.c: 382: break;
-"382
 [e $U 828  ]
+"380
+}
+[; ;main.c: 380: }
+[e $U 841  ]
+"381
+[e :U 839 ]
+[; ;main.c: 381: else if(userInput == 't' && !determine_omega_mode_active())
+[e $ ! && == -> _userInput `ui -> 116 `ui ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 842  ]
+[; ;main.c: 382: {
+"382
+{
+[; ;main.c: 383: stun_counter += 10;
 "383
-}
-[; ;main.c: 383: }
-[e $U 843  ]
+[e =+ _stun_counter -> -> 10 `i `uc ]
+[; ;main.c: 384: printf("The blade has been stunned.\n\r");
 "384
-[e :U 842 ]
-[; ;main.c: 384: else if(userInput == 'o')
-[e $ ! == -> _userInput `ui -> 111 `ui 844  ]
-[; ;main.c: 385: {
-"385
-{
-[; ;main.c: 386: if(!determine_omega_mode_active())
+[e ( _printf :s 34C ]
+[; ;main.c: 386: break;
 "386
-[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 845  ]
-[; ;main.c: 387: {
+[e $U 828  ]
 "387
-{
-[; ;main.c: 388: omega_mode = 1;
-"388
-[e = _omega_mode -> -> 1 `i `uc ]
-[; ;main.c: 389: printf("Omega mode enabled.\n\r");
-"389
-[e ( _printf :s 35C ]
-"390
 }
-[; ;main.c: 390: }
-[e $U 846  ]
-"391
-[e :U 845 ]
-[; ;main.c: 391: else
-[; ;main.c: 392: {
-"392
+[; ;main.c: 387: }
+[e $U 843  ]
+"388
+[e :U 842 ]
+[; ;main.c: 388: else if(userInput == 'o')
+[e $ ! == -> _userInput `ui -> 111 `ui 844  ]
+[; ;main.c: 389: {
+"389
 {
-[; ;main.c: 393: omega_mode = 0;
+[; ;main.c: 390: if(!determine_omega_mode_active())
+"390
+[e $ ! ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 845  ]
+[; ;main.c: 391: {
+"391
+{
+[; ;main.c: 392: omega_mode = 1;
+"392
+[e = _omega_mode -> -> 1 `i `uc ]
+[; ;main.c: 393: printf("Omega mode enabled.\n\r");
 "393
-[e = _omega_mode -> -> 0 `i `uc ]
-[; ;main.c: 394: printf("Omega mode disabled.\n\r");
+[e ( _printf :s 35C ]
 "394
-[e ( _printf :s 36C ]
+}
+[; ;main.c: 394: }
+[e $U 846  ]
 "395
+[e :U 845 ]
+[; ;main.c: 395: else
+[; ;main.c: 396: {
+"396
+{
+[; ;main.c: 397: omega_mode = 0;
+"397
+[e = _omega_mode -> -> 0 `i `uc ]
+[; ;main.c: 398: printf("Omega mode disabled.\n\r");
+"398
+[e ( _printf :s 36C ]
+"399
 }
 [e :U 846 ]
-[; ;main.c: 395: }
-[; ;main.c: 396: break;
-"396
+[; ;main.c: 399: }
+[; ;main.c: 400: break;
+"400
 [e $U 828  ]
-"397
+"401
 }
 [e :U 844 ]
-"399
+"403
 [e :U 843 ]
 [e :U 841 ]
 [e :U 838 ]
-[; ;main.c: 397: }
-[; ;main.c: 399: userInput = ' ';
+[; ;main.c: 401: }
+[; ;main.c: 403: userInput = ' ';
 [e = _userInput -> -> 32 `ui `uc ]
-"400
+"404
 }
 [e :U 826 ]
-"328
+"331
 [e $U 827  ]
 [e :U 828 ]
-[; ;main.c: 400: }
-[; ;main.c: 402: GIE = 0;
-"402
+[; ;main.c: 404: }
+[; ;main.c: 406: GIE = 0;
+"406
 [e = _GIE -> -> 0 `i `b ]
-[; ;main.c: 403: while(stun_counter > 0)
-"403
+[; ;main.c: 407: while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
+"407
 [e $U 847  ]
 [e :U 848 ]
-[; ;main.c: 404: {
-"404
-{
-[; ;main.c: 405: GIE = 1;
-"405
-[e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 406: _delay((unsigned long)((100)*(32000000/4000.0)));
-"406
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 407: GIE = 0;
-"407
-[e = _GIE -> -> 0 `i `b ]
-[; ;main.c: 408: --stun_counter;
+[; ;main.c: 408: {
 "408
-[e =- _stun_counter -> -> 1 `i `uc ]
+{
+[; ;main.c: 409: GIE = 1;
 "409
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 410: _delay((unsigned long)((100)*(32000000/4000.0)));
+"410
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 411: GIE = 0;
+"411
+[e = _GIE -> -> 0 `i `b ]
+[; ;main.c: 412: --stun_counter;
+"412
+[e =- _stun_counter -> -> 1 `i `uc ]
+"413
 }
 [e :U 847 ]
-"403
-[e $ > -> _stun_counter `i -> 0 `i 848  ]
+"407
+[e $ && > -> _stun_counter `i -> 0 `i ! != -> ( _determine_omega_mode_active ..  `i -> -> -> 0 `i `uc `i 848  ]
 [e :U 849 ]
-[; ;main.c: 409: }
-[; ;main.c: 410: GIE = 1;
-"410
+[; ;main.c: 413: }
+[; ;main.c: 414: GIE = 1;
+"414
 [e = _GIE -> -> 1 `i `b ]
-"411
+"415
 }
 [e :U 825 ]
-[; ;main.c: 411: }
-[; ;main.c: 427: printf("\n\r");
-"427
+[; ;main.c: 415: }
+[; ;main.c: 431: printf("\n\r");
+"431
 [e ( _printf :s 37C ]
-"428
+"432
 }
 [e :U 757 ]
 "97
 [e $U 758  ]
 [e :U 759 ]
-[; ;main.c: 428: }
-[; ;main.c: 429: }
-"429
+[; ;main.c: 432: }
+[; ;main.c: 433: }
+"433
 [e :UE 740 ]
 }
-"432
+"436
 [v _main_loop_individual `(v ~T0 @X0 1 ef ]
-"433
+"437
 {
-[; ;main.c: 432: void main_loop_individual()
-[; ;main.c: 433: {
+[; ;main.c: 436: void main_loop_individual()
+[; ;main.c: 437: {
 [e :U _main_loop_individual ]
 [f ]
-[; ;main.c: 435: return;
-"435
+[; ;main.c: 439: return;
+"439
 [e $UE 850  ]
-[; ;main.c: 441: }
-"441
+[; ;main.c: 445: }
+"445
 [e :UE 850 ]
 }
-"444
+"448
 [v _main_loop_omega `(v ~T0 @X0 1 ef ]
-"445
+"449
 {
-[; ;main.c: 444: void main_loop_omega()
-[; ;main.c: 445: {
+[; ;main.c: 448: void main_loop_omega()
+[; ;main.c: 449: {
 [e :U _main_loop_omega ]
 [f ]
-[; ;main.c: 447: return;
-"447
+[; ;main.c: 451: return;
+"451
 [e $UE 851  ]
-[; ;main.c: 455: }
-"455
+[; ;main.c: 459: }
+"459
 [e :UE 851 ]
 }
-"458
+"462
 [v _init_pic `(v ~T0 @X0 1 ef ]
-"459
+"463
 {
-[; ;main.c: 458: void init_pic()
-[; ;main.c: 459: {
+[; ;main.c: 462: void init_pic()
+[; ;main.c: 463: {
 [e :U _init_pic ]
 [f ]
-[; ;main.c: 461: OSCCON |= 0b11111000;
-"461
+[; ;main.c: 465: OSCCON |= 0b11111000;
+"465
 [e =| _OSCCON -> -> 248 `i `uc ]
-[; ;main.c: 464: TRISB &= 0b11110111;
-"464
-[e =& _TRISB -> -> 247 `i `uc ]
-[; ;main.c: 467: GIE = 1;
-"467
-[e = _GIE -> -> 1 `i `b ]
-[; ;main.c: 468: }
+[; ;main.c: 468: TRISB &= 0b11110111;
 "468
+[e =& _TRISB -> -> 247 `i `uc ]
+[; ;main.c: 471: GIE = 1;
+"471
+[e = _GIE -> -> 1 `i `b ]
+[; ;main.c: 472: }
+"472
 [e :UE 852 ]
 }
 [p f _printf 8388736 ]

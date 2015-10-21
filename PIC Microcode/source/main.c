@@ -101,7 +101,7 @@ int main()
         {
             while( 1 )
             {
-                display_health();
+                display_health(50);
                 userInput = determine_sword_was_swung();
                 if( ( userInput == 1 ) && ( health > 0) ) 
                 {
@@ -189,7 +189,7 @@ int main()
         {
             while( 1 )
             {
-                display_health();
+                display_health(50);
                 userInput = determine_sword_was_swung();
                 if( ( userInput == 1 ) && ( health > 0) )
                 {
@@ -241,7 +241,7 @@ int main()
         {
             while( 1 )
             {
-                display_health();
+                display_health(50);
                 userInput = determine_sword_was_swung();
                 if(userInput == 1)
                 {
@@ -330,7 +330,7 @@ int main()
         {
             while( 1 )
             {
-                display_health();
+                display_health(50);
                 userInput = determine_sword_was_swung();
                 if(userInput == 1)
                 {

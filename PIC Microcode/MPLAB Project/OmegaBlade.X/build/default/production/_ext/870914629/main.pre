@@ -9289,8 +9289,9 @@ if( blade == 1 )
 {
 while( 1 )
 {
+display_health(50);
 userInput = determine_sword_was_swung();
-if(userInput == 1)
+if( ( userInput == 1 ) && ( health > 0) )
 {
 printf("Sword was swung\n\r");
 
@@ -9362,7 +9363,7 @@ userInput = ' ';
 }
 
 GIE = 0;
-while(stun_counter > 0)
+while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
 _delay((unsigned long)((100)*(32000000/4000.0)));
@@ -9376,8 +9377,9 @@ if( blade == 2 )
 {
 while( 1 )
 {
+display_health(50);
 userInput = determine_sword_was_swung();
-if(userInput == 1)
+if( ( userInput == 1 ) && ( health > 0) )
 {
 printf("Sword was swung\n\r");
 
@@ -9423,10 +9425,11 @@ userInput = ' ';
 }
 }
 
-if( blade == 3 )
+if( ( userInput == 1 ) && ( health > 0) )
 {
 while( 1 )
 {
+display_health(50);
 userInput = determine_sword_was_swung();
 if(userInput == 1)
 {
@@ -9501,7 +9504,7 @@ userInput = ' ';
 }
 
 GIE = 0;
-while(stun_counter > 0)
+while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
 _delay((unsigned long)((100)*(32000000/4000.0)));
@@ -9511,10 +9514,11 @@ GIE = 0;
 GIE = 1;
 }
 
-if( blade == 4 )
+if( ( userInput == 1 ) && ( health > 0) )
 {
 while( 1 )
 {
+display_health(50);
 userInput = determine_sword_was_swung();
 if(userInput == 1)
 {
@@ -9588,7 +9592,7 @@ userInput = ' ';
 }
 
 GIE = 0;
-while(stun_counter > 0)
+while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
 _delay((unsigned long)((100)*(32000000/4000.0)));
@@ -9598,7 +9602,7 @@ GIE = 0;
 GIE = 1;
 }
 
-# 427
+# 431
 printf("\n\r");
 }
 }
@@ -9609,7 +9613,7 @@ void main_loop_individual()
 
 return;
 
-# 441
+# 445
 }
 
 
@@ -9618,7 +9622,7 @@ void main_loop_omega()
 
 return;
 
-# 455
+# 459
 }
 
 
