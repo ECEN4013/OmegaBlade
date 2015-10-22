@@ -16,6 +16,7 @@
                    projectFiles="true">
       <itemPath>../../source/main.c</itemPath>
       <itemPath>../../source/uart.c</itemPath>
+      <itemPath>../../source/interrupt.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
