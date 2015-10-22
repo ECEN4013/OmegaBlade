@@ -12,8 +12,6 @@ void main_loop_omega();
 
 char stun_counter = 0;
 char health = 50;
-char omega_mode = 0;
-char blade = 0;
 
 int main()
 {
