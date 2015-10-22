@@ -158,14 +158,14 @@ void determine_packets_to_send(char* packets);
 
 /*------------------------------------------------------------------------------------
 Name: display_health
-Inputs: health - the current health value of the sword
+Inputs: void
 Return: void
 Purpose: This function updates the PWM outputs to the RGB health LED. This includes
-         calculating the correct values for the PWM registers based on the health
-         input.
+         calculating the correct values for the PWM registers based on the global
+         health variable.
 Developer: Austin Allen
 ------------------------------------------------------------------------------------*/
-void display_health(char health);
+void display_health();
 
 /*------------------------------------------------------------------------------------
 Name: init_leds

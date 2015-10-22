@@ -17,6 +17,8 @@
 [v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
 "67
 [v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
+"74
+[v _display_health display_health `(v  1 e 0 0 ]
 "76
 [v _init_leds init_leds `(v  1 e 0 0 ]
 "81
@@ -25,7 +27,7 @@
 [v _init_isr init_isr `(v  1 e 0 0 ]
 "18 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
-"458
+"461
 [v _init_pic init_pic `(v  1 e 0 0 ]
 "11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
 [v _init_uart init_uart `(v  1 e 0 0 ]
@@ -103,8 +105,8 @@
 "22
 [v main@i i `uc  1 a 1 24 ]
 "19
-[v main@F7230 F7230 `[3]uc  1 s 3 F7230 ]
-"429
+[v main@F7229 F7229 `[3]uc  1 s 3 F7229 ]
+"432
 } 0
 "76 C:\git\OmegaBlade\PIC Microcode/source/uart.c
 [v _waitch waitch `(uc  1 e 1 0 ]
@@ -135,10 +137,10 @@
 {
 "32
 } 0
-"458 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"461 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _init_pic init_pic `(v  1 e 0 0 ]
 {
-"468
+"471
 } 0
 "76 C:\git\OmegaBlade\PIC Microcode/source/function_stubs.c
 [v _init_leds init_leds `(v  1 e 0 0 ]
@@ -159,6 +161,10 @@
 [v _init_accel init_accel `(v  1 e 0 0 ]
 {
 "47
+} 0
+"74
+[v _display_health display_health `(v  1 e 0 0 ]
+{
 } 0
 "81
 [v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]

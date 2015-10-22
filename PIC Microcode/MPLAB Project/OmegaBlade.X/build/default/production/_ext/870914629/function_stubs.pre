@@ -9180,7 +9180,7 @@ char determine_omega_mode_active();
 void determine_packets_to_send(char* packets);
 
 # 168
-void display_health(char health);
+void display_health();
 
 # 178
 void init_leds();
@@ -9259,7 +9259,7 @@ packets[1] = 10;
 packets[2] = 15;
 }
 
-void display_health(char health) { return; }
+void display_health() { return; }
 
 void init_leds()
 {

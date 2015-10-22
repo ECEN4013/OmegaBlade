@@ -71,7 +71,7 @@ void determine_packets_to_send(char* packets)
     packets[2] = 15;
 }
 
-void display_health(char health) { return; }
+void display_health() { return; }
 
 void init_leds()
 {

@@ -103,7 +103,7 @@ int main()
             {
                 display_health();
                 userInput = determine_sword_was_swung();
-                if( ( userInput == 1 ) && ( health > 0) ) 
+                if( ( userInput == 1 ) && ( ( health > 0) || determine_omega_mode_active() ) )
                 {
                     printf("Sword was swung\n\r");
 
@@ -127,7 +127,7 @@ int main()
                     
                     break;
                 }
-                if(userInput == 'd' && !determine_omega_mode_active())
+                else if(userInput == 'd' && !determine_omega_mode_active())
                 {
                     if(health > 0)
                     {
@@ -185,13 +185,13 @@ int main()
             GIE = 1;
         }
         // -----Beta blade--------------------
-        if( blade == 2 )
+        else if( blade == 2 )
         {
             while( 1 )
             {
                 display_health();
                 userInput = determine_sword_was_swung();
-                if( ( userInput == 1 ) && ( health > 0) )
+                if( userInput == 1 )
                 {
                     printf("Sword was swung\n\r");
 
@@ -237,13 +237,13 @@ int main()
             }
         }
         // -----Delta blade--------------------
-        if( ( userInput == 1 ) && ( health > 0) )
+        else if( blade == 3 )
         {
             while( 1 )
             {
                 display_health();
                 userInput = determine_sword_was_swung();
-                if(userInput == 1)
+                if( ( userInput == 1 ) && ( ( health > 0) || determine_omega_mode_active() ) )
                 {
                     printf("Sword was swung\n\r");
 
@@ -268,7 +268,7 @@ int main()
                     
                     break;
                 }
-                if(userInput == 'd' && !determine_omega_mode_active())
+                else if(userInput == 'd' && !determine_omega_mode_active())
                 {
                     if(health > 0)
                     {
@@ -326,13 +326,13 @@ int main()
             GIE = 1;
         }
         // -----Gamma blade--------------------
-        if( ( userInput == 1 ) && ( health > 0) )
+        else if( blade == 4 )
         {
             while( 1 )
             {
                 display_health();
                 userInput = determine_sword_was_swung();
-                if(userInput == 1)
+                if( ( userInput == 1 ) && ( ( health > 0) || determine_omega_mode_active() ) )
                 {
                     printf("Sword was swung\n\r");
 
@@ -356,7 +356,7 @@ int main()
                     
                     break;
                 }
-                if(userInput == 'd' && !determine_omega_mode_active())
+                else if(userInput == 'd' && !determine_omega_mode_active())
                 {
                     if(health > 0)
                     {
@@ -413,7 +413,6 @@ int main()
             }
             GIE = 1;
         }
-        
         
         //main_loop_individual();
         /*

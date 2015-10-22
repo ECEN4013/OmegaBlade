@@ -6704,7 +6704,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main_header.h: 130: char determine_sword_was_swung();
 [; ;main_header.h: 143: char determine_omega_mode_active();
 [; ;main_header.h: 157: void determine_packets_to_send(char* packets);
-[; ;main_header.h: 168: void display_health(char health);
+[; ;main_header.h: 168: void display_health();
 [; ;main_header.h: 178: void init_leds();
 [; ;main_header.h: 189: void display_blade_lights(char mode);
 [; ;main_header.h: 198: void init_isr();
@@ -6927,11 +6927,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 755 ]
 }
 "74
-[v _display_health `(v ~T0 @X0 1 ef1`uc ]
+[v _display_health `(v ~T0 @X0 1 ef ]
 {
-[; ;function_stubs.c: 74: void display_health(char health) { return; }
+[; ;function_stubs.c: 74: void display_health() { return; }
 [e :U _display_health ]
-[v _health `uc ~T0 @X0 1 r1 ]
 [f ]
 [e $UE 756  ]
 [e :UE 756 ]

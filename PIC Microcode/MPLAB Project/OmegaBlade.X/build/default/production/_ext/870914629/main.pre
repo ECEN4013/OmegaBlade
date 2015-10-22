@@ -9180,7 +9180,7 @@ char determine_omega_mode_active();
 void determine_packets_to_send(char* packets);
 
 # 168
-void display_health(char health);
+void display_health();
 
 # 178
 void init_leds();
@@ -9289,8 +9289,9 @@ if( blade == 1 )
 {
 while( 1 )
 {
+display_health();
 userInput = determine_sword_was_swung();
-if(userInput == 1)
+if( ( userInput == 1 ) && ( ( health > 0) || determine_omega_mode_active() ) )
 {
 printf("Sword was swung\n\r");
 
@@ -9314,7 +9315,7 @@ display_blade_lights(1);
 
 break;
 }
-if(userInput == 'd' && !determine_omega_mode_active())
+else if(userInput == 'd' && !determine_omega_mode_active())
 {
 if(health > 0)
 {
@@ -9362,7 +9363,7 @@ userInput = ' ';
 }
 
 GIE = 0;
-while(stun_counter > 0)
+while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
 _delay((unsigned long)((100)*(32000000/4000.0)));
@@ -9372,12 +9373,13 @@ GIE = 0;
 GIE = 1;
 }
 
-if( blade == 2 )
+else if( blade == 2 )
 {
 while( 1 )
 {
+display_health();
 userInput = determine_sword_was_swung();
-if(userInput == 1)
+if( userInput == 1 )
 {
 printf("Sword was swung\n\r");
 
@@ -9423,12 +9425,13 @@ userInput = ' ';
 }
 }
 
-if( blade == 3 )
+else if( blade == 3 )
 {
 while( 1 )
 {
+display_health();
 userInput = determine_sword_was_swung();
-if(userInput == 1)
+if( ( userInput == 1 ) && ( ( health > 0) || determine_omega_mode_active() ) )
 {
 printf("Sword was swung\n\r");
 
@@ -9453,7 +9456,7 @@ display_blade_lights(1);
 
 break;
 }
-if(userInput == 'd' && !determine_omega_mode_active())
+else if(userInput == 'd' && !determine_omega_mode_active())
 {
 if(health > 0)
 {
@@ -9501,7 +9504,7 @@ userInput = ' ';
 }
 
 GIE = 0;
-while(stun_counter > 0)
+while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
 _delay((unsigned long)((100)*(32000000/4000.0)));
@@ -9511,12 +9514,13 @@ GIE = 0;
 GIE = 1;
 }
 
-if( blade == 4 )
+else if( blade == 4 )
 {
 while( 1 )
 {
+display_health();
 userInput = determine_sword_was_swung();
-if(userInput == 1)
+if( ( userInput == 1 ) && ( ( health > 0) || determine_omega_mode_active() ) )
 {
 printf("Sword was swung\n\r");
 
@@ -9540,7 +9544,7 @@ display_blade_lights(1);
 
 break;
 }
-if(userInput == 'd' && !determine_omega_mode_active())
+else if(userInput == 'd' && !determine_omega_mode_active())
 {
 if(health > 0)
 {
@@ -9588,7 +9592,7 @@ userInput = ' ';
 }
 
 GIE = 0;
-while(stun_counter > 0)
+while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
 _delay((unsigned long)((100)*(32000000/4000.0)));
@@ -9598,7 +9602,7 @@ GIE = 0;
 GIE = 1;
 }
 
-# 427
+# 430
 printf("\n\r");
 }
 }
@@ -9609,7 +9613,7 @@ void main_loop_individual()
 
 return;
 
-# 441
+# 444
 }
 
 
@@ -9618,7 +9622,7 @@ void main_loop_omega()
 
 return;
 
-# 455
+# 458
 }
 
 
