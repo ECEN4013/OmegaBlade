@@ -2,17 +2,57 @@
 File:   main_header.h
 Author: bjesper
 
-Created on October 12, 2015, 11:56 AM
+Created on October 12, 2015
 ====================================================================================*/
+// CONFIG1
+#pragma config FOSC = INTOSC    // Oscillator Selection (INTOSC oscillator: I/O function on CLKIN pin)
+#pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
+#pragma config PWRTE = OFF      // Power-up Timer Enable (PWRT disabled)
+#pragma config MCLRE = ON       // MCLR Pin Function Select (MCLR/VPP pin function is MCLR)
+#pragma config CP = OFF         // Flash Program Memory Code Protection (Program memory code protection is disabled)
+#pragma config CPD = OFF        // Data Memory Code Protection (Data memory code protection is disabled)
+#pragma config BOREN = OFF      // Brown-out Reset Enable (Brown-out Reset enabled)
+#pragma config CLKOUTEN = OFF   // Clock Out Enable (CLKOUT function is disabled. I/O or oscillator function on the CLKOUT pin)
+#pragma config IESO = ON        // Internal/External Switchover (Internal/External Switchover mode is enabled)
+#pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable (Fail-Safe Clock Monitor is enabled)
 
-#include "pic16F1788.h"
-#define F_OSC = 32000000;
+// CONFIG2
+#pragma config WRT = OFF        // Flash Memory Self-Write Protection (Write protection off)
+#pragma config VCAPEN = OFF     // Voltage Regulator Capacitor Enable bit (Vcap functionality is disabled on RA6.)
+#pragma config PLLEN = OFF      // PLL Enable (4x PLL enabled)
+#pragma config STVREN = ON      // Stack Overflow/Underflow Reset Enable (Stack Overflow or Underflow will cause a Reset)
+#pragma config BORV = LO        // Brown-out Reset Voltage Selection (Brown-out Reset Voltage (Vbor), low trip point selected.)
+#pragma config LPBOR = OFF      // Low Power Brown-Out Reset Enable Bit (Low power brown-out is disabled)
+#pragma config LVP = OFF        // Low-Voltage Programming Enable (Low-voltage programming enabled)
+
+#include "stdio.h"
+#include "xc.h"
+#include "uart_header.h"
+
+#define F_OSC 32000000
+#define _XTAL_FREQ 32000000
 
 // Uncomment the appropriate line for the blade you wish to compile the program for
-#define _ALPHA_BLADE
-//#define _BETA_BLADE
-//#define _DELTA_BLADE
-//#define _GAMMA_BLADE
+#define _ALPHA_BLADE 0
+#define _BETA_BLADE  0
+#define _DELTA_BLADE 0
+#define _GAMMA_BLADE 1
+
+// Define values of IR packet types
+#define _PKT_TYPE_DAMAGE 0
+#define _PKT_TYPE_HEALTH 1
+#define _PKT_TYPE_STUN   2
+
+// Define values of blade lighting modes
+#define _LIGHT_MODE_INDIVIDUAL_SWING 0
+#define _LIGHT_MODE_OMEGA_SWING      1
+#define _LIGHT_MODE_CONNECT          2
+
+// Global variables
+extern char stun_counter;
+extern char health;
+extern char omega_mode;
+extern char blade; // A=1, B=2, D=3, G=4
 
 /*------------------------------------------------------------------------------------
 Name: init_pic
@@ -87,7 +127,7 @@ Purpose: This function is responsible for reading the accelerometer once, updati
          what type of swing it was.
 Developer: Derrian Glynn
 ------------------------------------------------------------------------------------*/
-char determine_sword_was_swung(char* buffer);
+char determine_sword_was_swung();
 
 /*------------------------------------------------------------------------------------
 Name: determine_omega_mode_active
@@ -118,14 +158,14 @@ void determine_packets_to_send(char* packets);
 
 /*------------------------------------------------------------------------------------
 Name: display_health
-Inputs: health - the current health value of the sword
+Inputs: void
 Return: void
 Purpose: This function updates the PWM outputs to the RGB health LED. This includes
-         calculating the correct values for the PWM registers based on the health
-         input.
+         calculating the correct values for the PWM registers based on the global
+         health variable.
 Developer: Austin Allen
 ------------------------------------------------------------------------------------*/
-void display_health(char health);
+void display_health();
 
 /*------------------------------------------------------------------------------------
 Name: init_leds
@@ -170,10 +210,3 @@ Developer: Christian Coffield
 ------------------------------------------------------------------------------------*/
 void isr();
 
-/*------------------------------------------------------------------------------------
-Name:
-Inputs:
-Return:
-Purpose:
-Developer:
-------------------------------------------------------------------------------------*/

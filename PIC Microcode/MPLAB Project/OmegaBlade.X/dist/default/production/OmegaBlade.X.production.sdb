@@ -3,8 +3,18 @@
 [d edition pro ]
 [d chip 16F1788 ]
 [d frameptr 6 ]
-"13 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
+"342
+[v _init_pic init_pic `(v  1 e 0 0 ]
+"11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+[v _init_uart init_uart `(v  1 e 0 0 ]
+"41
+[v _putch putch `(v  1 e 0 0 ]
+"51
+[v _getch getch `(uc  1 e 1 0 ]
+"464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
@@ -13,8 +23,81 @@
 [v _eecpymem eecpymem `(v  1 e 0 0 ]
 "24
 [v _memcpyee memcpyee `(v  1 e 0 0 ]
-"13 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"15 C:\git\OmegaBlade\PIC Microcode/source/main.c
+[v _omega_mode omega_mode `uc  1 e 1 0 ]
+"1232 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1301
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1863
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"4005
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"4062
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"4117
+[v _SPBRG SPBRG `VEuc  1 e 1 @411 ]
+"16067
+[v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
+"16069
+[v _BRGH BRGH `VEb  1 e 0 @3314 ]
+"16331
+[v _CREN CREN `VEb  1 e 0 @3308 ]
+"16473
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"18449
+[v _RB3 RB3 `VEb  1 e 0 @107 ]
+"18479
+[v _RCIE RCIE `VEb  1 e 0 @1165 ]
+"18481
+[v _RCIF RCIF `VEb  1 e 0 @141 ]
+"18571
+[v _SPEN SPEN `VEb  1 e 0 @3311 ]
+"18647
+[v _SYNC SYNC `VEb  1 e 0 @3316 ]
+"18779
+[v _TRMT TRMT `VEb  1 e 0 @3313 ]
+"18801
+[v _TXEN TXEN `VEb  1 e 0 @3317 ]
+"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"16
+"20
+[v main@pkt_arr pkt_arr `[3]uc  1 a 3 0 ]
+"22
+[v main@i i `uc  1 a 1 4 ]
+"21
+[v main@userInput userInput `uc  1 a 1 3 ]
+"19
+[v main@F7229 F7229 `[3]uc  1 s 3 F7229 ]
+"313
+} 0
+"464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"499
+[v printf@c c `c  1 a 1 7 ]
+"466
+[v printf@ap ap `[1]*.1v  1 a 1 6 ]
+"464
+[v printf@f f `*.25DCCuc  1 p 2 1 ]
+"1541
+} 0
+"41 C:\git\OmegaBlade\PIC Microcode/source/uart.c
+[v _putch putch `(v  1 e 0 0 ]
+{
+[v putch@input input `uc  1 a 1 wreg ]
+[v putch@input input `uc  1 a 1 wreg ]
+[v putch@input input `uc  1 a 1 0 ]
+"48
+} 0
+"11
+[v _init_uart init_uart `(v  1 e 0 0 ]
+{
+"32
+} 0
+"342 C:\git\OmegaBlade\PIC Microcode/source/main.c
+[v _init_pic init_pic `(v  1 e 0 0 ]
+{
+"352
 } 0
