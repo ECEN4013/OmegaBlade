@@ -27,7 +27,7 @@ Created on October 12, 2015
 
 #include "stdio.h"
 #include "xc.h"
-#include "uart_header.h"
+//#include "uart_header.h"
 
 #define F_OSC 32000000
 #define _XTAL_FREQ 32000000
