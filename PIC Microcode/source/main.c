@@ -206,9 +206,6 @@ void init_pic()
     // Configure for 32MHz operation with internal oscillator
     OSCCON |= 0b11111000;
     
-    // Set pin RB3 to output
-    TRISB &= 0b11110111;
-    
     // Enable interrupts
     GIE = 1;
 }
