@@ -19,21 +19,21 @@ volatile int numPackets=0;
 
 
 void init_isr() {     
-//enable global interrupts and also enable interrupt on change
-INTCON = 0b11011000;
+    //enable global interrupts and also enable interrupt on change
+    INTCON = 0b11011000;
 
-//set port A, pin 4 to look for rising edges to interrupt
-IOCAP = IOCAP | 0b00010000;
+    //set port A, pin 4 to look for rising edges to interrupt
+    IOCAP = IOCAP | 0b00010000;
 
-//set port A, pin 4 to look for falling edges to interrupt
-IOCAN = IOCAN | 0b00010000;
+    //set port A, pin 4 to look for falling edges to interrupt
+    IOCAN = IOCAN | 0b00010000;
 
-//set timer 1 up with a prescaling of 1:8, on the program clock (FOSC/4),
-//synchronized with system clock. Increments every us.
-T1CON = 0b00110001;
+    //set timer 1 up with a prescaling of 1:8, on the program clock (FOSC/4),
+    //synchronized with system clock. Increments every us.
+    T1CON = 0b00110001;
 
-//set pin RA4 to be an input for IR reception
-TRISA |= 0b00010000; //set all of PORTA to be outputs except RA4, the IR input
+    //set pin RA4 to be an input for IR reception
+    TRISA |= 0b00010000; //set all of PORTA to be outputs except RA4, the IR input
 }
 
 void interrupt isr() { //note: this logic is inverted! 
