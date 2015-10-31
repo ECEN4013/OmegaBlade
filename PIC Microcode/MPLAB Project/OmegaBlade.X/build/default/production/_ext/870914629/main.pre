@@ -9192,16 +9192,14 @@ void display_blade_lights(char mode);
 void init_isr();
 
 # 211
-void isr();
+void interrupt isr();
 
 # 10 "../../source/main.c"
 void main_loop_individual();
 void main_loop_omega();
 
 char stun_counter = 0;
-char health = 50;
-char omega_mode = 0;
-char blade = 0;
+char health = 5;
 
 int main()
 {
@@ -9210,15 +9208,14 @@ char i = 0;
 
 
 init_pic();
-init_uart();
+
 
 
 _delay((unsigned long)((100)*(32000000/4000.0)));
-RB3 = 1;
 
 
 init_ir();
-init_accel();
+
 init_leds();
 init_isr();
 
@@ -9226,120 +9223,29 @@ init_isr();
 while(1)
 {
 
-# 150
 while( 1 )
 {
 display_health();
-userInput = determine_sword_was_swung();
-if( ( userInput == 1 ) && ( ( health > 0) || determine_omega_mode_active() ) )
-{
-printf("Sword was swung\n\r");
+output_ir(0, 5);
 
-if(!determine_omega_mode_active())
-{
-determine_packets_to_send(&pkt_arr);
-
-for(i = 0; i < 3; ++i)
-{
-if(pkt_arr[i] > 0)
-{
-output_ir(i, pkt_arr[i]);
-}
-}
-display_blade_lights(0);
-}
-else
-{
-display_blade_lights(1);
+# 67
 }
 
-break;
+# 202
 }
-else if(userInput == 'd' && !determine_omega_mode_active())
-{
-if(health > 0)
-{
-health -= 10;
-}
-printf("The blade has been damaged. Health = %d.\n\r",
-health);
-
-break;
-}
-else if(userInput == 'h' && !determine_omega_mode_active())
-{
-if(health < 50)
-{
-health += 10;
-}
-printf("The blade has been healed. Health = %d.\n\r",
-health);
-
-break;
-}
-else if(userInput == 't' && !determine_omega_mode_active())
-{
-stun_counter += 10;
-printf("The blade has been stunned.\n\r");
-
-break;
-}
-else if(userInput == 'o')
-{
-if(!determine_omega_mode_active())
-{
-omega_mode = 1;
-printf("Omega mode enabled.\n\r");
-}
-else
-{
-omega_mode = 0;
-printf("Omega mode disabled.\n\r");
-}
-break;
-}
-}
-
-GIE = 0;
-while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
-{
-GIE = 1;
-_delay((unsigned long)((100)*(32000000/4000.0)));
-GIE = 0;
---stun_counter;
-}
-GIE = 1;
-
-# 248
-}
-}
-
-
-void main_loop_individual()
-{
-
-return;
-
-# 261
-}
-
-
-void main_loop_omega()
-{
-
-# 273
-return;
-
 }
 
 
 void init_pic()
 {
+ANSELA = 0;
+ANSELB = 0;
+
+
+TRISB = 0b11110011;
+
 
 OSCCON |= 0b11111000;
-
-
-TRISB &= 0b11110111;
 
 
 GIE = 1;

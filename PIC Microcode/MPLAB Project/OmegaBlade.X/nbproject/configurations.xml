@@ -22,6 +22,7 @@
       <itemPath>../../source/audio.c</itemPath>
       <itemPath>../../source/blade_connection.c</itemPath>
       <itemPath>../../source/lighting.c</itemPath>
+      <itemPath>../../source/function_stubs.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

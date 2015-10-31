@@ -11,7 +11,7 @@ void main_loop_individual();
 void main_loop_omega();
 
 char stun_counter = 0;
-char health = 50;
+char health = 5;
 
 int main()
 {
@@ -20,15 +20,14 @@ int main()
     
     // Initialize PIC and UART
     init_pic();
-    init_uart();
+    //init_uart();
     
-    // Wait a tenth of a second for clock to stabilize, then turn on status LED
+    // Wait a tenth of a second for clock to stabilize
     __delay_ms(100);
-    RB3 = 1;
     
     // Initialize teammates' code
     init_ir();
-    init_accel();
+    //init_accel();
     init_leds();
     init_isr();
     
@@ -39,6 +38,8 @@ int main()
         while( 1 )
         {
             display_health();
+            output_ir(_PKT_TYPE_DAMAGE, 5);
+            /*
             if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
             {
 
@@ -46,7 +47,7 @@ int main()
                 {
                     determine_packets_to_send(&pkt_arr);
 
-                    for(i = 0; i < 3; ++i)
+                    for(i = 2; i >= 0; --i)
                     {
                         if(pkt_arr[i] > 0)
                         {
@@ -62,8 +63,9 @@ int main()
 
                 break;
             }
+             */
         }
-
+/*
         GIE = 0;
         while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
         {
@@ -73,7 +75,7 @@ int main()
             --stun_counter;
         }
         GIE = 1;
-    
+*/    
 #elif _BETA_BLADE
         while( 1 )
         {
@@ -84,7 +86,7 @@ int main()
                 {
                     determine_packets_to_send(&pkt_arr);
 
-                    for(i = 0; i < 3; ++i)
+                    for(i = 2; i >= 0; --i)
                     {
                         if(pkt_arr[i] > 0)
                         {
@@ -113,7 +115,7 @@ int main()
             {
                 determine_packets_to_send(&pkt_arr);
 
-                for(i = 0; i < 3; ++i)
+                for(i = 2; i >= 0; --i)
                 {
                     if(pkt_arr[i] > 0)
                     {
@@ -154,7 +156,7 @@ int main()
                 {
                     determine_packets_to_send(&pkt_arr);
 
-                    for(i = 0; i < 3; ++i)
+                    for(i = 2; i >= 0; --i)
                     {
                         if(pkt_arr[i] > 0)
                         {
@@ -203,9 +205,15 @@ int main()
 // Initialize TRISX registers and set oscillator frequency
 void init_pic()
 {
+    ANSELA = 0;
+    ANSELB = 0;
+    
+    // Configure RB2 and RB3 (audio triggers) as outputs
+    TRISB = 0b11110011;
+    
     // Configure for 32MHz operation with internal oscillator
     OSCCON |= 0b11111000;
     
-    // Enable interrupts
+    // Enable global interrupts
     GIE = 1;
 }

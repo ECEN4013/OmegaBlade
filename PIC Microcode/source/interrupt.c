@@ -6,9 +6,7 @@
  * Created on October 16, 2015, 4:43 PM
  */
 
-void interrupt isr();
-void init_isr();
-
+#include "main_header.h"
 
 #define TIMEOUT 2678 //set constant TIMEOUT, = 2.6785ms = 2678 us. 
 
@@ -18,7 +16,7 @@ volatile int Davgcycles=0;
 volatile int numPackets=0;
 
 
-void init_isr() {     
+void init_isr() {    
     //enable global interrupts and also enable interrupt on change
     INTCON = 0b11011000;
 
@@ -37,6 +35,7 @@ void init_isr() {
 }
 
 void interrupt isr() { //note: this logic is inverted! 
+    
     TMR1 = 0; //reset timer
     if (IOCAFbits.IOCAF4)
     {
@@ -96,17 +95,23 @@ void interrupt isr() { //note: this logic is inverted!
 
             if(numPackets >= 6000 && numPackets <7500) 
             {
-                HealthPoints--; //damage received! Decrement HP!
+                if(health > 0)
+                {
+                    health--; //damage received! Decrement HP!
+                }
                 return;
             } 
             else if(numPackets >= 10000 && numPackets < 12000) 
             {
-                HealthPoints++; //heal received! Increment HP!
+                if(health < 50)
+                {
+                    health++; //heal received! Increment HP!
+                }
                 return;
             }
             else if(numPackets >= 13000 && numPackets < 15000) 
             {
-                stunCount++; //stun received! Increment counter for length of stun in main loop!
+                stun_counter++; //stun received! Increment counter for length of stun in main loop!
                 return; 
             }
         return;

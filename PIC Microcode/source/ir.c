@@ -1,7 +1,9 @@
 #include "main_header.h"
 
 void init_ir()
-{
+{   
+    TRISC &= 0b11110111;
+    
     PSMC1CON  = 0x00;
 	PSMC1MDL  = 0x80;
 	PSMC1SYNC = 0x00;

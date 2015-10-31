@@ -3,40 +3,178 @@
 [d edition pro ]
 [d chip 16F1788 ]
 [d frameptr 6 ]
-"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
-[v _main main `(i  1 e 2 0 ]
-"342
-[v _init_pic init_pic `(v  1 e 0 0 ]
-"11 C:\git\OmegaBlade\PIC Microcode/source/uart.c
-[v _init_uart init_uart `(v  1 e 0 0 ]
+"3 C:\git\OmegaBlade\PIC Microcode/source/blade_connection.c
+[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
+"19 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
+[v _init_isr init_isr `(v  1 e 0 0 ]
+"37
+[v _isr isr `II(v  1 e 0 0 ]
+"3 C:\git\OmegaBlade\PIC Microcode/source/ir.c
+[v _init_ir init_ir `(v  1 e 0 0 ]
 "41
+[v _output_ir output_ir `(v  1 e 0 0 ]
+"3 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
+[v _init_leds init_leds `(v  1 e 0 0 ]
+"8
+[v _display_health display_health `(v  1 e 0 0 ]
+"16 C:\git\OmegaBlade\PIC Microcode/source/main.c
+[v _main main `(i  1 e 2 0 ]
+"206
+[v _init_pic init_pic `(v  1 e 0 0 ]
+"41 C:\git\OmegaBlade\PIC Microcode/source/uart.c
 [v _putch putch `(v  1 e 0 0 ]
 "51
 [v _getch getch `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
 "464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 0 0 ]
 "24
 [v _memcpyee memcpyee `(v  1 e 0 0 ]
-"15 C:\git\OmegaBlade\PIC Microcode/source/main.c
-[v _omega_mode omega_mode `uc  1 e 1 0 ]
-"1232 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
+"13 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
+[v _D1cycles D1cycles `VEi  1 e 2 0 ]
+"14
+[v _D2cycles D2cycles `VEi  1 e 2 0 ]
+"15
+[v _Davgcycles Davgcycles `VEi  1 e 2 0 ]
+"16
+[v _numPackets numPackets `VEi  1 e 2 0 ]
+"13 C:\git\OmegaBlade\PIC Microcode/source/main.c
+[v _stun_counter stun_counter `uc  1 e 1 0 ]
+"14
+[v _health health `uc  1 e 1 0 ]
+"337 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S133 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"434
+[s S142 . 1 `uc 1 PORTA 1 0 :8:0 
+]
+[u S144 . 1 `S133 1 . 1 0 `S142 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES144  1 e 1 @12 ]
+"871
+[v _TMR1 TMR1 `VEus  1 e 2 @22 ]
+"915
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
+"1163
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1232
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1301
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1540
+[v _PIE4 PIE4 `VEuc  1 e 1 @148 ]
 "1863
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"3606
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3670
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
 "4005
 [v _RCREG RCREG `VEuc  1 e 1 @409 ]
 "4062
 [v _TXREG TXREG `VEuc  1 e 1 @410 ]
 "4117
 [v _SPBRG SPBRG `VEuc  1 e 1 @411 ]
+"7433
+[v _IOCAP IOCAP `VEuc  1 e 1 @913 ]
+"7502
+[v _IOCAN IOCAN `VEuc  1 e 1 @914 ]
+"7571
+[v _IOCAF IOCAF `VEuc  1 e 1 @915 ]
+[s S106 . 1 `uc 1 IOCAF0 1 0 :1:0 
+`uc 1 IOCAF1 1 0 :1:1 
+`uc 1 IOCAF2 1 0 :1:2 
+`uc 1 IOCAF3 1 0 :1:3 
+`uc 1 IOCAF4 1 0 :1:4 
+`uc 1 IOCAF5 1 0 :1:5 
+`uc 1 IOCAF6 1 0 :1:6 
+`uc 1 IOCAF7 1 0 :1:7 
+]
+"7591
+[s S115 . 1 `uc 1 IOCAF 1 0 :8:0 
+]
+[u S117 . 1 `S106 1 . 1 0 `S115 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES117  1 e 1 @915 ]
+"9209
+[v _PSMC1CON PSMC1CON `VEuc  1 e 1 @3729 ]
+"9278
+[v _PSMC1MDL PSMC1MDL `VEuc  1 e 1 @3730 ]
+"9342
+[v _PSMC1SYNC PSMC1SYNC `VEuc  1 e 1 @3731 ]
+"9392
+[v _PSMC1CLK PSMC1CLK `VEuc  1 e 1 @3732 ]
+"9445
+[v _PSMC1OEN PSMC1OEN `VEuc  1 e 1 @3733 ]
+"9494
+[v _PSMC1POL PSMC1POL `VEuc  1 e 1 @3734 ]
+"9549
+[v _PSMC1BLNK PSMC1BLNK `VEuc  1 e 1 @3735 ]
+"9602
+[v _PSMC1REBS PSMC1REBS `VEuc  1 e 1 @3736 ]
+"9647
+[v _PSMC1FEBS PSMC1FEBS `VEuc  1 e 1 @3737 ]
+"9692
+[v _PSMC1PHS PSMC1PHS `VEuc  1 e 1 @3738 ]
+"9742
+[v _PSMC1DCS PSMC1DCS `VEuc  1 e 1 @3739 ]
+"9792
+[v _PSMC1PRS PSMC1PRS `VEuc  1 e 1 @3740 ]
+"9842
+[v _PSMC1ASDC PSMC1ASDC `VEuc  1 e 1 @3741 ]
+"9880
+[v _PSMC1ASDL PSMC1ASDL `VEuc  1 e 1 @3742 ]
+"9929
+[v _PSMC1ASDS PSMC1ASDS `VEuc  1 e 1 @3743 ]
+"9974
+[v _PSMC1INT PSMC1INT `VEuc  1 e 1 @3744 ]
+"10041
+[v _PSMC1PHL PSMC1PHL `VEuc  1 e 1 @3745 ]
+"10102
+[v _PSMC1PHH PSMC1PHH `VEuc  1 e 1 @3746 ]
+"10169
+[v _PSMC1DCL PSMC1DCL `VEuc  1 e 1 @3747 ]
+"10230
+[v _PSMC1DCH PSMC1DCH `VEuc  1 e 1 @3748 ]
+"10297
+[v _PSMC1PRL PSMC1PRL `VEuc  1 e 1 @3749 ]
+"10358
+[v _PSMC1PRH PSMC1PRH `VEuc  1 e 1 @3750 ]
+"10547
+[v _PSMC1DBR PSMC1DBR `VEuc  1 e 1 @3753 ]
+"10608
+[v _PSMC1DBF PSMC1DBF `VEuc  1 e 1 @3754 ]
+"10669
+[v _PSMC1BLKR PSMC1BLKR `VEuc  1 e 1 @3755 ]
+"10730
+[v _PSMC1BLKF PSMC1BLKF `VEuc  1 e 1 @3756 ]
+"10791
+[v _PSMC1FFA PSMC1FFA `VEuc  1 e 1 @3757 ]
+"10828
+[v _PSMC1STR0 PSMC1STR0 `VEuc  1 e 1 @3758 ]
+"10877
+[v _PSMC1STR1 PSMC1STR1 `VEuc  1 e 1 @3759 ]
 "16067
 [v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
 "16069
@@ -45,8 +183,12 @@
 [v _CREN CREN `VEb  1 e 0 @3308 ]
 "16473
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"16933
+[v _P1MDLBIT P1MDLBIT `VEb  1 e 0 @29845 ]
 "18449
 [v _RB3 RB3 `VEb  1 e 0 @107 ]
+"18467
+[v _RC4 RC4 `VEb  1 e 0 @116 ]
 "18479
 [v _RCIE RCIE `VEb  1 e 0 @1165 ]
 "18481
@@ -59,45 +201,124 @@
 [v _TRMT TRMT `VEb  1 e 0 @3313 ]
 "18801
 [v _TXEN TXEN `VEb  1 e 0 @3317 ]
-"18 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"16 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"20
-[v main@pkt_arr pkt_arr `[3]uc  1 a 3 0 ]
-"22
-[v main@i i `uc  1 a 1 4 ]
-"21
-[v main@userInput userInput `uc  1 a 1 3 ]
+"18
+[v main@pkt_arr pkt_arr `[3]uc  1 a 3 7 ]
 "19
-[v main@F7229 F7229 `[3]uc  1 s 3 F7229 ]
-"313
+[v main@i i `uc  1 a 1 10 ]
+"17
+[v main@F7230 F7230 `[3]uc  1 s 3 F7230 ]
+"203
 } 0
-"464 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\doprnt.c
-[v _printf printf `(i  1 e 2 0 ]
+"41 C:\git\OmegaBlade\PIC Microcode/source/ir.c
+[v _output_ir output_ir `(v  1 e 0 0 ]
 {
-"499
-[v printf@c c `c  1 a 1 7 ]
-"466
-[v printf@ap ap `[1]*.1v  1 a 1 6 ]
-"464
-[v printf@f f `*.25DCCuc  1 p 2 1 ]
-"1541
+[v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
+"96
+[v output_ir@i_224 i `i  1 a 2 4 ]
+"71
+[v output_ir@i_223 i `i  1 a 2 2 ]
+"45
+[v output_ir@i i `i  1 a 2 0 ]
+"41
+[v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
+[v output_ir@amount amount `uc  1 p 1 32 ]
+"43
+[v output_ir@pkt_type pkt_type `uc  1 a 1 6 ]
+"119
 } 0
-"41 C:\git\OmegaBlade\PIC Microcode/source/uart.c
-[v _putch putch `(v  1 e 0 0 ]
-{
-[v putch@input input `uc  1 a 1 wreg ]
-[v putch@input input `uc  1 a 1 wreg ]
-[v putch@input input `uc  1 a 1 0 ]
-"48
-} 0
-"11
-[v _init_uart init_uart `(v  1 e 0 0 ]
-{
-"32
-} 0
-"342 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"206 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _init_pic init_pic `(v  1 e 0 0 ]
 {
-"352
+"219
+} 0
+"3 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
+[v _init_leds init_leds `(v  1 e 0 0 ]
+{
+"6
+} 0
+"19 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
+[v _init_isr init_isr `(v  1 e 0 0 ]
+{
+"35
+} 0
+"3 C:\git\OmegaBlade\PIC Microcode/source/ir.c
+[v _init_ir init_ir `(v  1 e 0 0 ]
+{
+"39
+} 0
+"8 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
+[v _display_health display_health `(v  1 e 0 0 ]
+{
+"18
+} 0
+"37 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
+[v _isr isr `II(v  1 e 0 0 ]
+{
+"119
+} 0
+"44 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 25 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 29 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 24 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 16 ]
+"73
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 11 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 15 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 14 ]
+[v ___ftmul@exp exp `uc  1 a 1 10 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 0 ]
+[v ___ftmul@f2 f2 `f  1 p 3 3 ]
+"157
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+{
+[v ___ftge@ff1 ff1 `f  1 p 3 16 ]
+[v ___ftge@ff2 ff2 `f  1 p 3 19 ]
+"13
+} 0
+"32 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 13 ]
+"32
+[v ___awtoft@c c `i  1 p 2 8 ]
+"42
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"42
 } 0
