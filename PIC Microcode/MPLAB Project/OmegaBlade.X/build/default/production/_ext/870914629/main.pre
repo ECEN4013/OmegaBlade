@@ -9155,43 +9155,45 @@ extern char health;
 extern char omega_mode;
 extern char blade;
 
-# 65
+void init_conn();
+
+# 67
 void init_pic();
 
-# 75
+# 77
 void init_ir();
 
-# 97
+# 99
 void output_ir(char pkt_type, char amount);
 
-# 106
+# 108
 void play_sound(char sound_selection);
 
-# 116
+# 118
 void init_accel();
 
-# 130
+# 132
 char determine_sword_was_swung();
 
-# 143
+# 145
 char determine_omega_mode_active();
 
-# 157
+# 159
 void determine_packets_to_send(char* packets);
 
-# 168
+# 170
 void display_health();
 
-# 178
+# 180
 void init_leds();
 
-# 189
+# 191
 void display_blade_lights(char mode);
 
-# 198
+# 200
 void init_isr();
 
-# 211
+# 213
 void interrupt isr();
 
 # 10 "../../source/main.c"
@@ -9199,7 +9201,7 @@ void main_loop_individual();
 void main_loop_omega();
 
 char stun_counter = 0;
-char health = 5;
+char health = 50;
 
 int main()
 {
@@ -9215,23 +9217,54 @@ _delay((unsigned long)((100)*(32000000/4000.0)));
 
 
 init_ir();
-
+init_accel();
 init_leds();
 init_isr();
+init_conn();
 
-
+# 50
 while(1)
 {
 
-while( 1 )
-{
 display_health();
-output_ir(0, 5);
 
-# 67
+if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
+{
+
+if(!determine_omega_mode_active())
+{
+determine_packets_to_send(&pkt_arr);
+
+for(i = 3; i > 0; --i)
+{
+if(pkt_arr[i-1] > 0)
+{
+GIE = 0;
+output_ir(i-1, pkt_arr[i-1]);
+GIE = 1;
+}
 }
 
-# 202
+display_blade_lights(0);
+}
+else
+{
+display_blade_lights(1);
+}
+}
+
+
+GIE = 0;
+while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
+{
+GIE = 1;
+_delay((unsigned long)((100)*(32000000/4000.0)));
+GIE = 0;
+--stun_counter;
+}
+GIE = 1;
+
+# 216
 }
 }
 
@@ -9242,7 +9275,7 @@ ANSELA = 0;
 ANSELB = 0;
 
 
-TRISB = 0b11110011;
+TRISB &= 0b11110011;
 
 
 OSCCON |= 0b11111000;

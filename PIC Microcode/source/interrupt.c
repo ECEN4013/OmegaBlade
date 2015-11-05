@@ -20,8 +20,8 @@ void init_isr() {
     //enable global interrupts and also enable interrupt on change
     INTCON = 0b11011000;
 
-    //set port A, pin 4 to look for rising edges to interrupt
-    IOCAP = IOCAP | 0b00010000;
+    //set port A, pins 1 and 4 to look for rising edges to interrupt
+    IOCAP = IOCAP | 0b00010010;
 
     //set port A, pin 4 to look for falling edges to interrupt
     IOCAN = IOCAN | 0b00010000;
@@ -31,13 +31,23 @@ void init_isr() {
     T1CON = 0b00110001;
 
     //set pin RA4 to be an input for IR reception
-    TRISA |= 0b00010000; //set all of PORTA to be outputs except RA4, the IR input
+    TRISA |= 0b00010000;
 }
 
 void interrupt isr() { //note: this logic is inverted! 
     
     TMR1 = 0; //reset timer
-    if (IOCAFbits.IOCAF4)
+    
+    // Check to see if interrupt was on pin RA1 (sword RX))
+    if (IOCAF1)
+    {
+        // Clear interrupt flag
+        IOCAF1 = 0;
+        
+        display_blade_lights(_LIGHT_MODE_CONNECT);
+    }
+    // Check to see if interrupt was on pin RA4 (IR input))
+    else if (IOCAFbits.IOCAF4)
     {
         IOCAF &= 0b11101111; //clear the flag for an IR interrupt on pin A4
         while(PORTAbits.RA4) //wait until the start bursts end

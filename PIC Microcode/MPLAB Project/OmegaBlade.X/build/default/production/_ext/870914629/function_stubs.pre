@@ -9155,42 +9155,44 @@ extern char health;
 extern char omega_mode;
 extern char blade;
 
-# 65
+void init_conn();
+
+# 67
 void init_pic();
 
-# 75
+# 77
 void init_ir();
 
-# 97
+# 99
 void output_ir(char pkt_type, char amount);
 
-# 106
+# 108
 void play_sound(char sound_selection);
 
-# 116
+# 118
 void init_accel();
 
-# 130
+# 132
 char determine_sword_was_swung();
 
-# 143
+# 145
 char determine_omega_mode_active();
 
-# 157
+# 159
 void determine_packets_to_send(char* packets);
 
-# 168
+# 170
 void display_health();
 
-# 178
+# 180
 void init_leds();
 
-# 189
+# 191
 void display_blade_lights(char mode);
 
-# 198
+# 200
 void init_isr();
 
-# 211
+# 213
 void interrupt isr();
 

@@ -54,6 +54,8 @@ extern char health;
 extern char omega_mode;
 extern char blade; // A=1, B=2, D=3, G=4
 
+void init_conn();
+
 /*------------------------------------------------------------------------------------
 Name: init_pic
 Inputs: void

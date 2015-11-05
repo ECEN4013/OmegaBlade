@@ -3,8 +3,16 @@
 [d edition pro ]
 [d chip 16F1788 ]
 [d frameptr 6 ]
+"3 C:\git\OmegaBlade\PIC Microcode/source/accelerometer.c
+[v _init_accel init_accel `(v  1 e 0 0 ]
+"16
+[v _determine_sword_was_swung determine_sword_was_swung `(uc  1 e 1 0 ]
 "3 C:\git\OmegaBlade\PIC Microcode/source/blade_connection.c
+[v _init_conn init_conn `(v  1 e 0 0 ]
+"9
 [v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
+"14
+[v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
 "19 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
 [v _init_isr init_isr `(v  1 e 0 0 ]
 "37
@@ -13,13 +21,19 @@
 [v _init_ir init_ir `(v  1 e 0 0 ]
 "41
 [v _output_ir output_ir `(v  1 e 0 0 ]
-"3 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
+"5 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
 [v _init_leds init_leds `(v  1 e 0 0 ]
-"8
+"128
 [v _display_health display_health `(v  1 e 0 0 ]
+"193
+[v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
+[v i1_display_blade_lights display_blade_lights `(v  1 e 0 0 ]
+"279
+[v _writespi writespi `(v  1 e 0 0 ]
+[v i1_writespi writespi `(v  1 e 0 0 ]
 "16 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _main main `(i  1 e 2 0 ]
-"206
+"220
 [v _init_pic init_pic `(v  1 e 0 0 ]
 "41 C:\git\OmegaBlade\PIC Microcode/source/uart.c
 [v _putch putch `(v  1 e 0 0 ]
@@ -59,7 +73,7 @@
 [v _health health `uc  1 e 1 0 ]
 "337 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S133 . 1 `uc 1 RA0 1 0 :1:0 
+[s S161 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -69,10 +83,22 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "434
-[s S142 . 1 `uc 1 PORTA 1 0 :8:0 
+[s S170 . 1 `uc 1 PORTA 1 0 :8:0 
 ]
-[u S144 . 1 `S133 1 . 1 0 `S142 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES144  1 e 1 @12 ]
+[u S172 . 1 `S161 1 . 1 0 `S170 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES172  1 e 1 @12 ]
+[s S417 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"666
+[u S426 . 1 `S417 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES426  1 e 1 @17 ]
 "871
 [v _TMR1 TMR1 `VEus  1 e 2 @22 ]
 "915
@@ -81,12 +107,36 @@
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1232
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
+[s S286 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1252
+[s S295 . 1 `uc 1 TRISB 1 0 :8:0 
+]
+[u S297 . 1 `S286 1 . 1 0 `S295 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES297  1 e 1 @141 ]
 "1301
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
 "1540
 [v _PIE4 PIE4 `VEuc  1 e 1 @148 ]
 "1863
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2001
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"2020
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"2039
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+"2133
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2204
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @159 ]
 "3606
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "3670
@@ -97,13 +147,31 @@
 [v _TXREG TXREG `VEuc  1 e 1 @410 ]
 "4117
 [v _SPBRG SPBRG `VEuc  1 e 1 @411 ]
+"5077
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"5961
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
+[s S438 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"6110
+[s S444 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S449 . 1 `S438 1 . 1 0 `S444 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES449  1 e 1 @533 ]
 "7433
 [v _IOCAP IOCAP `VEuc  1 e 1 @913 ]
 "7502
 [v _IOCAN IOCAN `VEuc  1 e 1 @914 ]
 "7571
 [v _IOCAF IOCAF `VEuc  1 e 1 @915 ]
-[s S106 . 1 `uc 1 IOCAF0 1 0 :1:0 
+[s S134 . 1 `uc 1 IOCAF0 1 0 :1:0 
 `uc 1 IOCAF1 1 0 :1:1 
 `uc 1 IOCAF2 1 0 :1:2 
 `uc 1 IOCAF3 1 0 :1:3 
@@ -113,10 +181,10 @@
 `uc 1 IOCAF7 1 0 :1:7 
 ]
 "7591
-[s S115 . 1 `uc 1 IOCAF 1 0 :8:0 
+[s S143 . 1 `uc 1 IOCAF 1 0 :8:0 
 ]
-[u S117 . 1 `S106 1 . 1 0 `S115 1 . 1 0 ]
-[v _IOCAFbits IOCAFbits `VES117  1 e 1 @915 ]
+[u S145 . 1 `S134 1 . 1 0 `S143 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES145  1 e 1 @915 ]
 "9209
 [v _PSMC1CON PSMC1CON `VEuc  1 e 1 @3729 ]
 "9278
@@ -175,6 +243,182 @@
 [v _PSMC1STR0 PSMC1STR0 `VEuc  1 e 1 @3758 ]
 "10877
 [v _PSMC1STR1 PSMC1STR1 `VEuc  1 e 1 @3759 ]
+"10909
+[v _PSMC2CON PSMC2CON `VEuc  1 e 1 @3761 ]
+"10978
+[v _PSMC2MDL PSMC2MDL `VEuc  1 e 1 @3762 ]
+"11042
+[v _PSMC2SYNC PSMC2SYNC `VEuc  1 e 1 @3763 ]
+"11092
+[v _PSMC2CLK PSMC2CLK `VEuc  1 e 1 @3764 ]
+"11145
+[v _PSMC2OEN PSMC2OEN `VEuc  1 e 1 @3765 ]
+"11170
+[v _PSMC2POL PSMC2POL `VEuc  1 e 1 @3766 ]
+"11202
+[v _PSMC2BLNK PSMC2BLNK `VEuc  1 e 1 @3767 ]
+"11255
+[v _PSMC2REBS PSMC2REBS `VEuc  1 e 1 @3768 ]
+"11300
+[v _PSMC2FEBS PSMC2FEBS `VEuc  1 e 1 @3769 ]
+"11345
+[v _PSMC2PHS PSMC2PHS `VEuc  1 e 1 @3770 ]
+"11395
+[v _PSMC2DCS PSMC2DCS `VEuc  1 e 1 @3771 ]
+"11445
+[v _PSMC2PRS PSMC2PRS `VEuc  1 e 1 @3772 ]
+"11495
+[v _PSMC2ASDC PSMC2ASDC `VEuc  1 e 1 @3773 ]
+"11533
+[v _PSMC2ASDL PSMC2ASDL `VEuc  1 e 1 @3774 ]
+"11558
+[v _PSMC2ASDS PSMC2ASDS `VEuc  1 e 1 @3775 ]
+"11603
+[v _PSMC2INT PSMC2INT `VEuc  1 e 1 @3776 ]
+"11670
+[v _PSMC2PHL PSMC2PHL `VEuc  1 e 1 @3777 ]
+"11731
+[v _PSMC2PHH PSMC2PHH `VEuc  1 e 1 @3778 ]
+"11798
+[v _PSMC2DCL PSMC2DCL `VEuc  1 e 1 @3779 ]
+"11859
+[v _PSMC2DCH PSMC2DCH `VEuc  1 e 1 @3780 ]
+"11926
+[v _PSMC2PRL PSMC2PRL `VEuc  1 e 1 @3781 ]
+"11987
+[v _PSMC2PRH PSMC2PRH `VEuc  1 e 1 @3782 ]
+"12176
+[v _PSMC2DBR PSMC2DBR `VEuc  1 e 1 @3785 ]
+"12237
+[v _PSMC2DBF PSMC2DBF `VEuc  1 e 1 @3786 ]
+"12298
+[v _PSMC2BLKR PSMC2BLKR `VEuc  1 e 1 @3787 ]
+"12359
+[v _PSMC2BLKF PSMC2BLKF `VEuc  1 e 1 @3788 ]
+"12420
+[v _PSMC2FFA PSMC2FFA `VEuc  1 e 1 @3789 ]
+"12457
+[v _PSMC2STR0 PSMC2STR0 `VEuc  1 e 1 @3790 ]
+"12482
+[v _PSMC2STR1 PSMC2STR1 `VEuc  1 e 1 @3791 ]
+"12514
+[v _PSMC3CON PSMC3CON `VEuc  1 e 1 @3793 ]
+"12583
+[v _PSMC3MDL PSMC3MDL `VEuc  1 e 1 @3794 ]
+"12647
+[v _PSMC3SYNC PSMC3SYNC `VEuc  1 e 1 @3795 ]
+"12697
+[v _PSMC3CLK PSMC3CLK `VEuc  1 e 1 @3796 ]
+"12750
+[v _PSMC3OEN PSMC3OEN `VEuc  1 e 1 @3797 ]
+"12775
+[v _PSMC3POL PSMC3POL `VEuc  1 e 1 @3798 ]
+"12807
+[v _PSMC3BLNK PSMC3BLNK `VEuc  1 e 1 @3799 ]
+"12860
+[v _PSMC3REBS PSMC3REBS `VEuc  1 e 1 @3800 ]
+"12905
+[v _PSMC3FEBS PSMC3FEBS `VEuc  1 e 1 @3801 ]
+"12950
+[v _PSMC3PHS PSMC3PHS `VEuc  1 e 1 @3802 ]
+"13000
+[v _PSMC3DCS PSMC3DCS `VEuc  1 e 1 @3803 ]
+"13050
+[v _PSMC3PRS PSMC3PRS `VEuc  1 e 1 @3804 ]
+"13100
+[v _PSMC3ASDC PSMC3ASDC `VEuc  1 e 1 @3805 ]
+"13138
+[v _PSMC3ASDL PSMC3ASDL `VEuc  1 e 1 @3806 ]
+"13163
+[v _PSMC3ASDS PSMC3ASDS `VEuc  1 e 1 @3807 ]
+"13208
+[v _PSMC3INT PSMC3INT `VEuc  1 e 1 @3808 ]
+"13275
+[v _PSMC3PHL PSMC3PHL `VEuc  1 e 1 @3809 ]
+"13336
+[v _PSMC3PHH PSMC3PHH `VEuc  1 e 1 @3810 ]
+"13403
+[v _PSMC3DCL PSMC3DCL `VEuc  1 e 1 @3811 ]
+"13464
+[v _PSMC3DCH PSMC3DCH `VEuc  1 e 1 @3812 ]
+"13531
+[v _PSMC3PRL PSMC3PRL `VEuc  1 e 1 @3813 ]
+"13592
+[v _PSMC3PRH PSMC3PRH `VEuc  1 e 1 @3814 ]
+"13781
+[v _PSMC3DBR PSMC3DBR `VEuc  1 e 1 @3817 ]
+"13842
+[v _PSMC3DBF PSMC3DBF `VEuc  1 e 1 @3818 ]
+"13903
+[v _PSMC3BLKR PSMC3BLKR `VEuc  1 e 1 @3819 ]
+"13964
+[v _PSMC3BLKF PSMC3BLKF `VEuc  1 e 1 @3820 ]
+"14025
+[v _PSMC3FFA PSMC3FFA `VEuc  1 e 1 @3821 ]
+"14062
+[v _PSMC3STR0 PSMC3STR0 `VEuc  1 e 1 @3822 ]
+"14087
+[v _PSMC3STR1 PSMC3STR1 `VEuc  1 e 1 @3823 ]
+"14119
+[v _PSMC4CON PSMC4CON `VEuc  1 e 1 @3857 ]
+"14188
+[v _PSMC4MDL PSMC4MDL `VEuc  1 e 1 @3858 ]
+"14252
+[v _PSMC4SYNC PSMC4SYNC `VEuc  1 e 1 @3859 ]
+"14302
+[v _PSMC4CLK PSMC4CLK `VEuc  1 e 1 @3860 ]
+"14355
+[v _PSMC4OEN PSMC4OEN `VEuc  1 e 1 @3861 ]
+"14380
+[v _PSMC4POL PSMC4POL `VEuc  1 e 1 @3862 ]
+"14412
+[v _PSMC4BLNK PSMC4BLNK `VEuc  1 e 1 @3863 ]
+"14465
+[v _PSMC4REBS PSMC4REBS `VEuc  1 e 1 @3864 ]
+"14510
+[v _PSMC4FEBS PSMC4FEBS `VEuc  1 e 1 @3865 ]
+"14555
+[v _PSMC4PHS PSMC4PHS `VEuc  1 e 1 @3866 ]
+"14605
+[v _PSMC4DCS PSMC4DCS `VEuc  1 e 1 @3867 ]
+"14655
+[v _PSMC4PRS PSMC4PRS `VEuc  1 e 1 @3868 ]
+"14705
+[v _PSMC4ASDC PSMC4ASDC `VEuc  1 e 1 @3869 ]
+"14743
+[v _PSMC4ASDL PSMC4ASDL `VEuc  1 e 1 @3870 ]
+"14768
+[v _PSMC4ASDS PSMC4ASDS `VEuc  1 e 1 @3871 ]
+"14813
+[v _PSMC4INT PSMC4INT `VEuc  1 e 1 @3872 ]
+"14880
+[v _PSMC4PHL PSMC4PHL `VEuc  1 e 1 @3873 ]
+"14941
+[v _PSMC4PHH PSMC4PHH `VEuc  1 e 1 @3874 ]
+"15008
+[v _PSMC4DCL PSMC4DCL `VEuc  1 e 1 @3875 ]
+"15069
+[v _PSMC4DCH PSMC4DCH `VEuc  1 e 1 @3876 ]
+"15136
+[v _PSMC4PRL PSMC4PRL `VEuc  1 e 1 @3877 ]
+"15197
+[v _PSMC4PRH PSMC4PRH `VEuc  1 e 1 @3878 ]
+"15386
+[v _PSMC4DBR PSMC4DBR `VEuc  1 e 1 @3881 ]
+"15447
+[v _PSMC4DBF PSMC4DBF `VEuc  1 e 1 @3882 ]
+"15508
+[v _PSMC4BLKR PSMC4BLKR `VEuc  1 e 1 @3883 ]
+"15569
+[v _PSMC4BLKF PSMC4BLKF `VEuc  1 e 1 @3884 ]
+"15630
+[v _PSMC4FFA PSMC4FFA `VEuc  1 e 1 @3885 ]
+"15667
+[v _PSMC4STR0 PSMC4STR0 `VEuc  1 e 1 @3886 ]
+"15692
+[v _PSMC4STR1 PSMC4STR1 `VEuc  1 e 1 @3887 ]
+"15993
+[v _ADGO ADGO `VEb  1 e 0 @1257 ]
 "16067
 [v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
 "16069
@@ -183,18 +427,38 @@
 [v _CREN CREN `VEb  1 e 0 @3308 ]
 "16473
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"16543
+[v _IOCAF1 IOCAF1 `VEb  1 e 0 @7321 ]
 "16933
 [v _P1MDLBIT P1MDLBIT `VEb  1 e 0 @29845 ]
+"17897
+[v _PSMC2LD PSMC2LD `VEb  1 e 0 @30094 ]
+"18109
+[v _PSMC3LD PSMC3LD `VEb  1 e 0 @30350 ]
+"18321
+[v _PSMC4LD PSMC4LD `VEb  1 e 0 @30862 ]
+"18429
+[v _RA1 RA1 `VEb  1 e 0 @97 ]
 "18449
 [v _RB3 RB3 `VEb  1 e 0 @107 ]
 "18467
 [v _RC4 RC4 `VEb  1 e 0 @116 ]
+"18473
+[v _RC7 RC7 `VEb  1 e 0 @119 ]
 "18479
 [v _RCIE RCIE `VEb  1 e 0 @1165 ]
 "18481
 [v _RCIF RCIF `VEb  1 e 0 @141 ]
+"18505
+[v _SCKSEL SCKSEL `VEb  1 e 0 @2284 ]
+"18513
+[v _SDISEL SDISEL `VEb  1 e 0 @2283 ]
+"18515
+[v _SDOSEL SDOSEL `VEb  1 e 0 @2285 ]
 "18571
 [v _SPEN SPEN `VEb  1 e 0 @3311 ]
+"18629
+[v _SSPEN SSPEN `VEb  1 e 0 @4269 ]
 "18647
 [v _SYNC SYNC `VEb  1 e 0 @3316 ]
 "18779
@@ -205,21 +469,21 @@
 [v _main main `(i  1 e 2 0 ]
 {
 "18
-[v main@pkt_arr pkt_arr `[3]uc  1 a 3 7 ]
+[v main@pkt_arr pkt_arr `[3]uc  1 a 3 12 ]
 "19
-[v main@i i `uc  1 a 1 10 ]
+[v main@i i `uc  1 a 1 15 ]
 "17
-[v main@F7230 F7230 `[3]uc  1 s 3 F7230 ]
-"203
+[v main@F7231 F7231 `[3]uc  1 s 3 F7231 ]
+"217
 } 0
 "41 C:\git\OmegaBlade\PIC Microcode/source/ir.c
 [v _output_ir output_ir `(v  1 e 0 0 ]
 {
 [v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
 "96
-[v output_ir@i_224 i `i  1 a 2 4 ]
+[v output_ir@i_252 i `i  1 a 2 4 ]
 "71
-[v output_ir@i_223 i `i  1 a 2 2 ]
+[v output_ir@i_251 i `i  1 a 2 2 ]
 "45
 [v output_ir@i i `i  1 a 2 0 ]
 "41
@@ -229,15 +493,15 @@
 [v output_ir@pkt_type pkt_type `uc  1 a 1 6 ]
 "119
 } 0
-"206 C:\git\OmegaBlade\PIC Microcode/source/main.c
+"220 C:\git\OmegaBlade\PIC Microcode/source/main.c
 [v _init_pic init_pic `(v  1 e 0 0 ]
 {
-"219
+"233
 } 0
-"3 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
+"5 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
 [v _init_leds init_leds `(v  1 e 0 0 ]
 {
-"6
+"126
 } 0
 "19 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
 [v _init_isr init_isr `(v  1 e 0 0 ]
@@ -249,15 +513,121 @@
 {
 "39
 } 0
-"8 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
+"3 C:\git\OmegaBlade\PIC Microcode/source/blade_connection.c
+[v _init_conn init_conn `(v  1 e 0 0 ]
+{
+"7
+} 0
+"3 C:\git\OmegaBlade\PIC Microcode/source/accelerometer.c
+[v _init_accel init_accel `(v  1 e 0 0 ]
+{
+"14
+} 0
+"128 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
 [v _display_health display_health `(v  1 e 0 0 ]
 {
-"18
+"191
+} 0
+"193
+[v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
+{
+[v display_blade_lights@mode mode `uc  1 a 1 wreg ]
+"271
+[v display_blade_lights@i_481 i `i  1 a 2 6 ]
+"242
+[v display_blade_lights@i_480 i `i  1 a 2 4 ]
+"231
+[v display_blade_lights@i_478 i `i  1 a 2 2 ]
+"202
+[v display_blade_lights@i i `i  1 a 2 0 ]
+"239
+[v display_blade_lights@r_479 r `uc  1 a 1 10 ]
+"199
+[v display_blade_lights@r r `uc  1 a 1 9 ]
+"193
+[v display_blade_lights@mode mode `uc  1 a 1 wreg ]
+"197
+[v display_blade_lights@mode mode `uc  1 a 1 8 ]
+"277
+} 0
+"279
+[v _writespi writespi `(v  1 e 0 0 ]
+{
+[v writespi@data_out data_out `uc  1 a 1 wreg ]
+"281
+[v writespi@TempVar TempVar `uc  1 a 1 33 ]
+"279
+[v writespi@data_out data_out `uc  1 a 1 wreg ]
+"282
+[v writespi@data_out data_out `uc  1 a 1 34 ]
+"292
+} 0
+"16 C:\git\OmegaBlade\PIC Microcode/source/accelerometer.c
+[v _determine_sword_was_swung determine_sword_was_swung `(uc  1 e 1 0 ]
+{
+"31
+[v determine_sword_was_swung@neg_thresh neg_thresh `i  1 a 2 9 ]
+"30
+[v determine_sword_was_swung@pos_thresh pos_thresh `i  1 a 2 7 ]
+"32
+[v determine_sword_was_swung@midpoint midpoint `i  1 a 2 0 ]
+"24
+[v determine_sword_was_swung@xh xh `uc  1 a 1 11 ]
+"29
+[v determine_sword_was_swung@zl zl `uc  1 a 1 6 ]
+"28
+[v determine_sword_was_swung@yl yl `uc  1 a 1 5 ]
+"27
+[v determine_sword_was_swung@xl xl `uc  1 a 1 4 ]
+"26
+[v determine_sword_was_swung@zh zh `uc  1 a 1 3 ]
+"25
+[v determine_sword_was_swung@yh yh `uc  1 a 1 2 ]
+"94
+} 0
+"14 C:\git\OmegaBlade\PIC Microcode/source/blade_connection.c
+[v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
+{
+[v determine_packets_to_send@packets packets `*.4uc  1 a 1 wreg ]
+[v determine_packets_to_send@packets packets `*.4uc  1 a 1 wreg ]
+"16
+[v determine_packets_to_send@packets packets `*.4uc  1 a 1 33 ]
+"62
+} 0
+"9
+[v _determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
+{
+"12
 } 0
 "37 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
 [v _isr isr `II(v  1 e 0 0 ]
 {
-"119
+"129
+} 0
+"193 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
+[v i1_display_blade_lights display_blade_lights `(v  1 e 0 0 ]
+{
+[v i1display_blade_lights@mode mode `uc  1 a 1 wreg ]
+[v i1display_blade_lights@i_481 display_blade_lights `i  1 a 2 7 ]
+[v i1display_blade_lights@i_480 display_blade_lights `i  1 a 2 5 ]
+[v i1display_blade_lights@i_478 display_blade_lights `i  1 a 2 3 ]
+[v i1display_blade_lights@i display_blade_lights `i  1 a 2 1 ]
+[v i1display_blade_lights@r_479 display_blade_lights `uc  1 a 1 10 ]
+[v i1display_blade_lights@r display_blade_lights `uc  1 a 1 9 ]
+[v i1display_blade_lights@mode mode `uc  1 a 1 wreg ]
+"197
+[v i1display_blade_lights@mode mode `uc  1 a 1 0 ]
+"277
+} 0
+"279
+[v i1_writespi writespi `(v  1 e 0 0 ]
+{
+[v i1writespi@data_out data_out `uc  1 a 1 wreg ]
+[v i1writespi@TempVar writespi `uc  1 a 1 1 ]
+[v i1writespi@data_out data_out `uc  1 a 1 wreg ]
+"282
+[v i1writespi@data_out data_out `uc  1 a 1 2 ]
+"292
 } 0
 "44 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
