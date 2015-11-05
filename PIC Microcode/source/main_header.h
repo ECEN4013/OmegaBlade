@@ -33,9 +33,9 @@ Created on October 12, 2015
 #define _XTAL_FREQ 32000000
 
 // Uncomment the appropriate line for the blade you wish to compile the program for
-#define _ALPHA_BLADE 1
+#define _ALPHA_BLADE 0
 #define _BETA_BLADE  0
-#define _DELTA_BLADE 0
+#define _DELTA_BLADE 1
 #define _GAMMA_BLADE 0
 
 // Define values of IR packet types
@@ -47,12 +47,15 @@ Created on October 12, 2015
 #define _LIGHT_MODE_INDIVIDUAL_SWING 0
 #define _LIGHT_MODE_OMEGA_SWING      1
 #define _LIGHT_MODE_CONNECT          2
+#define _LIGHT_MODE_DAMAGE_RECEIVED  3
+
+#define _SOUND_TYPE_INDIVIDUAL 0
+#define _SOUND_TYPE_OMEGA      1
 
 // Global variables
 extern char stun_counter;
 extern char health;
-extern char omega_mode;
-extern char blade; // A=1, B=2, D=3, G=4
+extern char damage_received;
 
 void init_conn();
 

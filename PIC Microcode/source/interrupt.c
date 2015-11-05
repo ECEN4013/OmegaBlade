@@ -44,12 +44,15 @@ void interrupt isr() { //note: this logic is inverted!
         // Clear interrupt flag
         IOCAF1 = 0;
         
+        health = 50;
+        display_health();
         display_blade_lights(_LIGHT_MODE_CONNECT);
     }
     // Check to see if interrupt was on pin RA4 (IR input))
     else if (IOCAFbits.IOCAF4)
     {
         IOCAF &= 0b11101111; //clear the flag for an IR interrupt on pin A4
+#if !_BETA_BLADE
         while(PORTAbits.RA4) //wait until the start bursts end
         {
             if(TMR1 >= TIMEOUT)
@@ -105,9 +108,10 @@ void interrupt isr() { //note: this logic is inverted!
 
             if(numPackets >= 6000 && numPackets <7500) 
             {
-                if(health > 0)
+                if( (health > 0) && (!determine_omega_mode_active()) )
                 {
                     health--; //damage received! Decrement HP!
+                    damage_received = 1;
                 }
                 return;
             } 
@@ -125,5 +129,6 @@ void interrupt isr() { //note: this logic is inverted!
                 return; 
             }
         return;
+#endif
     }
 }

@@ -27,7 +27,7 @@ void determine_packets_to_send(char* packets)
 #elif _DELTA_BLADE
         packets[_PKT_TYPE_DAMAGE] = 22;
         packets[_PKT_TYPE_HEALTH] = 0;
-        PACKETS[_PKT_TYPE_STUN]   = 15;
+        packets[_PKT_TYPE_STUN]   = 15;
 #elif _GAMMA_BLADE
         packets[_PKT_TYPE_DAMAGE] = 0;
         packets[_PKT_TYPE_HEALTH] = 0;

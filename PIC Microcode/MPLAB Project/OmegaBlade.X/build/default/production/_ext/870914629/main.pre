@@ -9149,51 +9149,50 @@ unsigned char getche();
 unsigned char waitch();
 void uart_test();
 
-# 52 "../../source/main_header.h"
+# 56 "../../source/main_header.h"
 extern char stun_counter;
 extern char health;
-extern char omega_mode;
-extern char blade;
+extern char damage_received;
 
 void init_conn();
 
-# 67
+# 70
 void init_pic();
 
-# 77
+# 80
 void init_ir();
 
-# 99
+# 102
 void output_ir(char pkt_type, char amount);
 
-# 108
+# 111
 void play_sound(char sound_selection);
 
-# 118
+# 121
 void init_accel();
 
-# 132
+# 135
 char determine_sword_was_swung();
 
-# 145
+# 148
 char determine_omega_mode_active();
 
-# 159
+# 162
 void determine_packets_to_send(char* packets);
 
-# 170
+# 173
 void display_health();
 
-# 180
+# 183
 void init_leds();
 
-# 191
+# 194
 void display_blade_lights(char mode);
 
-# 200
+# 203
 void init_isr();
 
-# 213
+# 216
 void interrupt isr();
 
 # 10 "../../source/main.c"
@@ -9202,11 +9201,12 @@ void main_loop_omega();
 
 char stun_counter = 0;
 char health = 50;
+char damage_received = 0;
 
 int main()
 {
 char pkt_arr[] = {0, 0, 0};
-char i = 0;
+unsigned char i = 0;
 
 
 init_pic();
@@ -9222,17 +9222,29 @@ init_leds();
 init_isr();
 init_conn();
 
-# 50
+# 51
 while(1)
 {
 
+# 168
 display_health();
+if(damage_received)
+{
+display_blade_lights(3);
+damage_received = 0;
+}
 
 if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
 {
-
 if(!determine_omega_mode_active())
 {
+display_blade_lights(0);
+}
+else
+{
+display_blade_lights(1);
+}
+
 determine_packets_to_send(&pkt_arr);
 
 for(i = 3; i > 0; --i)
@@ -9245,26 +9257,60 @@ GIE = 1;
 }
 }
 
-display_blade_lights(0);
+break;
 }
-else
-{
-display_blade_lights(1);
-}
-}
-
 
 GIE = 0;
 while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
-_delay((unsigned long)((100)*(32000000/4000.0)));
+
+
+
+PSMC2DCH = 0x00;
+PSMC2DCL = 0x00;
+PSMC2LD = 1;
+
+PSMC3DCH = 0xFF;
+PSMC3DCL = 0xFF;
+PSMC3LD = 1;
+
+PSMC4DCH = 0x00;
+PSMC4DCL = 0xFF;
+PSMC4LD = 1;
+
+PSMC2LD = 1;
+PSMC3LD = 1;
+PSMC4LD = 1;
+
+_delay((unsigned long)((50)*(32000000/4000.0)));
+
+
+
+PSMC2DCH = 0xFF;
+PSMC2DCL = 0xFF;
+PSMC2LD = 1;
+
+PSMC3DCH = 0xFF;
+PSMC3DCL = 0xFF;
+PSMC3LD = 1;
+
+PSMC4DCH = 0xFF;
+PSMC4DCL = 0xFF;
+PSMC4LD = 1;
+
+PSMC2LD = 1;
+PSMC3LD = 1;
+PSMC4LD = 1;
+
+_delay((unsigned long)((50)*(32000000/4000.0)));
+
 GIE = 0;
 --stun_counter;
 }
 GIE = 1;
 
-# 216
+# 337
 }
 }
 
@@ -9276,6 +9322,8 @@ ANSELB = 0;
 
 
 TRISB &= 0b11110011;
+RB2 = 1;
+RB3 = 1;
 
 
 OSCCON |= 0b11111000;

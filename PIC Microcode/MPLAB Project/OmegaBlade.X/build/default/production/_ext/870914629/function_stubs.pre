@@ -9149,50 +9149,49 @@ unsigned char getche();
 unsigned char waitch();
 void uart_test();
 
-# 52 "../../source/main_header.h"
+# 56 "../../source/main_header.h"
 extern char stun_counter;
 extern char health;
-extern char omega_mode;
-extern char blade;
+extern char damage_received;
 
 void init_conn();
 
-# 67
+# 70
 void init_pic();
 
-# 77
+# 80
 void init_ir();
 
-# 99
+# 102
 void output_ir(char pkt_type, char amount);
 
-# 108
+# 111
 void play_sound(char sound_selection);
 
-# 118
+# 121
 void init_accel();
 
-# 132
+# 135
 char determine_sword_was_swung();
 
-# 145
+# 148
 char determine_omega_mode_active();
 
-# 159
+# 162
 void determine_packets_to_send(char* packets);
 
-# 170
+# 173
 void display_health();
 
-# 180
+# 183
 void init_leds();
 
-# 191
+# 194
 void display_blade_lights(char mode);
 
-# 200
+# 203
 void init_isr();
 
-# 213
+# 216
 void interrupt isr();
 

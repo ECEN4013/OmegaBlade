@@ -12,11 +12,12 @@ void main_loop_omega();
 
 char stun_counter = 0;
 char health = 50;
+char damage_received = 0;
 
 int main()
 {
     char pkt_arr[] = {0, 0, 0}; // {damage, health, stun}
-    char i = 0;
+    unsigned char i = 0;
     
     // Initialize PIC and UART
     init_pic();
@@ -51,12 +52,19 @@ int main()
     {
 #if _ALPHA_BLADE
         display_health();
+        if(damage_received)
+        {
+            display_blade_lights(_LIGHT_MODE_DAMAGE_RECEIVED);
+            damage_received = 0;
+        }
         
         if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
         {
 
             if(!determine_omega_mode_active())
             {
+                display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
+                
                 determine_packets_to_send(&pkt_arr);
                 
                 for(i = 3; i > 0; --i)
@@ -68,8 +76,6 @@ int main()
                         GIE = 1;
                     }
                 }
-                
-                display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
             }
             else
             {
@@ -82,134 +88,249 @@ int main()
         while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
         {
             GIE = 1;
-            __delay_ms(100);
+            
+            //****************Turn full blue
+            //Green to 0%
+            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
+            PSMC2LD = 1; //PSMC 2 Load		
+            //Blue to 0%
+            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3LD = 1; //PSMC 3 Load
+            //Red to 100%
+            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4LD = 1; //PSMC 4 Load		
+            //Set Load Bit to load duty cycle values
+            PSMC2LD = 1; //PSMC 2 Load
+            PSMC3LD = 1; //PSMC 3 Load
+            PSMC4LD = 1; //PSMC 4 Load
+
+            __delay_ms(50);
+
+            //****************Turn off
+            //Green to 0%
+            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+            PSMC2LD = 1; //PSMC 2 Load		
+            //Blue to 0%
+            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3LD = 1; //PSMC 3 Load
+            //Red to 0%
+            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4LD = 1; //PSMC 4 Load		
+            //Set Load Bit to load duty cycle values
+            PSMC2LD = 1; //PSMC 2 Load
+            PSMC3LD = 1; //PSMC 3 Load
+            PSMC4LD = 1; //PSMC 4 Load
+
+            __delay_ms(50);
+            
             GIE = 0;
             --stun_counter;
         }
         GIE = 1;
-        
-        
     
 #elif _BETA_BLADE
-        while( 1 )
+        display_health();
+        if( determine_sword_was_swung() )
         {
-            display_health();
-            if( determine_sword_was_swung() )
+            if(!determine_omega_mode_active())
             {
-                if(!determine_omega_mode_active())
-                {
-                    determine_packets_to_send(&pkt_arr);
+                play_sound(_SOUND_TYPE_INDIVIDUAL);
+                display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
+                
+                determine_packets_to_send(&pkt_arr);
 
-                    for(i = 2; i >= 0; --i)
+                for(i = 3; i > 0; --i)
+                {
+                    if(pkt_arr[i-1] > 0)
                     {
-                        if(pkt_arr[i] > 0)
-                        {
-                            output_ir(i, pkt_arr[i]);
-                        }
+                        GIE = 0;
+                        output_ir(i-1, pkt_arr[i-1]);
+                        GIE = 1;
                     }
-
-                    play_sound(0);
-                    display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
                 }
-                else
-                {
-                    play_sound(1);
-                    display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
-                }
-
-                break;
             }
+            else
+            {
+                play_sound(_SOUND_TYPE_OMEGA);
+                display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
+            }
+
+            break;
         }
     
 #elif _DELTA_BLADE
-        while( 1 )
+        display_health();
+        if(damage_received)
         {
-            display_health();
-            if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
+            display_blade_lights(_LIGHT_MODE_DAMAGE_RECEIVED);
+            damage_received = 0;
+        }
+        
+        if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
+        {
+            if(!determine_omega_mode_active())
             {
-                determine_packets_to_send(&pkt_arr);
-
-                for(i = 2; i >= 0; --i)
-                {
-                    if(pkt_arr[i] > 0)
-                    {
-                        output_ir(i, pkt_arr[i]);
-                    }
-                }
-
-                if(!determine_omega_mode_active())
-                {
-                    display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
-                }
-                else
-                {
-                    display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
-                }
-
-                break;
+                display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
             }
+            else
+            {
+                display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
+            }
+            
+            determine_packets_to_send(&pkt_arr);
+
+            for(i = 3; i > 0; --i)
+            {
+                if(pkt_arr[i-1] > 0)
+                {
+                    GIE = 0;
+                    output_ir(i-1, pkt_arr[i-1]);
+                    GIE = 1;
+                }
+            }
+
+            break;
         }
 
         GIE = 0;
         while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
         {
             GIE = 1;
-            __delay_ms(100);
+            
+            //****************Turn full blue
+            //Green to 0%
+            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
+            PSMC2LD = 1; //PSMC 2 Load		
+            //Blue to 0%
+            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3LD = 1; //PSMC 3 Load
+            //Red to 100%
+            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4LD = 1; //PSMC 4 Load		
+            //Set Load Bit to load duty cycle values
+            PSMC2LD = 1; //PSMC 2 Load
+            PSMC3LD = 1; //PSMC 3 Load
+            PSMC4LD = 1; //PSMC 4 Load
+
+            __delay_ms(50);
+
+            //****************Turn off
+            //Green to 0%
+            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+            PSMC2LD = 1; //PSMC 2 Load		
+            //Blue to 0%
+            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3LD = 1; //PSMC 3 Load
+            //Red to 0%
+            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4LD = 1; //PSMC 4 Load		
+            //Set Load Bit to load duty cycle values
+            PSMC2LD = 1; //PSMC 2 Load
+            PSMC3LD = 1; //PSMC 3 Load
+            PSMC4LD = 1; //PSMC 4 Load
+
+            __delay_ms(50);
+            
             GIE = 0;
             --stun_counter;
         }
         GIE = 1;
 
 #elif _GAMMA_BLADE
-        while( 1 )
+        display_health();
+        if(damage_received)
         {
-            display_health();
-            if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
+            display_blade_lights(_LIGHT_MODE_DAMAGE_RECEIVED);
+            damage_received = 0;
+        }
+        
+        if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
+        {
+            if(!determine_omega_mode_active())
             {
-                if(!determine_omega_mode_active())
-                {
-                    determine_packets_to_send(&pkt_arr);
+                display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
+                
+                determine_packets_to_send(&pkt_arr);
 
-                    for(i = 2; i >= 0; --i)
+                for(i = 3; i > 0; --i)
+                {
+                    if(pkt_arr[i-1] > 0)
                     {
-                        if(pkt_arr[i] > 0)
-                        {
-                            output_ir(i, pkt_arr[i]);
-                        }
+                        GIE = 0;
+                        output_ir(i-1, pkt_arr[i-1]);
+                        GIE = 1;
                     }
-                    display_blade_lights(_LIGHT_MODE_INDIVIDUAL_SWING);
                 }
-                else
-                {
-                    display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
-                }
-
-                break;
             }
+            else
+            {
+                display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
+            }
+
+            break;
         }
 
         GIE = 0;
         while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
         {
             GIE = 1;
-            __delay_ms(100);
+            
+            //****************Turn full blue
+            //Green to 0%
+            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
+            PSMC2LD = 1; //PSMC 2 Load		
+            //Blue to 0%
+            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3LD = 1; //PSMC 3 Load
+            //Red to 100%
+            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4LD = 1; //PSMC 4 Load		
+            //Set Load Bit to load duty cycle values
+            PSMC2LD = 1; //PSMC 2 Load
+            PSMC3LD = 1; //PSMC 3 Load
+            PSMC4LD = 1; //PSMC 4 Load
+
+            __delay_ms(50);
+
+            //****************Turn off
+            //Green to 0%
+            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+            PSMC2LD = 1; //PSMC 2 Load		
+            //Blue to 0%
+            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3LD = 1; //PSMC 3 Load
+            //Red to 0%
+            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4LD = 1; //PSMC 4 Load		
+            //Set Load Bit to load duty cycle values
+            PSMC2LD = 1; //PSMC 2 Load
+            PSMC3LD = 1; //PSMC 3 Load
+            PSMC4LD = 1; //PSMC 4 Load
+
+            __delay_ms(50);
+            
             GIE = 0;
             --stun_counter;
         }
         GIE = 1;
-        
-        //main_loop_individual();
-        /*
-        // select omega mode loop or individual blade loop
-        if(determine_omega_mode_active() <= 0)
-        {
-            main_loop_individual();
-        }
-        else
-        {
-            main_loop_omega();
-        }
-        */
         
 #endif
         
@@ -224,6 +345,8 @@ void init_pic()
     
     // Configure RB2 and RB3 (audio triggers) as outputs
     TRISB &= 0b11110011;
+    RB2 = 1;
+    RB3 = 1;
     
     // Configure for 32MHz operation with internal oscillator
     OSCCON |= 0b11111000;
