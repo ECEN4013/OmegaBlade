@@ -26,6 +26,7 @@ Created on October 12, 2015
 #pragma config LVP = OFF        // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 #include "stdio.h"
+#include "stdint.h"
 #include "xc.h"
 #include "uart_header.h"
 
@@ -35,8 +36,8 @@ Created on October 12, 2015
 // Uncomment the appropriate line for the blade you wish to compile the program for
 #define _ALPHA_BLADE 0
 #define _BETA_BLADE  0
-#define _DELTA_BLADE 1
-#define _GAMMA_BLADE 0
+#define _DELTA_BLADE 0
+#define _GAMMA_BLADE 1
 
 // Define values of IR packet types
 #define _PKT_TYPE_DAMAGE 0

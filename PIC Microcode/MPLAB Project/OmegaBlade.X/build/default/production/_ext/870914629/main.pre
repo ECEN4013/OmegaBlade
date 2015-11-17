@@ -86,6 +86,96 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
@@ -9149,50 +9239,50 @@ unsigned char getche();
 unsigned char waitch();
 void uart_test();
 
-# 56 "../../source/main_header.h"
+# 57 "../../source/main_header.h"
 extern char stun_counter;
 extern char health;
 extern char damage_received;
 
 void init_conn();
 
-# 70
+# 71
 void init_pic();
 
-# 80
+# 81
 void init_ir();
 
-# 102
+# 103
 void output_ir(char pkt_type, char amount);
 
-# 111
+# 112
 void play_sound(char sound_selection);
 
-# 121
+# 122
 void init_accel();
 
-# 135
+# 136
 char determine_sword_was_swung();
 
-# 148
+# 149
 char determine_omega_mode_active();
 
-# 162
+# 163
 void determine_packets_to_send(char* packets);
 
-# 173
+# 174
 void display_health();
 
-# 183
+# 184
 void init_leds();
 
-# 194
+# 195
 void display_blade_lights(char mode);
 
-# 203
+# 204
 void init_isr();
 
-# 216
+# 217
 void interrupt isr();
 
 # 10 "../../source/main.c"
@@ -9213,20 +9303,17 @@ init_pic();
 
 
 
-_delay((unsigned long)((100)*(32000000/4000.0)));
-
-
 init_ir();
 init_accel();
 init_leds();
 init_isr();
 init_conn();
 
-# 51
+# 48
 while(1)
 {
 
-# 168
+# 244
 display_health();
 if(damage_received)
 {
@@ -9239,11 +9326,6 @@ if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_activ
 if(!determine_omega_mode_active())
 {
 display_blade_lights(0);
-}
-else
-{
-display_blade_lights(1);
-}
 
 determine_packets_to_send(&pkt_arr);
 
@@ -9256,11 +9338,15 @@ output_ir(i-1, pkt_arr[i-1]);
 GIE = 1;
 }
 }
-
-break;
+}
+else
+{
+display_blade_lights(1);
+}
 }
 
 GIE = 0;
+
 while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
@@ -9308,17 +9394,35 @@ _delay((unsigned long)((50)*(32000000/4000.0)));
 GIE = 0;
 --stun_counter;
 }
+
 GIE = 1;
 
-# 337
+
+
 }
 }
 
 
 void init_pic()
 {
+
 ANSELA = 0;
 ANSELB = 0;
+
+
+LATBbits.LATB2 = 1;
+LATBbits.LATB3 = 1;
+PORTBbits.RB2 = 1;
+PORTBbits.RB3 = 1;
+
+
+WPUB2 = 1;
+WPUB3 = 1;
+
+
+OSCCON |= 0b11111000;
+
+_delay((unsigned long)((100)*(32000000/4000.0)));
 
 
 TRISB &= 0b11110011;
@@ -9326,7 +9430,12 @@ RB2 = 1;
 RB3 = 1;
 
 
-OSCCON |= 0b11111000;
+if(RB2 == 0 || RB3 == 0)
+{
+asm("RESET");
+}
+
+
 
 
 GIE = 1;

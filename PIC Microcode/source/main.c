@@ -19,12 +19,9 @@ int main()
     char pkt_arr[] = {0, 0, 0}; // {damage, health, stun}
     unsigned char i = 0;
     
-    // Initialize PIC and UART
+    // Initialize PIC
     init_pic();
     //init_uart();
-    
-    // Wait a tenth of a second for clock to stabilize
-    __delay_ms(100);
     
     // Initialize teammates' code
     init_ir();
@@ -82,7 +79,6 @@ int main()
                 display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
             }
         }
-
         
         GIE = 0;
         while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
@@ -160,8 +156,6 @@ int main()
                 play_sound(_SOUND_TYPE_OMEGA);
                 display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
             }
-
-            break;
         }
     
 #elif _DELTA_BLADE
@@ -194,8 +188,6 @@ int main()
                     GIE = 1;
                 }
             }
-
-            break;
         }
 
         GIE = 0;
@@ -278,11 +270,10 @@ int main()
             {
                 display_blade_lights(_LIGHT_MODE_OMEGA_SWING);
             }
-
-            break;
         }
 
         GIE = 0;
+        
         while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
         {
             GIE = 1;
@@ -330,6 +321,7 @@ int main()
             GIE = 0;
             --stun_counter;
         }
+        
         GIE = 1;
         
 #endif
@@ -339,17 +331,38 @@ int main()
 
 // Initialize TRISX registers and set oscillator frequency
 void init_pic()
-{
+{   
+    // Disable all analog inputs
     ANSELA = 0;
     ANSELB = 0;
+    
+    // Initialize audio pins
+    LATBbits.LATB2 = 1;
+    LATBbits.LATB3 = 1;
+    PORTBbits.RB2 = 1;
+    PORTBbits.RB3 = 1;
+    
+    // Enable internal pull-up on audio pins
+    WPUB2 = 1;
+    WPUB3 = 1;
+    
+    // Configure for 32MHz operation with internal oscillator
+    OSCCON |= 0b11111000;
+    // Wait a tenth of a second for clock to stabilize
+    __delay_ms(100);
     
     // Configure RB2 and RB3 (audio triggers) as outputs
     TRISB &= 0b11110011;
     RB2 = 1;
     RB3 = 1;
     
-    // Configure for 32MHz operation with internal oscillator
-    OSCCON |= 0b11111000;
+    // Reset the software if necessary to prevent sounds playing on startup
+    if(RB2 == 0 || RB3 == 0)
+    {
+        asm("RESET");
+    }
+    
+    //play_sound(_SOUND_TYPE_INDIVIDUAL);
     
     // Enable global interrupts
     GIE = 1;
