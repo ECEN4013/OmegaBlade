@@ -173,38 +173,38 @@ char determine_sword_was_swung()
     int y_neg_thresh = 0;
     int z_pos_thresh = 0;
     int z_neg_thresh = 0;
-    int pos_shock_thresh = 1550;
-    int neg_shock_thresh = -1550;
-    int midpoint = 0x0151;  // Represents 1.65 volts
+    const int midpoint = 4096;//0x0151;  // Represents 1.65 volts
+    const int pos_shock_thresh = midpoint + 1000;
+    const int neg_shock_thresh = midpoint - 1000;
 	
 #if _ALPHA_BLADE
-	x_pos_thresh = 1500;
-    x_neg_thresh = -1500;
-    y_pos_thresh = 1500;
-    y_neg_thresh = -1500;
-    z_pos_thresh = 1500;
-    z_neg_thresh = -1500;
+	x_pos_thresh = midpoint + 2900;
+    x_neg_thresh = midpoint - 2900;
+    y_pos_thresh = midpoint + 2900;
+    y_neg_thresh = midpoint - 2900;
+    z_pos_thresh = midpoint + 2900;
+    z_neg_thresh = midpoint - 2900;
 #elif _BETA_BLADE
-	x_pos_thresh = 1500;
-    x_neg_thresh = -1500;
-    y_pos_thresh = 1500;
-    y_neg_thresh = -1500;
-    z_pos_thresh = 1500;
-    z_neg_thresh = -1500;
+	x_pos_thresh = midpoint + 2900;//3500;
+    x_neg_thresh = midpoint - 2900;//3500;
+    y_pos_thresh = midpoint + 2900;//3500;
+    y_neg_thresh = midpoint - 2900;//3500;
+    z_pos_thresh = midpoint + 2900;//3500;
+    z_neg_thresh = midpoint - 2900;//3500;
 #elif _DELTA_BLADE
-	x_pos_thresh = 1500;
-    x_neg_thresh = -1500;
-    y_pos_thresh = 1500;
-    y_neg_thresh = -1500;
-    z_pos_thresh = 1500;
-    z_neg_thresh = -1500;
+	x_pos_thresh = midpoint + 3200;
+    x_neg_thresh = midpoint - 3200;
+    y_pos_thresh = midpoint + 3200;
+    y_neg_thresh = midpoint - 3200;
+    z_pos_thresh = midpoint + 3200;
+    z_neg_thresh = midpoint - 3200;
 #elif _GAMMA_BLADE
-	x_pos_thresh = 1500;
-    x_neg_thresh = -1500;
-    y_pos_thresh = 1500;
-    y_neg_thresh = -1500;
-    z_pos_thresh = 1500;
-    z_neg_thresh = -1500;
+	x_pos_thresh = midpoint + 3200;
+    x_neg_thresh = midpoint - 3200;
+    y_pos_thresh = midpoint + 3200;
+    y_neg_thresh = midpoint - 3200;
+    z_pos_thresh = midpoint + 3200;
+    z_neg_thresh = midpoint - 3200;
 #endif
 	
 	// Select channel AN2
@@ -238,15 +238,16 @@ char determine_sword_was_swung()
 	}
 	z = ADRES;
     
+    /*if( ( y > y_neg_thresh ) && ( ( x > x_pos_thresh ) || ( x < x_neg_thresh ) || ( y > y_pos_thresh ) ) )*/
 	if( (( x > x_pos_thresh ) || ( x < x_neg_thresh )
         || ( y > y_pos_thresh ) || ( y < y_neg_thresh ) 
         || ( z > z_pos_thresh ) || ( z < z_neg_thresh )) 
-        && ( x < pos_shock_thresh )
+        /*&& ( x < pos_shock_thresh )
         && ( x > neg_shock_thresh )
         && ( y < pos_shock_thresh )
         && ( y > neg_shock_thresh )
         && ( z < pos_shock_thresh )
-        && ( z > neg_shock_thresh ) )
+        && ( z > neg_shock_thresh )*/ )
 	{
 		return 1;
 	}

@@ -21,6 +21,20 @@ void led5_command( unsigned char brightness,
                unsigned char red,
                unsigned char green,
                unsigned char blue );
+void led6_command( unsigned char brightness,
+               unsigned char red,
+               unsigned char green,
+               unsigned char blue );
+void led7_command( unsigned char brightness,
+               unsigned char red,
+               unsigned char green,
+               unsigned char blue );
+void led_command( unsigned char brightness,
+               unsigned char red,
+               unsigned char green,
+               unsigned char blue );
+void led_start();
+void led_end();
 void leds_off();
 
 void init_leds()
@@ -299,19 +313,115 @@ void display_blade_lights(char mode)
         // Turn on LED 5 for 1/20 of a second
         led5_command(brightness, red, green, blue);
         __delay_ms(50);
+        // Turn on LED 6 for 1/20 of a second
+        //led6_command(brightness, red, green, blue);
+        //__delay_ms(50);
+        // Turn on LED 7 for 1/20 of a second
+        //led7_command(brightness, red, green, blue);
+        //__delay_ms(50);
         
         for(unsigned char i = 0; i < 4; ++i)
         {
-            // Turn on LED 5 for 1/40 of a second
+            // Turn on LED 7 for 1/40 of a second
             led5_command(brightness, red, green, blue);
             __delay_ms(25);
-            // Turn off LED 5 for 1/40 of a second
+            // Turn off LED 7 for 1/40 of a second
             led5_command(0xFF, 0, 0, 0);
             __delay_ms(25);
         }
     }
     else if( mode == _LIGHT_MODE_CONNECT )
     {
+        led_start();
+        led_command(0xFF, 0, 0xFF, 0);
+        led_end();
+        
+        led_start();
+        led_command(0xFF, 0xFF, 0x2F, 0);
+        led_command(0xFF, 0, 0xFF, 0);
+        led_end();
+        
+        led_start();
+        led_command(0xFF, 0, 0, 0xFF);
+        led_command(0xFF, 0xFF, 0x2F, 0);
+        led_command(0xFF, 0, 0xFF, 0);
+        led_end();
+        
+        led_start();
+        led_command(0xFF, 0xFF, 0, 0);
+        led_command(0xFF, 0, 0, 0xFF);
+        led_command(0xFF, 0xFF, 0x2F, 0);
+        led_command(0xFF, 0, 0xFF, 0);
+        led_end();
+        
+        led_start();
+        led_command(0, 0, 0, 0);
+        led_command(0xFF, 0xFF, 0, 0);
+        led_command(0xFF, 0, 0, 0xFF);
+        led_command(0xFF, 0xFF, 0x2F, 0);
+        led_command(0xFF, 0, 0xFF, 0);
+        led_end();
+        
+        led_start();
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0xFF, 0xFF, 0, 0);
+        led_command(0xFF, 0, 0, 0xFF);
+        led_command(0xFF, 0xFF, 0x2F, 0);
+        led_command(0xFF, 0, 0xFF, 0);
+        led_end();
+        
+        led_start();
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0xFF, 0xFF, 0, 0);
+        led_command(0xFF, 0, 0, 0xFF);
+        led_command(0xFF, 0xFF, 0x2F, 0);
+        led_command(0xFF, 0, 0xFF, 0);
+        led_end();
+        
+        led_start();
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0xFF, 0xFF, 0, 0);
+        led_command(0xFF, 0, 0, 0xFF);
+        led_command(0xFF, 0xFF, 0x2F, 0);
+        led_end();
+        
+        led_start();
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0xFF, 0xFF, 0, 0);
+        led_command(0xFF, 0, 0, 0xFF);
+        led_end();
+        
+        led_start();
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0xFF, 0xFF, 0, 0);
+        led_end();
+        
+        led_start();
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_command(0, 0, 0, 0);
+        led_end();
+        
+        /* Austin's light show
         for(unsigned char r = 0;r < 255; r+=5)
         {
         //32-bit start frame
@@ -349,6 +459,7 @@ void display_blade_lights(char mode)
             }
             __delay_ms(20);
         }
+        
 
         for(unsigned char r = 255;r > 0; r-=5)
         {
@@ -387,6 +498,7 @@ void display_blade_lights(char mode)
             }
             __delay_ms(20);
         }
+        */
     }
     else if( mode == _LIGHT_MODE_DAMAGE_RECEIVED )
     {
@@ -432,6 +544,35 @@ void writespi( unsigned char data_out )
    //while( !SSPSTATbits.BF );  // wait until bus cycle complete 
    while( !PIR1bits.SSP1IF );  // wait until bus cycle complete  
   //return ( 0 );                // if WCOL bit is not set return non-negative#
+}
+
+void led_start()
+{
+    //32-bit start frame
+    for(int i = 0;i < 4; i++)
+    {
+        writespi(0x00);
+    }
+}
+
+void led_end()
+{
+    //32-bit end frame
+    for(int i = 0;i < 4; i++)
+    {
+        writespi(0xFF);
+    }
+}
+
+void led_command( unsigned char brightness,
+                  unsigned char red,
+                  unsigned char green,
+                  unsigned char blue )
+{
+    writespi(brightness);//Brightness
+    writespi(blue);//Blue
+    writespi(green);//Green
+    writespi(red);//Red
 }
 
 void led1_command( unsigned char brightness,
@@ -637,6 +778,112 @@ void led5_command( unsigned char brightness,
     writespi(0);//Green
     writespi(0);//Red
     // Command LED 5
+    writespi(brightness);//Brightness
+    writespi(blue);//Blue
+    writespi(green);//Green
+    writespi(red);//Red
+    //32-bit end frame
+    for(int i = 0;i < 4; i++)
+    {
+        writespi(0xFF);
+    }
+    __delay_ms(20);
+}
+
+void led6_command( unsigned char brightness,
+               unsigned char red,
+               unsigned char green,
+               unsigned char blue )
+{
+    //32-bit start frame
+    for(int i = 0;i < 4; i++)
+    {
+        writespi(0x00);
+    }
+    // Turn off LED 1
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 2
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 3
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 4
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 5
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Command LED 6
+    writespi(brightness);//Brightness
+    writespi(blue);//Blue
+    writespi(green);//Green
+    writespi(red);//Red
+    // Turn off LED 7
+    //32-bit end frame
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    for(int i = 0;i < 4; i++)
+    {
+        writespi(0xFF);
+    }
+    __delay_ms(20);
+}
+
+void led7_command( unsigned char brightness,
+               unsigned char red,
+               unsigned char green,
+               unsigned char blue )
+{
+    //32-bit start frame
+    for(int i = 0;i < 4; i++)
+    {
+        writespi(0x00);
+    }
+    // Turn off LED 1
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 2
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 3
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 4
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 5
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 6
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Command LED 7
     writespi(brightness);//Brightness
     writespi(blue);//Blue
     writespi(green);//Green

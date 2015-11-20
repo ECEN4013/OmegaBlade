@@ -362,8 +362,6 @@ void init_pic()
         asm("RESET");
     }
     
-    //play_sound(_SOUND_TYPE_INDIVIDUAL);
-    
     // Enable global interrupts
     GIE = 1;
 }
