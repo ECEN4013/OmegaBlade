@@ -80,6 +80,7 @@ int main()
             }
         }
         
+        
         GIE = 0;
         while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
         {
@@ -87,16 +88,16 @@ int main()
             
             //****************Turn full blue
             //Green to 0%
-            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
-            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
+            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
             PSMC2LD = 1; //PSMC 2 Load		
             //Blue to 0%
-            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
             PSMC3LD = 1; //PSMC 3 Load
             //Red to 100%
-            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
-            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
             PSMC4LD = 1; //PSMC 4 Load		
             //Set Load Bit to load duty cycle values
             PSMC2LD = 1; //PSMC 2 Load
@@ -107,16 +108,16 @@ int main()
 
             //****************Turn off
             //Green to 0%
-            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
-            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
             PSMC2LD = 1; //PSMC 2 Load		
             //Blue to 0%
-            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
             PSMC3LD = 1; //PSMC 3 Load
             //Red to 0%
-            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
-            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
             PSMC4LD = 1; //PSMC 4 Load		
             //Set Load Bit to load duty cycle values
             PSMC2LD = 1; //PSMC 2 Load
@@ -129,6 +130,7 @@ int main()
             --stun_counter;
         }
         GIE = 1;
+        
     
 #elif _BETA_BLADE
         display_health();
@@ -197,16 +199,16 @@ int main()
             
             //****************Turn full blue
             //Green to 0%
-            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
-            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
+            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
             PSMC2LD = 1; //PSMC 2 Load		
             //Blue to 0%
-            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
             PSMC3LD = 1; //PSMC 3 Load
             //Red to 100%
-            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
-            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
             PSMC4LD = 1; //PSMC 4 Load		
             //Set Load Bit to load duty cycle values
             PSMC2LD = 1; //PSMC 2 Load
@@ -217,16 +219,16 @@ int main()
 
             //****************Turn off
             //Green to 0%
-            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
-            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
             PSMC2LD = 1; //PSMC 2 Load		
             //Blue to 0%
-            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
             PSMC3LD = 1; //PSMC 3 Load
             //Red to 0%
-            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
-            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
             PSMC4LD = 1; //PSMC 4 Load		
             //Set Load Bit to load duty cycle values
             PSMC2LD = 1; //PSMC 2 Load
@@ -280,16 +282,16 @@ int main()
             
             //****************Turn full blue
             //Green to 0%
-            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
-            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
+            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
             PSMC2LD = 1; //PSMC 2 Load		
             //Blue to 0%
-            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
             PSMC3LD = 1; //PSMC 3 Load
             //Red to 100%
-            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
-            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
             PSMC4LD = 1; //PSMC 4 Load		
             //Set Load Bit to load duty cycle values
             PSMC2LD = 1; //PSMC 2 Load
@@ -300,16 +302,16 @@ int main()
 
             //****************Turn off
             //Green to 0%
-            PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
-            PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+            PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+            PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
             PSMC2LD = 1; //PSMC 2 Load		
             //Blue to 0%
-            PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-            PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+            PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+            PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
             PSMC3LD = 1; //PSMC 3 Load
             //Red to 0%
-            PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
-            PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+            PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
+            PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
             PSMC4LD = 1; //PSMC 4 Load		
             //Set Load Bit to load duty cycle values
             PSMC2LD = 1; //PSMC 2 Load

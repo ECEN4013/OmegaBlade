@@ -169,16 +169,16 @@ void display_health()
     {
         //****************Turn full red
         //Green to 0%
-        PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
-        PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+        PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+        PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
         PSMC2LD = 1; //PSMC 2 Load		
         //Blue to 0%
-        PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-        PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+        PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+        PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
         PSMC3LD = 1; //PSMC 3 Load
         //Red to 100%
-        PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
-        PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
+        PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+        PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
         PSMC4LD = 1; //PSMC 4 Load		
         //Set Load Bit to load duty cycle values
         PSMC2LD = 1; //PSMC 2 Load
@@ -189,16 +189,16 @@ void display_health()
         
         //****************Turn off
         //Green to 0%
-        PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
-        PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+        PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+        PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
         PSMC2LD = 1; //PSMC 2 Load		
         //Blue to 0%
-        PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-        PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+        PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+        PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
         PSMC3LD = 1; //PSMC 3 Load
         //Red to 0%
-        PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
-        PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+        PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
+        PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
         PSMC4LD = 1; //PSMC 4 Load		
         //Set Load Bit to load duty cycle values
         PSMC2LD = 1; //PSMC 2 Load
@@ -212,16 +212,16 @@ void display_health()
     {
         //****************Turn full red
         //Green to 0%
-        PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
-        PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
+        PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
+        PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
         PSMC2LD = 1; //PSMC 2 Load		
         //Blue to 0%
-        PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-        PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+        PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+        PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
         PSMC3LD = 1; //PSMC 3 Load
         //Red to 100%
-        PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
-        PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
+        PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+        PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
         PSMC4LD = 1; //PSMC 4 Load		
         //Set Load Bit to load duty cycle values
         PSMC2LD = 1; //PSMC 2 Load
@@ -232,16 +232,16 @@ void display_health()
     {
         //****************Turn full yellow
         //Green to 0%
-        PSMC2DCH  = 0x00;//PSMC2 Duty Cycle High-byte
-        PSMC2DCL  = 0x00;//PSMC2 Duty Cycle Low-byte
+        PSMC2DCH  = 0xFF;//PSMC2 Duty Cycle High-byte
+        PSMC2DCL  = 0xFF;//PSMC2 Duty Cycle Low-byte
         PSMC2LD = 1; //PSMC 2 Load		
         //Blue to 0%
-        PSMC3DCH  = 0xFF;//PSMC3 Duty Cycle High-byte
-        PSMC3DCL  = 0xFF;//PSMC3 Duty Cycle Low-byte
+        PSMC3DCH  = 0x00;//PSMC3 Duty Cycle High-byte
+        PSMC3DCL  = 0x00;//PSMC3 Duty Cycle Low-byte
         PSMC3LD = 1; //PSMC 3 Load
         //Red to 100%
-        PSMC4DCH  = 0x00;//PSMC4 Duty Cycle High-byte
-        PSMC4DCL  = 0xFF;//PSMC4 Duty Cycle Low-byte
+        PSMC4DCH  = 0xFF;//PSMC4 Duty Cycle High-byte
+        PSMC4DCL  = 0x00;//PSMC4 Duty Cycle Low-byte
         PSMC4LD = 1; //PSMC 4 Load		
         //Set Load Bit to load duty cycle values
         PSMC2LD = 1; //PSMC 2 Load
@@ -252,16 +252,16 @@ void display_health()
     {
         //****************Turn full green
         //Green to 100%
-        PSMC2DCH  = 0x00;
-        PSMC2DCL  = 0x00;
+        PSMC2DCH  = 0xFF;
+        PSMC2DCL  = 0xFF;
         PSMC2LD = 1;		
         //Blue to 0%
-        PSMC3DCH  = 0xFF;
-        PSMC3DCL  = 0xFF;
+        PSMC3DCH  = 0x00;
+        PSMC3DCL  = 0x00;
         PSMC3LD = 1;		
         //Red to 0%
-        PSMC4DCH  = 0xFF;
-        PSMC4DCL  = 0xFF;
+        PSMC4DCH  = 0x00;
+        PSMC4DCL  = 0x00;
         PSMC4LD = 1;		
         //Set Load Bit to load duty cycle values
         PSMC2LD = 1;
@@ -298,40 +298,41 @@ void display_blade_lights(char mode)
     if( (mode == _LIGHT_MODE_INDIVIDUAL_SWING)
          || (mode == _LIGHT_MODE_OMEGA_SWING) )
     {
-        // Turn on LED 1 for 1/20 of a second
-        led1_command(brightness, red, green, blue);
+        // Turn on LED 7 for 1/20 of a second
+        led7_command(brightness, red, green, blue);
         __delay_ms(50);
-        // Turn on LED 2 for 1/20 of a second
-        led2_command(brightness, red, green, blue);
-        __delay_ms(50);
-        // Turn on LED 3 for 1/20 of a second
-        led3_command(brightness, red, green, blue);
-        __delay_ms(50);
-        // Turn on LED 4 for 1/20 of a second
-        led4_command(brightness, red, green, blue);
+        // Turn on LED 6 for 1/20 of a second
+        led6_command(brightness, red, green, blue);
         __delay_ms(50);
         // Turn on LED 5 for 1/20 of a second
         led5_command(brightness, red, green, blue);
         __delay_ms(50);
-        // Turn on LED 6 for 1/20 of a second
-        //led6_command(brightness, red, green, blue);
-        //__delay_ms(50);
-        // Turn on LED 7 for 1/20 of a second
-        //led7_command(brightness, red, green, blue);
-        //__delay_ms(50);
+        // Turn on LED 4 for 1/20 of a second
+        led4_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 3 for 1/20 of a second
+        led3_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 2 for 1/20 of a second
+        led2_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 1 for 1/20 of a second
+        led1_command(brightness, red, green, blue);
+        __delay_ms(50);
         
         for(unsigned char i = 0; i < 4; ++i)
         {
-            // Turn on LED 7 for 1/40 of a second
-            led5_command(brightness, red, green, blue);
+            // Turn on LED 1 for 1/40 of a second
+            led1_command(brightness, red, green, blue);
             __delay_ms(25);
-            // Turn off LED 7 for 1/40 of a second
-            led5_command(0xFF, 0, 0, 0);
+            // Turn off LED 1 for 1/40 of a second
+            led1_command(0xFF, 0, 0, 0);
             __delay_ms(25);
         }
     }
     else if( mode == _LIGHT_MODE_CONNECT )
     {
+        /*
         led_start();
         led_command(0xFF, 0, 0xFF, 0);
         led_end();
@@ -420,8 +421,10 @@ void display_blade_lights(char mode)
         led_command(0, 0, 0, 0);
         led_command(0, 0, 0, 0);
         led_end();
+        */
         
-        /* Austin's light show
+        
+        // Austin's light show
         for(unsigned char r = 0;r < 255; r+=5)
         {
         //32-bit start frame
@@ -498,33 +501,39 @@ void display_blade_lights(char mode)
             }
             __delay_ms(20);
         }
-        */
+        
     }
     else if( mode == _LIGHT_MODE_DAMAGE_RECEIVED )
     {
-        // Turn on LED 5 for 1/20 of a second
-        led5_command(0xFF, 0xFF, 0, 0);
-        __delay_ms(50);
-        // Turn on LED 4 for 1/20 of a second
-        led4_command(0xFF, 0xFF, 0, 0);
-        __delay_ms(50);
-        // Turn on LED 3 for 1/20 of a second
-        led3_command(0xFF, 0xFF, 0, 0);
+        // Turn on LED 1 for 1/20 of a second
+        led1_command(0xFF, 0xFF, 0, 0);
         __delay_ms(50);
         // Turn on LED 2 for 1/20 of a second
         led2_command(0xFF, 0xFF, 0, 0);
         __delay_ms(50);
-        // Turn on LED 1 for 1/20 of a second
-        led1_command(0xFF, 0xFF, 0, 0);
+        // Turn on LED 3 for 1/20 of a second
+        led3_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 4 for 1/20 of a second
+        led4_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 5 for 1/20 of a second
+        led5_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 6 for 1/20 of a second
+        led6_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 7 for 1/20 of a second
+        led7_command(0xFF, 0xFF, 0, 0);
         __delay_ms(50);
         
         for(unsigned char i = 0; i < 4; ++i)
         {
-            // Turn on LED 1 for 1/40 of a second
-            led1_command(0xFF, 0xFF, 0, 0);
+            // Turn on LED 7 for 1/40 of a second
+            led7_command(0xFF, 0xFF, 0, 0);
             __delay_ms(25);
-            // Turn off LED 5 for 1/40 of a second
-            led1_command(0xFF, 0, 0, 0);
+            // Turn off LED 7 for 1/40 of a second
+            led7_command(0xFF, 0, 0, 0);
             __delay_ms(25);
         }
     }
@@ -562,6 +571,7 @@ void led_end()
     {
         writespi(0xFF);
     }
+    __delay_ms(20);
 }
 
 void led_command( unsigned char brightness,
@@ -610,6 +620,16 @@ void led1_command( unsigned char brightness,
     writespi(0);//Blue
     writespi(0);//Green
     writespi(0);//Red
+    // Turn off LED 6
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 7
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
     //32-bit end frame
     for(int i = 0;i < 4; i++)
     {
@@ -649,6 +669,16 @@ void led2_command( unsigned char brightness,
     writespi(0);//Green
     writespi(0);//Red
     // Turn off LED 5
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 6
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 7
     writespi(0xFF);//Brightness
     writespi(0);//Blue
     writespi(0);//Green
@@ -696,6 +726,16 @@ void led3_command( unsigned char brightness,
     writespi(0);//Blue
     writespi(0);//Green
     writespi(0);//Red
+    // Turn off LED 6
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 7
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
     //32-bit end frame
     for(int i = 0;i < 4; i++)
     {
@@ -735,6 +775,16 @@ void led4_command( unsigned char brightness,
     writespi(green);//Green
     writespi(red);//Red
     // Turn off LED 5
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 6
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 7
     writespi(0xFF);//Brightness
     writespi(0);//Blue
     writespi(0);//Green
@@ -782,6 +832,16 @@ void led5_command( unsigned char brightness,
     writespi(blue);//Blue
     writespi(green);//Green
     writespi(red);//Red
+    // Turn off LED 6
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 7
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
     //32-bit end frame
     for(int i = 0;i < 4; i++)
     {
@@ -924,6 +984,16 @@ void leds_off()
     writespi(0);//Green
     writespi(0);//Red
     // Turn off LED 5
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 6
+    writespi(0xFF);//Brightness
+    writespi(0);//Blue
+    writespi(0);//Green
+    writespi(0);//Red
+    // Turn off LED 7
     writespi(0xFF);//Brightness
     writespi(0);//Blue
     writespi(0);//Green
