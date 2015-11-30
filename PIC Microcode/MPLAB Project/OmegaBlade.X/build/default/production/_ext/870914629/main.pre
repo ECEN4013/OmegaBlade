@@ -9313,6 +9313,7 @@ init_conn();
 while(1)
 {
 
+# 246
 display_health();
 if(damage_received)
 {
@@ -9322,7 +9323,6 @@ damage_received = 0;
 
 if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
 {
-
 if(!determine_omega_mode_active())
 {
 display_blade_lights(0);
@@ -9345,8 +9345,8 @@ display_blade_lights(1);
 }
 }
 
-
 GIE = 0;
+
 while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
 {
 GIE = 1;
@@ -9394,9 +9394,11 @@ _delay((unsigned long)((50)*(32000000/4000.0)));
 GIE = 0;
 --stun_counter;
 }
+
 GIE = 1;
 
-# 331
+
+
 }
 }
 

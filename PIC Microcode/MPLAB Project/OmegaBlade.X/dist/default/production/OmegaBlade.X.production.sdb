@@ -835,7 +835,7 @@
 "37 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
 [v _isr isr `II(v  1 e 0 0 ]
 {
-"136
+"134
 } 0
 "166 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
 [v i1_display_health display_health `(v  1 e 0 0 ]

@@ -298,40 +298,81 @@ void display_blade_lights(char mode)
     if( (mode == _LIGHT_MODE_INDIVIDUAL_SWING)
          || (mode == _LIGHT_MODE_OMEGA_SWING) )
     {
-        // Turn on LED 7 for 1/20 of a second
-        led7_command(brightness, red, green, blue);
-        __delay_ms(50);
-        // Turn on LED 6 for 1/20 of a second
-        led6_command(brightness, red, green, blue);
-        __delay_ms(50);
-        // Turn on LED 5 for 1/20 of a second
-        led5_command(brightness, red, green, blue);
-        __delay_ms(50);
-        // Turn on LED 4 for 1/20 of a second
-        led4_command(brightness, red, green, blue);
-        __delay_ms(50);
-        // Turn on LED 3 for 1/20 of a second
-        led3_command(brightness, red, green, blue);
+        // Turn on LED 1 for 1/20 of a second
+        led1_command(brightness, red, green, blue);
         __delay_ms(50);
         // Turn on LED 2 for 1/20 of a second
         led2_command(brightness, red, green, blue);
         __delay_ms(50);
-        // Turn on LED 1 for 1/20 of a second
-        led1_command(brightness, red, green, blue);
+        // Turn on LED 3 for 1/20 of a second
+        led3_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 4 for 1/20 of a second
+        led4_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 5 for 1/20 of a second
+        led5_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 6 for 1/20 of a second
+        led6_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 7 for 1/20 of a second
+        led7_command(brightness, red, green, blue);
         __delay_ms(50);
         
         for(unsigned char i = 0; i < 4; ++i)
         {
-            // Turn on LED 1 for 1/40 of a second
-            led1_command(brightness, red, green, blue);
+            // Turn on LED 7 for 1/40 of a second
+            led7_command(brightness, red, green, blue);
             __delay_ms(25);
-            // Turn off LED 1 for 1/40 of a second
-            led1_command(0xFF, 0, 0, 0);
+            // Turn off LED 7 for 1/40 of a second
+            led7_command(0xFF, 0, 0, 0);
             __delay_ms(25);
         }
     }
     else if( mode == _LIGHT_MODE_CONNECT )
     {
+        // Turn on LED 1  green for 1/20 of a second
+        led1_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 2 orange for 1/20 of a second
+        led2_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 3 blue for 1/20 of a second
+        led3_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 4 red for 1/20 of a second
+        led4_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 5 green 1/20 of a second
+        led5_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 6 orange 1/20 of a second
+        led6_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 7 blue 1/20 of a second
+        led7_command(brightness, red, green, blue);
+        __delay_ms(50);
+        
+        // Turn on LED 6  red for 1/20 of a second
+        led6_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 5 green for 1/20 of a second
+        led5_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 4 orange for 1/20 of a second
+        led4_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 3 blue for 1/20 of a second
+        led3_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 2 red 1/20 of a second
+        led2_command(brightness, red, green, blue);
+        __delay_ms(50);
+        // Turn on LED 1 green 1/20 of a second
+        led1_command(brightness, red, green, blue);
+        __delay_ms(50);
+        
         /*
         led_start();
         led_command(0xFF, 0, 0xFF, 0);
@@ -423,7 +464,7 @@ void display_blade_lights(char mode)
         led_end();
         */
         
-        
+        /*
         // Austin's light show
         for(unsigned char r = 0;r < 255; r+=5)
         {
@@ -501,39 +542,39 @@ void display_blade_lights(char mode)
             }
             __delay_ms(20);
         }
-        
+        */
     }
     else if( mode == _LIGHT_MODE_DAMAGE_RECEIVED )
     {
-        // Turn on LED 1 for 1/20 of a second
-        led1_command(0xFF, 0xFF, 0, 0);
-        __delay_ms(50);
-        // Turn on LED 2 for 1/20 of a second
-        led2_command(0xFF, 0xFF, 0, 0);
-        __delay_ms(50);
-        // Turn on LED 3 for 1/20 of a second
-        led3_command(0xFF, 0xFF, 0, 0);
-        __delay_ms(50);
-        // Turn on LED 4 for 1/20 of a second
-        led4_command(0xFF, 0xFF, 0, 0);
-        __delay_ms(50);
-        // Turn on LED 5 for 1/20 of a second
-        led5_command(0xFF, 0xFF, 0, 0);
+        // Turn on LED 7 for 1/20 of a second
+        led7_command(0xFF, 0xFF, 0, 0);
         __delay_ms(50);
         // Turn on LED 6 for 1/20 of a second
         led6_command(0xFF, 0xFF, 0, 0);
         __delay_ms(50);
-        // Turn on LED 7 for 1/20 of a second
-        led7_command(0xFF, 0xFF, 0, 0);
+        // Turn on LED 5 for 1/20 of a second
+        led5_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 4 for 1/20 of a second
+        led4_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 3 for 1/20 of a second
+        led3_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 2 for 1/20 of a second
+        led2_command(0xFF, 0xFF, 0, 0);
+        __delay_ms(50);
+        // Turn on LED 1 for 1/20 of a second
+        led1_command(0xFF, 0xFF, 0, 0);
         __delay_ms(50);
         
         for(unsigned char i = 0; i < 4; ++i)
         {
-            // Turn on LED 7 for 1/40 of a second
-            led7_command(0xFF, 0xFF, 0, 0);
+            // Turn on LED 1 for 1/40 of a second
+            led1_command(0xFF, 0xFF, 0, 0);
             __delay_ms(25);
-            // Turn off LED 7 for 1/40 of a second
-            led7_command(0xFF, 0, 0, 0);
+            // Turn off LED 1 for 1/40 of a second
+            led1_command(0xFF, 0, 0, 0);
             __delay_ms(25);
         }
     }

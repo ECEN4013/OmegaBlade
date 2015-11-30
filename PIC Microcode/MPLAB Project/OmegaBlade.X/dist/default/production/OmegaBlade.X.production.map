@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\OmegaBlade.X.production.sym \
   --cmf=dist/default/production\OmegaBlade.X.production.cmf -z -Q16F1788 \
-  -oC:\Users\Ben\AppData\Local\Temp\sas0.2 \
+  -oC:\Users\Ben\AppData\Local\Temp\sgnk.2 \
   -Mdist/default/production/OmegaBlade.X.production.map -E1 -ver=XC8 \
   -ASTACK=02076h-027efh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
@@ -36,7 +36,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Ben\AppData\Local\Temp\sas0.obj \
+  C:\Users\Ben\AppData\Local\Temp\sgnk.obj \
   dist/default/production\OmegaBlade.X.production.obj 
 
 Object code version is 3.11
@@ -46,20 +46,20 @@ Machine type is 16F1788
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Ben\AppData\Local\Temp\sas0.obj
-                end_init                            176      176        2        8       0
+C:\Users\Ben\AppData\Local\Temp\sgnk.obj
+                end_init                            173      173        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\OmegaBlade.X.production.obj
-                cinit                               178      178       15        8       0
-                intentry                              4        4      172        8       0
-                text40                              7AA      7AA       51        8       0
+                cinit                               175      175       15        8       0
+                intentry                              4        4      16F        8       0
+                text40                              7A7      7A7       51        8       0
                 text39                             101C     101C       64     2038       0
                 text38                             1B33     1B33       20     3666       0
                 text37                             1BE2     1BE2       3C     37C4       0
                 text36                             1DD7     1DD7       B4     3BAE       0
                 text35                             1C1E     1C1E       87     383C       0
-                text34                              800      800        5        8       0
+                text34                              800      800        5     1000       0
                 text33                             1B10     1B10       10     3620       0
                 text32                             1F45     1F45       BB     3E8A       0
                 text31                             1080     1080       BB     2100       0
@@ -71,9 +71,9 @@ dist/default/production\OmegaBlade.X.production.obj
                 text25                             1E8B     1E8B       BA     3D16       0
                 text24                              C8B      C8B      375     1916       0
                 text23                             1CA5     1CA5       88     394A       0
-                text21                              7FB      7FB        5        8       0
+                text21                              7F8      7F8        5        8       0
                 text20                             1B53     1B53       29     36A6       0
-                text19                              681      681      129        8       0
+                text19                              67E      67E      129        8       0
                 text18                             1B20     1B20       13     3640       0
                 text17                             1668     1668       CC     2CD0       0
                 text16                             1734     1734       CC     2E68       0
@@ -83,15 +83,15 @@ dist/default/production\OmegaBlade.X.production.obj
                 text12                              AF3      AF3       CC     15E6       0
                 text11                              BBF      BBF       CC     177E       0
                 text10                             15A1     15A1       C7     2B42       0
-                text9                               18D      18D      3AF        8       0
+                text9                               18A      18A      3AF        8       0
                 text8                               805      805       8A     100A       0
                 text7                              1007     1007       15     200E       0
-                text6                              1004     1004        3     2008       0
+                text6                               7FD      7FD        3        8       0
                 text5                              1BA9     1BA9       39     3752       0
                 text4                              1B01     1B01        F     3602       0
                 text3                              1D2D     1D2D       AA     3A5A       0
                 text2                              1B7C     1B7C       2D     36F8       0
-                text1                               53C      53C      145        8       0
+                text1                               539      539      145        8       0
                 maintext                           14E2     14E2       BF     29C4       0
                 cstackBANK0                          20       20       28       20       1
                 cstackCOMMON                         70       70        E       70       1
@@ -106,11 +106,11 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                            176      176        2         0
-                cinit                               178      178       15         0
-                intentry                              4        4      172         0
+                end_init                            173      173        2         0
+                cinit                               175      175       15         0
+                intentry                              4        4      16F         0
                 reset_vec                             0        0        2         0
-                text40                              7AA      7AA       51         0
+                text40                              7A7      7A7       51         0
                 text39                             101C     101C       64         0
                 text38                             1B33     1B33       20         0
                 text37                             1BE2     1BE2       3C         0
@@ -128,9 +128,9 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text25                             1E8B     1E8B       BA         0
                 text24                              C8B      C8B      375         0
                 text23                             1CA5     1CA5       88         0
-                text21                              7FB      7FB        5         0
+                text21                              7F8      7F8        5         0
                 text20                             1B53     1B53       29         0
-                text19                              681      681      129         0
+                text19                              67E      67E      129         0
                 text18                             1B20     1B20       13         0
                 text17                             1668     1668       CC         0
                 text16                             1734     1734       CC         0
@@ -140,15 +140,15 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text12                              AF3      AF3       CC         0
                 text11                              BBF      BBF       CC         0
                 text10                             15A1     15A1       C7         0
-                text9                               18D      18D      3AF         0
+                text9                               18A      18A      3AF         0
                 text8                               805      805       8A         0
                 text7                              1007     1007       15         0
-                text6                              1004     1004        3         0
+                text6                               7FD      7FD        3         0
                 text5                              1BA9     1BA9       39         0
                 text4                              1B01     1B01        F         0
                 text3                              1D2D     1D2D       AA         0
                 text2                              1B7C     1B7C       2D         0
-                text1                               53C      53C      145         0
+                text1                               539      539      145         0
                 maintext                           14E2     14E2       BF         0
                 idataBANK1                            3        3        1         0
 
@@ -317,10 +317,11 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
                 idataBANK1                     000003  000001  000004         6       0  CODE        2
-                intentry                       000004  000801  000805         8       0  CODE        2
+                intentry                       000004  0007FC  000800         8       0  CODE        2
                 cstackBANK0                    000020  000030  000050        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 cstackBANK1                    0000A0  000026  0000C6        A0       1  BANK1       1
+                text34                         000800  000005  000805      1000       0  CODE        2
                 text8                          000805  00008A  00088F      100A       0  CODE        2
                 text15                         00088F  0000CC  00095B      111E       0  CODE        2
                 text14                         00095B  0000CC  000A27      12B6       0  CODE        2
@@ -328,7 +329,6 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text12                         000AF3  0000CC  000BBF      15E6       0  CODE        2
                 text11                         000BBF  0000CC  000C8B      177E       0  CODE        2
                 text24                         000C8B  000375  001000      1916       0  CODE        2
-                text6                          001004  000003  001007      2008       0  CODE        2
                 text7                          001007  000015  00101C      200E       0  CODE        2
                 text39                         00101C  000064  001080      2038       0  CODE        2
                 text31                         001080  0000BB  00113B      2100       0  CODE        2
@@ -390,16 +390,16 @@ UNUSED ADDRESS RANGES
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-027EF             7F0           1
         CODE             00002-00002               1           2
-                         01000-01003               4
+                         01000-01006               7
                          01800-01B00             301
                          02089-03FFF             800
         CONST            00002-00002               1           2
-                         01000-01003               4
+                         01000-01006               7
                          01800-01B00             100
                          02089-03FFF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00002-00002               1           2
-                         01000-01003               4
+                         01000-01006               7
                          01800-01B00             100
                          02089-03FFF             100
         IDLOC            08000-08003               4           2
@@ -463,11 +463,11 @@ UNUSED ADDRESS RANGES
         SFR9             00480-0049F              20           1
         STACK            02076-027EF             77A           1
         STRCODE          00002-00002               1           2
-                         01000-01003               4
+                         01000-01006               7
                          01800-01B00             301
                          02089-03FFF            1F77
         STRING           00002-00002               1           2
-                         01000-01003               4
+                         01000-01006               7
                          01800-01B00             100
                          02089-03FFF             100
 
@@ -705,7 +705,7 @@ __Hbank9                                           bank9        00000
 __Hbigram                                          bigram       00000
 __HbssBANK0                                        bssBANK0     00000
 __HbssBANK1                                        bssBANK1     00000
-__Hcinit                                           cinit        0018D
+__Hcinit                                           cinit        0018A
 __Hclrtext                                         clrtext      00000
 __Hcode                                            code         00000
 __Hcommon                                          common       00000
@@ -715,12 +715,12 @@ __HcstackBANK1                                     cstackBANK1  00000
 __HcstackCOMMON                                    cstackCOMMON 00000
 __HdataBANK1                                       dataBANK1    00000
 __Heeprom_data                                     eeprom_data  00000
-__Hend_init                                        end_init     00178
+__Hend_init                                        end_init     00175
 __Hfunctab                                         functab      00000
 __HidataBANK1                                      idataBANK1   00000
 __Hidloc                                           idloc        00000
-__Hinit                                            init         00176
-__Hintentry                                        intentry     00176
+__Hinit                                            init         00173
+__Hintentry                                        intentry     00173
 __Hmaintext                                        maintext     00000
 __Hpowerup                                         powerup      00000
 __Hram                                             ram          00000
@@ -801,7 +801,7 @@ __Lbank9                                           bank9        00000
 __Lbigram                                          bigram       00000
 __LbssBANK0                                        bssBANK0     00000
 __LbssBANK1                                        bssBANK1     00000
-__Lcinit                                           cinit        00178
+__Lcinit                                           cinit        00175
 __Lclrtext                                         clrtext      00000
 __Lcode                                            code         00000
 __Lcommon                                          common       00000
@@ -811,11 +811,11 @@ __LcstackBANK1                                     cstackBANK1  00000
 __LcstackCOMMON                                    cstackCOMMON 00000
 __LdataBANK1                                       dataBANK1    00000
 __Leeprom_data                                     eeprom_data  00000
-__Lend_init                                        end_init     00176
+__Lend_init                                        end_init     00173
 __Lfunctab                                         functab      00000
 __LidataBANK1                                      idataBANK1   00000
 __Lidloc                                           idloc        00000
-__Linit                                            init         00176
+__Linit                                            init         00173
 __Lintentry                                        intentry     00004
 __Lmaintext                                        maintext     00000
 __Lpowerup                                         powerup      00000
@@ -865,7 +865,7 @@ __S0                                               (abs)        08009
 __S1                                               (abs)        000C6
 __S2                                               (abs)        00000
 __S3                                               (abs)        00000
-___awdiv                                           text40       007AA
+___awdiv                                           text40       007A7
 ___awdiv@counter                                   cstackCOMMON 00075
 ___awdiv@dividend                                  cstackCOMMON 00072
 ___awdiv@divisor                                   cstackCOMMON 00070
@@ -896,25 +896,25 @@ ___fttol@sign1                                     cstackBANK0  00038
 ___int_sp                                          stack        00000
 ___latbits                                         (abs)        00003
 ___sp                                              stack        00000
-__end_of___awdiv                                   text40       007FB
+__end_of___awdiv                                   text40       007F8
 __end_of___awtoft                                  text38       01B53
 __end_of___ftge                                    text37       01C1E
 __end_of___ftmul                                   text36       01E8B
 __end_of___ftpack                                  text39       01080
 __end_of___fttol                                   text35       01CA5
-__end_of__initialization                           cinit        00189
-__end_of_determine_omega_mode_active               text21       00800
+__end_of__initialization                           cinit        00186
+__end_of_determine_omega_mode_active               text21       007FD
 __end_of_determine_packets_to_send                 text20       01B7C
-__end_of_determine_sword_was_swung                 text19       007AA
-__end_of_display_blade_lights                      text9        0053C
+__end_of_determine_sword_was_swung                 text19       007A7
+__end_of_display_blade_lights                      text9        00539
 __end_of_display_health                            text8        0088F
 __end_of_init_accel                                text7        0101C
-__end_of_init_conn                                 text6        01007
+__end_of_init_conn                                 text6        00800
 __end_of_init_ir                                   text5        01BE2
 __end_of_init_isr                                  text4        01B10
 __end_of_init_leds                                 text3        01DD7
 __end_of_init_pic                                  text2        01BA9
-__end_of_isr                                       intentry     00176
+__end_of_isr                                       intentry     00173
 __end_of_led1_command                              text17       01734
 __end_of_led2_command                              text16       01800
 __end_of_led3_command                              text15       0095B
@@ -924,7 +924,7 @@ __end_of_led6_command                              text12       00BBF
 __end_of_led7_command                              text11       00C8B
 __end_of_leds_off                                  text10       01668
 __end_of_main                                      maintext     015A1
-__end_of_output_ir                                 text1        00681
+__end_of_output_ir                                 text1        0067E
 __end_of_writespi                                  text18       01B33
 __end_ofdetermine_sword_was_swung@midpoint         stringtext   02002
 __end_ofdetermine_sword_was_swung@neg_shock_thresh stringtext   02004
@@ -941,7 +941,7 @@ __end_ofi1_led6_command                            text27       01427
 __end_ofi1_led7_command                            text26       014E2
 __end_ofi1_leds_off                                text25       01F45
 __end_ofi1_writespi                                text33       01B20
-__initialization                                   cinit        00178
+__initialization                                   cinit        00175
 __pbssBANK0                                        bssBANK0     00048
 __pbssBANK1                                        bssBANK1     000C0
 __pcstackBANK0                                     cstackBANK0  00020
@@ -952,7 +952,7 @@ __pidataBANK1                                      idataBANK1   00003
 __pintentry                                        intentry     00004
 __pmaintext                                        maintext     014E2
 __pstringtext                                      stringtext   02000
-__ptext1                                           text1        0053C
+__ptext1                                           text1        00539
 __ptext10                                          text10       015A1
 __ptext11                                          text11       00BBF
 __ptext12                                          text12       00AF3
@@ -962,10 +962,10 @@ __ptext15                                          text15       0088F
 __ptext16                                          text16       01734
 __ptext17                                          text17       01668
 __ptext18                                          text18       01B20
-__ptext19                                          text19       00681
+__ptext19                                          text19       0067E
 __ptext2                                           text2        01B7C
 __ptext20                                          text20       01B53
-__ptext21                                          text21       007FB
+__ptext21                                          text21       007F8
 __ptext23                                          text23       01CA5
 __ptext24                                          text24       00C8B
 __ptext25                                          text25       01E8B
@@ -985,12 +985,12 @@ __ptext37                                          text37       01BE2
 __ptext38                                          text38       01B33
 __ptext39                                          text39       0101C
 __ptext4                                           text4        01B01
-__ptext40                                          text40       007AA
+__ptext40                                          text40       007A7
 __ptext5                                           text5        01BA9
-__ptext6                                           text6        01004
+__ptext6                                           text6        007FD
 __ptext7                                           text7        01007
 __ptext8                                           text8        00805
-__ptext9                                           text9        0018D
+__ptext9                                           text9        0018A
 __size_of___awdiv                                  (abs)        00000
 __size_of___awtoft                                 (abs)        00000
 __size_of___ftge                                   (abs)        00000
@@ -1033,14 +1033,14 @@ __size_ofi1_led7_command                           (abs)        00000
 __size_ofi1_leds_off                               (abs)        00000
 __size_ofi1_writespi                               (abs)        00000
 _damage_received                                   bssBANK1     000C3
-_determine_omega_mode_active                       text21       007FB
+_determine_omega_mode_active                       text21       007F8
 _determine_packets_to_send                         text20       01B53
-_determine_sword_was_swung                         text19       00681
-_display_blade_lights                              text9        0018D
+_determine_sword_was_swung                         text19       0067E
+_display_blade_lights                              text9        0018A
 _display_health                                    text8        00805
 _health                                            dataBANK1    000C5
 _init_accel                                        text7        01007
-_init_conn                                         text6        01004
+_init_conn                                         text6        007FD
 _init_ir                                           text5        01BA9
 _init_isr                                          text4        01B01
 _init_leds                                         text3        01D2D
@@ -1056,7 +1056,7 @@ _led7_command                                      text11       00BBF
 _leds_off                                          text10       015A1
 _main                                              maintext     014E2
 _numPackets                                        bssBANK0     0004E
-_output_ir                                         text1        0053C
+_output_ir                                         text1        00539
 _stun_counter                                      bssBANK1     000C4
 _writespi                                          text18       01B20
 btemp                                              (abs)        0007E
@@ -1090,7 +1090,7 @@ display_blade_lights@mode                          cstackBANK1  000B2
 display_blade_lights@r                             cstackBANK1  000B3
 display_blade_lights@r_640                         cstackBANK1  000B4
 display_blade_lights@red                           cstackBANK1  000B6
-end_of_initialization                              cinit        00189
+end_of_initialization                              cinit        00186
 i1_determine_omega_mode_active                     text34       00800
 i1_display_blade_lights                            text24       00C8B
 i1_display_health                                  text23       01CA5
@@ -1229,8 +1229,8 @@ output_ir@pkt_type                                 cstackBANK1  000A6
 reset_vec                                          reset_vec    00000
 stackhi                                            (abs)        027EF
 stacklo                                            (abs)        02076
-start                                              init         00176
-start_initialization                               cinit        00178
+start                                              init         00173
+start_initialization                               cinit        00175
 ttemp                                              (abs)        0007E
 ttemp0                                             (abs)        0007E
 ttemp1                                             (abs)        00081
@@ -2665,13 +2665,13 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 ../../source/interrupt.c
-		_isr           		CODE           	0004	0000	371
+		_isr           		CODE           	0004	0000	368
 		_init_isr      		CODE           	1B01	0000	16
 
-../../source/interrupt.c estimated size: 387
+../../source/interrupt.c estimated size: 384
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-		___awdiv       		CODE           	07AA	0000	82
+		___awdiv       		CODE           	07A7	0000	82
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c estimated size: 82
 
@@ -2688,7 +2688,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c estimated size:
 		_writespi      		CODE           	1B20	0000	20
 		_leds_off      		CODE           	15A1	0000	200
 		_display_health		CODE           	0805	0000	139
-		_display_blade_lights		CODE           	018D	0000	944
+		_display_blade_lights		CODE           	018A	0000	944
 		_led1_command  		CODE           	1668	0000	205
 		_led2_command  		CODE           	1734	0000	205
 		_led3_command  		CODE           	088F	0000	205
@@ -2707,7 +2707,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c estimated size: 101
 
 ../../source/ir.c
-		_output_ir     		CODE           	053C	0000	326
+		_output_ir     		CODE           	0539	0000	326
 		_init_ir       		CODE           	1BA9	0000	58
 
 ../../source/ir.c estimated size: 384
@@ -2720,8 +2720,8 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c estimated size
 
 ../../source/blade_connection.c
 		_determine_packets_to_send		CODE           	1B53	0000	42
-		_determine_omega_mode_active		CODE           	07FB	0000	6
-		_init_conn     		CODE           	1004	0000	4
+		_determine_omega_mode_active		CODE           	07F8	0000	6
+		_init_conn     		CODE           	07FD	0000	4
 
 ../../source/blade_connection.c estimated size: 52
 
@@ -2732,7 +2732,7 @@ shared
 		i1_leds_off    		CODE           	1E8B	0000	187
 		i1_led3_command		CODE           	113B	0000	188
 		i1_led6_command		CODE           	136C	0000	188
-		__initialization		CODE           	0178	0000	18
+		__initialization		CODE           	0175	0000	18
 		determine_sword_was_swung@neg_shock_thresh		STRCODE        	0000	0000	0
 		determine_sword_was_swung@pos_shock_thresh		STRCODE        	0000	0000	0
 		i1_determine_omega_mode_active		CODE           	0800	0000	6
@@ -2751,7 +2751,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c estimated size: 181
 
 ../../source/accelerometer.c
-		_determine_sword_was_swung		CODE           	0681	0000	298
+		_determine_sword_was_swung		CODE           	067E	0000	298
 		_init_accel    		CODE           	1007	0000	22
 
 ../../source/accelerometer.c estimated size: 320
