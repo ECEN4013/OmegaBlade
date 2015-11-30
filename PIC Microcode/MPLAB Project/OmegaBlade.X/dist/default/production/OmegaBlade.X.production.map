@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\OmegaBlade.X.production.sym \
   --cmf=dist/default/production\OmegaBlade.X.production.cmf -z -Q16F1788 \
-  -oC:\Users\Ben\AppData\Local\Temp\sgnk.2 \
+  -oC:\Users\Ben\AppData\Local\Temp\sfps.2 \
   -Mdist/default/production/OmegaBlade.X.production.map -E1 -ver=XC8 \
   -ASTACK=02076h-027efh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
@@ -36,7 +36,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Ben\AppData\Local\Temp\sgnk.obj \
+  C:\Users\Ben\AppData\Local\Temp\sfps.obj \
   dist/default/production\OmegaBlade.X.production.obj 
 
 Object code version is 3.11
@@ -46,21 +46,21 @@ Machine type is 16F1788
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Ben\AppData\Local\Temp\sgnk.obj
-                end_init                            173      173        2        8       0
+C:\Users\Ben\AppData\Local\Temp\sfps.obj
+                end_init                            181      181        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\OmegaBlade.X.production.obj
-                cinit                               175      175       15        8       0
-                intentry                              4        4      16F        8       0
-                text40                              7A7      7A7       51        8       0
+                cinit                               183      183       15        8       0
+                intentry                              4        4      17D        8       0
+                text40                              7AB      7AB       51        8       0
                 text39                             101C     101C       64     2038       0
-                text38                             1B33     1B33       20     3666       0
-                text37                             1BE2     1BE2       3C     37C4       0
+                text38                             1AA9     1AA9       20     3552       0
+                text37                             1B58     1B58       3C     36B0       0
                 text36                             1DD7     1DD7       B4     3BAE       0
-                text35                             1C1E     1C1E       87     383C       0
-                text34                              800      800        5     1000       0
-                text33                             1B10     1B10       10     3620       0
+                text35                             1B94     1B94       87     3728       0
+                text34                             1A85     1A85        5     350A       0
+                text33                             1A99     1A99       10     3532       0
                 text32                             1F45     1F45       BB     3E8A       0
                 text31                             1080     1080       BB     2100       0
                 text30                             113B     113B       BB     2276       0
@@ -70,28 +70,28 @@ dist/default/production\OmegaBlade.X.production.obj
                 text26                             1427     1427       BB     284E       0
                 text25                             1E8B     1E8B       BA     3D16       0
                 text24                              C8B      C8B      375     1916       0
-                text23                             1CA5     1CA5       88     394A       0
-                text21                              7F8      7F8        5        8       0
-                text20                             1B53     1B53       29     36A6       0
-                text19                              67E      67E      129        8       0
-                text18                             1B20     1B20       13     3640       0
+                text23                             1C1B     1C1B       88     3836       0
+                text21                             1004     1004        5     2008       0
+                text20                             1AC9     1AC9       29     3592       0
+                text19                              547      547      198        8       0
+                text18                             1009     1009       13     2012       0
                 text17                             1668     1668       CC     2CD0       0
                 text16                             1734     1734       CC     2E68       0
-                text15                              88F      88F       CC     111E       0
-                text14                              95B      95B       CC     12B6       0
-                text13                              A27      A27       CC     144E       0
-                text12                              AF3      AF3       CC     15E6       0
-                text11                              BBF      BBF       CC     177E       0
+                text15                              816      816       CC     102C       0
+                text14                              8E2      8E2       CC     11C4       0
+                text13                              9AE      9AE       CC     135C       0
+                text12                              A7A      A7A       CC     14F4       0
+                text11                              6DF      6DF       CC        8       0
                 text10                             15A1     15A1       C7     2B42       0
-                text9                               18A      18A      3AF        8       0
-                text8                               805      805       8A     100A       0
-                text7                              1007     1007       15     200E       0
-                text6                               7FD      7FD        3        8       0
-                text5                              1BA9     1BA9       39     3752       0
-                text4                              1B01     1B01        F     3602       0
+                text9                               198      198      3AF        8       0
+                text8                              1CA3     1CA3       8A     3946       0
+                text7                               801      801       15     1002       0
+                text6                               7FC      7FC        3        8       0
+                text5                              1B1F     1B1F       39     363E       0
+                text4                              1A8A     1A8A        F     3514       0
                 text3                              1D2D     1D2D       AA     3A5A       0
-                text2                              1B7C     1B7C       2D     36F8       0
-                text1                               539      539      145        8       0
+                text2                              1AF2     1AF2       2D     35E4       0
+                text1                               B46      B46      145     168C       0
                 maintext                           14E2     14E2       BF     29C4       0
                 cstackBANK0                          20       20       28       20       1
                 cstackCOMMON                         70       70        E       70       1
@@ -100,24 +100,24 @@ dist/default/production\OmegaBlade.X.production.obj
                 bssBANK1                             C0       C0        5       A0       1
                 bssBANK0                             48       48        8       20       1
                 stringtext                         2000     2000       89     4000       0
-                idataBANK1                            3        3        1        6       0
+                idataBANK1                          7FF      7FF        1        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                            173      173        2         0
-                cinit                               175      175       15         0
-                intentry                              4        4      16F         0
+                end_init                            181      181        2         0
+                cinit                               183      183       15         0
+                intentry                              4        4      17D         0
                 reset_vec                             0        0        2         0
-                text40                              7A7      7A7       51         0
+                text40                              7AB      7AB       51         0
                 text39                             101C     101C       64         0
-                text38                             1B33     1B33       20         0
-                text37                             1BE2     1BE2       3C         0
+                text38                             1AA9     1AA9       20         0
+                text37                             1B58     1B58       3C         0
                 text36                             1DD7     1DD7       B4         0
-                text35                             1C1E     1C1E       87         0
-                text34                              800      800        5         0
-                text33                             1B10     1B10       10         0
+                text35                             1B94     1B94       87         0
+                text34                             1A85     1A85        5         0
+                text33                             1A99     1A99       10         0
                 text32                             1F45     1F45       BB         0
                 text31                             1080     1080       BB         0
                 text30                             113B     113B       BB         0
@@ -127,30 +127,30 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text26                             1427     1427       BB         0
                 text25                             1E8B     1E8B       BA         0
                 text24                              C8B      C8B      375         0
-                text23                             1CA5     1CA5       88         0
-                text21                              7F8      7F8        5         0
-                text20                             1B53     1B53       29         0
-                text19                              67E      67E      129         0
-                text18                             1B20     1B20       13         0
+                text23                             1C1B     1C1B       88         0
+                text21                             1004     1004        5         0
+                text20                             1AC9     1AC9       29         0
+                text19                              547      547      198         0
+                text18                             1009     1009       13         0
                 text17                             1668     1668       CC         0
                 text16                             1734     1734       CC         0
-                text15                              88F      88F       CC         0
-                text14                              95B      95B       CC         0
-                text13                              A27      A27       CC         0
-                text12                              AF3      AF3       CC         0
-                text11                              BBF      BBF       CC         0
+                text15                              816      816       CC         0
+                text14                              8E2      8E2       CC         0
+                text13                              9AE      9AE       CC         0
+                text12                              A7A      A7A       CC         0
+                text11                              6DF      6DF       CC         0
                 text10                             15A1     15A1       C7         0
-                text9                               18A      18A      3AF         0
-                text8                               805      805       8A         0
-                text7                              1007     1007       15         0
-                text6                               7FD      7FD        3         0
-                text5                              1BA9     1BA9       39         0
-                text4                              1B01     1B01        F         0
+                text9                               198      198      3AF         0
+                text8                              1CA3     1CA3       8A         0
+                text7                               801      801       15         0
+                text6                               7FC      7FC        3         0
+                text5                              1B1F     1B1F       39         0
+                text4                              1A8A     1A8A        F         0
                 text3                              1D2D     1D2D       AA         0
-                text2                              1B7C     1B7C       2D         0
-                text1                               539      539      145         0
+                text2                              1AF2     1AF2       2D         0
+                text1                               B46      B46      145         0
                 maintext                           14E2     14E2       BF         0
-                idataBANK1                            3        3        1         0
+                idataBANK1                          7FF      7FF        1         0
 
         CLASS   STRCODE        
                 stringtext                         2000     2000       89         0
@@ -316,20 +316,19 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
-                idataBANK1                     000003  000001  000004         6       0  CODE        2
                 intentry                       000004  0007FC  000800         8       0  CODE        2
                 cstackBANK0                    000020  000030  000050        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 cstackBANK1                    0000A0  000026  0000C6        A0       1  BANK1       1
-                text34                         000800  000005  000805      1000       0  CODE        2
-                text8                          000805  00008A  00088F      100A       0  CODE        2
-                text15                         00088F  0000CC  00095B      111E       0  CODE        2
-                text14                         00095B  0000CC  000A27      12B6       0  CODE        2
-                text13                         000A27  0000CC  000AF3      144E       0  CODE        2
-                text12                         000AF3  0000CC  000BBF      15E6       0  CODE        2
-                text11                         000BBF  0000CC  000C8B      177E       0  CODE        2
+                text7                          000801  000015  000816      1002       0  CODE        2
+                text15                         000816  0000CC  0008E2      102C       0  CODE        2
+                text14                         0008E2  0000CC  0009AE      11C4       0  CODE        2
+                text13                         0009AE  0000CC  000A7A      135C       0  CODE        2
+                text12                         000A7A  0000CC  000B46      14F4       0  CODE        2
+                text1                          000B46  000145  000C8B      168C       0  CODE        2
                 text24                         000C8B  000375  001000      1916       0  CODE        2
-                text7                          001007  000015  00101C      200E       0  CODE        2
+                text21                         001004  000005  001009      2008       0  CODE        2
+                text18                         001009  000013  00101C      2012       0  CODE        2
                 text39                         00101C  000064  001080      2038       0  CODE        2
                 text31                         001080  0000BB  00113B      2100       0  CODE        2
                 text30                         00113B  0000BB  0011F6      2276       0  CODE        2
@@ -341,16 +340,17 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text10                         0015A1  0000C7  001668      2B42       0  CODE        2
                 text17                         001668  0000CC  001734      2CD0       0  CODE        2
                 text16                         001734  0000CC  001800      2E68       0  CODE        2
-                text4                          001B01  00000F  001B10      3602       0  CODE        2
-                text33                         001B10  000010  001B20      3620       0  CODE        2
-                text18                         001B20  000013  001B33      3640       0  CODE        2
-                text38                         001B33  000020  001B53      3666       0  CODE        2
-                text20                         001B53  000029  001B7C      36A6       0  CODE        2
-                text2                          001B7C  00002D  001BA9      36F8       0  CODE        2
-                text5                          001BA9  000039  001BE2      3752       0  CODE        2
-                text37                         001BE2  00003C  001C1E      37C4       0  CODE        2
-                text35                         001C1E  000087  001CA5      383C       0  CODE        2
-                text23                         001CA5  000088  001D2D      394A       0  CODE        2
+                text34                         001A85  000005  001A8A      350A       0  CODE        2
+                text4                          001A8A  00000F  001A99      3514       0  CODE        2
+                text33                         001A99  000010  001AA9      3532       0  CODE        2
+                text38                         001AA9  000020  001AC9      3552       0  CODE        2
+                text20                         001AC9  000029  001AF2      3592       0  CODE        2
+                text2                          001AF2  00002D  001B1F      35E4       0  CODE        2
+                text5                          001B1F  000039  001B58      363E       0  CODE        2
+                text37                         001B58  00003C  001B94      36B0       0  CODE        2
+                text35                         001B94  000087  001C1B      3728       0  CODE        2
+                text23                         001C1B  000088  001CA3      3836       0  CODE        2
+                text8                          001CA3  00008A  001D2D      3946       0  CODE        2
                 text3                          001D2D  0000AA  001DD7      3A5A       0  CODE        2
                 text36                         001DD7  0000B4  001E8B      3BAE       0  CODE        2
                 text25                         001E8B  0000BA  001F45      3D16       0  CODE        2
@@ -389,18 +389,21 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-027EF             7F0           1
-        CODE             00002-00002               1           2
-                         01000-01006               7
-                         01800-01B00             301
+        CODE             00002-00003               2           2
+                         00800-00800               1
+                         01000-01003               4
+                         01800-01A84             285
                          02089-03FFF             800
-        CONST            00002-00002               1           2
-                         01000-01006               7
-                         01800-01B00             100
+        CONST            00002-00003               2           2
+                         00800-00800               1
+                         01000-01003               4
+                         01800-01A84             100
                          02089-03FFF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00002-00002               1           2
-                         01000-01006               7
-                         01800-01B00             100
+        ENTRY            00002-00003               2           2
+                         00800-00800               1
+                         01000-01003               4
+                         01800-01A84             100
                          02089-03FFF             100
         IDLOC            08000-08003               4           2
         RAM              00050-0006F              20           1
@@ -462,13 +465,15 @@ UNUSED ADDRESS RANGES
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
         STACK            02076-027EF             77A           1
-        STRCODE          00002-00002               1           2
-                         01000-01006               7
-                         01800-01B00             301
+        STRCODE          00002-00003               2           2
+                         00800-00800               1
+                         01000-01003               4
+                         01800-01A84             285
                          02089-03FFF            1F77
-        STRING           00002-00002               1           2
-                         01000-01006               7
-                         01800-01B00             100
+        STRING           00002-00003               2           2
+                         00800-00800               1
+                         01000-01003               4
+                         01800-01A84             100
                          02089-03FFF             100
 
                                   Symbol Table
@@ -705,7 +710,7 @@ __Hbank9                                           bank9        00000
 __Hbigram                                          bigram       00000
 __HbssBANK0                                        bssBANK0     00000
 __HbssBANK1                                        bssBANK1     00000
-__Hcinit                                           cinit        0018A
+__Hcinit                                           cinit        00198
 __Hclrtext                                         clrtext      00000
 __Hcode                                            code         00000
 __Hcommon                                          common       00000
@@ -715,12 +720,12 @@ __HcstackBANK1                                     cstackBANK1  00000
 __HcstackCOMMON                                    cstackCOMMON 00000
 __HdataBANK1                                       dataBANK1    00000
 __Heeprom_data                                     eeprom_data  00000
-__Hend_init                                        end_init     00175
+__Hend_init                                        end_init     00183
 __Hfunctab                                         functab      00000
 __HidataBANK1                                      idataBANK1   00000
 __Hidloc                                           idloc        00000
-__Hinit                                            init         00173
-__Hintentry                                        intentry     00173
+__Hinit                                            init         00181
+__Hintentry                                        intentry     00181
 __Hmaintext                                        maintext     00000
 __Hpowerup                                         powerup      00000
 __Hram                                             ram          00000
@@ -801,7 +806,7 @@ __Lbank9                                           bank9        00000
 __Lbigram                                          bigram       00000
 __LbssBANK0                                        bssBANK0     00000
 __LbssBANK1                                        bssBANK1     00000
-__Lcinit                                           cinit        00175
+__Lcinit                                           cinit        00183
 __Lclrtext                                         clrtext      00000
 __Lcode                                            code         00000
 __Lcommon                                          common       00000
@@ -811,11 +816,11 @@ __LcstackBANK1                                     cstackBANK1  00000
 __LcstackCOMMON                                    cstackCOMMON 00000
 __LdataBANK1                                       dataBANK1    00000
 __Leeprom_data                                     eeprom_data  00000
-__Lend_init                                        end_init     00173
+__Lend_init                                        end_init     00181
 __Lfunctab                                         functab      00000
 __LidataBANK1                                      idataBANK1   00000
 __Lidloc                                           idloc        00000
-__Linit                                            init         00173
+__Linit                                            init         00181
 __Lintentry                                        intentry     00004
 __Lmaintext                                        maintext     00000
 __Lpowerup                                         powerup      00000
@@ -865,16 +870,16 @@ __S0                                               (abs)        08009
 __S1                                               (abs)        000C6
 __S2                                               (abs)        00000
 __S3                                               (abs)        00000
-___awdiv                                           text40       007A7
+___awdiv                                           text40       007AB
 ___awdiv@counter                                   cstackCOMMON 00075
 ___awdiv@dividend                                  cstackCOMMON 00072
 ___awdiv@divisor                                   cstackCOMMON 00070
 ___awdiv@quotient                                  cstackCOMMON 00077
 ___awdiv@sign                                      cstackCOMMON 00076
-___awtoft                                          text38       01B33
+___awtoft                                          text38       01AA9
 ___awtoft@c                                        cstackCOMMON 00078
 ___awtoft@sign                                     cstackCOMMON 0007D
-___ftge                                            text37       01BE2
+___ftge                                            text37       01B58
 ___ftge@ff1                                        cstackBANK0  00030
 ___ftge@ff2                                        cstackBANK0  00033
 ___ftmul                                           text36       01DD7
@@ -888,7 +893,7 @@ ___ftpack                                          text39       0101C
 ___ftpack@arg                                      cstackCOMMON 00070
 ___ftpack@exp                                      cstackCOMMON 00073
 ___ftpack@sign                                     cstackCOMMON 00074
-___fttol                                           text35       01C1E
+___fttol                                           text35       01B94
 ___fttol@exp1                                      cstackBANK0  0003D
 ___fttol@f1                                        cstackBANK0  00030
 ___fttol@lval                                      cstackBANK0  00039
@@ -896,42 +901,42 @@ ___fttol@sign1                                     cstackBANK0  00038
 ___int_sp                                          stack        00000
 ___latbits                                         (abs)        00003
 ___sp                                              stack        00000
-__end_of___awdiv                                   text40       007F8
-__end_of___awtoft                                  text38       01B53
-__end_of___ftge                                    text37       01C1E
+__end_of___awdiv                                   text40       007FC
+__end_of___awtoft                                  text38       01AC9
+__end_of___ftge                                    text37       01B94
 __end_of___ftmul                                   text36       01E8B
 __end_of___ftpack                                  text39       01080
-__end_of___fttol                                   text35       01CA5
-__end_of__initialization                           cinit        00186
-__end_of_determine_omega_mode_active               text21       007FD
-__end_of_determine_packets_to_send                 text20       01B7C
-__end_of_determine_sword_was_swung                 text19       007A7
-__end_of_display_blade_lights                      text9        00539
-__end_of_display_health                            text8        0088F
-__end_of_init_accel                                text7        0101C
-__end_of_init_conn                                 text6        00800
-__end_of_init_ir                                   text5        01BE2
-__end_of_init_isr                                  text4        01B10
+__end_of___fttol                                   text35       01C1B
+__end_of__initialization                           cinit        00194
+__end_of_determine_omega_mode_active               text21       01009
+__end_of_determine_packets_to_send                 text20       01AF2
+__end_of_determine_sword_was_swung                 text19       006DF
+__end_of_display_blade_lights                      text9        00547
+__end_of_display_health                            text8        01D2D
+__end_of_init_accel                                text7        00816
+__end_of_init_conn                                 text6        007FF
+__end_of_init_ir                                   text5        01B58
+__end_of_init_isr                                  text4        01A99
 __end_of_init_leds                                 text3        01DD7
-__end_of_init_pic                                  text2        01BA9
-__end_of_isr                                       intentry     00173
+__end_of_init_pic                                  text2        01B1F
+__end_of_isr                                       intentry     00181
 __end_of_led1_command                              text17       01734
 __end_of_led2_command                              text16       01800
-__end_of_led3_command                              text15       0095B
-__end_of_led4_command                              text14       00A27
-__end_of_led5_command                              text13       00AF3
-__end_of_led6_command                              text12       00BBF
-__end_of_led7_command                              text11       00C8B
+__end_of_led3_command                              text15       008E2
+__end_of_led4_command                              text14       009AE
+__end_of_led5_command                              text13       00A7A
+__end_of_led6_command                              text12       00B46
+__end_of_led7_command                              text11       007AB
 __end_of_leds_off                                  text10       01668
 __end_of_main                                      maintext     015A1
-__end_of_output_ir                                 text1        0067E
-__end_of_writespi                                  text18       01B33
+__end_of_output_ir                                 text1        00C8B
+__end_of_writespi                                  text18       0101C
 __end_ofdetermine_sword_was_swung@midpoint         stringtext   02002
 __end_ofdetermine_sword_was_swung@neg_shock_thresh stringtext   02004
 __end_ofdetermine_sword_was_swung@pos_shock_thresh stringtext   02006
-__end_ofi1_determine_omega_mode_active             text34       00805
+__end_ofi1_determine_omega_mode_active             text34       01A8A
 __end_ofi1_display_blade_lights                    text24       01000
-__end_ofi1_display_health                          text23       01D2D
+__end_ofi1_display_health                          text23       01CA3
 __end_ofi1_led1_command                            text32       02000
 __end_ofi1_led2_command                            text31       0113B
 __end_ofi1_led3_command                            text30       011F6
@@ -940,33 +945,33 @@ __end_ofi1_led5_command                            text28       0136C
 __end_ofi1_led6_command                            text27       01427
 __end_ofi1_led7_command                            text26       014E2
 __end_ofi1_leds_off                                text25       01F45
-__end_ofi1_writespi                                text33       01B20
-__initialization                                   cinit        00175
+__end_ofi1_writespi                                text33       01AA9
+__initialization                                   cinit        00183
 __pbssBANK0                                        bssBANK0     00048
 __pbssBANK1                                        bssBANK1     000C0
 __pcstackBANK0                                     cstackBANK0  00020
 __pcstackBANK1                                     cstackBANK1  000A0
 __pcstackCOMMON                                    cstackCOMMON 00070
 __pdataBANK1                                       dataBANK1    000C5
-__pidataBANK1                                      idataBANK1   00003
+__pidataBANK1                                      idataBANK1   007FF
 __pintentry                                        intentry     00004
 __pmaintext                                        maintext     014E2
 __pstringtext                                      stringtext   02000
-__ptext1                                           text1        00539
+__ptext1                                           text1        00B46
 __ptext10                                          text10       015A1
-__ptext11                                          text11       00BBF
-__ptext12                                          text12       00AF3
-__ptext13                                          text13       00A27
-__ptext14                                          text14       0095B
-__ptext15                                          text15       0088F
+__ptext11                                          text11       006DF
+__ptext12                                          text12       00A7A
+__ptext13                                          text13       009AE
+__ptext14                                          text14       008E2
+__ptext15                                          text15       00816
 __ptext16                                          text16       01734
 __ptext17                                          text17       01668
-__ptext18                                          text18       01B20
-__ptext19                                          text19       0067E
-__ptext2                                           text2        01B7C
-__ptext20                                          text20       01B53
-__ptext21                                          text21       007F8
-__ptext23                                          text23       01CA5
+__ptext18                                          text18       01009
+__ptext19                                          text19       00547
+__ptext2                                           text2        01AF2
+__ptext20                                          text20       01AC9
+__ptext21                                          text21       01004
+__ptext23                                          text23       01C1B
 __ptext24                                          text24       00C8B
 __ptext25                                          text25       01E8B
 __ptext26                                          text26       01427
@@ -977,20 +982,20 @@ __ptext3                                           text3        01D2D
 __ptext30                                          text30       0113B
 __ptext31                                          text31       01080
 __ptext32                                          text32       01F45
-__ptext33                                          text33       01B10
-__ptext34                                          text34       00800
-__ptext35                                          text35       01C1E
+__ptext33                                          text33       01A99
+__ptext34                                          text34       01A85
+__ptext35                                          text35       01B94
 __ptext36                                          text36       01DD7
-__ptext37                                          text37       01BE2
-__ptext38                                          text38       01B33
+__ptext37                                          text37       01B58
+__ptext38                                          text38       01AA9
 __ptext39                                          text39       0101C
-__ptext4                                           text4        01B01
-__ptext40                                          text40       007A7
-__ptext5                                           text5        01BA9
-__ptext6                                           text6        007FD
-__ptext7                                           text7        01007
-__ptext8                                           text8        00805
-__ptext9                                           text9        0018A
+__ptext4                                           text4        01A8A
+__ptext40                                          text40       007AB
+__ptext5                                           text5        01B1F
+__ptext6                                           text6        007FC
+__ptext7                                           text7        00801
+__ptext8                                           text8        01CA3
+__ptext9                                           text9        00198
 __size_of___awdiv                                  (abs)        00000
 __size_of___awtoft                                 (abs)        00000
 __size_of___ftge                                   (abs)        00000
@@ -1033,32 +1038,32 @@ __size_ofi1_led7_command                           (abs)        00000
 __size_ofi1_leds_off                               (abs)        00000
 __size_ofi1_writespi                               (abs)        00000
 _damage_received                                   bssBANK1     000C3
-_determine_omega_mode_active                       text21       007F8
-_determine_packets_to_send                         text20       01B53
-_determine_sword_was_swung                         text19       0067E
-_display_blade_lights                              text9        0018A
-_display_health                                    text8        00805
+_determine_omega_mode_active                       text21       01004
+_determine_packets_to_send                         text20       01AC9
+_determine_sword_was_swung                         text19       00547
+_display_blade_lights                              text9        00198
+_display_health                                    text8        01CA3
 _health                                            dataBANK1    000C5
-_init_accel                                        text7        01007
-_init_conn                                         text6        007FD
-_init_ir                                           text5        01BA9
-_init_isr                                          text4        01B01
+_init_accel                                        text7        00801
+_init_conn                                         text6        007FC
+_init_ir                                           text5        01B1F
+_init_isr                                          text4        01A8A
 _init_leds                                         text3        01D2D
-_init_pic                                          text2        01B7C
+_init_pic                                          text2        01AF2
 _isr                                               intentry     00004
 _led1_command                                      text17       01668
 _led2_command                                      text16       01734
-_led3_command                                      text15       0088F
-_led4_command                                      text14       0095B
-_led5_command                                      text13       00A27
-_led6_command                                      text12       00AF3
-_led7_command                                      text11       00BBF
+_led3_command                                      text15       00816
+_led4_command                                      text14       008E2
+_led5_command                                      text13       009AE
+_led6_command                                      text12       00A7A
+_led7_command                                      text11       006DF
 _leds_off                                          text10       015A1
 _main                                              maintext     014E2
 _numPackets                                        bssBANK0     0004E
-_output_ir                                         text1        00539
+_output_ir                                         text1        00B46
 _stun_counter                                      bssBANK1     000C4
-_writespi                                          text18       01B20
+_writespi                                          text18       01009
 btemp                                              (abs)        0007E
 determine_packets_to_send@packets                  cstackBANK0  00041
 determine_sword_was_swung@midpoint                 stringtext   02000
@@ -1081,19 +1086,19 @@ display_blade_lights@blue                          cstackBANK1  000B8
 display_blade_lights@brightness                    cstackBANK1  000B5
 display_blade_lights@green                         cstackBANK1  000B7
 display_blade_lights@i                             cstackBANK1  000B0
-display_blade_lights@i_638                         cstackBANK1  000A8
-display_blade_lights@i_639                         cstackBANK1  000AA
-display_blade_lights@i_641                         cstackBANK1  000AC
-display_blade_lights@i_642                         cstackBANK1  000AE
-display_blade_lights@i_643                         cstackBANK1  000B1
+display_blade_lights@i_641                         cstackBANK1  000A8
+display_blade_lights@i_642                         cstackBANK1  000AA
+display_blade_lights@i_644                         cstackBANK1  000AC
+display_blade_lights@i_645                         cstackBANK1  000AE
+display_blade_lights@i_646                         cstackBANK1  000B1
 display_blade_lights@mode                          cstackBANK1  000B2
 display_blade_lights@r                             cstackBANK1  000B3
-display_blade_lights@r_640                         cstackBANK1  000B4
+display_blade_lights@r_643                         cstackBANK1  000B4
 display_blade_lights@red                           cstackBANK1  000B6
-end_of_initialization                              cinit        00186
-i1_determine_omega_mode_active                     text34       00800
+end_of_initialization                              cinit        00194
+i1_determine_omega_mode_active                     text34       01A85
 i1_display_blade_lights                            text24       00C8B
-i1_display_health                                  text23       01CA5
+i1_display_health                                  text23       01C1B
 i1_led1_command                                    text32       01F45
 i1_led2_command                                    text31       01080
 i1_led3_command                                    text30       0113B
@@ -1102,64 +1107,64 @@ i1_led5_command                                    text28       012B1
 i1_led6_command                                    text27       0136C
 i1_led7_command                                    text26       01427
 i1_leds_off                                        text25       01E8B
-i1_writespi                                        text33       01B10
+i1_writespi                                        text33       01A99
 i1display_blade_lights@blue                        cstackBANK0  00033
 i1display_blade_lights@brightness                  cstackBANK0  00030
 i1display_blade_lights@green                       cstackBANK0  00032
 i1display_blade_lights@i                           cstackBANK0  0002C
-i1display_blade_lights@i_638                       cstackBANK0  00024
-i1display_blade_lights@i_639                       cstackBANK0  00026
-i1display_blade_lights@i_641                       cstackBANK0  00028
-i1display_blade_lights@i_642                       cstackBANK0  0002A
-i1display_blade_lights@i_643                       cstackBANK0  0002D
+i1display_blade_lights@i_641                       cstackBANK0  00024
+i1display_blade_lights@i_642                       cstackBANK0  00026
+i1display_blade_lights@i_644                       cstackBANK0  00028
+i1display_blade_lights@i_645                       cstackBANK0  0002A
+i1display_blade_lights@i_646                       cstackBANK0  0002D
 i1display_blade_lights@mode                        cstackBANK0  00023
 i1display_blade_lights@r                           cstackBANK0  0002E
-i1display_blade_lights@r_640                       cstackBANK0  0002F
+i1display_blade_lights@r_643                       cstackBANK0  0002F
 i1display_blade_lights@red                         cstackBANK0  00031
 i1led1_command@blue                                cstackCOMMON 00075
 i1led1_command@brightness                          cstackCOMMON 00078
 i1led1_command@green                               cstackCOMMON 00074
 i1led1_command@i                                   cstackCOMMON 00079
-i1led1_command@i_675                               cstackCOMMON 0007B
+i1led1_command@i_678                               cstackCOMMON 0007B
 i1led1_command@red                                 cstackCOMMON 00073
 i1led2_command@blue                                cstackCOMMON 00075
 i1led2_command@brightness                          cstackCOMMON 00078
 i1led2_command@green                               cstackCOMMON 00074
 i1led2_command@i                                   cstackCOMMON 00079
-i1led2_command@i_682                               cstackCOMMON 0007B
+i1led2_command@i_685                               cstackCOMMON 0007B
 i1led2_command@red                                 cstackCOMMON 00073
 i1led3_command@blue                                cstackCOMMON 00075
 i1led3_command@brightness                          cstackCOMMON 00078
 i1led3_command@green                               cstackCOMMON 00074
 i1led3_command@i                                   cstackCOMMON 00079
-i1led3_command@i_689                               cstackCOMMON 0007B
+i1led3_command@i_692                               cstackCOMMON 0007B
 i1led3_command@red                                 cstackCOMMON 00073
 i1led4_command@blue                                cstackCOMMON 00075
 i1led4_command@brightness                          cstackCOMMON 00078
 i1led4_command@green                               cstackCOMMON 00074
 i1led4_command@i                                   cstackCOMMON 00079
-i1led4_command@i_696                               cstackCOMMON 0007B
+i1led4_command@i_699                               cstackCOMMON 0007B
 i1led4_command@red                                 cstackCOMMON 00073
 i1led5_command@blue                                cstackCOMMON 00075
 i1led5_command@brightness                          cstackCOMMON 00078
 i1led5_command@green                               cstackCOMMON 00074
 i1led5_command@i                                   cstackCOMMON 00079
-i1led5_command@i_703                               cstackCOMMON 0007B
+i1led5_command@i_706                               cstackCOMMON 0007B
 i1led5_command@red                                 cstackCOMMON 00073
 i1led6_command@blue                                cstackCOMMON 00075
 i1led6_command@brightness                          cstackCOMMON 00078
 i1led6_command@green                               cstackCOMMON 00074
 i1led6_command@i                                   cstackCOMMON 00079
-i1led6_command@i_710                               cstackCOMMON 0007B
+i1led6_command@i_713                               cstackCOMMON 0007B
 i1led6_command@red                                 cstackCOMMON 00073
 i1led7_command@blue                                cstackCOMMON 00075
 i1led7_command@brightness                          cstackCOMMON 00078
 i1led7_command@green                               cstackCOMMON 00074
 i1led7_command@i                                   cstackCOMMON 00079
-i1led7_command@i_717                               cstackCOMMON 0007B
+i1led7_command@i_720                               cstackCOMMON 0007B
 i1led7_command@red                                 cstackCOMMON 00073
 i1leds_off@i                                       cstackCOMMON 00075
-i1leds_off@i_720                                   cstackCOMMON 00077
+i1leds_off@i_723                                   cstackCOMMON 00077
 i1writespi@TempVar                                 cstackCOMMON 00071
 i1writespi@data_out                                cstackCOMMON 00072
 int$flags                                          (abs)        0007E
@@ -1173,46 +1178,46 @@ led1_command@blue                                  cstackBANK0  00045
 led1_command@brightness                            cstackBANK1  000A0
 led1_command@green                                 cstackBANK0  00044
 led1_command@i                                     cstackBANK1  000A1
-led1_command@i_675                                 cstackBANK1  000A3
+led1_command@i_678                                 cstackBANK1  000A3
 led1_command@red                                   cstackBANK0  00043
 led2_command@blue                                  cstackBANK0  00045
 led2_command@brightness                            cstackBANK1  000A0
 led2_command@green                                 cstackBANK0  00044
 led2_command@i                                     cstackBANK1  000A1
-led2_command@i_682                                 cstackBANK1  000A3
+led2_command@i_685                                 cstackBANK1  000A3
 led2_command@red                                   cstackBANK0  00043
 led3_command@blue                                  cstackBANK0  00045
 led3_command@brightness                            cstackBANK1  000A0
 led3_command@green                                 cstackBANK0  00044
 led3_command@i                                     cstackBANK1  000A1
-led3_command@i_689                                 cstackBANK1  000A3
+led3_command@i_692                                 cstackBANK1  000A3
 led3_command@red                                   cstackBANK0  00043
 led4_command@blue                                  cstackBANK0  00045
 led4_command@brightness                            cstackBANK1  000A0
 led4_command@green                                 cstackBANK0  00044
 led4_command@i                                     cstackBANK1  000A1
-led4_command@i_696                                 cstackBANK1  000A3
+led4_command@i_699                                 cstackBANK1  000A3
 led4_command@red                                   cstackBANK0  00043
 led5_command@blue                                  cstackBANK0  00045
 led5_command@brightness                            cstackBANK1  000A0
 led5_command@green                                 cstackBANK0  00044
 led5_command@i                                     cstackBANK1  000A1
-led5_command@i_703                                 cstackBANK1  000A3
+led5_command@i_706                                 cstackBANK1  000A3
 led5_command@red                                   cstackBANK0  00043
 led6_command@blue                                  cstackBANK0  00045
 led6_command@brightness                            cstackBANK1  000A0
 led6_command@green                                 cstackBANK0  00044
 led6_command@i                                     cstackBANK1  000A1
-led6_command@i_710                                 cstackBANK1  000A3
+led6_command@i_713                                 cstackBANK1  000A3
 led6_command@red                                   cstackBANK0  00043
 led7_command@blue                                  cstackBANK0  00045
 led7_command@brightness                            cstackBANK1  000A0
 led7_command@green                                 cstackBANK0  00044
 led7_command@i                                     cstackBANK1  000A1
-led7_command@i_717                                 cstackBANK1  000A3
+led7_command@i_720                                 cstackBANK1  000A3
 led7_command@red                                   cstackBANK0  00043
 leds_off@i                                         cstackBANK1  000A0
-leds_off@i_720                                     cstackBANK1  000A2
+leds_off@i_723                                     cstackBANK1  000A2
 ltemp                                              (abs)        0007E
 ltemp0                                             (abs)        0007E
 ltemp1                                             (abs)        00082
@@ -1223,14 +1228,14 @@ main@i                                             cstackBANK1  000BF
 main@pkt_arr                                       cstackBANK1  000BC
 output_ir@amount                                   cstackBANK0  00040
 output_ir@i                                        cstackBANK1  000A0
-output_ir@i_336                                    cstackBANK1  000A2
-output_ir@i_337                                    cstackBANK1  000A4
+output_ir@i_338                                    cstackBANK1  000A2
+output_ir@i_339                                    cstackBANK1  000A4
 output_ir@pkt_type                                 cstackBANK1  000A6
 reset_vec                                          reset_vec    00000
 stackhi                                            (abs)        027EF
 stacklo                                            (abs)        02076
-start                                              init         00173
-start_initialization                               cinit        00175
+start                                              init         00181
+start_initialization                               cinit        00183
 ttemp                                              (abs)        0007E
 ttemp0                                             (abs)        0007E
 ttemp1                                             (abs)        00081
@@ -1588,7 +1593,7 @@ Total ram usage:       20 bytes
 
  *************** function _leds_off *****************
  Defined at:
-		line 959 in file "../../source/lighting.c"
+		line 1001 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1620,7 +1625,7 @@ Total ram usage:        6 bytes
 
  *************** function _led7_command *****************
  Defined at:
-		line 906 in file "../../source/lighting.c"
+		line 948 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1   35[BANK0 ] unsigned char 
@@ -1655,7 +1660,7 @@ Total ram usage:       10 bytes
 
  *************** function _led6_command *****************
  Defined at:
-		line 853 in file "../../source/lighting.c"
+		line 895 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1   35[BANK0 ] unsigned char 
@@ -1690,7 +1695,7 @@ Total ram usage:       10 bytes
 
  *************** function _led5_command *****************
  Defined at:
-		line 800 in file "../../source/lighting.c"
+		line 842 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1   35[BANK0 ] unsigned char 
@@ -1725,7 +1730,7 @@ Total ram usage:       10 bytes
 
  *************** function _led4_command *****************
  Defined at:
-		line 747 in file "../../source/lighting.c"
+		line 789 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1   35[BANK0 ] unsigned char 
@@ -1760,7 +1765,7 @@ Total ram usage:       10 bytes
 
  *************** function _led3_command *****************
  Defined at:
-		line 694 in file "../../source/lighting.c"
+		line 736 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1   35[BANK0 ] unsigned char 
@@ -1795,7 +1800,7 @@ Total ram usage:       10 bytes
 
  *************** function _led2_command *****************
  Defined at:
-		line 641 in file "../../source/lighting.c"
+		line 683 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1   35[BANK0 ] unsigned char 
@@ -1830,7 +1835,7 @@ Total ram usage:       10 bytes
 
  *************** function _led1_command *****************
  Defined at:
-		line 588 in file "../../source/lighting.c"
+		line 630 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1   35[BANK0 ] unsigned char 
@@ -1865,7 +1870,7 @@ Total ram usage:       10 bytes
 
  *************** function _writespi *****************
  Defined at:
-		line 543 in file "../../source/lighting.c"
+		line 585 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   data_out        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1929,7 +1934,7 @@ Total ram usage:        3 bytes
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1941,9 +1946,9 @@ Total ram usage:        3 bytes
       Totals:         0       2      24       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       26 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    4
+ Hardware stack levels required when called:    5
  This function calls:
-		Nothing
+		_determine_omega_mode_active
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -2008,6 +2013,7 @@ Total ram usage:        0 bytes
 		Nothing
  This function is called by:
 		_main
+		_determine_sword_was_swung
 		_determine_packets_to_send
  This function uses a non-reentrant model
 
@@ -2130,7 +2136,7 @@ Total ram usage:       20 bytes
 
  *************** function i1_leds_off *****************
  Defined at:
-		line 959 in file "../../source/lighting.c"
+		line 1001 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2161,7 +2167,7 @@ Total ram usage:        6 bytes
 
  *************** function i1_led7_command *****************
  Defined at:
-		line 906 in file "../../source/lighting.c"
+		line 948 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1    3[COMMON] unsigned char 
@@ -2196,7 +2202,7 @@ Total ram usage:       10 bytes
 
  *************** function i1_led6_command *****************
  Defined at:
-		line 853 in file "../../source/lighting.c"
+		line 895 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1    3[COMMON] unsigned char 
@@ -2231,7 +2237,7 @@ Total ram usage:       10 bytes
 
  *************** function i1_led5_command *****************
  Defined at:
-		line 800 in file "../../source/lighting.c"
+		line 842 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1    3[COMMON] unsigned char 
@@ -2266,7 +2272,7 @@ Total ram usage:       10 bytes
 
  *************** function i1_led4_command *****************
  Defined at:
-		line 747 in file "../../source/lighting.c"
+		line 789 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1    3[COMMON] unsigned char 
@@ -2301,7 +2307,7 @@ Total ram usage:       10 bytes
 
  *************** function i1_led3_command *****************
  Defined at:
-		line 694 in file "../../source/lighting.c"
+		line 736 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1    3[COMMON] unsigned char 
@@ -2336,7 +2342,7 @@ Total ram usage:       10 bytes
 
  *************** function i1_led2_command *****************
  Defined at:
-		line 641 in file "../../source/lighting.c"
+		line 683 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1    3[COMMON] unsigned char 
@@ -2371,7 +2377,7 @@ Total ram usage:       10 bytes
 
  *************** function i1_led1_command *****************
  Defined at:
-		line 588 in file "../../source/lighting.c"
+		line 630 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
   red             1    3[COMMON] unsigned char 
@@ -2406,7 +2412,7 @@ Total ram usage:       10 bytes
 
  *************** function i1_writespi *****************
  Defined at:
-		line 543 in file "../../source/lighting.c"
+		line 585 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   data_out        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2665,39 +2671,39 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 ../../source/interrupt.c
-		_isr           		CODE           	0004	0000	368
-		_init_isr      		CODE           	1B01	0000	16
+		_isr           		CODE           	0004	0000	382
+		_init_isr      		CODE           	1A8A	0000	16
 
-../../source/interrupt.c estimated size: 384
+../../source/interrupt.c estimated size: 398
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
-		___awdiv       		CODE           	07A7	0000	82
+		___awdiv       		CODE           	07AB	0000	82
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c estimated size: 82
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c
-		___ftge        		CODE           	1BE2	0000	61
+		___ftge        		CODE           	1B58	0000	61
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c estimated size: 61
 
 ../../source/lighting.c
 		_init_leds     		CODE           	1D2D	0000	171
-		_led5_command  		CODE           	0A27	0000	205
-		_led6_command  		CODE           	0AF3	0000	205
-		_led7_command  		CODE           	0BBF	0000	205
-		_writespi      		CODE           	1B20	0000	20
+		_led5_command  		CODE           	09AE	0000	205
+		_led6_command  		CODE           	0A7A	0000	205
+		_led7_command  		CODE           	06DF	0000	205
+		_writespi      		CODE           	1009	0000	20
 		_leds_off      		CODE           	15A1	0000	200
-		_display_health		CODE           	0805	0000	139
-		_display_blade_lights		CODE           	018A	0000	944
+		_display_health		CODE           	1CA3	0000	139
+		_display_blade_lights		CODE           	0198	0000	944
 		_led1_command  		CODE           	1668	0000	205
 		_led2_command  		CODE           	1734	0000	205
-		_led3_command  		CODE           	088F	0000	205
-		_led4_command  		CODE           	095B	0000	205
+		_led3_command  		CODE           	0816	0000	205
+		_led4_command  		CODE           	08E2	0000	205
 
 ../../source/lighting.c estimated size: 2909
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awtoft.c
-		___awtoft      		CODE           	1B33	0000	33
+		___awtoft      		CODE           	1AA9	0000	33
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awtoft.c estimated size: 33
 
@@ -2707,39 +2713,39 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c estimated size: 101
 
 ../../source/ir.c
-		_output_ir     		CODE           	0539	0000	326
-		_init_ir       		CODE           	1BA9	0000	58
+		_output_ir     		CODE           	0B46	0000	326
+		_init_ir       		CODE           	1B1F	0000	58
 
 ../../source/ir.c estimated size: 384
 
 ../../source/main.c
-		_init_pic      		CODE           	1B7C	0000	46
+		_init_pic      		CODE           	1AF2	0000	46
 		_main          		CODE           	14E2	0000	192
 
 ../../source/main.c estimated size: 238
 
 ../../source/blade_connection.c
-		_determine_packets_to_send		CODE           	1B53	0000	42
-		_determine_omega_mode_active		CODE           	07F8	0000	6
-		_init_conn     		CODE           	07FD	0000	4
+		_determine_packets_to_send		CODE           	1AC9	0000	42
+		_determine_omega_mode_active		CODE           	1004	0000	6
+		_init_conn     		CODE           	07FC	0000	4
 
 ../../source/blade_connection.c estimated size: 52
 
 shared
 		i1_led2_command		CODE           	1080	0000	188
-		i1_writespi    		CODE           	1B10	0000	17
+		i1_writespi    		CODE           	1A99	0000	17
 		i1_led5_command		CODE           	12B1	0000	188
 		i1_leds_off    		CODE           	1E8B	0000	187
 		i1_led3_command		CODE           	113B	0000	188
 		i1_led6_command		CODE           	136C	0000	188
-		__initialization		CODE           	0175	0000	18
+		__initialization		CODE           	0183	0000	18
 		determine_sword_was_swung@neg_shock_thresh		STRCODE        	0000	0000	0
 		determine_sword_was_swung@pos_shock_thresh		STRCODE        	0000	0000	0
-		i1_determine_omega_mode_active		CODE           	0800	0000	6
+		i1_determine_omega_mode_active		CODE           	1A85	0000	6
 		i1_led1_command		CODE           	1F45	0000	188
 		i1_led4_command		CODE           	11F6	0000	188
 		i1_led7_command		CODE           	1427	0000	188
-		i1_display_health		CODE           	1CA5	0000	137
+		i1_display_health		CODE           	1C1B	0000	137
 		determine_sword_was_swung@midpoint		STRCODE        	2000	0000	3
 		i1_display_blade_lights		CODE           	0C8B	0000	886
 
@@ -2751,13 +2757,13 @@ C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c estimated size: 181
 
 ../../source/accelerometer.c
-		_determine_sword_was_swung		CODE           	067E	0000	298
-		_init_accel    		CODE           	1007	0000	22
+		_determine_sword_was_swung		CODE           	0547	0000	409
+		_init_accel    		CODE           	0801	0000	22
 
-../../source/accelerometer.c estimated size: 320
+../../source/accelerometer.c estimated size: 431
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c
-		___fttol       		CODE           	1C1E	0000	136
+		___fttol       		CODE           	1B94	0000	136
 
 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c estimated size: 136
 

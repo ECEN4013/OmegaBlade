@@ -332,6 +332,7 @@ void display_blade_lights(char mode)
     }
     else if( mode == _LIGHT_MODE_CONNECT )
     {
+        /*
         // Turn on LED 1  green for 1/20 of a second
         led1_command(brightness, red, green, blue);
         __delay_ms(50);
@@ -372,7 +373,7 @@ void display_blade_lights(char mode)
         // Turn on LED 1 green 1/20 of a second
         led1_command(brightness, red, green, blue);
         __delay_ms(50);
-        
+        */
         /*
         led_start();
         led_command(0xFF, 0, 0xFF, 0);
@@ -464,7 +465,7 @@ void display_blade_lights(char mode)
         led_end();
         */
         
-        /*
+        
         // Austin's light show
         for(unsigned char r = 0;r < 255; r+=5)
         {
@@ -542,7 +543,7 @@ void display_blade_lights(char mode)
             }
             __delay_ms(20);
         }
-        */
+        
     }
     else if( mode == _LIGHT_MODE_DAMAGE_RECEIVED )
     {

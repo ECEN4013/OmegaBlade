@@ -30,31 +30,31 @@
 "273
 [v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
 [v i1_display_blade_lights display_blade_lights `(v  1 e 0 0 ]
-"543
+"585
 [v _writespi writespi `(v  1 e 0 0 ]
 [v i1_writespi writespi `(v  1 e 0 0 ]
-"588
+"630
 [v _led1_command led1_command `(v  1 e 0 0 ]
 [v i1_led1_command led1_command `(v  1 e 0 0 ]
-"641
+"683
 [v _led2_command led2_command `(v  1 e 0 0 ]
 [v i1_led2_command led2_command `(v  1 e 0 0 ]
-"694
+"736
 [v _led3_command led3_command `(v  1 e 0 0 ]
 [v i1_led3_command led3_command `(v  1 e 0 0 ]
-"747
+"789
 [v _led4_command led4_command `(v  1 e 0 0 ]
 [v i1_led4_command led4_command `(v  1 e 0 0 ]
-"800
+"842
 [v _led5_command led5_command `(v  1 e 0 0 ]
 [v i1_led5_command led5_command `(v  1 e 0 0 ]
-"853
+"895
 [v _led6_command led6_command `(v  1 e 0 0 ]
 [v i1_led6_command led6_command `(v  1 e 0 0 ]
-"906
+"948
 [v _led7_command led7_command `(v  1 e 0 0 ]
 [v i1_led7_command led7_command `(v  1 e 0 0 ]
-"959
+"1001
 [v _leds_off leds_off `(v  1 e 0 0 ]
 [v i1_leds_off leds_off `(v  1 e 0 0 ]
 "17 C:\git\OmegaBlade\PIC Microcode/source/main.c
@@ -101,7 +101,7 @@
 [v _damage_received damage_received `uc  1 e 1 0 ]
 "337 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic16f1788.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S245 . 1 `uc 1 RA0 1 0 :1:0 
+[s S248 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -111,10 +111,10 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "434
-[s S254 . 1 `uc 1 PORTA 1 0 :8:0 
+[s S257 . 1 `uc 1 PORTA 1 0 :8:0 
 ]
-[u S256 . 1 `S245 1 . 1 0 `S254 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES256  1 e 1 @12 ]
+[u S259 . 1 `S248 1 . 1 0 `S257 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES259  1 e 1 @12 ]
 [s S115 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -129,7 +129,7 @@
 ]
 [u S126 . 1 `S115 1 . 1 0 `S124 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES126  1 e 1 @13 ]
-[s S573 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S576 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -139,8 +139,8 @@
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "666
-[u S582 . 1 `S573 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES582  1 e 1 @17 ]
+[u S585 . 1 `S576 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES585  1 e 1 @17 ]
 "871
 [v _TMR1 TMR1 `VEus  1 e 2 @22 ]
 "915
@@ -149,7 +149,7 @@
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1232
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
-[s S382 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S385 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -159,10 +159,10 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1252
-[s S391 . 1 `uc 1 TRISB 1 0 :8:0 
+[s S394 . 1 `uc 1 TRISB 1 0 :8:0 
 ]
-[u S393 . 1 `S382 1 . 1 0 `S391 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES393  1 e 1 @141 ]
+[u S396 . 1 `S385 1 . 1 0 `S394 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES396  1 e 1 @141 ]
 "1301
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
 "1540
@@ -205,27 +205,27 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
 "5961
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
-[s S594 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S597 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "6110
-[s S600 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S603 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S605 . 1 `S594 1 . 1 0 `S600 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES605  1 e 1 @533 ]
+[u S608 . 1 `S597 1 . 1 0 `S603 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES608  1 e 1 @533 ]
 "7433
 [v _IOCAP IOCAP `VEuc  1 e 1 @913 ]
 "7502
 [v _IOCAN IOCAN `VEuc  1 e 1 @914 ]
 "7571
 [v _IOCAF IOCAF `VEuc  1 e 1 @915 ]
-[s S218 . 1 `uc 1 IOCAF0 1 0 :1:0 
+[s S221 . 1 `uc 1 IOCAF0 1 0 :1:0 
 `uc 1 IOCAF1 1 0 :1:1 
 `uc 1 IOCAF2 1 0 :1:2 
 `uc 1 IOCAF3 1 0 :1:3 
@@ -235,10 +235,10 @@
 `uc 1 IOCAF7 1 0 :1:7 
 ]
 "7591
-[s S227 . 1 `uc 1 IOCAF 1 0 :8:0 
+[s S230 . 1 `uc 1 IOCAF 1 0 :8:0 
 ]
-[u S229 . 1 `S218 1 . 1 0 `S227 1 . 1 0 ]
-[v _IOCAFbits IOCAFbits `VES229  1 e 1 @915 ]
+[u S232 . 1 `S221 1 . 1 0 `S230 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES232  1 e 1 @915 ]
 "9209
 [v _PSMC1CON PSMC1CON `VEuc  1 e 1 @3729 ]
 "9278
@@ -539,9 +539,9 @@
 {
 [v output_ir@pkt_type pkt_type `uc  1 a 1 wreg ]
 "96
-[v output_ir@i_337 i `i  1 a 2 4 ]
+[v output_ir@i_339 i `i  1 a 2 4 ]
 "71
-[v output_ir@i_336 i `i  1 a 2 2 ]
+[v output_ir@i_338 i `i  1 a 2 2 ]
 "45
 [v output_ir@i i `i  1 a 2 0 ]
 "41
@@ -590,19 +590,19 @@
 [v _display_blade_lights display_blade_lights `(v  1 e 0 0 ]
 {
 [v display_blade_lights@mode mode `uc  1 a 1 wreg ]
-"499
-[v display_blade_lights@i_642 i `i  1 a 2 14 ]
+"541
+[v display_blade_lights@i_645 i `i  1 a 2 14 ]
+"512
+[v display_blade_lights@i_644 i `i  1 a 2 12 ]
+"502
+[v display_blade_lights@i_642 i `i  1 a 2 10 ]
+"473
+[v display_blade_lights@i_641 i `i  1 a 2 8 ]
+"572
+[v display_blade_lights@i_646 i `uc  1 a 1 17 ]
+"509
+[v display_blade_lights@r_643 r `uc  1 a 1 20 ]
 "470
-[v display_blade_lights@i_641 i `i  1 a 2 12 ]
-"460
-[v display_blade_lights@i_639 i `i  1 a 2 10 ]
-"431
-[v display_blade_lights@i_638 i `i  1 a 2 8 ]
-"530
-[v display_blade_lights@i_643 i `uc  1 a 1 17 ]
-"467
-[v display_blade_lights@r_640 r `uc  1 a 1 20 ]
-"428
 [v display_blade_lights@r r `uc  1 a 1 19 ]
 "323
 [v display_blade_lights@i i `uc  1 a 1 16 ]
@@ -618,168 +618,168 @@
 [v display_blade_lights@mode mode `uc  1 a 1 wreg ]
 "275
 [v display_blade_lights@mode mode `uc  1 a 1 18 ]
-"541
+"583
 } 0
-"959
+"1001
 [v _leds_off leds_off `(v  1 e 0 0 ]
 {
-"1002
-[v leds_off@i_720 i `i  1 a 2 2 ]
-"962
+"1044
+[v leds_off@i_723 i `i  1 a 2 2 ]
+"1004
 [v leds_off@i i `i  1 a 2 0 ]
-"1007
+"1049
 } 0
-"906
+"948
 [v _led7_command led7_command `(v  1 e 0 0 ]
 {
 [v led7_command@brightness brightness `uc  1 a 1 wreg ]
-"952
-[v led7_command@i_717 i `i  1 a 2 3 ]
-"912
+"994
+[v led7_command@i_720 i `i  1 a 2 3 ]
+"954
 [v led7_command@i i `i  1 a 2 1 ]
-"906
+"948
 [v led7_command@brightness brightness `uc  1 a 1 wreg ]
-"907
+"949
 [v led7_command@red red `uc  1 p 1 35 ]
-"908
+"950
 [v led7_command@green green `uc  1 p 1 36 ]
-"909
+"951
 [v led7_command@blue blue `uc  1 p 1 37 ]
-"912
+"954
 [v led7_command@brightness brightness `uc  1 a 1 0 ]
-"957
+"999
 } 0
-"853
+"895
 [v _led6_command led6_command `(v  1 e 0 0 ]
 {
 [v led6_command@brightness brightness `uc  1 a 1 wreg ]
-"899
-[v led6_command@i_710 i `i  1 a 2 3 ]
-"859
+"941
+[v led6_command@i_713 i `i  1 a 2 3 ]
+"901
 [v led6_command@i i `i  1 a 2 1 ]
-"853
+"895
 [v led6_command@brightness brightness `uc  1 a 1 wreg ]
-"854
+"896
 [v led6_command@red red `uc  1 p 1 35 ]
-"855
+"897
 [v led6_command@green green `uc  1 p 1 36 ]
-"856
+"898
 [v led6_command@blue blue `uc  1 p 1 37 ]
-"859
+"901
 [v led6_command@brightness brightness `uc  1 a 1 0 ]
-"904
+"946
 } 0
-"800
+"842
 [v _led5_command led5_command `(v  1 e 0 0 ]
 {
 [v led5_command@brightness brightness `uc  1 a 1 wreg ]
-"846
-[v led5_command@i_703 i `i  1 a 2 3 ]
-"806
+"888
+[v led5_command@i_706 i `i  1 a 2 3 ]
+"848
 [v led5_command@i i `i  1 a 2 1 ]
-"800
+"842
 [v led5_command@brightness brightness `uc  1 a 1 wreg ]
-"801
+"843
 [v led5_command@red red `uc  1 p 1 35 ]
-"802
+"844
 [v led5_command@green green `uc  1 p 1 36 ]
-"803
+"845
 [v led5_command@blue blue `uc  1 p 1 37 ]
-"806
+"848
 [v led5_command@brightness brightness `uc  1 a 1 0 ]
-"851
+"893
 } 0
-"747
+"789
 [v _led4_command led4_command `(v  1 e 0 0 ]
 {
 [v led4_command@brightness brightness `uc  1 a 1 wreg ]
-"793
-[v led4_command@i_696 i `i  1 a 2 3 ]
-"753
+"835
+[v led4_command@i_699 i `i  1 a 2 3 ]
+"795
 [v led4_command@i i `i  1 a 2 1 ]
-"747
+"789
 [v led4_command@brightness brightness `uc  1 a 1 wreg ]
-"748
+"790
 [v led4_command@red red `uc  1 p 1 35 ]
-"749
+"791
 [v led4_command@green green `uc  1 p 1 36 ]
-"750
+"792
 [v led4_command@blue blue `uc  1 p 1 37 ]
-"753
+"795
 [v led4_command@brightness brightness `uc  1 a 1 0 ]
-"798
+"840
 } 0
-"694
+"736
 [v _led3_command led3_command `(v  1 e 0 0 ]
 {
 [v led3_command@brightness brightness `uc  1 a 1 wreg ]
-"740
-[v led3_command@i_689 i `i  1 a 2 3 ]
-"700
+"782
+[v led3_command@i_692 i `i  1 a 2 3 ]
+"742
 [v led3_command@i i `i  1 a 2 1 ]
-"694
+"736
 [v led3_command@brightness brightness `uc  1 a 1 wreg ]
-"695
+"737
 [v led3_command@red red `uc  1 p 1 35 ]
-"696
+"738
 [v led3_command@green green `uc  1 p 1 36 ]
-"697
+"739
 [v led3_command@blue blue `uc  1 p 1 37 ]
-"700
+"742
 [v led3_command@brightness brightness `uc  1 a 1 0 ]
-"745
+"787
 } 0
-"641
+"683
 [v _led2_command led2_command `(v  1 e 0 0 ]
 {
 [v led2_command@brightness brightness `uc  1 a 1 wreg ]
-"687
-[v led2_command@i_682 i `i  1 a 2 3 ]
-"647
+"729
+[v led2_command@i_685 i `i  1 a 2 3 ]
+"689
 [v led2_command@i i `i  1 a 2 1 ]
-"641
+"683
 [v led2_command@brightness brightness `uc  1 a 1 wreg ]
-"642
+"684
 [v led2_command@red red `uc  1 p 1 35 ]
-"643
+"685
 [v led2_command@green green `uc  1 p 1 36 ]
-"644
+"686
 [v led2_command@blue blue `uc  1 p 1 37 ]
-"647
+"689
 [v led2_command@brightness brightness `uc  1 a 1 0 ]
-"692
+"734
 } 0
-"588
+"630
 [v _led1_command led1_command `(v  1 e 0 0 ]
 {
 [v led1_command@brightness brightness `uc  1 a 1 wreg ]
-"634
-[v led1_command@i_675 i `i  1 a 2 3 ]
-"594
+"676
+[v led1_command@i_678 i `i  1 a 2 3 ]
+"636
 [v led1_command@i i `i  1 a 2 1 ]
-"588
+"630
 [v led1_command@brightness brightness `uc  1 a 1 wreg ]
-"589
+"631
 [v led1_command@red red `uc  1 p 1 35 ]
-"590
+"632
 [v led1_command@green green `uc  1 p 1 36 ]
-"591
+"633
 [v led1_command@blue blue `uc  1 p 1 37 ]
-"594
+"636
 [v led1_command@brightness brightness `uc  1 a 1 0 ]
-"639
+"681
 } 0
-"543
+"585
 [v _writespi writespi `(v  1 e 0 0 ]
 {
 [v writespi@data_out data_out `uc  1 a 1 wreg ]
-"545
+"587
 [v writespi@TempVar TempVar `uc  1 a 1 33 ]
-"543
+"585
 [v writespi@data_out data_out `uc  1 a 1 wreg ]
-"546
+"588
 [v writespi@data_out data_out `uc  1 a 1 34 ]
-"556
+"598
 } 0
 "153 C:\git\OmegaBlade\PIC Microcode/source/accelerometer.c
 [v _determine_sword_was_swung determine_sword_was_swung `(uc  1 e 1 0 ]
@@ -816,7 +816,7 @@
 [v determine_sword_was_swung@xh xh `uc  1 a 1 0 ]
 "176
 [v determine_sword_was_swung@midpoint midpoint `DCCi  1 s 2 midpoint ]
-"259
+"271
 } 0
 "14 C:\git\OmegaBlade\PIC Microcode/source/blade_connection.c
 [v _determine_packets_to_send determine_packets_to_send `(v  1 e 0 0 ]
@@ -835,7 +835,7 @@
 "37 C:\git\OmegaBlade\PIC Microcode/source/interrupt.c
 [v _isr isr `II(v  1 e 0 0 ]
 {
-"134
+"140
 } 0
 "166 C:\git\OmegaBlade\PIC Microcode/source/lighting.c
 [v i1_display_health display_health `(v  1 e 0 0 ]
@@ -846,158 +846,158 @@
 [v i1_display_blade_lights display_blade_lights `(v  1 e 0 0 ]
 {
 [v i1display_blade_lights@mode mode `uc  1 a 1 wreg ]
-[v i1display_blade_lights@i_642 display_blade_lights `i  1 a 2 10 ]
-[v i1display_blade_lights@i_641 display_blade_lights `i  1 a 2 8 ]
-[v i1display_blade_lights@i_639 display_blade_lights `i  1 a 2 6 ]
-[v i1display_blade_lights@i_638 display_blade_lights `i  1 a 2 4 ]
+[v i1display_blade_lights@i_645 display_blade_lights `i  1 a 2 10 ]
+[v i1display_blade_lights@i_644 display_blade_lights `i  1 a 2 8 ]
+[v i1display_blade_lights@i_642 display_blade_lights `i  1 a 2 6 ]
+[v i1display_blade_lights@i_641 display_blade_lights `i  1 a 2 4 ]
 [v i1display_blade_lights@blue display_blade_lights `uc  1 a 1 19 ]
 [v i1display_blade_lights@green display_blade_lights `uc  1 a 1 18 ]
 [v i1display_blade_lights@red display_blade_lights `uc  1 a 1 17 ]
 [v i1display_blade_lights@brightness display_blade_lights `uc  1 a 1 16 ]
-[v i1display_blade_lights@r_640 display_blade_lights `uc  1 a 1 15 ]
+[v i1display_blade_lights@r_643 display_blade_lights `uc  1 a 1 15 ]
 [v i1display_blade_lights@r display_blade_lights `uc  1 a 1 14 ]
-[v i1display_blade_lights@i_643 display_blade_lights `uc  1 a 1 13 ]
+[v i1display_blade_lights@i_646 display_blade_lights `uc  1 a 1 13 ]
 [v i1display_blade_lights@i display_blade_lights `uc  1 a 1 12 ]
 [v i1display_blade_lights@mode mode `uc  1 a 1 wreg ]
 "275
 [v i1display_blade_lights@mode mode `uc  1 a 1 3 ]
-"541
+"583
 } 0
-"959
+"1001
 [v i1_leds_off leds_off `(v  1 e 0 0 ]
 {
-[v i1leds_off@i_720 leds_off `i  1 a 2 7 ]
+[v i1leds_off@i_723 leds_off `i  1 a 2 7 ]
 [v i1leds_off@i leds_off `i  1 a 2 5 ]
-"1007
+"1049
 } 0
-"906
+"948
 [v i1_led7_command led7_command `(v  1 e 0 0 ]
 {
 [v i1led7_command@brightness brightness `uc  1 a 1 wreg ]
-[v i1led7_command@i_717 led7_command `i  1 a 2 11 ]
+[v i1led7_command@i_720 led7_command `i  1 a 2 11 ]
 [v i1led7_command@i led7_command `i  1 a 2 9 ]
 [v i1led7_command@brightness brightness `uc  1 a 1 wreg ]
-"907
+"949
 [v i1led7_command@red red `uc  1 p 1 3 ]
-"908
+"950
 [v i1led7_command@green green `uc  1 p 1 4 ]
-"909
+"951
 [v i1led7_command@blue blue `uc  1 p 1 5 ]
-"912
+"954
 [v i1led7_command@brightness brightness `uc  1 a 1 8 ]
-"957
+"999
 } 0
-"853
+"895
 [v i1_led6_command led6_command `(v  1 e 0 0 ]
 {
 [v i1led6_command@brightness brightness `uc  1 a 1 wreg ]
-[v i1led6_command@i_710 led6_command `i  1 a 2 11 ]
+[v i1led6_command@i_713 led6_command `i  1 a 2 11 ]
 [v i1led6_command@i led6_command `i  1 a 2 9 ]
 [v i1led6_command@brightness brightness `uc  1 a 1 wreg ]
-"854
+"896
 [v i1led6_command@red red `uc  1 p 1 3 ]
-"855
+"897
 [v i1led6_command@green green `uc  1 p 1 4 ]
-"856
+"898
 [v i1led6_command@blue blue `uc  1 p 1 5 ]
-"859
+"901
 [v i1led6_command@brightness brightness `uc  1 a 1 8 ]
-"904
+"946
 } 0
-"800
+"842
 [v i1_led5_command led5_command `(v  1 e 0 0 ]
 {
 [v i1led5_command@brightness brightness `uc  1 a 1 wreg ]
-[v i1led5_command@i_703 led5_command `i  1 a 2 11 ]
+[v i1led5_command@i_706 led5_command `i  1 a 2 11 ]
 [v i1led5_command@i led5_command `i  1 a 2 9 ]
 [v i1led5_command@brightness brightness `uc  1 a 1 wreg ]
-"801
+"843
 [v i1led5_command@red red `uc  1 p 1 3 ]
-"802
+"844
 [v i1led5_command@green green `uc  1 p 1 4 ]
-"803
+"845
 [v i1led5_command@blue blue `uc  1 p 1 5 ]
-"806
+"848
 [v i1led5_command@brightness brightness `uc  1 a 1 8 ]
-"851
+"893
 } 0
-"747
+"789
 [v i1_led4_command led4_command `(v  1 e 0 0 ]
 {
 [v i1led4_command@brightness brightness `uc  1 a 1 wreg ]
-[v i1led4_command@i_696 led4_command `i  1 a 2 11 ]
+[v i1led4_command@i_699 led4_command `i  1 a 2 11 ]
 [v i1led4_command@i led4_command `i  1 a 2 9 ]
 [v i1led4_command@brightness brightness `uc  1 a 1 wreg ]
-"748
+"790
 [v i1led4_command@red red `uc  1 p 1 3 ]
-"749
+"791
 [v i1led4_command@green green `uc  1 p 1 4 ]
-"750
+"792
 [v i1led4_command@blue blue `uc  1 p 1 5 ]
-"753
+"795
 [v i1led4_command@brightness brightness `uc  1 a 1 8 ]
-"798
+"840
 } 0
-"694
+"736
 [v i1_led3_command led3_command `(v  1 e 0 0 ]
 {
 [v i1led3_command@brightness brightness `uc  1 a 1 wreg ]
-[v i1led3_command@i_689 led3_command `i  1 a 2 11 ]
+[v i1led3_command@i_692 led3_command `i  1 a 2 11 ]
 [v i1led3_command@i led3_command `i  1 a 2 9 ]
 [v i1led3_command@brightness brightness `uc  1 a 1 wreg ]
-"695
+"737
 [v i1led3_command@red red `uc  1 p 1 3 ]
-"696
+"738
 [v i1led3_command@green green `uc  1 p 1 4 ]
-"697
+"739
 [v i1led3_command@blue blue `uc  1 p 1 5 ]
-"700
+"742
 [v i1led3_command@brightness brightness `uc  1 a 1 8 ]
-"745
+"787
 } 0
-"641
+"683
 [v i1_led2_command led2_command `(v  1 e 0 0 ]
 {
 [v i1led2_command@brightness brightness `uc  1 a 1 wreg ]
-[v i1led2_command@i_682 led2_command `i  1 a 2 11 ]
+[v i1led2_command@i_685 led2_command `i  1 a 2 11 ]
 [v i1led2_command@i led2_command `i  1 a 2 9 ]
 [v i1led2_command@brightness brightness `uc  1 a 1 wreg ]
-"642
+"684
 [v i1led2_command@red red `uc  1 p 1 3 ]
-"643
+"685
 [v i1led2_command@green green `uc  1 p 1 4 ]
-"644
+"686
 [v i1led2_command@blue blue `uc  1 p 1 5 ]
-"647
+"689
 [v i1led2_command@brightness brightness `uc  1 a 1 8 ]
-"692
+"734
 } 0
-"588
+"630
 [v i1_led1_command led1_command `(v  1 e 0 0 ]
 {
 [v i1led1_command@brightness brightness `uc  1 a 1 wreg ]
-[v i1led1_command@i_675 led1_command `i  1 a 2 11 ]
+[v i1led1_command@i_678 led1_command `i  1 a 2 11 ]
 [v i1led1_command@i led1_command `i  1 a 2 9 ]
 [v i1led1_command@brightness brightness `uc  1 a 1 wreg ]
-"589
+"631
 [v i1led1_command@red red `uc  1 p 1 3 ]
-"590
+"632
 [v i1led1_command@green green `uc  1 p 1 4 ]
-"591
+"633
 [v i1led1_command@blue blue `uc  1 p 1 5 ]
-"594
+"636
 [v i1led1_command@brightness brightness `uc  1 a 1 8 ]
-"639
+"681
 } 0
-"543
+"585
 [v i1_writespi writespi `(v  1 e 0 0 ]
 {
 [v i1writespi@data_out data_out `uc  1 a 1 wreg ]
 [v i1writespi@TempVar writespi `uc  1 a 1 1 ]
 [v i1writespi@data_out data_out `uc  1 a 1 wreg ]
-"546
+"588
 [v i1writespi@data_out data_out `uc  1 a 1 2 ]
-"556
+"598
 } 0
 "9 C:\git\OmegaBlade\PIC Microcode/source/blade_connection.c
 [v i1_determine_omega_mode_active determine_omega_mode_active `(uc  1 e 1 0 ]
