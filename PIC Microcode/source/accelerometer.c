@@ -177,47 +177,35 @@ char determine_sword_was_swung()
     const int pos_shock_thresh = midpoint + 1000;
     const int neg_shock_thresh = midpoint - 1000;
 	
-    if(determine_omega_mode_active())
-    {
-        x_pos_thresh = midpoint + 2900;
-        x_neg_thresh = midpoint - 2900;
-        y_pos_thresh = midpoint + 2900;
-        y_neg_thresh = midpoint - 2900;
-        z_pos_thresh = midpoint + 2900;
-        z_neg_thresh = midpoint - 2900;
-    }
-    else   
-    {
 #if _ALPHA_BLADE
-        x_pos_thresh = midpoint + 2900;
-        x_neg_thresh = midpoint - 2900;
-        y_pos_thresh = midpoint + 2900;
-        y_neg_thresh = midpoint - 2900;
-        z_pos_thresh = midpoint + 2900;
-        z_neg_thresh = midpoint - 2900;
+	x_pos_thresh = midpoint + 2900;
+    x_neg_thresh = midpoint - 2900;
+    y_pos_thresh = midpoint + 2900;
+    y_neg_thresh = midpoint - 2900;
+    z_pos_thresh = midpoint + 2900;
+    z_neg_thresh = midpoint - 2900;
 #elif _BETA_BLADE
-        x_pos_thresh = midpoint + 3500;
-        x_neg_thresh = midpoint - 3500;
-        y_pos_thresh = midpoint + 3500;
-        y_neg_thresh = midpoint - 3500;
-        z_pos_thresh = midpoint + 3500;
-        z_neg_thresh = midpoint - 3500;
+	x_pos_thresh = midpoint + 2900;//3500;
+    x_neg_thresh = midpoint - 2900;//3500;
+    y_pos_thresh = midpoint + 2900;//3500;
+    y_neg_thresh = midpoint - 2900;//3500;
+    z_pos_thresh = midpoint + 2900;//3500;
+    z_neg_thresh = midpoint - 2900;//3500;
 #elif _DELTA_BLADE
-        x_pos_thresh = midpoint + 3200;
-        x_neg_thresh = midpoint - 3200;
-        y_pos_thresh = midpoint + 3200;
-        y_neg_thresh = midpoint - 3200;
-        z_pos_thresh = midpoint + 3200;
-        z_neg_thresh = midpoint - 3200;
+	x_pos_thresh = midpoint + 3200;
+    x_neg_thresh = midpoint - 3200;
+    y_pos_thresh = midpoint + 3200;
+    y_neg_thresh = midpoint - 3200;
+    z_pos_thresh = midpoint + 3200;
+    z_neg_thresh = midpoint - 3200;
 #elif _GAMMA_BLADE
-        x_pos_thresh = midpoint + 3200;
-        x_neg_thresh = midpoint - 3200;
-        y_pos_thresh = midpoint + 3200;
-        y_neg_thresh = midpoint - 3200;
-        z_pos_thresh = midpoint + 3200;
-        z_neg_thresh = midpoint - 3200;
+	x_pos_thresh = midpoint + 3200;
+    x_neg_thresh = midpoint - 3200;
+    y_pos_thresh = midpoint + 3200;
+    y_neg_thresh = midpoint - 3200;
+    z_pos_thresh = midpoint + 3200;
+    z_neg_thresh = midpoint - 3200;
 #endif
-    }
 	
 	// Select channel AN2
     ADCON0 = 0b00001001;
