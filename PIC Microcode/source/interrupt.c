@@ -44,6 +44,12 @@ void interrupt isr() { //note: this logic is inverted!
         // Clear interrupt flag
         IOCAF1 = 0;
         
+        __delay_us(100);
+        if(!determine_omega_mode_active())
+        {
+            return;
+        }
+        
         health = 50;
         display_health();
         display_blade_lights(_LIGHT_MODE_CONNECT);
