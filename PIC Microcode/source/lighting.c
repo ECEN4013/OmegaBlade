@@ -497,7 +497,17 @@ void display_blade_lights(char mode)
                 writespi(0xFF);//Brightness
                 writespi(0x00);//Blue
                 writespi(0x00);//Green
-                writespi(r);//Red     
+                writespi(r);//Red
+        //LED 6
+                writespi(0xFF);//Brightness
+                writespi(0x00);//Blue
+                writespi(0x00);//Green
+                writespi(255-r);//Red    
+        //LED 7
+                writespi(0xFF);//Brightness
+                writespi(0x00);//Blue
+                writespi(0x00);//Green
+                writespi(r);//Red   
         //32-bit end frame
             for(int i = 0;i < 4; i++){
             writespi(0xFF);
@@ -537,6 +547,16 @@ void display_blade_lights(char mode)
                 writespi(0x00);//Blue
                 writespi(0x00);//Green
                 writespi(r);//Red     
+        //LED 6
+                writespi(0xFF);//Brightness
+                writespi(0x00);//Blue
+                writespi(0x00);//Green
+                writespi(255-r);//Red    
+        //LED 7
+                writespi(0xFF);//Brightness
+                writespi(0x00);//Blue
+                writespi(0x00);//Green
+                writespi(r);//Red    
         //32-bit end frame
             for(int i = 0;i < 4; i++){
             writespi(0xFF);

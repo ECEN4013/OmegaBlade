@@ -196,26 +196,26 @@ char determine_sword_was_swung()
         z_pos_thresh = midpoint + 2900;
         z_neg_thresh = midpoint - 2900;
 #elif _BETA_BLADE
-        x_pos_thresh = midpoint + 3500;
-        x_neg_thresh = midpoint - 3500;
-        y_pos_thresh = midpoint + 3500;
-        y_neg_thresh = midpoint - 3500;
-        z_pos_thresh = midpoint + 3500;
-        z_neg_thresh = midpoint - 3500;
+        x_pos_thresh = midpoint + 3000;
+        x_neg_thresh = midpoint - 3000;
+        y_pos_thresh = midpoint + 3000;
+        y_neg_thresh = midpoint - 3000;
+        z_pos_thresh = midpoint + 3000;
+        z_neg_thresh = midpoint - 3000;
 #elif _DELTA_BLADE
-        x_pos_thresh = midpoint + 3200;
-        x_neg_thresh = midpoint - 3200;
-        y_pos_thresh = midpoint + 3200;
-        y_neg_thresh = midpoint - 3200;
-        z_pos_thresh = midpoint + 3200;
-        z_neg_thresh = midpoint - 3200;
+        x_pos_thresh = midpoint + 3050;
+        x_neg_thresh = midpoint - 3050;
+        y_pos_thresh = midpoint + 3050;
+        y_neg_thresh = midpoint - 3050;
+        z_pos_thresh = midpoint + 3050;
+        z_neg_thresh = midpoint - 3050;
 #elif _GAMMA_BLADE
-        x_pos_thresh = midpoint + 3200;
-        x_neg_thresh = midpoint - 3200;
-        y_pos_thresh = midpoint + 3200;
-        y_neg_thresh = midpoint - 3200;
-        z_pos_thresh = midpoint + 3200;
-        z_neg_thresh = midpoint - 3200;
+        x_pos_thresh = midpoint + 3050;
+        x_neg_thresh = midpoint - 3050;
+        y_pos_thresh = midpoint + 3050;
+        y_neg_thresh = midpoint - 3050;
+        z_pos_thresh = midpoint + 3050;
+        z_neg_thresh = midpoint - 3050;
 #endif
     }
 	

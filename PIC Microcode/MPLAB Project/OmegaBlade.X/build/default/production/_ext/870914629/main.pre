@@ -9313,18 +9313,13 @@ init_conn();
 while(1)
 {
 
-# 246
+# 136
 display_health();
-if(damage_received)
-{
-display_blade_lights(3);
-damage_received = 0;
-}
-
-if( determine_sword_was_swung() && ( ( health > 0) || determine_omega_mode_active() ) )
+if( determine_sword_was_swung() )
 {
 if(!determine_omega_mode_active())
 {
+play_sound(0);
 display_blade_lights(0);
 
 determine_packets_to_send(&pkt_arr);
@@ -9341,64 +9336,12 @@ GIE = 1;
 }
 else
 {
+play_sound(1);
 display_blade_lights(1);
 }
 }
 
-GIE = 0;
-
-while( ( stun_counter > 0 ) && !determine_omega_mode_active() )
-{
-GIE = 1;
-
-
-
-PSMC2DCH = 0xFF;
-PSMC2DCL = 0xFF;
-PSMC2LD = 1;
-
-PSMC3DCH = 0x00;
-PSMC3DCL = 0x00;
-PSMC3LD = 1;
-
-PSMC4DCH = 0xFF;
-PSMC4DCL = 0x00;
-PSMC4LD = 1;
-
-PSMC2LD = 1;
-PSMC3LD = 1;
-PSMC4LD = 1;
-
-_delay((unsigned long)((50)*(32000000/4000.0)));
-
-
-
-PSMC2DCH = 0x00;
-PSMC2DCL = 0x00;
-PSMC2LD = 1;
-
-PSMC3DCH = 0x00;
-PSMC3DCL = 0x00;
-PSMC3LD = 1;
-
-PSMC4DCH = 0x00;
-PSMC4DCL = 0x00;
-PSMC4LD = 1;
-
-PSMC2LD = 1;
-PSMC3LD = 1;
-PSMC4LD = 1;
-
-_delay((unsigned long)((50)*(32000000/4000.0)));
-
-GIE = 0;
---stun_counter;
-}
-
-GIE = 1;
-
-
-
+# 331
 }
 }
 
