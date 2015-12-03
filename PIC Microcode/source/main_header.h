@@ -35,8 +35,8 @@ Created on October 12, 2015
 
 // Uncomment the appropriate line for the blade you wish to compile the program for
 #define _ALPHA_BLADE 0
-#define _BETA_BLADE  1
-#define _DELTA_BLADE 0
+#define _BETA_BLADE  0
+#define _DELTA_BLADE 1
 #define _GAMMA_BLADE 0
 
 // Define values of IR packet types

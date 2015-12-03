@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
   -h+dist/default/production\OmegaBlade.X.production.sym \
   --cmf=dist/default/production\OmegaBlade.X.production.cmf -z -Q16F1788 \
-  -oC:\Users\Ben\AppData\Local\Temp\s5g.2 \
+  -oC:\Users\Ben\AppData\Local\Temp\sin8.2 \
   -Mdist/default/production/OmegaBlade.X.production.map -E1 -ver=XC8 \
-  -ASTACK=02069h-027efh -pstack=STACK -ACODE=00h-07FFhx8 \
+  -ASTACK=02076h-027efh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
   -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -36,7 +36,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Ben\AppData\Local\Temp\s5g.obj \
+  C:\Users\Ben\AppData\Local\Temp\sin8.obj \
   dist/default/production\OmegaBlade.X.production.obj 
 
 Object code version is 3.11
@@ -46,102 +46,111 @@ Machine type is 16F1788
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Ben\AppData\Local\Temp\s5g.obj
-                end_init                             37       37        2        8       0
+C:\Users\Ben\AppData\Local\Temp\sin8.obj
+                end_init                            181      181        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\OmegaBlade.X.production.obj
-                cinit                                39       39       16        8       0
-                intentry                              4        4       33        8       0
-                text35                              803      803        5     1006       0
-                text34                             1E2B     1E2B       10     3C56       0
-                text33                             1160     1160       BB     22C0       0
-                text32                             121B     121B       BB     2436       0
-                text31                             12D6     12D6       BB     25AC       0
-                text30                             1391     1391       BB     2722       0
-                text29                             144C     144C       BB     2898       0
-                text28                             1507     1507       BB     2A0E       0
-                text27                             15C2     15C2       BB     2B84       0
-                text26                             10A6     10A6       BA     214C       0
-                text25                              C40      C40      3C0     1880       0
-                text24                             1ECE     1ECE       88     3D9C       0
-                text22                              7F7      7F7        5        8       0
-                text21                             1E4E     1E4E       29     3C9C       0
-                text20                              45E      45E      15D        8       0
-                text19                             1E3B     1E3B       13     3C76       0
-                text18                             173C     173C       C4     2E78       0
-                text17                              86C      86C       C4     10D8       0
-                text16                              930      930       C4     1260       0
-                text15                              9F4      9F4       C4     13E8       0
-                text14                              AB8      AB8       C4     1570       0
-                text13                              B7C      B7C       C4     16F8       0
-                text12                              6FA      6FA       C4        8       0
-                text11                             167D     167D       BF     2CFA       0
-                text10                               4F       4F      40F        8       0
-                text9                              101C     101C       8A     2038       0
-                text8                              1007     1007       15     200E       0
-                text7                               7FC      7FC        3        8       0
-                text6                               7BE      7BE       39        8       0
-                text5                              1E1C     1E1C        F     3C38       0
-                text4                              1F56     1F56       AA     3EAC       0
-                text3                              1EA1     1EA1       2D     3D42       0
-                text2                               5BB      5BB      13F        8       0
-                text1                              1E77     1E77       2A     3CEE       0
-                maintext                            808      808       64     1010       0
-                cstackBANK0                          20       20       30       20       1
-                cstackCOMMON                         70       70        D       70       1
-                cstackBANK1                          A0       A0       16       A0       1
-                bssBANK1                             B6       B6        3       A0       1
-                dataBANK0                            59       59        1       20       1
-                bssBANK0                             50       50        9       20       1
-                bssCOMMON                            7D       7D        1       70       1
+                cinit                               183      183       15        8       0
+                intentry                              4        4      17D        8       0
+                text40                             1B12     1B12       51     3624       0
+                text39                             100B     100B       64     2016       0
+                text38                             1A1E     1A1E       20     343C       0
+                text37                             1AD6     1AD6       3C     35AC       0
+                text36                             1D1C     1D1C       B4     3A38       0
+                text35                             1B63     1B63       87     36C6       0
+                text34                             1001     1001        5     2002       0
+                text33                              7F0      7F0       10        8       0
+                text32                             1E8A     1E8A       BB     3D14       0
+                text31                             1F45     1F45       BB     3E8A       0
+                text30                             106F     106F       BB     20DE       0
+                text29                             112A     112A       BB     2254       0
+                text28                             11E5     11E5       BB     23CA       0
+                text27                             12A0     12A0       BB     2540       0
+                text26                             135B     135B       BB     26B6       0
+                text25                             1DD0     1DD0       BA     3BA0       0
+                text24                              C43      C43      3BD     1886       0
+                text23                             1BEA     1BEA       88     37D4       0
+                text21                             1006     1006        5     200C       0
+                text20                             1A6B     1A6B       32     34D6       0
+                text19                              58F      58F      195        8       0
+                text18                             19F6     19F6       13     33EC       0
+                text17                             159C     159C       CC     2B38       0
+                text16                             1668     1668       CC     2CD0       0
+                text15                             1734     1734       CC     2E68       0
+                text14                              89A      89A       CC     1134       0
+                text13                              966      966       CC     12CC       0
+                text12                              A32      A32       CC     1464       0
+                text11                              724      724       CC        8       0
+                text10                             14D5     14D5       C7     29AA       0
+                text9                               198      198      3F7        8       0
+                text8                               810      810       8A     1020       0
+                text7                              1A09     1A09       15     3412       0
+                text6                              19F3     19F3        3     33E6       0
+                text5                              1A9D     1A9D       39     353A       0
+                text4                               801      801        F     1002       0
+                text3                              1C72     1C72       AA     38E4       0
+                text2                              1A3E     1A3E       2D     347C       0
+                text1                               AFE      AFE      145     15FC       0
+                maintext                           1416     1416       BF     282C       0
+                cstackBANK0                          20       20       28       20       1
+                cstackCOMMON                         70       70        E       70       1
+                cstackBANK1                          A0       A0       20       A0       1
+                dataBANK1                            C5       C5        1       A0       1
+                bssBANK1                             C0       C0        5       A0       1
+                bssBANK0                             48       48        8       20       1
                 stringtext                         2000     2000       89     4000       0
-                idataBANK0                          7FF      7FF        1        8       0
+                idataBANK1                            3        3        1        6       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                             37       37        2         0
-                cinit                                39       39       16         0
-                intentry                              4        4       33         0
+                end_init                            181      181        2         0
+                cinit                               183      183       15         0
+                intentry                              4        4      17D         0
                 reset_vec                             0        0        2         0
-                text35                              803      803        5         0
-                text34                             1E2B     1E2B       10         0
-                text33                             1160     1160       BB         0
-                text32                             121B     121B       BB         0
-                text31                             12D6     12D6       BB         0
-                text30                             1391     1391       BB         0
-                text29                             144C     144C       BB         0
-                text28                             1507     1507       BB         0
-                text27                             15C2     15C2       BB         0
-                text26                             10A6     10A6       BA         0
-                text25                              C40      C40      3C0         0
-                text24                             1ECE     1ECE       88         0
-                text22                              7F7      7F7        5         0
-                text21                             1E4E     1E4E       29         0
-                text20                              45E      45E      15D         0
-                text19                             1E3B     1E3B       13         0
-                text18                             173C     173C       C4         0
-                text17                              86C      86C       C4         0
-                text16                              930      930       C4         0
-                text15                              9F4      9F4       C4         0
-                text14                              AB8      AB8       C4         0
-                text13                              B7C      B7C       C4         0
-                text12                              6FA      6FA       C4         0
-                text11                             167D     167D       BF         0
-                text10                               4F       4F      40F         0
-                text9                              101C     101C       8A         0
-                text8                              1007     1007       15         0
-                text7                               7FC      7FC        3         0
-                text6                               7BE      7BE       39         0
-                text5                              1E1C     1E1C        F         0
-                text4                              1F56     1F56       AA         0
-                text3                              1EA1     1EA1       2D         0
-                text2                               5BB      5BB      13F         0
-                text1                              1E77     1E77       2A         0
-                maintext                            808      808       64         0
-                idataBANK0                          7FF      7FF        1         0
+                text40                             1B12     1B12       51         0
+                text39                             100B     100B       64         0
+                text38                             1A1E     1A1E       20         0
+                text37                             1AD6     1AD6       3C         0
+                text36                             1D1C     1D1C       B4         0
+                text35                             1B63     1B63       87         0
+                text34                             1001     1001        5         0
+                text33                              7F0      7F0       10         0
+                text32                             1E8A     1E8A       BB         0
+                text31                             1F45     1F45       BB         0
+                text30                             106F     106F       BB         0
+                text29                             112A     112A       BB         0
+                text28                             11E5     11E5       BB         0
+                text27                             12A0     12A0       BB         0
+                text26                             135B     135B       BB         0
+                text25                             1DD0     1DD0       BA         0
+                text24                              C43      C43      3BD         0
+                text23                             1BEA     1BEA       88         0
+                text21                             1006     1006        5         0
+                text20                             1A6B     1A6B       32         0
+                text19                              58F      58F      195         0
+                text18                             19F6     19F6       13         0
+                text17                             159C     159C       CC         0
+                text16                             1668     1668       CC         0
+                text15                             1734     1734       CC         0
+                text14                              89A      89A       CC         0
+                text13                              966      966       CC         0
+                text12                              A32      A32       CC         0
+                text11                              724      724       CC         0
+                text10                             14D5     14D5       C7         0
+                text9                               198      198      3F7         0
+                text8                               810      810       8A         0
+                text7                              1A09     1A09       15         0
+                text6                              19F3     19F3        3         0
+                text5                              1A9D     1A9D       39         0
+                text4                               801      801        F         0
+                text3                              1C72     1C72       AA         0
+                text2                              1A3E     1A3E       2D         0
+                text1                               AFE      AFE      145         0
+                maintext                           1416     1416       BF         0
+                idataBANK1                            3        3        1         0
 
         CLASS   STRCODE        
                 stringtext                         2000     2000       89         0
@@ -153,17 +162,16 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        D         1
-                bssCOMMON                            7D       7D        1         1
+                cstackCOMMON                         70       70        E         1
 
         CLASS   BANK0          
-                cstackBANK0                          20       20       30         1
-                dataBANK0                            59       59        1         1
-                bssBANK0                             50       50        9         1
+                cstackBANK0                          20       20       28         1
+                bssBANK0                             48       48        8         1
 
         CLASS   BANK1          
-                cstackBANK1                          A0       A0       16         1
-                bssBANK1                             B6       B6        3         1
+                cstackBANK1                          A0       A0       20         1
+                dataBANK1                            C5       C5        1         1
+                bssBANK1                             C0       C0        5         1
 
         CLASS   BANK2          
 
@@ -308,38 +316,47 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
+                idataBANK1                     000003  000001  000004         6       0  CODE        2
                 intentry                       000004  0007FC  000800         8       0  CODE        2
-                cstackBANK0                    000020  00003A  00005A        20       1  BANK0       1
+                cstackBANK0                    000020  000030  000050        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
-                cstackBANK1                    0000A0  000019  0000B9        A0       1  BANK1       1
-                text35                         000803  000005  000808      1006       0  CODE        2
-                maintext                       000808  000064  00086C      1010       0  CODE        2
-                text17                         00086C  0000C4  000930      10D8       0  CODE        2
-                text16                         000930  0000C4  0009F4      1260       0  CODE        2
-                text15                         0009F4  0000C4  000AB8      13E8       0  CODE        2
-                text14                         000AB8  0000C4  000B7C      1570       0  CODE        2
-                text13                         000B7C  0000C4  000C40      16F8       0  CODE        2
-                text25                         000C40  0003C0  001000      1880       0  CODE        2
-                text8                          001007  000015  00101C      200E       0  CODE        2
-                text9                          00101C  00008A  0010A6      2038       0  CODE        2
-                text26                         0010A6  0000BA  001160      214C       0  CODE        2
-                text33                         001160  0000BB  00121B      22C0       0  CODE        2
-                text32                         00121B  0000BB  0012D6      2436       0  CODE        2
-                text31                         0012D6  0000BB  001391      25AC       0  CODE        2
-                text30                         001391  0000BB  00144C      2722       0  CODE        2
-                text29                         00144C  0000BB  001507      2898       0  CODE        2
-                text28                         001507  0000BB  0015C2      2A0E       0  CODE        2
-                text27                         0015C2  0000BB  00167D      2B84       0  CODE        2
-                text11                         00167D  0000BF  00173C      2CFA       0  CODE        2
-                text18                         00173C  0000C4  001800      2E78       0  CODE        2
-                text5                          001E1C  00000F  001E2B      3C38       0  CODE        2
-                text34                         001E2B  000010  001E3B      3C56       0  CODE        2
-                text19                         001E3B  000013  001E4E      3C76       0  CODE        2
-                text21                         001E4E  000029  001E77      3C9C       0  CODE        2
-                text1                          001E77  00002A  001EA1      3CEE       0  CODE        2
-                text3                          001EA1  00002D  001ECE      3D42       0  CODE        2
-                text24                         001ECE  000088  001F56      3D9C       0  CODE        2
-                text4                          001F56  0000AA  002000      3EAC       0  CODE        2
+                cstackBANK1                    0000A0  000026  0000C6        A0       1  BANK1       1
+                text4                          000801  00000F  000810      1002       0  CODE        2
+                text8                          000810  00008A  00089A      1020       0  CODE        2
+                text14                         00089A  0000CC  000966      1134       0  CODE        2
+                text13                         000966  0000CC  000A32      12CC       0  CODE        2
+                text12                         000A32  0000CC  000AFE      1464       0  CODE        2
+                text1                          000AFE  000145  000C43      15FC       0  CODE        2
+                text24                         000C43  0003BD  001000      1886       0  CODE        2
+                text34                         001001  000005  001006      2002       0  CODE        2
+                text21                         001006  000005  00100B      200C       0  CODE        2
+                text39                         00100B  000064  00106F      2016       0  CODE        2
+                text30                         00106F  0000BB  00112A      20DE       0  CODE        2
+                text29                         00112A  0000BB  0011E5      2254       0  CODE        2
+                text28                         0011E5  0000BB  0012A0      23CA       0  CODE        2
+                text27                         0012A0  0000BB  00135B      2540       0  CODE        2
+                text26                         00135B  0000BB  001416      26B6       0  CODE        2
+                maintext                       001416  0000BF  0014D5      282C       0  CODE        2
+                text10                         0014D5  0000C7  00159C      29AA       0  CODE        2
+                text17                         00159C  0000CC  001668      2B38       0  CODE        2
+                text16                         001668  0000CC  001734      2CD0       0  CODE        2
+                text15                         001734  0000CC  001800      2E68       0  CODE        2
+                text6                          0019F3  000003  0019F6      33E6       0  CODE        2
+                text18                         0019F6  000013  001A09      33EC       0  CODE        2
+                text7                          001A09  000015  001A1E      3412       0  CODE        2
+                text38                         001A1E  000020  001A3E      343C       0  CODE        2
+                text2                          001A3E  00002D  001A6B      347C       0  CODE        2
+                text20                         001A6B  000032  001A9D      34D6       0  CODE        2
+                text5                          001A9D  000039  001AD6      353A       0  CODE        2
+                text37                         001AD6  00003C  001B12      35AC       0  CODE        2
+                text40                         001B12  000051  001B63      3624       0  CODE        2
+                text35                         001B63  000087  001BEA      36C6       0  CODE        2
+                text23                         001BEA  000088  001C72      37D4       0  CODE        2
+                text3                          001C72  0000AA  001D1C      38E4       0  CODE        2
+                text36                         001D1C  0000B4  001DD0      3A38       0  CODE        2
+                text25                         001DD0  0000BA  001E8A      3BA0       0  CODE        2
+                text32                         001E8A  0000BB  001F45      3D14       0  CODE        2
+                text31                         001F45  0000BB  002000      3E8A       0  CODE        2
                 stringtext                     002000  000089  002089      4000       0  STRCODE     2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
 
@@ -347,8 +364,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0005A-0006F              16           1
-        BANK1            000B9-000EF              37           1
+        BANK0            00050-0006F              20           1
+        BANK1            000C6-000EF              2A           1
         BANK10           00520-0056F              50           1
         BANK11           005A0-005EF              50           1
         BANK12           00620-0066F              50           1
@@ -374,25 +391,25 @@ UNUSED ADDRESS RANGES
         BANK8            00420-0046F              50           1
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-027EF             7F0           1
-        CODE             00002-00003               2           2
-                         00800-00802               3
-                         01000-01006               7
-                         01800-01E1B             61C
+        CODE             00002-00002               1           2
+                         00800-00800               1
+                         01000-01000               1
+                         01800-019F2             1F3
                          02089-03FFF             800
-        CONST            00002-00003               2           2
-                         00800-00802               3
-                         01000-01006               7
-                         01800-01E1B             100
+        CONST            00002-00002               1           2
+                         00800-00800               1
+                         01000-01000               1
+                         01800-019F2             100
                          02089-03FFF             100
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00002-00003               2           2
-                         00800-00802               3
-                         01000-01006               7
-                         01800-01E1B             100
+        ENTRY            00002-00002               1           2
+                         00800-00800               1
+                         01000-01000               1
+                         01800-019F2             100
                          02089-03FFF             100
         IDLOC            08000-08003               4           2
-        RAM              0005A-0006F              16           1
-                         000B9-000EF              37
+        RAM              00050-0006F              20           1
+                         000C6-000EF              2A
                          00120-0016F              50
                          001A0-001EF              50
                          00220-0026F              50
@@ -449,20 +466,25 @@ UNUSED ADDRESS RANGES
         SFR7             00380-0039F              20           1
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
-        STACK            02069-027EF             787           1
-        STRCODE          00002-00003               2           2
-                         00800-00802               3
-                         01000-01006               7
-                         01800-01E1B             61C
+        STACK            02076-027EF             77A           1
+        STRCODE          00002-00002               1           2
+                         00800-00800               1
+                         01000-01000               1
+                         01800-019F2             1F3
                          02089-03FFF            1F77
-        STRING           00002-00003               2           2
-                         00800-00802               3
-                         01000-01006               7
-                         01800-01E1B             100
+        STRING           00002-00002               1           2
+                         00800-00800               1
+                         01000-01000               1
+                         01800-019F2             100
                          02089-03FFF             100
 
                                   Symbol Table
 
+?___awdiv                                          cstackCOMMON 00070
+?___awtoft                                         cstackCOMMON 00078
+?___ftmul                                          cstackBANK0  00020
+?___ftpack                                         cstackCOMMON 00070
+?___fttol                                          cstackBANK0  00030
 _ADCON0                                            (abs)        0009D
 _ADCON1                                            (abs)        0009E
 _ADCON2                                            (abs)        0009F
@@ -473,9 +495,9 @@ _ANSELB                                            (abs)        0018D
 _BRG16                                             (abs)        00CFB
 _BRGH                                              (abs)        00CF2
 _CREN                                              (abs)        00CEC
-_D1cycles                                          bssBANK0     00050
-_D2cycles                                          bssBANK0     00052
-_Davgcycles                                        bssBANK0     00054
+_D1cycles                                          bssBANK0     00048
+_D2cycles                                          bssBANK0     0004A
+_Davgcycles                                        bssBANK0     0004C
 _GIE                                               (abs)        0005F
 _INTCON                                            (abs)        0000B
 _IOCAF                                             (abs)        00393
@@ -488,6 +510,7 @@ _OSCCON                                            (abs)        00099
 _P1MDLBIT                                          (abs)        07495
 _PIE4                                              (abs)        00094
 _PIR1bits                                          (abs)        00011
+_PORTAbits                                         (abs)        0000C
 _PORTBbits                                         (abs)        0000D
 _PSMC1ASDC                                         (abs)        00E9D
 _PSMC1ASDL                                         (abs)        00E9E
@@ -689,8 +712,7 @@ __Hbank9                                           bank9        00000
 __Hbigram                                          bigram       00000
 __HbssBANK0                                        bssBANK0     00000
 __HbssBANK1                                        bssBANK1     00000
-__HbssCOMMON                                       bssCOMMON    00000
-__Hcinit                                           cinit        0004F
+__Hcinit                                           cinit        00198
 __Hclrtext                                         clrtext      00000
 __Hcode                                            code         00000
 __Hcommon                                          common       00000
@@ -698,14 +720,14 @@ __Hconfig                                          config       08009
 __HcstackBANK0                                     cstackBANK0  00000
 __HcstackBANK1                                     cstackBANK1  00000
 __HcstackCOMMON                                    cstackCOMMON 00000
-__HdataBANK0                                       dataBANK0    00000
+__HdataBANK1                                       dataBANK1    00000
 __Heeprom_data                                     eeprom_data  00000
-__Hend_init                                        end_init     00039
+__Hend_init                                        end_init     00183
 __Hfunctab                                         functab      00000
-__HidataBANK0                                      idataBANK0   00000
+__HidataBANK1                                      idataBANK1   00000
 __Hidloc                                           idloc        00000
-__Hinit                                            init         00037
-__Hintentry                                        intentry     00037
+__Hinit                                            init         00181
+__Hintentry                                        intentry     00181
 __Hmaintext                                        maintext     00000
 __Hpowerup                                         powerup      00000
 __Hram                                             ram          00000
@@ -743,7 +765,7 @@ __Hsfr7                                            sfr7         00000
 __Hsfr8                                            sfr8         00000
 __Hsfr9                                            sfr9         00000
 __Hspace_0                                         (abs)        08009
-__Hspace_1                                         (abs)        000B9
+__Hspace_1                                         (abs)        000C6
 __Hspace_2                                         (abs)        00000
 __Hspace_3                                         (abs)        00000
 __Hstack                                           stack        00000
@@ -786,8 +808,7 @@ __Lbank9                                           bank9        00000
 __Lbigram                                          bigram       00000
 __LbssBANK0                                        bssBANK0     00000
 __LbssBANK1                                        bssBANK1     00000
-__LbssCOMMON                                       bssCOMMON    00000
-__Lcinit                                           cinit        00039
+__Lcinit                                           cinit        00183
 __Lclrtext                                         clrtext      00000
 __Lcode                                            code         00000
 __Lcommon                                          common       00000
@@ -795,13 +816,13 @@ __Lconfig                                          config       08007
 __LcstackBANK0                                     cstackBANK0  00000
 __LcstackBANK1                                     cstackBANK1  00000
 __LcstackCOMMON                                    cstackCOMMON 00000
-__LdataBANK0                                       dataBANK0    00000
+__LdataBANK1                                       dataBANK1    00000
 __Leeprom_data                                     eeprom_data  00000
-__Lend_init                                        end_init     00037
+__Lend_init                                        end_init     00181
 __Lfunctab                                         functab      00000
-__LidataBANK0                                      idataBANK0   00000
+__LidataBANK1                                      idataBANK1   00000
 __Lidloc                                           idloc        00000
-__Linit                                            init         00037
+__Linit                                            init         00181
 __Lintentry                                        intentry     00004
 __Lmaintext                                        maintext     00000
 __Lpowerup                                         powerup      00000
@@ -848,98 +869,141 @@ __Lstrings                                         strings      00000
 __Lstringtext                                      stringtext   00000
 __Ltext                                            text         00000
 __S0                                               (abs)        08009
-__S1                                               (abs)        000B9
+__S1                                               (abs)        000C6
 __S2                                               (abs)        00000
 __S3                                               (abs)        00000
+___awdiv                                           text40       01B12
+___awdiv@counter                                   cstackCOMMON 00075
+___awdiv@dividend                                  cstackCOMMON 00072
+___awdiv@divisor                                   cstackCOMMON 00070
+___awdiv@quotient                                  cstackCOMMON 00077
+___awdiv@sign                                      cstackCOMMON 00076
+___awtoft                                          text38       01A1E
+___awtoft@c                                        cstackCOMMON 00078
+___awtoft@sign                                     cstackCOMMON 0007D
+___ftge                                            text37       01AD6
+___ftge@ff1                                        cstackBANK0  00030
+___ftge@ff2                                        cstackBANK0  00033
+___ftmul                                           text36       01D1C
+___ftmul@cntr                                      cstackBANK0  0002E
+___ftmul@exp                                       cstackBANK0  0002A
+___ftmul@f1                                        cstackBANK0  00020
+___ftmul@f2                                        cstackBANK0  00023
+___ftmul@f3_as_product                             cstackBANK0  0002B
+___ftmul@sign                                      cstackBANK0  0002F
+___ftpack                                          text39       0100B
+___ftpack@arg                                      cstackCOMMON 00070
+___ftpack@exp                                      cstackCOMMON 00073
+___ftpack@sign                                     cstackCOMMON 00074
+___fttol                                           text35       01B63
+___fttol@exp1                                      cstackBANK0  0003D
+___fttol@f1                                        cstackBANK0  00030
+___fttol@lval                                      cstackBANK0  00039
+___fttol@sign1                                     cstackBANK0  00038
 ___int_sp                                          stack        00000
 ___latbits                                         (abs)        00003
 ___sp                                              stack        00000
-__end_of__initialization                           cinit        0004B
-__end_of_determine_omega_mode_active               text22       007FC
-__end_of_determine_packets_to_send                 text21       01E77
-__end_of_determine_sword_was_swung                 text20       005BB
-__end_of_display_blade_lights                      text10       0045E
-__end_of_display_health                            text9        010A6
-__end_of_init_accel                                text8        0101C
-__end_of_init_conn                                 text7        007FF
-__end_of_init_ir                                   text6        007F7
-__end_of_init_isr                                  text5        01E2B
-__end_of_init_leds                                 text4        02000
-__end_of_init_pic                                  text3        01ECE
-__end_of_isr                                       intentry     00037
-__end_of_led1_command                              text18       01800
-__end_of_led2_command                              text17       00930
-__end_of_led3_command                              text16       009F4
-__end_of_led4_command                              text15       00AB8
-__end_of_led5_command                              text14       00B7C
-__end_of_led6_command                              text13       00C40
-__end_of_led7_command                              text12       007BE
-__end_of_leds_off                                  text11       0173C
-__end_of_main                                      maintext     0086C
-__end_of_output_ir                                 text2        006FA
-__end_of_play_sound                                text1        01EA1
-__end_of_writespi                                  text19       01E4E
+__end_of___awdiv                                   text40       01B63
+__end_of___awtoft                                  text38       01A3E
+__end_of___ftge                                    text37       01B12
+__end_of___ftmul                                   text36       01DD0
+__end_of___ftpack                                  text39       0106F
+__end_of___fttol                                   text35       01BEA
+__end_of__initialization                           cinit        00194
+__end_of_determine_omega_mode_active               text21       0100B
+__end_of_determine_packets_to_send                 text20       01A9D
+__end_of_determine_sword_was_swung                 text19       00724
+__end_of_display_blade_lights                      text9        0058F
+__end_of_display_health                            text8        0089A
+__end_of_init_accel                                text7        01A1E
+__end_of_init_conn                                 text6        019F6
+__end_of_init_ir                                   text5        01AD6
+__end_of_init_isr                                  text4        00810
+__end_of_init_leds                                 text3        01D1C
+__end_of_init_pic                                  text2        01A6B
+__end_of_isr                                       intentry     00181
+__end_of_led1_command                              text17       01668
+__end_of_led2_command                              text16       01734
+__end_of_led3_command                              text15       01800
+__end_of_led4_command                              text14       00966
+__end_of_led5_command                              text13       00A32
+__end_of_led6_command                              text12       00AFE
+__end_of_led7_command                              text11       007F0
+__end_of_leds_off                                  text10       0159C
+__end_of_main                                      maintext     014D5
+__end_of_output_ir                                 text1        00C43
+__end_of_writespi                                  text18       01A09
 __end_ofdetermine_sword_was_swung@midpoint         stringtext   02002
 __end_ofdetermine_sword_was_swung@neg_shock_thresh stringtext   02004
 __end_ofdetermine_sword_was_swung@pos_shock_thresh stringtext   02006
-__end_ofi1_determine_omega_mode_active             text35       00808
-__end_ofi1_display_blade_lights                    text25       01000
-__end_ofi1_display_health                          text24       01F56
-__end_ofi1_led1_command                            text33       0121B
-__end_ofi1_led2_command                            text32       012D6
-__end_ofi1_led3_command                            text31       01391
-__end_ofi1_led4_command                            text30       0144C
-__end_ofi1_led5_command                            text29       01507
-__end_ofi1_led6_command                            text28       015C2
-__end_ofi1_led7_command                            text27       0167D
-__end_ofi1_leds_off                                text26       01160
-__end_ofi1_writespi                                text34       01E3B
-__initialization                                   cinit        00039
-__pbssBANK0                                        bssBANK0     00050
-__pbssBANK1                                        bssBANK1     000B6
-__pbssCOMMON                                       bssCOMMON    0007D
+__end_ofi1_determine_omega_mode_active             text34       01006
+__end_ofi1_display_blade_lights                    text24       01000
+__end_ofi1_display_health                          text23       01C72
+__end_ofi1_led1_command                            text32       01F45
+__end_ofi1_led2_command                            text31       02000
+__end_ofi1_led3_command                            text30       0112A
+__end_ofi1_led4_command                            text29       011E5
+__end_ofi1_led5_command                            text28       012A0
+__end_ofi1_led6_command                            text27       0135B
+__end_ofi1_led7_command                            text26       01416
+__end_ofi1_leds_off                                text25       01E8A
+__end_ofi1_writespi                                text33       00800
+__initialization                                   cinit        00183
+__pbssBANK0                                        bssBANK0     00048
+__pbssBANK1                                        bssBANK1     000C0
 __pcstackBANK0                                     cstackBANK0  00020
 __pcstackBANK1                                     cstackBANK1  000A0
 __pcstackCOMMON                                    cstackCOMMON 00070
-__pdataBANK0                                       dataBANK0    00059
-__pidataBANK0                                      idataBANK0   007FF
+__pdataBANK1                                       dataBANK1    000C5
+__pidataBANK1                                      idataBANK1   00003
 __pintentry                                        intentry     00004
-__pmaintext                                        maintext     00808
+__pmaintext                                        maintext     01416
 __pstringtext                                      stringtext   02000
-__ptext1                                           text1        01E77
-__ptext10                                          text10       0004F
-__ptext11                                          text11       0167D
-__ptext12                                          text12       006FA
-__ptext13                                          text13       00B7C
-__ptext14                                          text14       00AB8
-__ptext15                                          text15       009F4
-__ptext16                                          text16       00930
-__ptext17                                          text17       0086C
-__ptext18                                          text18       0173C
-__ptext19                                          text19       01E3B
-__ptext2                                           text2        005BB
-__ptext20                                          text20       0045E
-__ptext21                                          text21       01E4E
-__ptext22                                          text22       007F7
-__ptext24                                          text24       01ECE
-__ptext25                                          text25       00C40
-__ptext26                                          text26       010A6
-__ptext27                                          text27       015C2
-__ptext28                                          text28       01507
-__ptext29                                          text29       0144C
-__ptext3                                           text3        01EA1
-__ptext30                                          text30       01391
-__ptext31                                          text31       012D6
-__ptext32                                          text32       0121B
-__ptext33                                          text33       01160
-__ptext34                                          text34       01E2B
-__ptext35                                          text35       00803
-__ptext4                                           text4        01F56
-__ptext5                                           text5        01E1C
-__ptext6                                           text6        007BE
-__ptext7                                           text7        007FC
-__ptext8                                           text8        01007
-__ptext9                                           text9        0101C
+__ptext1                                           text1        00AFE
+__ptext10                                          text10       014D5
+__ptext11                                          text11       00724
+__ptext12                                          text12       00A32
+__ptext13                                          text13       00966
+__ptext14                                          text14       0089A
+__ptext15                                          text15       01734
+__ptext16                                          text16       01668
+__ptext17                                          text17       0159C
+__ptext18                                          text18       019F6
+__ptext19                                          text19       0058F
+__ptext2                                           text2        01A3E
+__ptext20                                          text20       01A6B
+__ptext21                                          text21       01006
+__ptext23                                          text23       01BEA
+__ptext24                                          text24       00C43
+__ptext25                                          text25       01DD0
+__ptext26                                          text26       0135B
+__ptext27                                          text27       012A0
+__ptext28                                          text28       011E5
+__ptext29                                          text29       0112A
+__ptext3                                           text3        01C72
+__ptext30                                          text30       0106F
+__ptext31                                          text31       01F45
+__ptext32                                          text32       01E8A
+__ptext33                                          text33       007F0
+__ptext34                                          text34       01001
+__ptext35                                          text35       01B63
+__ptext36                                          text36       01D1C
+__ptext37                                          text37       01AD6
+__ptext38                                          text38       01A1E
+__ptext39                                          text39       0100B
+__ptext4                                           text4        00801
+__ptext40                                          text40       01B12
+__ptext5                                           text5        01A9D
+__ptext6                                           text6        019F3
+__ptext7                                           text7        01A09
+__ptext8                                           text8        00810
+__ptext9                                           text9        00198
+__size_of___awdiv                                  (abs)        00000
+__size_of___awtoft                                 (abs)        00000
+__size_of___ftge                                   (abs)        00000
+__size_of___ftmul                                  (abs)        00000
+__size_of___ftpack                                 (abs)        00000
+__size_of___fttol                                  (abs)        00000
 __size_of_determine_omega_mode_active              (abs)        00000
 __size_of_determine_packets_to_send                (abs)        00000
 __size_of_determine_sword_was_swung                (abs)        00000
@@ -962,7 +1026,6 @@ __size_of_led7_command                             (abs)        00000
 __size_of_leds_off                                 (abs)        00000
 __size_of_main                                     (abs)        00000
 __size_of_output_ir                                (abs)        00000
-__size_of_play_sound                               (abs)        00000
 __size_of_writespi                                 (abs)        00000
 __size_ofi1_determine_omega_mode_active            (abs)        00000
 __size_ofi1_display_blade_lights                   (abs)        00000
@@ -976,133 +1039,134 @@ __size_ofi1_led6_command                           (abs)        00000
 __size_ofi1_led7_command                           (abs)        00000
 __size_ofi1_leds_off                               (abs)        00000
 __size_ofi1_writespi                               (abs)        00000
-_determine_omega_mode_active                       text22       007F7
-_determine_packets_to_send                         text21       01E4E
-_determine_sword_was_swung                         text20       0045E
-_display_blade_lights                              text10       0004F
-_display_health                                    text9        0101C
-_health                                            dataBANK0    00059
-_init_accel                                        text8        01007
-_init_conn                                         text7        007FC
-_init_ir                                           text6        007BE
-_init_isr                                          text5        01E1C
-_init_leds                                         text4        01F56
-_init_pic                                          text3        01EA1
+_damage_received                                   bssBANK1     000C3
+_determine_omega_mode_active                       text21       01006
+_determine_packets_to_send                         text20       01A6B
+_determine_sword_was_swung                         text19       0058F
+_display_blade_lights                              text9        00198
+_display_health                                    text8        00810
+_health                                            dataBANK1    000C5
+_init_accel                                        text7        01A09
+_init_conn                                         text6        019F3
+_init_ir                                           text5        01A9D
+_init_isr                                          text4        00801
+_init_leds                                         text3        01C72
+_init_pic                                          text2        01A3E
 _isr                                               intentry     00004
-_led1_command                                      text18       0173C
-_led2_command                                      text17       0086C
-_led3_command                                      text16       00930
-_led4_command                                      text15       009F4
-_led5_command                                      text14       00AB8
-_led6_command                                      text13       00B7C
-_led7_command                                      text12       006FA
-_leds_off                                          text11       0167D
-_main                                              maintext     00808
-_numPackets                                        bssBANK0     00056
-_output_ir                                         text2        005BB
-_play_sound                                        text1        01E77
-_writespi                                          text19       01E3B
+_led1_command                                      text17       0159C
+_led2_command                                      text16       01668
+_led3_command                                      text15       01734
+_led4_command                                      text14       0089A
+_led5_command                                      text13       00966
+_led6_command                                      text12       00A32
+_led7_command                                      text11       00724
+_leds_off                                          text10       014D5
+_main                                              maintext     01416
+_numPackets                                        bssBANK0     0004E
+_output_ir                                         text1        00AFE
+_stun_counter                                      bssBANK1     000C4
+_writespi                                          text18       019F6
 btemp                                              (abs)        0007E
-determine_packets_to_send@packets                  cstackBANK0  00037
+determine_packets_to_send@packets                  cstackBANK0  00041
 determine_sword_was_swung@midpoint                 stringtext   02000
-determine_sword_was_swung@x                        cstackBANK0  0004A
-determine_sword_was_swung@x_neg_thresh             cstackBANK0  00040
-determine_sword_was_swung@x_pos_thresh             cstackBANK0  0003E
-determine_sword_was_swung@xh                       cstackBANK0  00038
-determine_sword_was_swung@xl                       cstackBANK0  0003B
-determine_sword_was_swung@y                        cstackBANK0  0004C
-determine_sword_was_swung@y_neg_thresh             cstackBANK0  00044
-determine_sword_was_swung@y_pos_thresh             cstackBANK0  00042
-determine_sword_was_swung@yh                       cstackBANK0  00039
-determine_sword_was_swung@yl                       cstackBANK0  0003C
-determine_sword_was_swung@z                        cstackBANK0  0004E
-determine_sword_was_swung@z_neg_thresh             cstackBANK0  00048
-determine_sword_was_swung@z_pos_thresh             cstackBANK0  00046
-determine_sword_was_swung@zh                       cstackBANK0  0003A
-determine_sword_was_swung@zl                       cstackBANK0  0003D
-display_blade_lights@blue                          cstackBANK1  000AE
-display_blade_lights@brightness                    cstackBANK1  000AB
-display_blade_lights@green                         cstackBANK1  000AD
-display_blade_lights@i                             cstackBANK1  000A8
-display_blade_lights@i_601                         cstackBANK1  000A0
-display_blade_lights@i_602                         cstackBANK1  000A2
-display_blade_lights@i_604                         cstackBANK1  000A4
-display_blade_lights@i_605                         cstackBANK1  000A6
-display_blade_lights@i_606                         cstackBANK1  000A9
-display_blade_lights@mode                          cstackBANK1  000AA
-display_blade_lights@r                             cstackBANK1  000AF
-display_blade_lights@r_603                         cstackBANK1  000B0
-display_blade_lights@red                           cstackBANK1  000AC
-end_of_initialization                              cinit        0004B
-i1_determine_omega_mode_active                     text35       00803
-i1_display_blade_lights                            text25       00C40
-i1_display_health                                  text24       01ECE
-i1_led1_command                                    text33       01160
-i1_led2_command                                    text32       0121B
-i1_led3_command                                    text31       012D6
-i1_led4_command                                    text30       01391
-i1_led5_command                                    text29       0144C
-i1_led6_command                                    text28       01507
-i1_led7_command                                    text27       015C2
-i1_leds_off                                        text26       010A6
-i1_writespi                                        text34       01E2B
+determine_sword_was_swung@x                        cstackBANK1  000B2
+determine_sword_was_swung@x_neg_thresh             cstackBANK1  000A8
+determine_sword_was_swung@x_pos_thresh             cstackBANK1  000A6
+determine_sword_was_swung@xh                       cstackBANK1  000A0
+determine_sword_was_swung@xl                       cstackBANK1  000A3
+determine_sword_was_swung@y                        cstackBANK1  000B4
+determine_sword_was_swung@y_neg_thresh             cstackBANK1  000AC
+determine_sword_was_swung@y_pos_thresh             cstackBANK1  000AA
+determine_sword_was_swung@yh                       cstackBANK1  000A1
+determine_sword_was_swung@yl                       cstackBANK1  000A4
+determine_sword_was_swung@z                        cstackBANK1  000B6
+determine_sword_was_swung@z_neg_thresh             cstackBANK1  000B0
+determine_sword_was_swung@z_pos_thresh             cstackBANK1  000AE
+determine_sword_was_swung@zh                       cstackBANK1  000A2
+determine_sword_was_swung@zl                       cstackBANK1  000A5
+display_blade_lights@blue                          cstackBANK1  000B6
+display_blade_lights@brightness                    cstackBANK1  000B3
+display_blade_lights@green                         cstackBANK1  000B5
+display_blade_lights@i                             cstackBANK1  000B0
+display_blade_lights@i_641                         cstackBANK1  000A8
+display_blade_lights@i_642                         cstackBANK1  000AA
+display_blade_lights@i_644                         cstackBANK1  000AC
+display_blade_lights@i_645                         cstackBANK1  000AE
+display_blade_lights@i_646                         cstackBANK1  000B1
+display_blade_lights@mode                          cstackBANK1  000B2
+display_blade_lights@r                             cstackBANK1  000B7
+display_blade_lights@r_643                         cstackBANK1  000B8
+display_blade_lights@red                           cstackBANK1  000B4
+end_of_initialization                              cinit        00194
+i1_determine_omega_mode_active                     text34       01001
+i1_display_blade_lights                            text24       00C43
+i1_display_health                                  text23       01BEA
+i1_led1_command                                    text32       01E8A
+i1_led2_command                                    text31       01F45
+i1_led3_command                                    text30       0106F
+i1_led4_command                                    text29       0112A
+i1_led5_command                                    text28       011E5
+i1_led6_command                                    text27       012A0
+i1_led7_command                                    text26       0135B
+i1_leds_off                                        text25       01DD0
+i1_writespi                                        text33       007F0
 i1display_blade_lights@blue                        cstackBANK0  00031
 i1display_blade_lights@brightness                  cstackBANK0  0002E
 i1display_blade_lights@green                       cstackBANK0  00030
 i1display_blade_lights@i                           cstackBANK0  0002C
-i1display_blade_lights@i_601                       cstackBANK0  00024
-i1display_blade_lights@i_602                       cstackBANK0  00026
-i1display_blade_lights@i_604                       cstackBANK0  00028
-i1display_blade_lights@i_605                       cstackBANK0  0002A
-i1display_blade_lights@i_606                       cstackBANK0  0002D
+i1display_blade_lights@i_641                       cstackBANK0  00024
+i1display_blade_lights@i_642                       cstackBANK0  00026
+i1display_blade_lights@i_644                       cstackBANK0  00028
+i1display_blade_lights@i_645                       cstackBANK0  0002A
+i1display_blade_lights@i_646                       cstackBANK0  0002D
 i1display_blade_lights@mode                        cstackBANK0  00023
 i1display_blade_lights@r                           cstackBANK0  00032
-i1display_blade_lights@r_603                       cstackBANK0  00033
+i1display_blade_lights@r_643                       cstackBANK0  00033
 i1display_blade_lights@red                         cstackBANK0  0002F
 i1led1_command@blue                                cstackCOMMON 00075
 i1led1_command@brightness                          cstackCOMMON 00078
 i1led1_command@green                               cstackCOMMON 00074
 i1led1_command@i                                   cstackCOMMON 00079
-i1led1_command@i_638                               cstackCOMMON 0007B
+i1led1_command@i_678                               cstackCOMMON 0007B
 i1led1_command@red                                 cstackCOMMON 00073
 i1led2_command@blue                                cstackCOMMON 00075
 i1led2_command@brightness                          cstackCOMMON 00078
 i1led2_command@green                               cstackCOMMON 00074
 i1led2_command@i                                   cstackCOMMON 00079
-i1led2_command@i_645                               cstackCOMMON 0007B
+i1led2_command@i_685                               cstackCOMMON 0007B
 i1led2_command@red                                 cstackCOMMON 00073
 i1led3_command@blue                                cstackCOMMON 00075
 i1led3_command@brightness                          cstackCOMMON 00078
 i1led3_command@green                               cstackCOMMON 00074
 i1led3_command@i                                   cstackCOMMON 00079
-i1led3_command@i_652                               cstackCOMMON 0007B
+i1led3_command@i_692                               cstackCOMMON 0007B
 i1led3_command@red                                 cstackCOMMON 00073
 i1led4_command@blue                                cstackCOMMON 00075
 i1led4_command@brightness                          cstackCOMMON 00078
 i1led4_command@green                               cstackCOMMON 00074
 i1led4_command@i                                   cstackCOMMON 00079
-i1led4_command@i_659                               cstackCOMMON 0007B
+i1led4_command@i_699                               cstackCOMMON 0007B
 i1led4_command@red                                 cstackCOMMON 00073
 i1led5_command@blue                                cstackCOMMON 00075
 i1led5_command@brightness                          cstackCOMMON 00078
 i1led5_command@green                               cstackCOMMON 00074
 i1led5_command@i                                   cstackCOMMON 00079
-i1led5_command@i_666                               cstackCOMMON 0007B
+i1led5_command@i_706                               cstackCOMMON 0007B
 i1led5_command@red                                 cstackCOMMON 00073
 i1led6_command@blue                                cstackCOMMON 00075
 i1led6_command@brightness                          cstackCOMMON 00078
 i1led6_command@green                               cstackCOMMON 00074
 i1led6_command@i                                   cstackCOMMON 00079
-i1led6_command@i_673                               cstackCOMMON 0007B
+i1led6_command@i_713                               cstackCOMMON 0007B
 i1led6_command@red                                 cstackCOMMON 00073
 i1led7_command@blue                                cstackCOMMON 00075
 i1led7_command@brightness                          cstackCOMMON 00078
 i1led7_command@green                               cstackCOMMON 00074
 i1led7_command@i                                   cstackCOMMON 00079
-i1led7_command@i_680                               cstackCOMMON 0007B
+i1led7_command@i_720                               cstackCOMMON 0007B
 i1led7_command@red                                 cstackCOMMON 00073
 i1leds_off@i                                       cstackCOMMON 00075
-i1leds_off@i_683                                   cstackCOMMON 00077
+i1leds_off@i_723                                   cstackCOMMON 00077
 i1writespi@TempVar                                 cstackCOMMON 00071
 i1writespi@data_out                                cstackCOMMON 00072
 int$flags                                          (abs)        0007E
@@ -1112,77 +1176,76 @@ intlevel2                                          functab      00000
 intlevel3                                          functab      00000
 intlevel4                                          functab      00000
 intlevel5                                          functab      00000
-led1_command@blue                                  cstackBANK0  0003B
-led1_command@brightness                            cstackBANK0  0003E
-led1_command@green                                 cstackBANK0  0003A
-led1_command@i                                     cstackBANK0  0003F
-led1_command@i_638                                 cstackBANK0  00041
-led1_command@red                                   cstackBANK0  00039
-led2_command@blue                                  cstackBANK0  0003B
-led2_command@brightness                            cstackBANK0  0003E
-led2_command@green                                 cstackBANK0  0003A
-led2_command@i                                     cstackBANK0  0003F
-led2_command@i_645                                 cstackBANK0  00041
-led2_command@red                                   cstackBANK0  00039
-led3_command@blue                                  cstackBANK0  0003B
-led3_command@brightness                            cstackBANK0  0003E
-led3_command@green                                 cstackBANK0  0003A
-led3_command@i                                     cstackBANK0  0003F
-led3_command@i_652                                 cstackBANK0  00041
-led3_command@red                                   cstackBANK0  00039
-led4_command@blue                                  cstackBANK0  0003B
-led4_command@brightness                            cstackBANK0  0003E
-led4_command@green                                 cstackBANK0  0003A
-led4_command@i                                     cstackBANK0  0003F
-led4_command@i_659                                 cstackBANK0  00041
-led4_command@red                                   cstackBANK0  00039
-led5_command@blue                                  cstackBANK0  0003B
-led5_command@brightness                            cstackBANK0  0003E
-led5_command@green                                 cstackBANK0  0003A
-led5_command@i                                     cstackBANK0  0003F
-led5_command@i_666                                 cstackBANK0  00041
-led5_command@red                                   cstackBANK0  00039
-led6_command@blue                                  cstackBANK0  0003B
-led6_command@brightness                            cstackBANK0  0003E
-led6_command@green                                 cstackBANK0  0003A
-led6_command@i                                     cstackBANK0  0003F
-led6_command@i_673                                 cstackBANK0  00041
-led6_command@red                                   cstackBANK0  00039
-led7_command@blue                                  cstackBANK0  0003B
-led7_command@brightness                            cstackBANK0  0003E
-led7_command@green                                 cstackBANK0  0003A
-led7_command@i                                     cstackBANK0  0003F
-led7_command@i_680                                 cstackBANK0  00041
-led7_command@red                                   cstackBANK0  00039
-leds_off@i                                         cstackBANK0  0003B
-leds_off@i_683                                     cstackBANK0  0003D
+led1_command@blue                                  cstackBANK0  00045
+led1_command@brightness                            cstackBANK1  000A0
+led1_command@green                                 cstackBANK0  00044
+led1_command@i                                     cstackBANK1  000A1
+led1_command@i_678                                 cstackBANK1  000A3
+led1_command@red                                   cstackBANK0  00043
+led2_command@blue                                  cstackBANK0  00045
+led2_command@brightness                            cstackBANK1  000A0
+led2_command@green                                 cstackBANK0  00044
+led2_command@i                                     cstackBANK1  000A1
+led2_command@i_685                                 cstackBANK1  000A3
+led2_command@red                                   cstackBANK0  00043
+led3_command@blue                                  cstackBANK0  00045
+led3_command@brightness                            cstackBANK1  000A0
+led3_command@green                                 cstackBANK0  00044
+led3_command@i                                     cstackBANK1  000A1
+led3_command@i_692                                 cstackBANK1  000A3
+led3_command@red                                   cstackBANK0  00043
+led4_command@blue                                  cstackBANK0  00045
+led4_command@brightness                            cstackBANK1  000A0
+led4_command@green                                 cstackBANK0  00044
+led4_command@i                                     cstackBANK1  000A1
+led4_command@i_699                                 cstackBANK1  000A3
+led4_command@red                                   cstackBANK0  00043
+led5_command@blue                                  cstackBANK0  00045
+led5_command@brightness                            cstackBANK1  000A0
+led5_command@green                                 cstackBANK0  00044
+led5_command@i                                     cstackBANK1  000A1
+led5_command@i_706                                 cstackBANK1  000A3
+led5_command@red                                   cstackBANK0  00043
+led6_command@blue                                  cstackBANK0  00045
+led6_command@brightness                            cstackBANK1  000A0
+led6_command@green                                 cstackBANK0  00044
+led6_command@i                                     cstackBANK1  000A1
+led6_command@i_713                                 cstackBANK1  000A3
+led6_command@red                                   cstackBANK0  00043
+led7_command@blue                                  cstackBANK0  00045
+led7_command@brightness                            cstackBANK1  000A0
+led7_command@green                                 cstackBANK0  00044
+led7_command@i                                     cstackBANK1  000A1
+led7_command@i_720                                 cstackBANK1  000A3
+led7_command@red                                   cstackBANK0  00043
+leds_off@i                                         cstackBANK1  000A0
+leds_off@i_723                                     cstackBANK1  000A2
 ltemp                                              (abs)        0007E
 ltemp0                                             (abs)        0007E
 ltemp1                                             (abs)        00082
 ltemp2                                             (abs)        00086
 ltemp3                                             (abs)        00080
-main@F7258                                         bssBANK1     000B6
-main@i                                             cstackBANK1  000B5
-main@pkt_arr                                       cstackBANK1  000B2
-output_ir@amount                                   cstackBANK0  00036
-output_ir@i                                        cstackBANK0  00039
-output_ir@i_298                                    cstackBANK0  0003B
-output_ir@i_299                                    cstackBANK0  0003D
-output_ir@pkt_type                                 cstackBANK0  0003F
-play_sound@sound_selection                         cstackBANK0  00039
+main@F7258                                         bssBANK1     000C0
+main@i                                             cstackBANK1  000BF
+main@pkt_arr                                       cstackBANK1  000BC
+output_ir@amount                                   cstackBANK0  00040
+output_ir@i                                        cstackBANK1  000A0
+output_ir@i_338                                    cstackBANK1  000A2
+output_ir@i_339                                    cstackBANK1  000A4
+output_ir@pkt_type                                 cstackBANK1  000A6
 reset_vec                                          reset_vec    00000
 stackhi                                            (abs)        027EF
-stacklo                                            (abs)        02069
-start                                              init         00037
-start_initialization                               cinit        00039
+stacklo                                            (abs)        02076
+start                                              init         00181
+start_initialization                               cinit        00183
 ttemp                                              (abs)        0007E
 ttemp0                                             (abs)        0007E
 ttemp1                                             (abs)        00081
 ttemp2                                             (abs)        00084
 ttemp3                                             (abs)        00087
 ttemp4                                             (abs)        0007F
-writespi@TempVar                                   cstackBANK0  00037
-writespi@data_out                                  cstackBANK0  00038
+writespi@TempVar                                   cstackBANK0  00041
+writespi@data_out                                  cstackBANK0  00042
 wtemp                                              (abs)        0007E
 wtemp0                                             (abs)        0007E
 wtemp1                                             (abs)        00080
@@ -1201,10 +1264,10 @@ FUNCTION INFORMATION:
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  pkt_arr         3   18[BANK1 ] unsigned char [3]
-  i               1   21[BANK1 ] unsigned char 
+  pkt_arr         3   28[BANK1 ] unsigned char [3]
+  i               1   31[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
-                  2   58[None  ] int 
+                  2   74[None  ] int 
  Registers used:
 		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
  Tracked objects:
@@ -1214,9 +1277,9 @@ FUNCTION INFORMATION:
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
+      Temps:          0       0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        7 bytes
  Hardware stack levels required when called:    7
  This function calls:
 		_determine_omega_mode_active
@@ -1231,39 +1294,8 @@ Total ram usage:        5 bytes
 		_init_leds
 		_init_pic
 		_output_ir
-		_play_sound
  This function is called by:
 		Startup code after reset
- This function uses a non-reentrant model
-
-
- *************** function _play_sound *****************
- Defined at:
-		line 3 in file "../../source/audio.c"
- Parameters:    Size  Location     Type
-  sound_select    1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  sound_select    1   25[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
  This function uses a non-reentrant model
 
 
@@ -1272,12 +1304,12 @@ Total ram usage:        4 bytes
 		line 41 in file "../../source/ir.c"
  Parameters:    Size  Location     Type
   pkt_type        1    wreg     unsigned char 
-  amount          1   22[BANK0 ] unsigned char 
+  amount          1   32[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  pkt_type        1   31[BANK0 ] unsigned char 
-  i               2   29[BANK0 ] int 
-  i               2   27[BANK0 ] int 
-  i               2   25[BANK0 ] int 
+  pkt_type        1    6[BANK1 ] unsigned char 
+  i               2    4[BANK1 ] int 
+  i               2    2[BANK1 ] int 
+  i               2    0[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1288,9 +1320,9 @@ Total ram usage:        4 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       3       7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -1517,19 +1549,19 @@ Total ram usage:        3 bytes
  Parameters:    Size  Location     Type
   mode            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  mode            1   10[BANK1 ] unsigned char 
-  i               2    6[BANK1 ] int 
-  i               2    4[BANK1 ] int 
-  i               2    2[BANK1 ] int 
-  i               2    0[BANK1 ] int 
-  i               1    9[BANK1 ] unsigned char 
-  r               1   16[BANK1 ] unsigned char 
-  r               1   15[BANK1 ] unsigned char 
-  i               1    8[BANK1 ] unsigned char 
-  blue            1   14[BANK1 ] unsigned char 
-  green           1   13[BANK1 ] unsigned char 
-  red             1   12[BANK1 ] unsigned char 
-  brightness      1   11[BANK1 ] unsigned char 
+  mode            1   18[BANK1 ] unsigned char 
+  i               2   14[BANK1 ] int 
+  i               2   12[BANK1 ] int 
+  i               2   10[BANK1 ] int 
+  i               2    8[BANK1 ] int 
+  i               1   17[BANK1 ] unsigned char 
+  r               1   24[BANK1 ] unsigned char 
+  r               1   23[BANK1 ] unsigned char 
+  i               1   16[BANK1 ] unsigned char 
+  blue            1   22[BANK1 ] unsigned char 
+  green           1   21[BANK1 ] unsigned char 
+  red             1   20[BANK1 ] unsigned char 
+  brightness      1   19[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1541,8 +1573,8 @@ Total ram usage:        3 bytes
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0      17       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       3      17       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0      20       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       20 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    6
@@ -1567,8 +1599,8 @@ Total ram usage:       20 bytes
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2   29[BANK0 ] int 
-  i               2   27[BANK0 ] int 
+  i               2    2[BANK1 ] int 
+  i               2    0[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1579,9 +1611,9 @@ Total ram usage:       20 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        6 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1598,13 +1630,13 @@ Total ram usage:        6 bytes
 		line 968 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
-  red             1   25[BANK0 ] unsigned char 
-  green           1   26[BANK0 ] unsigned char 
-  blue            1   27[BANK0 ] unsigned char 
+  red             1   35[BANK0 ] unsigned char 
+  green           1   36[BANK0 ] unsigned char 
+  blue            1   37[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1   30[BANK0 ] unsigned char 
-  i               2   33[BANK0 ] int 
-  i               2   31[BANK0 ] int 
+  brightness      1    0[BANK1 ] unsigned char 
+  i               2    3[BANK1 ] int 
+  i               2    1[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1615,9 +1647,9 @@ Total ram usage:        6 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1633,13 +1665,13 @@ Total ram usage:       10 bytes
 		line 915 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
-  red             1   25[BANK0 ] unsigned char 
-  green           1   26[BANK0 ] unsigned char 
-  blue            1   27[BANK0 ] unsigned char 
+  red             1   35[BANK0 ] unsigned char 
+  green           1   36[BANK0 ] unsigned char 
+  blue            1   37[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1   30[BANK0 ] unsigned char 
-  i               2   33[BANK0 ] int 
-  i               2   31[BANK0 ] int 
+  brightness      1    0[BANK1 ] unsigned char 
+  i               2    3[BANK1 ] int 
+  i               2    1[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1650,9 +1682,9 @@ Total ram usage:       10 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1668,13 +1700,13 @@ Total ram usage:       10 bytes
 		line 862 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
-  red             1   25[BANK0 ] unsigned char 
-  green           1   26[BANK0 ] unsigned char 
-  blue            1   27[BANK0 ] unsigned char 
+  red             1   35[BANK0 ] unsigned char 
+  green           1   36[BANK0 ] unsigned char 
+  blue            1   37[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1   30[BANK0 ] unsigned char 
-  i               2   33[BANK0 ] int 
-  i               2   31[BANK0 ] int 
+  brightness      1    0[BANK1 ] unsigned char 
+  i               2    3[BANK1 ] int 
+  i               2    1[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1685,9 +1717,9 @@ Total ram usage:       10 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1703,13 +1735,13 @@ Total ram usage:       10 bytes
 		line 809 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
-  red             1   25[BANK0 ] unsigned char 
-  green           1   26[BANK0 ] unsigned char 
-  blue            1   27[BANK0 ] unsigned char 
+  red             1   35[BANK0 ] unsigned char 
+  green           1   36[BANK0 ] unsigned char 
+  blue            1   37[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1   30[BANK0 ] unsigned char 
-  i               2   33[BANK0 ] int 
-  i               2   31[BANK0 ] int 
+  brightness      1    0[BANK1 ] unsigned char 
+  i               2    3[BANK1 ] int 
+  i               2    1[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1720,9 +1752,9 @@ Total ram usage:       10 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1738,13 +1770,13 @@ Total ram usage:       10 bytes
 		line 756 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
-  red             1   25[BANK0 ] unsigned char 
-  green           1   26[BANK0 ] unsigned char 
-  blue            1   27[BANK0 ] unsigned char 
+  red             1   35[BANK0 ] unsigned char 
+  green           1   36[BANK0 ] unsigned char 
+  blue            1   37[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1   30[BANK0 ] unsigned char 
-  i               2   33[BANK0 ] int 
-  i               2   31[BANK0 ] int 
+  brightness      1    0[BANK1 ] unsigned char 
+  i               2    3[BANK1 ] int 
+  i               2    1[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1755,9 +1787,9 @@ Total ram usage:       10 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1773,13 +1805,13 @@ Total ram usage:       10 bytes
 		line 703 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
-  red             1   25[BANK0 ] unsigned char 
-  green           1   26[BANK0 ] unsigned char 
-  blue            1   27[BANK0 ] unsigned char 
+  red             1   35[BANK0 ] unsigned char 
+  green           1   36[BANK0 ] unsigned char 
+  blue            1   37[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1   30[BANK0 ] unsigned char 
-  i               2   33[BANK0 ] int 
-  i               2   31[BANK0 ] int 
+  brightness      1    0[BANK1 ] unsigned char 
+  i               2    3[BANK1 ] int 
+  i               2    1[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1790,9 +1822,9 @@ Total ram usage:       10 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1808,13 +1840,13 @@ Total ram usage:       10 bytes
 		line 650 in file "../../source/lighting.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
-  red             1   25[BANK0 ] unsigned char 
-  green           1   26[BANK0 ] unsigned char 
-  blue            1   27[BANK0 ] unsigned char 
+  red             1   35[BANK0 ] unsigned char 
+  green           1   36[BANK0 ] unsigned char 
+  blue            1   37[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1   30[BANK0 ] unsigned char 
-  i               2   33[BANK0 ] int 
-  i               2   31[BANK0 ] int 
+  brightness      1    0[BANK1 ] unsigned char 
+  i               2    3[BANK1 ] int 
+  i               2    1[BANK1 ] int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1825,9 +1857,9 @@ Total ram usage:       10 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       10 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1844,8 +1876,8 @@ Total ram usage:       10 bytes
  Parameters:    Size  Location     Type
   data_out        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  data_out        1   24[BANK0 ] unsigned char 
-  TempVar         1   23[BANK0 ] unsigned char 
+  data_out        1   34[BANK0 ] unsigned char 
+  TempVar         1   33[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1886,21 +1918,21 @@ Total ram usage:        3 bytes
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  z               2   46[BANK0 ] int 
-  y               2   44[BANK0 ] int 
-  x               2   42[BANK0 ] int 
-  z_neg_thresh    2   40[BANK0 ] int 
-  z_pos_thresh    2   38[BANK0 ] int 
-  y_neg_thresh    2   36[BANK0 ] int 
-  y_pos_thresh    2   34[BANK0 ] int 
-  x_neg_thresh    2   32[BANK0 ] int 
-  x_pos_thresh    2   30[BANK0 ] int 
-  zl              1   29[BANK0 ] unsigned char 
-  yl              1   28[BANK0 ] unsigned char 
-  xl              1   27[BANK0 ] unsigned char 
-  zh              1   26[BANK0 ] unsigned char 
-  yh              1   25[BANK0 ] unsigned char 
-  xh              1   24[BANK0 ] unsigned char 
+  z               2   22[BANK1 ] int 
+  y               2   20[BANK1 ] int 
+  x               2   18[BANK1 ] int 
+  z_neg_thresh    2   16[BANK1 ] int 
+  z_pos_thresh    2   14[BANK1 ] int 
+  y_neg_thresh    2   12[BANK1 ] int 
+  y_pos_thresh    2   10[BANK1 ] int 
+  x_neg_thresh    2    8[BANK1 ] int 
+  x_pos_thresh    2    6[BANK1 ] int 
+  zl              1    5[BANK1 ] unsigned char 
+  yl              1    4[BANK1 ] unsigned char 
+  xl              1    3[BANK1 ] unsigned char 
+  zh              1    2[BANK1 ] unsigned char 
+  yh              1    1[BANK1 ] unsigned char 
+  xh              1    0[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
@@ -1911,9 +1943,9 @@ Total ram usage:        3 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0      24       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0      24       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      26       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2      24       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       26 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1931,7 +1963,7 @@ Total ram usage:       26 bytes
   packets         1    wreg     PTR unsigned char 
 		 -> main@pkt_arr(3), 
  Auto vars:     Size  Location     Type
-  packets         1   23[BANK0 ] PTR unsigned char 
+  packets         1   33[BANK0 ] PTR unsigned char 
 		 -> main@pkt_arr(3), 
  Return value:  Size  Location     Type
 		None               void
@@ -2012,6 +2044,11 @@ Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
  This function calls:
+		___awdiv
+		___awtoft
+		___ftge
+		___ftmul
+		___fttol
 		i1_determine_omega_mode_active
 		i1_display_blade_lights
 		i1_display_health
@@ -2442,79 +2479,293 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function ___fttol *****************
+ Defined at:
+		line 44 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c"
+ Parameters:    Size  Location     Type
+  f1              3   16[BANK0 ] float 
+ Auto vars:     Size  Location     Type
+  lval            4   25[BANK0 ] unsigned long 
+  exp1            1   29[BANK0 ] unsigned char 
+  sign1           1   24[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  4   16[BANK0 ] long 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      14       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       14 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_isr
+ This function uses a non-reentrant model
+
+
+ *************** function ___ftmul *****************
+ Defined at:
+		line 62 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c"
+ Parameters:    Size  Location     Type
+  f1              3    0[BANK0 ] float 
+  f2              3    3[BANK0 ] float 
+ Auto vars:     Size  Location     Type
+  f3_as_produc    3   11[BANK0 ] unsigned um
+  sign            1   15[BANK0 ] unsigned char 
+  cntr            1   14[BANK0 ] unsigned char 
+  exp             1   10[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  3    0[BANK0 ] float 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      16       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       16 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		___ftpack
+ This function is called by:
+		_isr
+ This function uses a non-reentrant model
+
+
+ *************** function ___ftge *****************
+ Defined at:
+		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c"
+ Parameters:    Size  Location     Type
+  ff1             3   16[BANK0 ] float 
+  ff2             3   19[BANK0 ] float 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       9       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        9 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_isr
+ This function uses a non-reentrant model
+
+
+ *************** function ___awtoft *****************
+ Defined at:
+		line 32 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awtoft.c"
+ Parameters:    Size  Location     Type
+  c               2    8[COMMON] int 
+ Auto vars:     Size  Location     Type
+  sign            1   13[COMMON] unsigned char 
+ Return value:  Size  Location     Type
+                  3    8[COMMON] float 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		___ftpack
+ This function is called by:
+		_isr
+ This function uses a non-reentrant model
+
+
+ *************** function ___ftpack *****************
+ Defined at:
+		line 62 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c"
+ Parameters:    Size  Location     Type
+  arg             3    0[COMMON] unsigned um
+  exp             1    3[COMMON] unsigned char 
+  sign            1    4[COMMON] unsigned char 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  3    0[COMMON] float 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		___awtoft
+		___ftmul
+ This function uses a non-reentrant model
+
+
+ *************** function ___awdiv *****************
+ Defined at:
+		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c"
+ Parameters:    Size  Location     Type
+  divisor         2    0[COMMON] int 
+  dividend        2    2[COMMON] int 
+ Auto vars:     Size  Location     Type
+  quotient        2    7[COMMON] int 
+  sign            1    6[COMMON] unsigned char 
+  counter         1    5[COMMON] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[COMMON] int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         9       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        9 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_isr
+ This function uses a non-reentrant model
+
+
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 ../../source/interrupt.c
-		_isr           		CODE           	0004	0000	52
-		_init_isr      		CODE           	1E1C	0000	16
+		_isr           		CODE           	0004	0000	382
+		_init_isr      		CODE           	0801	0000	16
 
-../../source/interrupt.c estimated size: 68
+../../source/interrupt.c estimated size: 398
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+		___awdiv       		CODE           	1B12	0000	82
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c estimated size: 82
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c
+		___ftge        		CODE           	1AD6	0000	61
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftge.c estimated size: 61
 
 ../../source/lighting.c
-		_init_leds     		CODE           	1F56	0000	171
-		_led5_command  		CODE           	0AB8	0000	197
-		_led6_command  		CODE           	0B7C	0000	197
-		_led7_command  		CODE           	06FA	0000	197
-		_writespi      		CODE           	1E3B	0000	20
-		_leds_off      		CODE           	167D	0000	192
-		_display_health		CODE           	101C	0000	139
-		_display_blade_lights		CODE           	004F	0000	1040
-		_led1_command  		CODE           	173C	0000	197
-		_led2_command  		CODE           	086C	0000	197
-		_led3_command  		CODE           	0930	0000	197
-		_led4_command  		CODE           	09F4	0000	197
+		_init_leds     		CODE           	1C72	0000	171
+		_led5_command  		CODE           	0966	0000	205
+		_led6_command  		CODE           	0A32	0000	205
+		_led7_command  		CODE           	0724	0000	205
+		_writespi      		CODE           	19F6	0000	20
+		_leds_off      		CODE           	14D5	0000	200
+		_display_health		CODE           	0810	0000	139
+		_display_blade_lights		CODE           	0198	0000	1016
+		_led1_command  		CODE           	159C	0000	205
+		_led2_command  		CODE           	1668	0000	205
+		_led3_command  		CODE           	1734	0000	205
+		_led4_command  		CODE           	089A	0000	205
 
-../../source/lighting.c estimated size: 2941
+../../source/lighting.c estimated size: 2981
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awtoft.c
+		___awtoft      		CODE           	1A1E	0000	33
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awtoft.c estimated size: 33
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c
+		___ftpack      		CODE           	100B	0000	101
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\float.c estimated size: 101
 
 ../../source/ir.c
-		_output_ir     		CODE           	05BB	0000	320
-		_init_ir       		CODE           	07BE	0000	58
+		_output_ir     		CODE           	0AFE	0000	326
+		_init_ir       		CODE           	1A9D	0000	58
 
-../../source/ir.c estimated size: 378
+../../source/ir.c estimated size: 384
 
 ../../source/main.c
-		_init_pic      		CODE           	1EA1	0000	46
-		_main          		CODE           	0808	0000	101
+		_init_pic      		CODE           	1A3E	0000	46
+		_main          		CODE           	1416	0000	192
 
-../../source/main.c estimated size: 147
+../../source/main.c estimated size: 238
 
 ../../source/blade_connection.c
-		_determine_packets_to_send		CODE           	1E4E	0000	42
-		_determine_omega_mode_active		CODE           	07F7	0000	6
-		_init_conn     		CODE           	07FC	0000	4
+		_determine_packets_to_send		CODE           	1A6B	0000	51
+		_determine_omega_mode_active		CODE           	1006	0000	6
+		_init_conn     		CODE           	19F3	0000	4
 
-../../source/blade_connection.c estimated size: 52
+../../source/blade_connection.c estimated size: 61
 
 shared
-		i1_led2_command		CODE           	121B	0000	188
-		i1_writespi    		CODE           	1E2B	0000	17
-		i1_led5_command		CODE           	144C	0000	188
-		i1_leds_off    		CODE           	10A6	0000	187
-		i1_led3_command		CODE           	12D6	0000	188
-		i1_led6_command		CODE           	1507	0000	188
-		__initialization		CODE           	0039	0000	19
+		i1_led2_command		CODE           	1F45	0000	188
+		i1_writespi    		CODE           	07F0	0000	17
+		i1_led5_command		CODE           	11E5	0000	188
+		i1_leds_off    		CODE           	1DD0	0000	187
+		i1_led3_command		CODE           	106F	0000	188
+		i1_led6_command		CODE           	12A0	0000	188
+		__initialization		CODE           	0183	0000	18
 		determine_sword_was_swung@neg_shock_thresh		STRCODE        	0000	0000	0
 		determine_sword_was_swung@pos_shock_thresh		STRCODE        	0000	0000	0
-		i1_determine_omega_mode_active		CODE           	0803	0000	6
-		i1_led1_command		CODE           	1160	0000	188
-		i1_led4_command		CODE           	1391	0000	188
-		i1_led7_command		CODE           	15C2	0000	188
-		i1_display_health		CODE           	1ECE	0000	137
+		i1_determine_omega_mode_active		CODE           	1001	0000	6
+		i1_led1_command		CODE           	1E8A	0000	188
+		i1_led4_command		CODE           	112A	0000	188
+		i1_led7_command		CODE           	135B	0000	188
+		i1_display_health		CODE           	1BEA	0000	137
 		determine_sword_was_swung@midpoint		STRCODE        	2000	0000	3
-		i1_display_blade_lights		CODE           	0C40	0000	961
+		i1_display_blade_lights		CODE           	0C43	0000	958
 
-shared estimated size: 2646
+shared estimated size: 2642
 
-../../source/audio.c
-		_play_sound    		CODE           	1E77	0000	43
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c
+		___ftmul       		CODE           	1D1C	0000	181
 
-../../source/audio.c estimated size: 43
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\ftmul.c estimated size: 181
 
 ../../source/accelerometer.c
-		_determine_sword_was_swung		CODE           	045E	0000	350
-		_init_accel    		CODE           	1007	0000	22
+		_determine_sword_was_swung		CODE           	058F	0000	406
+		_init_accel    		CODE           	1A09	0000	22
 
-../../source/accelerometer.c estimated size: 372
+../../source/accelerometer.c estimated size: 428
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c
+		___fttol       		CODE           	1B63	0000	136
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\fttol.c estimated size: 136
 
